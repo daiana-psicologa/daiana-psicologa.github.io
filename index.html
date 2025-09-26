@@ -6,12 +6,12 @@
 
   <title>Daiana Beltrán – Psicóloga en Neuquén</title>
   <meta name="description" content="Psicóloga en Neuquén. Enfoque humano y realista: vamos a la causa del malestar, no solo al síntoma. Presencial y online. WhatsApp 299 604 4900.">
-  <meta name="color-scheme" content="light dark">
 
-  <!-- Fuente -->
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Montserrat (texto) + Rock Salt (trazo a mano para “PSICOLOGÍA”) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Rock+Salt&display=swap" rel="stylesheet">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Daiana Beltrán – Psicóloga en Neuquén">
@@ -24,12 +24,12 @@
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%23d4ad07"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat,Arial" font-weight="800" font-size="26" fill="%23111111">DB</text></svg>'>
 
   <style>
-    /* ================== THEME (LIGHT) ================== */
+    /* ===== Paleta (modo claro fijo) ================================== */
     :root{
       --bg:#ffffff;
       --ink:#111113;
       --muted:#5c6069;
-      --brand:#d4ad07;   /* amarillo marca */
+      --brand:#d4ad07;            /* amarillo marca/botones */
       --brand-ink:#231f10;
       --line:#e9ecf1;
       --card:#f7f8fb;
@@ -37,164 +37,159 @@
       --max:1200px;
       --radius:20px;
       --shadow:0 10px 24px rgba(0,0,0,.08);
-      --shadow-strong:0 14px 30px rgba(0,0,0,.12);
-      --tiktok:#0f0f0f;
-    }
-    /* ================== THEME (DARK) ================== */
-    @media (prefers-color-scheme: dark){
-      :root{
-        --bg:#0f1114;
-        --ink:#f4f6f9;
-        --muted:#b3bac6;
-        --brand:#d4ad07;      /* mantiene identidad */
-        --brand-ink:#1b1608;
-        --line:#1e232b;
-        --card:#151920;
-        --alt:#12161c;
-        --shadow:0 10px 24px rgba(0,0,0,.35);
-        --shadow-strong:0 14px 30px rgba(0,0,0,.45);
-        --tiktok:#0f0f0f;
-      }
+      --shadow-strong:0 16px 36px rgba(0,0,0,.14);
     }
 
-    /* ============ Reset / base ============ */
+    /* ===== Reset / base ============================================== */
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0}
     img{max-width:100%;display:block;height:auto}
     body{
       font-family:Montserrat,system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;
-      color:var(--ink);background:var(--bg);line-height:1.65;
+      color:var(--ink); background:var(--bg); line-height:1.65;
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
       text-rendering:optimizeLegibility;
-      transition:background-color .3s ease, color .3s ease;
     }
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--max);margin:auto;padding:0 28px}
     :focus-visible{outline:3px solid #7bb0ff; outline-offset:2px; border-radius:10px}
 
-    /* ============ Animaciones base ============ */
-    @keyframes fadeUp {
-      from {opacity:0; transform:translateY(10px)}
-      to   {opacity:1; transform:translateY(0)}
-    }
-    .fade-up{animation:fadeUp .5s both}
-    .delay-1{animation-delay:.06s}
-    .delay-2{animation-delay:.12s}
-    .delay-3{animation-delay:.18s}
-
-    /* ============ Topbar ============ */
-    .top{position:sticky;top:0;z-index:30;background:color-mix(in oklab, var(--bg) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    /* ===== Topbar ===================================================== */
+    .top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
     .top .row{display:flex;align-items:center;justify-content:space-between;height:72px}
-    .brand{font-weight:800;letter-spacing:.2px}
+    .brand{
+      display:flex; align-items:baseline; gap:14px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .brand .scribble{
+      font-family:"Rock Salt", system-ui, cursive;
+      font-size:16px; letter-spacing:.06em; color:#0f0f0f;
+      position:relative; top:1px;
+      opacity:.95;
+    }
+    /* Subrayado “garabato” animado bajo PSICOLOGÍA */
+    .brand .scribble::after{
+      content:""; position:absolute; left:0; right:0; bottom:-6px; height:8px;
+      background: radial-gradient(6px 4px at 6px 4px, rgba(0,0,0,.75) 60%, transparent 62%) repeat-x;
+      background-size: 12px 8px;
+      transform-origin:left;
+      animation: underline 1.1s ease-out .2s both;
+      opacity:.9;
+    }
+
     .nav{display:flex;gap:22px;align-items:center}
-    .nav a{color:color-mix(in srgb, var(--ink) 80%, transparent)}
-    .nav .cta{background:var(--brand);color:var(--brand-ink);padding:10px 18px;border-radius:999px;font-weight:800;box-shadow:var(--shadow);transition:transform .15s ease, box-shadow .2s ease}
-    .nav .cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
+    .nav a{color:#333}
+    .nav .cta{
+      background:var(--brand); color:var(--brand-ink);
+      padding:10px 18px; border-radius:999px; font-weight:800;
+      box-shadow:var(--shadow);
+      transition:transform .15s ease, box-shadow .2s ease;
+    }
+    .nav .cta:hover{transform:translateY(-2px); box-shadow:var(--shadow-strong)}
     .nav .cta:active{transform:translateY(0)}
 
-    /* ============ Hero ============ */
-    .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:48px;padding:72px 0}
-    .eyebrow{color:#7b6a05;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.87rem}
-    h1{font-size:clamp(34px,5vw,60px);line-height:1.08;letter-spacing:-.02em;margin:.15em 0}
-    .lead{color:var(--muted);font-size:1.06rem;margin:.6rem 0 1.2rem;transition:color .3s ease}
+    /* ===== Hero ======================================================= */
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:48px;padding:74px 0}
+    .eyebrow{color:#7b6a05;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.87rem; opacity:0; animation:fadeUp .6s ease .05s forwards}
+    h1{font-size:clamp(34px,5vw,60px);line-height:1.08;letter-spacing:-.02em;margin:.15em 0; opacity:0; animation:fadeUp .6s ease .15s forwards}
+    .lead{color:var(--muted);font-size:1.06rem;margin:.6rem 0 1.2rem; opacity:0; animation:fadeUp .6s ease .25s forwards}
 
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:12px;padding:14px 20px;border-radius:14px;border:1px solid var(--line);font-weight:700;background:var(--bg);box-shadow:var(--shadow);transition:transform .15s ease, box-shadow .2s ease, background-color .3s ease, border-color .3s ease}
+    .actions{display:flex;gap:12px;flex-wrap:wrap; opacity:0; animation:fadeUp .6s ease .35s forwards}
+    .btn{
+      display:inline-flex;align-items:center;gap:12px;padding:14px 20px;border-radius:14px;border:1px solid var(--line);
+      font-weight:700;background:#fff;box-shadow:var(--shadow);
+      transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
+    }
     .btn svg{flex:0 0 20px}
     .btn--primary{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
     .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
     .btn:active{transform:translateY(0)}
 
-    /* Foto estilizada */
-    .photo-wrap{position:relative;isolation:isolate}
+    /* Foto con bloque amarillo detrás + flotado suave */
+    .photo-wrap{position:relative; opacity:0; animation:fadeUp .6s ease .25s forwards}
     .photo-wrap::before{
       content:"";position:absolute;right:-22px;top:40px;width:76%;height:78%;
-      background:var(--brand);border-radius:26px;z-index:0;filter:drop-shadow(0 18px 28px rgba(0,0,0,.2));
-      transition:filter .3s ease;
+      background:var(--brand);border-radius:22px;z-index:0;
+      filter:drop-shadow(0 12px 24px rgba(0,0,0,.15));
+      transform:translateZ(0);
+      animation:floatY 6s ease-in-out infinite;
     }
-    .photo{position:relative;z-index:1;border-radius:24px;border:6px solid color-mix(in srgb, var(--bg) 92%, #fff 8%);outline:1px solid var(--line);
-           box-shadow:0 28px 50px rgba(0,0,0,.10);object-fit:cover;aspect-ratio:4/5;transition:border-color .3s ease, outline-color .3s ease}
+    .photo{
+      position:relative;z-index:1;border-radius:22px;border:1px solid var(--line);
+      box-shadow:0 24px 48px rgba(0,0,0,.10);object-fit:cover;
+      transform:translateZ(0); animation:floatY 6s ease-in-out -.6s infinite;
+    }
 
-    /* Secciones */
+    /* ===== Secciones ================================================== */
     section{padding:68px 0}
     h2{font-size:clamp(24px,3.6vw,36px);letter-spacing:-.01em;margin:0 0 10px}
 
-    /* Filosofía */
     .ticks{padding-left:18px;margin:12px 0 0}
     .ticks li{margin:6px 0}
 
-    /* Cards servicios */
     .grid{display:grid;gap:22px}
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
     .card{
       background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;
-      transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease, background-color .3s ease;
+      transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease;
     }
     .card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#dfe3ea}
     .card h3{margin:0 0 6px}
     .card p{margin:0;color:var(--muted)}
-
-    details{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:10px;transition:background-color .3s ease,border-color .3s}
+    details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:10px}
     details summary{cursor:pointer;font-weight:700}
 
-    /* Contacto + mapa */
-    .contact{background:var(--alt);transition:background-color .3s ease}
+    /* ===== Contacto + mapa =========================================== */
+    .contact{background:var(--alt)}
     .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:start}
 
-    /* Pastillas de acción */
     .pills{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0 18px}
     .pill{
       display:inline-flex;align-items:center;gap:12px;border:1px solid var(--line);
       padding:12px 16px;border-radius:999px;font-weight:700;box-shadow:var(--shadow);
       transition:transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
-      background:var(--bg);
+      background:#fff;
     }
     .pill svg{width:20px;height:20px}
 
-    .pill--whatsapp{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+    .pill--whatsapp{ background:var(--brand); border-color:var(--brand); color:var(--brand-ink)}
     .pill--whatsapp:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
 
-    .pill--tiktok{background:var(--tiktok);border-color:#0a0a0a;color:#fff}
+    .pill--tiktok{ background:#0f0f0f; border-color:#0a0a0a; color:#fff }
     .pill--tiktok svg path{fill:#fff}
     .pill--tiktok:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
 
-    .pill--google{background:var(--bg);border-color:#dcdfe5;color:var(--ink)}
+    .pill--google{ background:#fff; border-color:#dcdfe5; color:#111 }
     .pill--google:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#cfd4dc}
 
     .map{width:100%;height:400px;border:0;border-radius:16px;box-shadow:var(--shadow)}
 
-    /* Franja CTA */
+    /* ===== Franja CTA ================================================= */
     .strip{background:var(--brand);color:var(--brand-ink);padding:32px 0}
-
     .strip .row{display:flex;align-items:center;justify-content:space-between;gap:16px}
 
-    /* Botón fijo móvil */
-    .wa-bar{
-      position:fixed;left:0;right:0;bottom:0;z-index:40;
-      display:none;background:color-mix(in oklab, var(--bg) 88%, transparent);backdrop-filter:blur(6px);
-      border-top:1px solid var(--line);padding:10px 14px;transition:background-color .3s ease,border-color .3s ease;
-    }
-    .wa-bar .wrap{max-width:var(--max);margin:auto}
-    .wa-bar a{display:flex;align-items:center;gap:12px;justify-content:center;
-      width:100%;padding:14px 18px;background:var(--brand);color:var(--brand-ink);
-      border-radius:14px;font-weight:800;box-shadow:var(--shadow);transition:box-shadow .2s ease}
-    .wa-bar a:hover{box-shadow:var(--shadow-strong)}
+    /* ===== Footer ===================================================== */
+    footer{border-top:1px solid var(--line);color:#5c6069;padding:28px 0}
+    footer .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
-    /* Responsive */
+    /* ===== Animaciones clave ========================================= */
+    @keyframes fadeUp{ from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)} }
+    @keyframes floatY{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-6px) } }
+    @keyframes underline{ from{transform:scaleX(0)} to{transform:scaleX(1)} }
+
+    /* ===== Responsive ================================================= */
     @media (max-width:980px){
-      .hero{grid-template-columns:1fr;padding:52px 0}
+      .hero{grid-template-columns:1fr;padding:56px 0}
       .photo-wrap::before{right:-10px;top:28px;width:70%;height:70%}
       .grid.cols-3{grid-template-columns:1fr}
       .contact-grid{grid-template-columns:1fr}
       .strip .row{flex-direction:column;align-items:flex-start}
-      .wa-bar{display:block}
-      body{padding-bottom:86px}
     }
 
     /* Reduce motion */
     @media (prefers-reduced-motion: reduce){
-      .fade-up,.btn,.card,.pill{animation:none;transition:none}
-      .nav .cta:hover,.btn:hover,.card:hover,.pill:hover{transform:none}
+      .btn,.card,.pill,.photo,.photo-wrap::before{animation:none !important; transition:none !important}
+      .eyebrow,h1,.lead,.actions,.photo-wrap{animation:none !important; opacity:1}
     }
   </style>
 </head>
@@ -203,7 +198,10 @@
   <!-- Topbar -->
   <header class="top">
     <div class="container row">
-      <div class="brand">Daiana Beltrán · Psicóloga</div>
+      <div class="brand">
+        <span>Daiana Beltrán</span>
+        <span class="scribble">PSICOLOGÍA</span>
+      </div>
       <nav class="nav" aria-label="Principal">
         <a href="#filosofia">Filosofía</a>
         <a href="#servicios">Servicios</a>
@@ -215,7 +213,7 @@
 
   <!-- Hero -->
   <section class="hero container">
-    <div class="fade-up">
+    <div>
       <div class="eyebrow">Psicóloga en Neuquén</div>
       <h1>Daiana Beltrán</h1>
       <p class="lead">
@@ -223,43 +221,46 @@
         duelo y trastornos alimenticios. Presencial u online. Voy a la <strong>causa</strong>, no solo al síntoma.
       </p>
       <div class="actions">
-        <a class="btn delay-1" href="#filosofia" aria-label="Ver enfoque de trabajo">
+        <a class="btn" href="#filosofia" aria-label="Ver enfoque de trabajo">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5c5.5 0 9.5 5 9.5 7s-4 7-9.5 7S2.5 14 2.5 12 6.5 5 12 5Z" stroke="#222" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" stroke="#222" stroke-width="1.6"/></svg>
           Ver enfoque
         </a>
-        <a class="btn btn--primary delay-2" href="https://wa.me/5492996044900?text=Hola%20quisiera%20consultar%20por%20un%20turno" aria-label="Pedir turno por WhatsApp">
+        <a class="btn btn--primary" href="https://wa.me/5492996044900?text=Hola%20quisiera%20consultar%20por%20un%20turno" aria-label="Pedir turno por WhatsApp">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 1 1-16.4 3.3L3 21l6.4-1a8.5 8.5 0 1 0 11.1-8.5Z" stroke="#111" stroke-width="1.6"/><path d="M9.5 8.5c-.3.7-.6 2 .9 3.9 1.8 2.2 3.4 2.3 4.2 2 .3-.1.9-.5 1.1-1 .1-.3 0-.5-.2-.6l-1.1-.5c-.2-.1-.5-.1-.7.1l-.3.3c-.2.2-.4.2-.6.1-1.1-.6-1.8-1.4-2.2-2.4-.1-.2 0-.4.1-.5l.3-.3c.2-.2.2-.5.1-.7l-.5-1.1c-.1-.2-.4-.3-.6-.2-.5.2-.9.8-1 .9Z" fill="#111"/></svg>
           Pedir turno por WhatsApp
         </a>
       </div>
     </div>
 
-    <!-- Foto -->
-    <div class="photo-wrap fade-up delay-3" aria-hidden="true">
-      <img class="photo" src="assets/portrait.png?v=3" alt="Daiana Beltrán, Psicóloga en Neuquén" loading="lazy" decoding="async">
+    <!-- Foto con bloque amarillo detrás -->
+    <div class="photo-wrap" aria-hidden="true">
+      <img class="photo" src="assets/portrait.png" alt="Daiana Beltrán, Psicóloga en Neuquén">
     </div>
   </section>
 
   <!-- Filosofía -->
-  <section id="filosofia" class="container fade-up">
+  <section id="filosofia" class="container">
     <h2>Mi filosofía de trabajo</h2>
     <p class="lead">
       La terapia funciona cuando miramos tu vida real y entendemos qué sostiene el malestar.
       No se trata de aplicar técnicas sueltas ni de forzar el positivismo, sino de tomar
       decisiones posibles y que se noten en el día a día.
     </p>
+
     <p>
       Me guío por tres ideas simples: (1) yo puedo saber de psicoterapia, pero quien más sabe
       de tu vida sos vos; por eso, combinamos mi formación con tu experiencia. (2) si repetir lo
       mismo no funcionó, necesitamos probar algo distinto. (3) la conexión importa: si tenés que
       “adaptarte” al psicólogo, esa terapia difícilmente funcione.
     </p>
+
     <p>
       No entrego “recetas” universales. Mi tarea no es que te adaptes a un protocolo, sino
       adaptarme a tu forma de vivir, a tu historia y a lo que hoy necesitás. Muchas veces
       sufrimos por intentar seguir “la manera adecuada” impuesta por otros; en cambio, trabajamos
       para escucharte, entender qué pasa y actuar en consecuencia.
     </p>
+
     <ul class="ticks">
       <li>Ir a la <strong>causa</strong> detrás del síntoma (ansiedad, depresión, estrés).</li>
       <li>Construir una relación terapeuta–paciente clara, honesta y humana.</li>
@@ -268,29 +269,79 @@
   </section>
 
   <!-- Servicios -->
-  <section id="servicios" class="container fade-up" style="padding-top:24px">
+  <section id="servicios" class="container" style="padding-top:24px">
     <h2>En qué puedo ayudarte</h2>
+
     <div class="grid cols-3">
-      <article class="card"><h3>Ansiedad</h3><p>La ansiedad es una alarma. Escuchemos qué la activa y resolvámoslo; al atender la causa, baja sola.</p><details><summary>Leer más</summary><p>Es un mecanismo de alerta. Si nunca se enciende estamos en riesgo; si está siempre encendida, también. No se trata de dominarla con trucos sino de entender su origen (exigencia, miedo, amenaza, ritmo imposible) y cambiarlo.</p></details></article>
-      <article class="card"><h3>Depresión</h3><p>No es “ver el lado bueno” a la fuerza. Curar la herida devuelve energía y sentido.</p><details><summary>Leer más</summary><p>Además de tristeza suele haber agotamiento y autocrítica. No aparece “porque sí”; salvo causas biológicas raras, responde a pérdidas, rupturas internas o falta de sentido. Buscamos y curamos esa herida.</p></details></article>
-      <article class="card"><h3>Gestión emocional</h3><p>Rabia, bloqueo, impulsividad: destrabar con herramientas concretas.</p><details><summary>Leer más</summary><p>Muchas veces el problema no es lo que pasa sino cómo se siente y cómo actuamos desde ahí. Aprender a sentir, entender y <strong>posicionarte</strong> para elegir cómo actuar, sin reprimirte.</p></details></article>
-      <article class="card"><h3>Trastornos alimenticios</h3><p>No es solo la comida: hay ansiedad, control y autoexigencia detrás.</p><details><summary>Leer más</summary><p>El foco real es el <em>para qué</em> del síntoma (calmar, tapar, controlar). Cambia cuando entendemos su función y cubrimos esa necesidad de un modo más sano.</p></details></article>
-      <article class="card"><h3>Duelo y pérdidas</h3><p>Acompañamiento humano para atravesar pérdidas y rearmar la vida.</p><details><summary>Leer más</summary><p>Darle lugar al dolor, entender qué se perdió y cómo seguir viviendo con sentido. Procesos a tu ritmo, sin frases hechas.</p></details></article>
-      <article class="card"><h3>Psicología online</h3><p>Si no estás en Neuquén, trabajamos por videollamada.</p><details><summary>Leer más</summary><p>La misma calidez y claridad por videollamada. Coordinamos por WhatsApp día y horario.</p></details></article>
+      <article class="card">
+        <h3>Ansiedad</h3>
+        <p>La ansiedad es una alarma. Escuchemos qué la activa y, al resolver la causa, baja sola.</p>
+        <details><summary>Leer más</summary>
+          <p>Si nunca se enciende estamos en riesgo; si siempre está encendida, también. No se trata de “dominarla”, sino de entender el origen (exigencia, miedo, amenaza, ritmo imposible) y cambiarlo.</p>
+        </details>
+      </article>
+
+      <article class="card">
+        <h3>Depresión</h3>
+        <p>No es “ver el lado bueno” a la fuerza. Curar la herida devuelve energía y sentido.</p>
+        <details><summary>Leer más</summary>
+          <p>Además de tristeza suele haber agotamiento y autocrítica. Salvo causas biológicas raras, responde a pérdidas, rupturas internas o falta de sentido. Buscamos y curamos esa herida.</p>
+        </details>
+      </article>
+
+      <article class="card">
+        <h3>Gestión emocional</h3>
+        <p>Rabia, bloqueo, impulsividad: destrabar con herramientas concretas.</p>
+        <details><summary>Leer más</summary>
+          <p>El problema no es solo lo que pasa sino cómo se siente y cómo actuamos desde ahí. Aprender a sentir, entender y <strong>posicionarte</strong> para elegir mejor.</p>
+        </details>
+      </article>
+
+      <article class="card">
+        <h3>Trastornos alimenticios</h3>
+        <p>Más allá de la comida, suele haber ansiedad, control y autoexigencia.</p>
+        <details><summary>Leer más</summary>
+          <p>El foco real es el <em>para qué</em> del síntoma (calmar, tapar, controlar). Cambia cuando entendemos su función y cubrimos esa necesidad de un modo más sano.</p>
+        </details>
+      </article>
+
+      <article class="card">
+        <h3>Duelo y pérdidas</h3>
+        <p>Acompañamiento humano para atravesar pérdidas y rearmar la vida.</p>
+        <details><summary>Leer más</summary>
+          <p>Darle lugar al dolor, entender qué se perdió y cómo seguir viviendo con sentido. Procesos a tu ritmo, sin frases hechas.</p>
+        </details>
+      </article>
+
+      <article class="card">
+        <h3>Psicología online</h3>
+        <p>Si no estás en Neuquén, trabajamos por videollamada.</p>
+        <details><summary>Leer más</summary>
+          <p>La misma calidez y claridad por videollamada. Coordinamos por WhatsApp día y horario.</p>
+        </details>
+      </article>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="container fade-up" style="padding-top:26px">
+  <!-- Preguntas frecuentes -->
+  <section id="faq" class="container" style="padding-top:26px">
     <h2>Preguntas frecuentes</h2>
-    <details><summary>¿Cómo saber si necesito ayuda psicológica?</summary><p>A veces hay síntomas claros (ansiedad, obsesiones, agotamiento). Otras veces el malestar es difuso: vivir en automático, cansancio, sin sentido. Si te lo estás planteando, ya es un indicador. En sesión vemos qué te dice ese malestar.</p></details>
-    <details><summary>¿Cuánto suele durar una psicoterapia?</summary><p>Lo habitual es una sesión semanal o cada 15 días; menos que eso suele ser ineficaz. Muchas terapias duran entre 6 y 10 meses, aunque depende del objetivo y la historia de cada persona.</p></details>
-    <details><summary>¿Por qué hay tantos tipos de terapia y cómo elegir?</summary><p>Existen varias corrientes (cognitivo-conductual, psicoanálisis, humanismo, sistémica). La investigación muestra que lo que más predice el éxito es la relación psicólogo-paciente. Priorizá la conexión y la confianza.</p></details>
-    <details><summary>¿Cómo es una psicoterapia conmigo?</summary><p>Me centro en la persona por encima de la técnica. Modelo humanista y emocional: entender qué pasa, por qué se sostiene y tomar decisiones reales. Proceso empático, honesto y práctico para que el cambio se note en tu vida.</p></details>
+    <details><summary>¿Cómo saber si necesito ayuda psicológica?</summary>
+      <p>A veces hay síntomas claros; otras, el malestar es difuso: vivir en automático, cansancio, sin sentido. Si te lo estás planteando, ya es un indicador. En sesión vemos qué te dice ese malestar.</p>
+    </details>
+    <details><summary>¿Cuánto suele durar una psicoterapia?</summary>
+      <p>Lo habitual es una sesión semanal o cada 15 días. Muchas terapias duran entre 6 y 10 meses, según el objetivo y la historia de cada persona.</p>
+    </details>
+    <details><summary>¿Por qué hay tantos tipos de terapia y cómo elegir?</summary>
+      <p>Existen varias corrientes. La evidencia muestra que lo que más predice el éxito es la relación psicólogo–paciente. Priorizá la conexión y la confianza.</p>
+    </details>
+    <details><summary>¿Cómo es una psicoterapia conmigo?</summary>
+      <p>Me centro en la persona por encima de la técnica: entender qué pasa, por qué se sostiene y tomar decisiones reales. Proceso empático, honesto y práctico para que el cambio se note en tu vida.</p>
+    </details>
   </section>
 
   <!-- Contacto + Mapa -->
-  <section class="contact fade-up">
+  <section class="contact">
     <div class="container contact-grid">
       <div>
         <h2>Atiendo en Neuquén y online</h2>
@@ -308,7 +359,7 @@
           </a>
 
           <a class="pill pill--google" href="https://www.google.com/maps/place/Infancia+y+Lenguaje+-+Psicolog%C3%ADa/@-38.947316,-68.052245,16z/data=!4m6!3m5!1s0x87c4be173e0fbe5f:0x7aab44d00d2f208a!8m2!3d-38.9473162!4d-68.0522455!16s%2Fg%2F11x_g32h3n?hl=es-419&entry=ttu" target="_blank" rel="noopener" aria-label="Ver perfil en Google">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.6 8 12 8 12s8-6.4 8-12c0-4.4-3.6-8-8-8Zm0 10.8a2.8 2.8 0 1 1 0-5.6 2.8 2.8 0 0 1 0 5.6Z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.6 8 12 8 12s8-6.4 8-12c0-4.4-3.6-8-8-8Zm0 10.8a2.8 2.8 0 1 1 0-5.6 2.8 2.8 0 0 1 0 5.6Z" fill="#111"/></svg>
             Perfil en Google
           </a>
         </div>
@@ -323,25 +374,12 @@
   </section>
 
   <!-- Franja CTA -->
-  <section class="strip fade-up">
+  <section class="strip">
     <div class="container row">
       <h2 style="margin:0">¿Coordinamos un turno?</h2>
       <a class="btn btn--primary" href="https://wa.me/5492996044900?text=Hola%20quisiera%20consultar%20por%20un%20turno">Escribirme por WhatsApp</a>
     </div>
   </section>
-
-  <!-- Botón fijo móvil -->
-  <div class="wa-bar" role="region" aria-label="Acción rápida en móvil">
-    <div class="wrap">
-      <a href="https://wa.me/5492996044900?text=Hola%20quisiera%20consultar%20por%20un%20turno" aria-label="Reservar por WhatsApp ahora">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-          <path d="M20.5 11.5a8.5 8.5 0 1 1-16.4 3.3L3 21l6.4-1a8.5 8.5 0 1 0 11.1-8.5Z" stroke="#111" stroke-width="1.6"/>
-          <path d="M9.5 8.5c-.3.7-.6 2 .9 3.9 1.8 2.2 3.4 2.3 4.2 2 .3-.1.9-.5 1.1-1 .1-.3 0-.5-.2-.6l-1.1-.5c-.2-.1-.5-.1-.7.1l-.3.3c-.2.2-.4.2-.6.1-1.1-.6-1.8-1.4-2.2-2.4-.1-.2 0-.4.1-.5l.3-.3c.2-.2.2-.5.1-.7l-.5-1.1c-.1-.2-.4-.3-.6-.2-.5.2-.9.8-1 .9Z" fill="#111"/>
-        </svg>
-        Reservar por WhatsApp
-      </a>
-    </div>
-  </div>
 
   <!-- Footer -->
   <footer>
