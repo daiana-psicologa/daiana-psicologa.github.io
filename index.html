@@ -4,88 +4,113 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Daiana Beltrán — Psicóloga en Neuquén</title>
+  <title>Daiana Beltrán – Psicóloga en Neuquén</title>
   <meta name="description" content="Psicóloga en Neuquén. Enfoque humano y realista: vamos a la causa del malestar, no solo al síntoma. Presencial y online. WhatsApp 299 604 4900.">
 
-  <!-- Fuente estilo Ventura -->
+  <!-- Fuente (similar a Ventura) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Favicon inline (SVG con “DB”) -->
-  <link rel="icon" type="image/svg+xml"
-        href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%23caa307"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-weight="700" font-size="28" fill="%23111113">DB</text></svg>'>
-  <!-- (Opcional) Fallback PNG si luego subís /favicon.png a la raíz -->
-  <link rel="alternate icon" type="image/png" href="/favicon.png">
-
-  <!-- Open Graph básico -->
-  <meta property="og:title" content="Daiana Beltrán — Psicóloga en Neuquén">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Daiana Beltrán – Psicóloga en Neuquén">
   <meta property="og:description" content="Psicoterapia cercana y honesta. Voy a la causa, no al síntoma. Presencial y online.">
-  <meta property="og:image" content="https://daiana-psicologa.github.io/activos/retrato.png">
+  <meta property="og:image" content="https://daiana-psicologa.github.io/assets/portrait.png">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
 
+  <!-- Favicon embebido (no necesitas subir archivo) -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%23d4ad07"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat,Arial" font-weight="800" font-size="26" fill="%23111111">DB</text></svg>'>
+
   <style>
     :root{
-      --bg:#ffffff; --ink:#111113; --muted:#666a73;
-      --brand:#caa307; --brand-ink:#4c3e07;
-      --line:#e8ebf0; --card:#f7f8fb; --alt:#f3f4f6;
-      --radius:18px; --max:1100px;
+      /* paleta basada en Ventura */
+      --bg:#ffffff;
+      --ink:#111113;
+      --muted:#5c6069;
+      --brand:#d4ad07;       /* amarillo botón/fondo */
+      --line:#e9ecf1;
+      --card:#f7f8fb;
+      --alt:#f2f4f7;
+      --max:1200px;
+      --radius:20px;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
-    body{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
-    img{max-width:100%;display:block;height:auto}
-    a{color:var(--brand-ink);text-decoration:none}
-    a:hover{opacity:.9}
-    .container{max-width:var(--max);margin:auto;padding:0 24px}
+    body{
+      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;
+      color:var(--ink); background:var(--bg); line-height:1.65;
+    }
+    img{max-width:100%; display:block; height:auto}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:auto; padding:0 28px}
+
     /* Topbar */
-    .top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-    .top .row{display:flex;align-items:center;justify-content:space-between;height:68px}
-    .brand{font-weight:800;letter-spacing:.2px}
-    .nav{display:flex;gap:20px;align-items:center}
-    .cta{display:inline-block;background:var(--brand);color:#111;padding:10px 16px;border-radius:999px;font-weight:700}
-    .btn{display:inline-block;border:1px solid var(--line);padding:12px 16px;border-radius:12px;font-weight:700;color:var(--ink)}
-    .btn--primary{background:var(--brand);border-color:var(--brand);color:#111}
+    .top{position:sticky; top:0; z-index:10; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+    .top .row{display:flex; align-items:center; justify-content:space-between; height:72px}
+    .brand{font-weight:800; letter-spacing:.2px}
+    .nav{display:flex; gap:22px; align-items:center}
+    .nav a{color:#333}
+    .nav .cta{background:var(--brand); color:#111; padding:10px 18px; border-radius:999px; font-weight:800}
+
     /* Hero */
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:52px 0}
-    h1{font-size:clamp(30px,4.8vw,52px);line-height:1.1;margin:0 0 12px;letter-spacing:-.02em}
-    .lead{color:var(--muted);margin:0 0 16px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
-    .photo{border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 40px rgba(0,0,0,.06)}
-    /* Sections */
-    section{padding:62px 0}
-    h2{font-size:clamp(24px,3.6vw,36px);margin:0 0 12px;letter-spacing:-.01em}
-    /* Filosofía */
-    .ticks{padding-left:18px;margin:14px 0 0}
+    .hero{display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:48px; padding:72px 0}
+    .eyebrow{color:#7b6a05; font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:.87rem}
+    h1{font-size:clamp(34px,5vw,60px); line-height:1.08; letter-spacing:-.02em; margin:.15em 0}
+    .lead{color:var(--muted); font-size:1.05rem; margin:.6rem 0 1.2rem}
+
+    .actions{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:14px 18px; border-radius:14px; border:1px solid var(--line); font-weight:700; background:#fff}
+    .btn--primary{background:var(--brand); border-color:var(--brand); color:#111}
+    .btn--ghost{background:#fff}
+
+    /* Foto con bloque amarillo detrás (estilo Ventura) */
+    .photo-wrap{position:relative}
+    .photo-wrap::before{
+      content:""; position:absolute; right:-22px; top:40px;
+      width:76%; height:78%; background:var(--brand); border-radius:22px; z-index:0;
+    }
+    .photo{position:relative; z-index:1; border-radius:22px; border:1px solid var(--line); box-shadow:0 24px 48px rgba(0,0,0,.06)}
+
+    /* Secciones */
+    section{padding:68px 0}
+    h2{font-size:clamp(24px,3.6vw,36px); letter-spacing:-.01em; margin:0 0 10px}
+
+    /* Lista tildes */
+    .ticks{padding-left:18px; margin:12px 0 0}
     .ticks li{margin:6px 0}
-    /* Cards */
-    .grid{display:grid;gap:18px}
+
+    /* Cards servicios */
+    .grid{display:grid; gap:22px}
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
-    .card h3{margin:0 0 6px}
-    .card p{color:var(--muted);margin:0}
-    details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:10px}
-    details summary{cursor:pointer;font-weight:700}
-    /* FAQ */
-    .faq details+details{margin-top:10px}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:18px}
+    .card h3{margin:0 0 4px}
+    .card p{margin:0; color:var(--muted)}
+    details{background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-top:10px}
+    details summary{cursor:pointer; font-weight:700}
+
     /* Contacto + mapa */
     .contact{background:var(--alt)}
-    .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:start}
-    .pills{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 18px}
-    .pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:#fff;padding:10px 12px;border-radius:999px}
-    .map{width:100%;height:380px;border:0;border-radius:16px}
-    /* CTA strip */
-    .strip{background:var(--brand);color:#111;padding:28px 0}
-    .strip .row{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .contact-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:26px; align-items:start}
+    .pills{display:flex; gap:12px; flex-wrap:wrap; margin:14px 0 18px}
+    .pill{display:inline-flex; gap:8px; align-items:center; border:1px solid var(--line); background:#fff; padding:10px 12px; border-radius:999px}
+    .map{width:100%; height:380px; border:0; border-radius:16px}
+
+    /* Franja CTA */
+    .strip{background:var(--brand); color:#111; padding:30px 0}
+    .strip .row{display:flex; align-items:center; justify-content:space-between; gap:16px}
+
     /* Footer */
-    footer{border-top:1px solid var(--line);color:var(--muted);padding:26px 0}
-    footer .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    footer{border-top:1px solid var(--line); color:#5c6069; padding:28px 0}
+    footer .foot{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+
+    /* Responsive */
     @media (max-width:980px){
-      .hero{grid-template-columns:1fr}
+      .hero{grid-template-columns:1fr; padding:52px 0}
+      .photo-wrap::before{right:-10px; top:28px; width:70%; height:70%}
       .grid.cols-3{grid-template-columns:1fr}
       .contact-grid{grid-template-columns:1fr}
-      .strip .row{flex-direction:column;align-items:flex-start}
+      .strip .row{flex-direction:column; align-items:flex-start}
     }
   </style>
 </head>
@@ -107,21 +132,28 @@
   <!-- Hero -->
   <section class="hero container">
     <div>
-      <h1>Voy a la causa, no al síntoma</h1>
-      <p class="lead">Psicoterapia cercana y honesta en Neuquén. Trabajo con ansiedad, depresión, gestión emocional, duelo y trastornos alimenticios. Podemos vernos presencial u online.</p>
-      <p class="lead"><strong>WhatsApp:</strong> <a href="https://wa.me/5492996044900?text=Hola%20quisiera%20consultar%20por%20un%20turno">299 604 4900</a> · <strong>Tel:</strong> <a href="tel:+542996044900">+54 299 604 4900</a></p>
+      <div class="eyebrow">Psicóloga en Neuquén</div>
+      <h1>Daiana Beltrán</h1>
+      <p class="lead">
+        Psicoterapia cercana y honesta. Trabajo con ansiedad, depresión, gestión emocional,
+        duelo y trastornos alimenticios. Presencial u online. Voy a la <strong>causa</strong>, no solo al síntoma.
+      </p>
       <div class="actions">
-        <a class="btn" href="#filosofia">Ver enfoque</a>
-        <a class="btn btn--primary" href="https://wa.me/5492996044900?text=Hola%20quisiera%20consultar%20por%20un%20turno">Pedir turno por WhatsApp</a>
+        <a class="btn btn--ghost" href="#filosofia">Ver enfoque</a>
+        <a class="btn btn--primary" href="https://wa.me/5492996044900?text=Hola%20quisiera%20consultar%20por%20un%20turno">Pedir cita por WhatsApp</a>
       </div>
     </div>
-    <div class="photo"><img src="activos/retrato.png" alt="Daiana Beltrán, Psicóloga en Neuquén"></div>
+
+    <!-- Foto con bloque amarillo detrás -->
+    <div class="photo-wrap">
+      <img class="photo" src="assets/portrait.png" alt="Daiana Beltrán, Psicóloga en Neuquén">
+    </div>
   </section>
 
   <!-- Filosofía -->
   <section id="filosofia" class="container">
     <h2>Mi filosofía de trabajo</h2>
-    <p class="lead">No reduzco la terapia a técnicas sueltas ni a positivismo forzado. La terapia funciona cuando miramos tu vida real, entendemos qué sostiene el malestar y tomamos decisiones posibles.</p>
+    <p class="lead">No reduzco la terapia a técnicas sueltas ni a positivismo forzado. Funciona cuando miramos tu vida real, entendemos qué sostiene el malestar y tomamos decisiones posibles.</p>
     <ul class="ticks">
       <li>Ir a la <strong>causa</strong> detrás del síntoma (ansiedad, depresión, estrés).</li>
       <li>Relación terapeuta–paciente clara, honesta y humana.</li>
@@ -129,8 +161,8 @@
     </ul>
   </section>
 
-  <!-- Servicios (tarjetas + desplegables con textos largos) -->
-  <section id="servicios" class="container" style="padding-top:28px">
+  <!-- Servicios -->
+  <section id="servicios" class="container" style="padding-top:24px">
     <h2>En qué puedo ayudarte</h2>
 
     <div class="grid cols-3">
@@ -138,11 +170,8 @@
       <article class="card">
         <h3>Ansiedad</h3>
         <p>La ansiedad es una alarma. Escuchemos qué la activa y resolvámoslo; al atender la causa, baja sola.</p>
-        <details>
-          <summary>Leer más</summary>
-          <p>La ansiedad es un mecanismo de alerta natural. Como la fiebre, indica que algo no va bien (o tu cuerpo lo interpreta así). Si nunca se enciende, estamos en riesgo; si está siempre encendida, también hay un problema.</p>
-          <p>No se trata de “dominarla” a toda costa, sino de escuchar su origen: ¿estás sosteniendo algo que no elegís?, ¿te sentís responsable de todo?, ¿el ritmo de obligaciones es excesivo?, ¿hay una amenaza real o simbólica?</p>
-          <p>Mi enfoque no es controlar con trucos aislados, sino disminuirla yendo a la <strong>causa</strong>. Cuando la causa se aborda, la ansiedad baja sola. Bajar la ansiedad sin ir al origen es como bajar la fiebre sin tratar la infección: vuelve.</p>
+        <details><summary>Leer más</summary>
+          <p>Es un mecanismo de alerta. Si nunca se enciende estamos en riesgo; si está siempre encendida, también. No se trata de dominarla con trucos sino de entender su origen (exigencia, miedo, amenaza, ritmo imposible) y cambiarlo.</p>
         </details>
       </article>
 
@@ -150,10 +179,8 @@
       <article class="card">
         <h3>Depresión</h3>
         <p>No es “ver el lado bueno” a la fuerza. Curar la herida devuelve energía y sentido.</p>
-        <details>
-          <summary>Leer más</summary>
-          <p>La depresión no es solo tristeza: suele haber agotamiento, dificultad para disfrutar y autocrítica dura. No aparece “porque sí”; salvo causas biológicas raras, <em>responde</em> a algo (pérdida, ruptura interna, falta de sentido).</p>
-          <p>El positivismo simplista puede culpar a quien sufre. Prefiero ayudarte a encontrar la herida real y a curarla; cuando sana, la tristeza profunda se transforma.</p>
+        <details><summary>Leer más</summary>
+          <p>Además de tristeza suele haber agotamiento y autocrítica. No aparece “porque sí”; salvo causas biológicas raras, responde a pérdidas, rupturas internas o falta de sentido. Buscamos y curamos esa herida.</p>
         </details>
       </article>
 
@@ -161,31 +188,26 @@
       <article class="card">
         <h3>Gestión emocional</h3>
         <p>Rabia, bloqueo, impulsividad: destrabar con herramientas concretas.</p>
-        <details>
-          <summary>Leer más</summary>
-          <p>Muchas veces el problema no es lo que pasa, sino cómo nos sentimos y actuamos desde ahí: angustia que se dispara, culpa al poner límites, impulsividad o bloqueo.</p>
-          <p>La gestión emocional es aprender a sentir, entender y <strong>posicionarte</strong> para elegir cómo actuar. No es reprimir, es comprender y decidir.</p>
+        <details><summary>Leer más</summary>
+          <p>Muchas veces el problema no es lo que pasa sino cómo se siente y cómo actuamos desde ahí. Aprender a sentir, entender y <strong>posicionarte</strong> para elegir cómo actuar, sin reprimirte.</p>
         </details>
       </article>
 
       <!-- Trastornos alimenticios -->
       <article class="card">
         <h3>Trastornos alimenticios</h3>
-        <p>Más allá de la comida, suele haber ansiedad, control y dolor. Trabajamos el “para qué”.</p>
-        <details>
-          <summary>Leer más</summary>
-          <p>El foco no es solo qué comés, sino qué intentás regular con la comida (ansiedad, control, vacío, exigencia). Por eso centrarse en calorías o dieta sin abordar el <em>para qué</em> suele fallar.</p>
-          <p>El cambio real llega cuando entendemos la función del síntoma y cubrimos esa necesidad de un modo más sano.</p>
+        <p>No es solo la comida: hay ansiedad, control y autoexigencia detrás.</p>
+        <details><summary>Leer más</summary>
+          <p>El foco real es el <em>para qué</em> del síntoma (calmar, tapar, controlar). Cambia cuando entendemos su función y cubrimos esa necesidad de un modo más sano.</p>
         </details>
       </article>
 
-      <!-- Infancia y lenguaje -->
+      <!-- Duelo y pérdidas -->
       <article class="card">
-        <h3>Infancia y lenguaje</h3>
-        <p>Orientación en desarrollo del lenguaje y acompañamiento a familias.</p>
-        <details>
-          <summary>Leer más</summary>
-          <p>Estimulación del lenguaje, pautas para casa y trabajo conjunto con la familia para favorecer comunicación y vínculo.</p>
+        <h3>Duelo y pérdidas</h3>
+        <p>Acompañamiento humano para atravesar pérdidas y rearmar la vida.</p>
+        <details><summary>Leer más</summary>
+          <p>Darle lugar al dolor, entender qué se perdió y cómo seguir viviendo con sentido. Procesos a tu ritmo, sin frases hechas.</p>
         </details>
       </article>
 
@@ -193,41 +215,28 @@
       <article class="card">
         <h3>Psicología online</h3>
         <p>Si no estás en Neuquén, trabajamos por videollamada.</p>
-        <details>
-          <summary>Leer más</summary>
-          <p>Atención por videollamada con la misma calidez y claridad. Coordinamos por WhatsApp día y horario.</p>
+        <details><summary>Leer más</summary>
+          <p>La misma calidez y claridad por videollamada. Coordinamos por WhatsApp día y horario.</p>
         </details>
       </article>
     </div>
   </section>
 
   <!-- Preguntas frecuentes -->
-  <section id="faq" class="container" style="padding-top:28px">
+  <section id="faq" class="container" style="padding-top:26px">
     <h2>Preguntas frecuentes</h2>
-
-    <div class="faq">
-      <details>
-        <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
-        <p>A veces hay síntomas claros (ansiedad, falta de energía, obsesiones). Otras veces el malestar es difuso: vivir en automático, cansancio, sin sentido. Si te lo estás planteando, tu propia experiencia ya es un indicador.</p>
-        <p>En sesión vemos qué te dice ese malestar y si hay algo que no estás pudiendo enfrentar.</p>
-      </details>
-
-      <details>
-        <summary>¿Cuánto suele durar una psicoterapia?</summary>
-        <p>Lo habitual es una sesión semanal o cada 15 días; menos que eso suele ser ineficaz. Muchas terapias duran entre 6 y 10 meses, aunque depende del caso y del objetivo.</p>
-      </details>
-
-      <details>
-        <summary>¿Por qué hay tantos tipos de terapia y cómo elegir?</summary>
-        <p>Existen muchas corrientes (cognitivo-conductual, psicoanálisis, humanismo, sistémica). Más allá del modelo, la evidencia muestra que el mayor predictor de éxito es la relación psicólogo–paciente.</p>
-        <p>Mi recomendación: priorizá la conexión y confianza con tu profesional.</p>
-      </details>
-
-      <details>
-        <summary>¿Cómo es una psicoterapia conmigo?</summary>
-        <p>Me centro en la persona por encima de la técnica. Trabajo desde modelos humanistas y emocionales: entender qué pasa, por qué se sostiene, y tomar decisiones reales. Un proceso empático, honesto y práctico para que el cambio se note en tu vida.</p>
-      </details>
-    </div>
+    <details><summary>¿Cómo saber si necesito ayuda psicológica?</summary>
+      <p>A veces hay síntomas claros (ansiedad, obsesiones, agotamiento). Otras veces el malestar es difuso: vivir en automático, cansancio, sin sentido. Si te lo estás planteando, ya es un indicador. En sesión vemos qué te dice ese malestar.</p>
+    </details>
+    <details><summary>¿Cuánto suele durar una psicoterapia?</summary>
+      <p>Lo habitual es una sesión semanal o cada 15 días; menos que eso suele ser ineficaz. Muchas terapias duran entre 6 y 10 meses, aunque depende del objetivo y la historia de cada persona.</p>
+    </details>
+    <details><summary>¿Por qué hay tantos tipos de terapia y cómo elegir?</summary>
+      <p>Existen varias corrientes (cognitivo-conductual, psicoanálisis, humanismo, sistémica). La investigación muestra que lo que más predice el éxito es la relación psicólogo-paciente. Priorizá la conexión y la confianza.</p>
+    </details>
+    <details><summary>¿Cómo es una psicoterapia conmigo?</summary>
+      <p>Me centro en la persona por encima de la técnica. Modelo humanista y emocional: entender qué pasa, por qué se sostiene y tomar decisiones reales. Proceso empático, honesto y práctico para que el cambio se note en tu vida.</p>
+    </details>
   </section>
 
   <!-- Contacto + Mapa -->
@@ -238,28 +247,26 @@
         <p class="lead">Por ahora sin consultorio fijo. Coordinamos lugar u online por WhatsApp.</p>
 
         <div class="pills">
-          <!-- WhatsApp -->
+          <!-- WhatsApp (único CTA de contacto) -->
           <a class="pill" href="https://wa.me/5492996044900?text=Hola%20quisiera%20consultar%20por%20un%20turno">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20.5 11.5a8.5 8.5 0 1 1-16.4 3.3L3 21l6.4-1a8.5 8.5 0 1 0 11.1-8.5Z" stroke="#111" stroke-width="1.5"/><path d="M9.5 8.5c-.3.7-.6 2 .9 3.9 1.8 2.2 3.4 2.3 4.2 2 .3-.1.9-.5 1.1-1 .1-.3 0-.5-.2-.6l-1.1-.5c-.2-.1-.5-.1-.7.1l-.3.3c-.2.2-.4.2-.6.1-1.1-.6-1.8-1.4-2.2-2.4-.1-.2 0-.4.1-.5l.3-.3c.2-.2.2-.5.1-.7l-.5-1.1c-.1-.2-.4-.3-.6-.2-.5.2-.9.8-1 .9Z" fill="#111"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 1 1-16.4 3.3L3 21l6.4-1a8.5 8.5 0 1 0 11.1-8.5Z" stroke="#111" stroke-width="1.5"/><path d="M9.5 8.5c-.3.7-.6 2 .9 3.9 1.8 2.2 3.4 2.3 4.2 2 .3-.1.9-.5 1.1-1 .1-.3 0-.5-.2-.6l-1.1-.5c-.2-.1-.5-.1-.7.1l-.3.3c-.2.2-.4.2-.6.1-1.1-.6-1.8-1.4-2.2-2.4-.1-.2 0-.4.1-.5l.3-.3c.2-.2.2-.5.1-.7l-.5-1.1c-.1-.2-.4-.3-.6-.2-.5.2-.9.8-1 .9Z" fill="#111"/></svg>
             WhatsApp
           </a>
-          <!-- Teléfono -->
-          <a class="pill" href="tel:+542996044900">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 3.6c.4-.4 1-.4 1.4 0l2.1 2.1c.4.4.4 1 0 1.4L8.7 8.4c.3 1 .9 2 1.8 2.9s1.9 1.5 2.9 1.8l1.3-1.4c.4-.4 1-.4 1.4 0l2.1 2.1c.4.4.4 1 0 1.4l-1.2 1.2c-.7.7-1.8 1-2.8.7-2.1-.6-4.3-2-6.3-4s-3.4-4.2-4-6.3c-.3-1 .1-2.1.7-2.8l1.1-1.1Z" fill="#111"/></svg>
-            299 604 4900
-          </a>
+
           <!-- TikTok -->
           <a class="pill" href="https://www.tiktok.com/@psicologa.daiana.b" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14.5 3v4.2c1.1.9 2.5 1.5 4 1.5V12c-1.9 0-3.6-.7-5-1.8V15a4.5 4.5 0 1 1-3.8-4.5V13a2 2 0 1 0 1.3 1.9V3h3.5Z" fill="#111"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.5 3v4.2c1.1.9 2.5 1.5 4 1.5V12c-1.9 0-3.6-.7-5-1.8V15a4.5 4.5 0 1 1-3.8-4.5V13a2 2 0 1 0 1.3 1.9V3h3.5Z" fill="#111"/></svg>
             TikTok
           </a>
-          <!-- Perfil de Google -->
-          <a class="pill" href="https://www.google.com/maps/place/Infancia+y+Lenguaje+-+Psicolog%C3%ADa/@-38.947316,-68.052245,16z/data=!4m6!3m5!1s0x87c4be173e0fbe5f:0x7aab44d00d2f208a!8m2!3d-38.9473162!4d-68.0522455!16s%2Fg%2F11x_g32h3n?hl=es-419&entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.6 8 12 8 12s8-6.4 8-12c0-4.4-3.6-8-8-8Zm0 10.8a2.8 2.8 0 1 1 0-5.6 2.8 2.8 0 0 1 0 5.6Z" fill="#111"/></svg>
+
+          <!-- Perfil de Google (link que enviaste) -->
+          <a class="pill" href="https://www.google.com/maps/place/Infancia+y+Lenguaje+-+Psicolog%C3%ADa/@-38.947316,-68.052245,16z/data=!4m6!3m5!1s0x87c4be173e0fbe5f:0x7aab44d00d2f208a!8m2!3d-38.9473162!4d-68.0522455!16s%2Fg%2F11x_g32h3n?hl=es-419&entry=ttu" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.6 8 12 8 12s8-6.4 8-12c0-4.4-3.6-8-8-8Zm0 10.8a2.8 2.8 0 1 1 0-5.6 2.8 2.8 0 0 1 0 5.6Z" fill="#111"/></svg>
             Perfil en Google
           </a>
         </div>
       </div>
+
       <div>
         <!-- Mapa centrado en Neuquén (sin dirección fija) -->
         <iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
@@ -269,14 +276,11 @@
     </div>
   </section>
 
-  <!-- CTA final -->
+  <!-- Franja CTA -->
   <section class="strip">
     <div class="container row">
-      <h2>¿Coordinamos un turno?</h2>
-      <div class="actions">
-        <a class="btn btn--primary" href="https://wa.me/5492996044900?text=Hola%20quisiera%20consultar%20por%20un%20turno">Escribirme a WhatsApp</a>
-        <a class="btn" href="tel:+542996044900">Llamar 299 604 4900</a>
-      </div>
+      <h2 style="margin:0">¿Coordinamos un turno?</h2>
+      <a class="btn btn--primary" href="https://wa.me/5492996044900?text=Hola%20quisiera%20consultar%20por%20un%20turno">Escribirme por WhatsApp</a>
     </div>
   </section>
 
