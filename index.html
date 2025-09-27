@@ -43,6 +43,7 @@
     /* ===== Reset / base ============================================== */
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0}
+    html{scroll-behavior:smooth}
     img{max-width:100%;display:block;height:auto}
     body{
       font-family:Montserrat,system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;
@@ -171,6 +172,9 @@
     /* ===== Footer ===================================================== */
     footer{border-top:1px solid var(--line);color:#5c6069;padding:28px 0}
     footer .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+    /* ===== Anclas: que la barra fija no tape el título =============== */
+    #faq, #contacto { scroll-margin-top: 90px; } /* <<< PUNTO 2 agregado */
 
     /* ===== Animaciones clave ========================================= */
     @keyframes fadeUp{ from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)} }
@@ -341,7 +345,7 @@
   </section>
 
   <!-- Contacto + Mapa -->
-  <section class="contact">
+  <section id="contacto" class="contact">
     <div class="container contact-grid">
       <div>
         <h2>Atiendo en Neuquén y online</h2>
@@ -391,3 +395,4 @@
   </footer>
 </body>
 </html>
+
