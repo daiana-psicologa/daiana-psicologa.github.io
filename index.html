@@ -394,105 +394,87 @@
     <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
   </footer>
 
- <!-- ===== Globo flotante de WhatsApp (pro) =========================== -->
-<a  id="wa-bubble"
-    href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20agendar%20una%20sesión%20(online%20o%20en%20Neuquén)."
-    target="_blank" rel="noopener"
-    aria-label="Chatear por WhatsApp">
-  <svg viewBox="0 0 256 256" width="36" height="36" aria-hidden="true">
+<!-- ===== Pastilla flotante WhatsApp (pro, bottom-right) ============ -->
+<a id="wa-pill"
+   href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20agendar%20una%20sesión%20(online%20o%20en%20Neuquén)."
+   target="_blank" rel="noopener"
+   aria-label="Chatear por WhatsApp">
+  <svg viewBox="0 0 256 256" aria-hidden="true" width="22" height="22">
     <defs>
-      <linearGradient id="waGrad" x1="0" y1="0" x2="1" y2="1">
+      <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
         <stop offset="0" stop-color="#25D366"/>
         <stop offset="1" stop-color="#20BD5A"/>
       </linearGradient>
     </defs>
-    <!-- círculo verde -->
-    <circle cx="128" cy="128" r="116" fill="url(#waGrad)"/>
-    <!-- logo blanco -->
+    <circle cx="128" cy="128" r="116" fill="url(#g)"/>
     <path fill="#fff" d="M128 50c-42.9 0-77.7 34.8-77.7 77.7 0 13.7 3.6 27 10.4 38.7l-6.9 25.2 25.9-6.8c11.3 6.2 24 9.5 36.9 9.5 42.9 0 77.7-34.8 77.7-77.7S170.9 50 128 50Zm45 88.6c-1.9 9-8.9 20.4-24.6 23.3-6.6 1.2-15 2.2-43.5-13.1-36.5-19.6-31.5-38.4-31.5-38.4s3.4-14.4 15.8-22.1c2.1-1.3 4.7-1.1 6.5.5 2.5 2.1 6.3 8.2 6.9 10.2.7 2.2.1 4.7-1.5 6.3l-3.6 3.6c-1.7 1.7-2.2 4.2-1.2 6.4 2.6 5.5 9.3 13.1 19.9 18.6 9.5 4.9 15.4 5.9 21.3 4.1 2.2-.7 4.1-2.2 5.3-4.2l2.5-4.3c1.1-2 3.4-3 5.7-2.6 2.5.4 9.8 3 12.4 4.6 2 .9 3.2 3.2 2.8 5.5Z"/>
   </svg>
+  <span class="label">WhatsApp</span>
 </a>
 
 <style>
   :root{
-    /* tamaño y posición */
-    --wa-size: 72px;         /* 72px desktop (grande y visible) */
-    --wa-offset: 20px;
-    --wa-side: left;         /* left | right  (cambiá a 'right' si lo querés abajo-derecha) */
+    --wa-offset: 20px;      /* separación del borde */
+    --wa-height: 56px;      /* alto desktop */
+    --wa-radius: 999px;
   }
-
-  #wa-bubble{
+  #wa-pill{
     position: fixed;
     bottom: var(--wa-offset);
-    /* lado configurable */
-    inset-inline-start: calc(var(--wa-side) == left ? var(--wa-offset) : auto);
-    inset-inline-end: calc(var(--wa-side) == right ? var(--wa-offset) : auto);
-
-    width: var(--wa-size); height: var(--wa-size);
-    border-radius: 50%;
-    display: grid; place-items: center;
+    right: var(--wa-offset); /* >>> abajo-derecha */
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    height: var(--wa-height);
+    padding: 0 18px;
     background: #25D366;
-    box-shadow: 0 14px 28px rgba(0,0,0,.18), 0 6px 12px rgba(0,0,0,.1);
+    color: #fff;
+    border-radius: var(--wa-radius);
+    box-shadow: 0 14px 28px rgba(0,0,0,.18), 0 6px 12px rgba(0,0,0,.10);
+    text-decoration: none;
+    font: 700 16px/1 system-ui, -apple-system, Segoe UI, Roboto, "Montserrat", Arial, sans-serif;
     z-index: 9999;
-    color:#fff; text-decoration:none;
     transition: transform .15s ease, box-shadow .2s ease, opacity .3s ease;
   }
-  /* Fallback para navegadores sin logical properties */
-  [dir] #wa-bubble{
-    left: var(--wa-side, left) == left ? var(--wa-offset) : auto;
-    right: var(--wa-side, left) == right ? var(--wa-offset) : auto;
-  }
-
-  #wa-bubble svg{ pointer-events:none; }
-
-  #wa-bubble:hover{
+  #wa-pill:hover{
     transform: translateY(-2px);
     box-shadow: 0 18px 36px rgba(0,0,0,.22), 0 8px 16px rgba(0,0,0,.12);
   }
+  #wa-pill svg{ flex:0 0 auto; display:block; }
+  #wa-pill .label{ white-space:nowrap; }
 
-  /* Pulso suave alrededor */
-  #wa-bubble::before{
+  /* halo/pulso suave */
+  #wa-pill::before{
     content:"";
-    position:absolute; inset: -8px;
-    border-radius: 50%;
-    background: rgba(37,211,102,.25);
+    position:absolute; inset:-8px;
+    border-radius: var(--wa-radius);
+    background: rgba(37,211,102,.22);
     filter: blur(6px);
-    opacity: 0; transform: scale(.9);
-    transition: opacity .3s ease, transform .3s ease;
-  }
-  #wa-bubble:hover::before{ opacity:1; transform: scale(1); }
-
-  /* Tooltip “¡Hola!” */
-  #wa-bubble::after{
-    content: "¡Hola!";
-    position: absolute;
-    bottom: 8px;
-    left: calc(100% + 10px);
-    background: #25D366; color:#fff;
-    font: 600 12px/1.2 system-ui, sans-serif;
-    padding:6px 10px; border-radius: 8px;
-    box-shadow: 0 8px 18px rgba(0,0,0,.12);
-    opacity: 0; transform: translateY(6px);
+    opacity:0; transform: scale(.96);
     transition: .25s ease;
-    white-space: nowrap;
   }
-  #wa-bubble:hover::after{ opacity:1; transform: translateY(0); }
+  #wa-pill:hover::before{ opacity:1; transform: scale(1); }
 
-  /* Responsive: un toque más chico en móvil */
+  /* Móvil: más compacto; muy chico = solo ícono */
   @media (max-width: 600px){
-    :root{ --wa-size: 64px; --wa-offset: 16px; }
+    :root{ --wa-offset: 16px; --wa-height: 50px; }
+    #wa-pill{ padding: 0 14px; font-size: 15px; }
+  }
+  @media (max-width: 380px){
+    #wa-pill .label{ display:none; }  /* queda solo el ícono */
+    #wa-pill{ width: 56px; justify-content:center; }
   }
 </style>
 
 <script>
-  // Aparición suave pos-carga
+  // Aparición suave pos-carga (evita parpadeo)
   window.addEventListener('load', ()=>{
-    const b = document.getElementById('wa-bubble');
-    b.style.opacity = '0';
-    setTimeout(()=>{ b.style.opacity = '1'; }, 300);
+    const p = document.getElementById('wa-pill');
+    p.style.opacity = '0';
+    setTimeout(()=>{ p.style.opacity = '1'; }, 250);
   });
 </script>
-<!-- ===== Fin globo WhatsApp ======================================== -->
+<!-- ===== Fin pastilla WhatsApp ===================================== -->
 
 </body>
 </html>
