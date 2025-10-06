@@ -158,36 +158,39 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero container">
-    <div>
-      <div class="eyebrow">Psicología online</div>
-      <h1>Psicoterapia <span style="white-space:nowrap">ONLINE</span> clara, humana y práctica</h1>
-      <p class="lead">
-        Trabajo 100% <strong>online</strong> por <strong>Google Meet</strong>. Abordo ansiedad, depresión, regulación emocional, duelos,
-        alimentación y vínculos. La primera conversación es gratuita para conocernos.
-      </p>
-      <div class="actions">
-        <a class="btn btn-outline" href="#filosofia">Ver enfoque</a>
-        <a class="btn btn-accent" href="#reservar">Primera conversación gratis (20′)</a>
-      </div>
-    </div>
+<!-- Foto del hero (robusta con fallback de rutas) -->
+<div class="photo-wrap" aria-hidden="true">
+  <img
+    id="portrait"
+    class="photo"
+    src="./activos/retrato.png"        <!-- 1) relativa -->
+    alt="Daiana Beltrán, psicóloga — retrato"
+    width="900" height="1200"
+    loading="eager" fetchpriority="high"
+  >
+</div>
 
-    <div class="photo-wrap" aria-hidden="true">
-      <picture>
-        <source srcset="activos/retrato.webp" type="image/webp">
-        <img
-          class="photo"
-          src="activos/retrato.png"
-          alt="Daiana Beltrán, psicóloga — retrato"
-          width="900"
-          height="1200"
-          loading="eager"
-          fetchpriority="high"
-        >
-      </picture>
-    </div>
-  </section>
+<script>
+(function(){
+  const img = document.getElementById('portrait');
+  const tries = [
+    './activos/retrato.png',                              // relativa (recomendado)
+    '/activos/retrato.png',                               // desde raíz del sitio
+    'https://daiana-psicologa.github.io/activos/retrato.png' // absoluta (dominio)
+  ];
+  let i = 0;
+  function swap(){
+    if(i >= tries.length) return; // nos quedamos con el último intento
+    const test = new Image();
+    test.onload = () => { img.src = tries[i]; };
+    test.onerror = () => { i++; swap(); };
+    test.src = tries[i];
+  }
+  // si la primera no carga, probamos las siguientes
+  img.onerror = () => { i = 1; swap(); };
+})();
+</script>
+
 
   <!-- Especialidades -->
   <section id="especialidades" class="container">
