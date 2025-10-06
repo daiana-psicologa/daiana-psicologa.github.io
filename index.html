@@ -164,19 +164,40 @@
     }
     .pill--wa{background:#25D366;color:#fff;border-color:#25D366;box-shadow:0 10px 20px rgba(37,211,102,.18)}
 
-    /* ===== Calendario (reservar) ===================================== */
-    .reserve{background:#fff}
-    .reserve .lede{color:var(--muted);max-width:780px}
+    /* ===== BLOQUE RESERVA (nuevo) ==================================== */
+    .booking{
+      background:#fff7f2; /* contraste suave */
+      padding:64px 0;
+      border-top:1px solid #f1e6e0;
+      border-bottom:1px solid #f1e6e0;
+    }
+    .booking .container{max-width:1200px;margin:auto;padding:0 28px}
+    .booking__grid{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start
+    }
+    .booking .eyebrow{
+      color:#a84c34;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.86rem;margin:0 0 6px
+    }
+    .booking h2{font-size:clamp(26px,3.2vw,36px);letter-spacing:-.01em;margin:0 0 10px}
+    .booking__copy p{color:var(--muted)}
+    .booking__bullets{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:12px}
+    .booking__bullets li{
+      display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+      padding:12px 14px;border-radius:14px;box-shadow:0 10px 24px rgba(0,0,0,.04)
+    }
+    .booking__bullets svg{margin-top:2px;color:#ff7a57}
+    .booking__bullets strong{font-weight:800}
+    .booking__bullets em{font-style:normal;color:#7a2c18}
 
-    .calendar-wrap{
-      background:#fff;border:1px solid var(--line);border-radius:20px;
-      padding:0; overflow:hidden; box-shadow:var(--shadow);
+    .booking__pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .pill{
+      display:inline-flex;align-items:center;background:#fff;border:1px solid #e9edf2;color:#2a140e;
+      border-radius:999px;padding:8px 12px;font-weight:800;font-size:.88rem;box-shadow:0 10px 24px rgba(0,0,0,.04)
     }
-    .calendar-head{
-      padding:22px 22px 10px; background:#fff;
+
+    .booking__calendar{
+      background:#fff;border:1px solid #e9edf2;border-radius:16px;padding:10px;box-shadow:0 14px 28px rgba(0,0,0,.06)
     }
-    .calendar-head h3{margin:0}
-    .calendar-head p{margin:6px 0 0; color:var(--muted)}
     .calendly-inline-widget{min-width:320px;height:760px}
 
     /* ===== Preguntas ================================================== */
@@ -206,6 +227,7 @@
       .photo-wrap::before{right:-10px;top:28px;width:70%;height:70%}
       .specs__grid{grid-template-columns:1fr}
       .fees__grid{grid-template-columns:1fr}
+      .booking__grid{grid-template-columns:1fr}
       .strip .row{flex-direction:column;align-items:flex-start}
     }
 
@@ -413,21 +435,39 @@
     </div>
   </section>
 
-  <!-- RESERVAR / CALENDARIO -->
-  <section id="reservar" class="reserve">
-    <div class="container">
-      <h2>Reservar turno</h2>
-      <p class="lede">
-        Elegí día y horario según tu huso horario. La primera conversación breve (20–30&nbsp;min) para encuadre es opcional y sin costo. Las sesiones de tratamiento se coordinan luego del encuadre.
-      </p>
+  <!-- RESERVA DIRECTA (calendario + aclaraciones) -->
+  <section id="reservar" class="booking">
+    <div class="container booking__grid">
+      <!-- Texto -->
+      <div class="booking__copy">
+        <p class="eyebrow">Agenda online</p>
+        <h2>Reservá tu primera sesión</h2>
+        <p class="lead">Elegí día y hora. Si preferís, primero podemos tener una breve conversación de encuadre (20–30&nbsp;min) para ver tu motivo de consulta; es opcional y sin costo.</p>
 
-      <div class="calendar-wrap" role="region" aria-label="Calendario de turnos">
-        <div class="calendar-head">
-          <h3 style="margin-bottom:2px">Agenda online</h3>
-          <p>Videollamada por Google Meet · Horario se adapta automáticamente a tu zona</p>
+        <ul class="booking__bullets">
+          <li>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7v3H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-1V9a7 7 0 0 0-7-7Zm0 2a5 5 0 0 1 5 5v3H7V9a5 5 0 0 1 5-5Z" fill="currentColor"/></svg>
+            <strong>Videollamada por Google Meet.</strong> El horario se adapta automáticamente a tu zona.
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M17 2H7a2 2 0 0 0-2 2v16l7-3 7 3V4a2 2 0 0 0-2-2Z" fill="currentColor"/></svg>
+            <strong>Confidencialidad y respeto.</strong> Trabajo bajo secreto profesional y encuadre claro.
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M2 7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3H2V7Zm0 5h20v5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-5Zm4 3h4v2H6v-2Z" fill="currentColor"/></svg>
+            <strong>Pago simple y cuidado de agenda.</strong> Para sostener los espacios, el <em>pago se realiza al confirmar el turno</em>. Si necesitás otra modalidad, lo conversamos antes de agendar.
+          </li>
+        </ul>
+
+        <div class="booking__pills">
+          <span class="pill">Meet seguro</span>
+          <span class="pill">Zonas horarias automáticas</span>
+          <span class="pill">Recordatorios por email</span>
         </div>
+      </div>
 
-        <!-- Reemplazá data-url si tu slug de Calendly es distinto -->
+      <!-- Calendario -->
+      <div class="booking__calendar" aria-label="Calendario de reserva">
         <div
           class="calendly-inline-widget"
           data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=141516&primary_color=ff7a57"
