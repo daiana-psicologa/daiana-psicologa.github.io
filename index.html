@@ -5,28 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <title>Daiana Beltrán · Psicología online</title>
-  <meta name="description" content="Psicoterapia clara y humana. Primera conversación gratuita de 20 minutos. Atención online por Google Meet.">
+  <meta name="description" content="Psicoterapia clara y humana. Primera conversación gratuita (20′) por Google Meet.">
 
-  <!-- Tipografías (branding estilo Ventura) -->
+  <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap" rel="stylesheet">
 
   <!-- Calendly -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" async type="text/javascript"></script>
 
-  <!-- OG -->
-  <meta property="og:title" content="Daiana Beltrán · Psicología online">
-  <meta property="og:description" content="Primera conversación gratuita (20′). Psicoterapia clara y humana por Google Meet.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_AR">
-
   <!-- Favicon -->
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%23E7B908"/><text x="50%" y="54%" font-size="26" font-family="Montserrat" font-weight="800" text-anchor="middle" fill="%230A0E19">DB</text></svg>'>
 
   <style>
-    /* ===== Paleta ===== */
     :root{
       --ink:#0A0E19;
       --muted:#5f6673;
@@ -34,10 +27,9 @@
       --card:#ffffff;
       --line:#ece7d6;
 
-      --amber:#E7B908;     /* marca */
-      --amber-ink:#2A1E00;
+      --amber:#E7B908;
       --amber-soft:#FFF4CC;
-      --accent:#FF6B4A;    /* call to action puntual */
+      --accent:#FF6B4A;
 
       --max:1200px;
       --radius:22px;
@@ -45,134 +37,109 @@
       --shadow-strong:0 28px 54px rgba(10,14,25,.14);
     }
 
-    /* ===== Reset ===== */
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0}
-    body{
-      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg); color:var(--ink); line-height:1.65;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-    }
-    img{max-width:100%; display:block}
-    a{color:inherit; text-decoration:none}
-    .container{max-width:var(--max); margin:auto; padding:0 28px}
-    :focus-visible{outline:3px solid #8fb5ff; outline-offset:2px; border-radius:10px}
+    body{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:auto;padding:0 28px}
+    :focus-visible{outline:3px solid #8fb5ff;outline-offset:2px;border-radius:10px}
 
-    /* ===== Topbar ===== */
-    .top{position:sticky; top:0; z-index:50; background:rgba(255,253,247,.9); backdrop-filter:saturate(1.15) blur(6px); border-bottom:1px solid var(--line)}
-    .top .row{display:flex; align-items:center; justify-content:space-between; height:76px}
-    .brand{display:flex; align-items:baseline; gap:10px}
-    .brand .logo{font:800 20px/1 Montserrat; letter-spacing:.2px}
-    .brand .scribble{font:700 16px "Playfair Display", serif; letter-spacing:.02em; color:#111; opacity:.9}
-    .nav{display:flex; gap:22px; align-items:center}
-    .nav a{font-weight:600; color:#2b2f3a}
+    /* Top */
+    .top{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.9);backdrop-filter:saturate(1.15) blur(6px);border-bottom:1px solid var(--line)}
+    .top .row{display:flex;align-items:center;justify-content:space-between;height:76px}
+    .brand{display:flex;align-items:flex-end;gap:10px}
+    .brand .logo{font:800 20px/1 Montserrat;letter-spacing:.2px}
+    .brand .scribble{
+      font:italic 700 20px/1 "Playfair Display", serif;
+      letter-spacing:.02em; color:#111; opacity:.95; transform:translateY(1px);
+    }
+    .nav{display:flex;gap:22px;align-items:center}
+    .nav a{font-weight:600;color:#2b2f3a}
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      border:1px solid transparent; background:var(--amber); color:#101217;
-      font-weight:800; padding:12px 18px; border-radius:999px; box-shadow:var(--shadow);
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:1px solid transparent;background:var(--amber);color:#101217;
+      font-weight:800;padding:12px 18px;border-radius:999px;box-shadow:var(--shadow);
       transition:transform .15s ease, box-shadow .2s ease;
     }
-    .btn:hover{transform:translateY(-2px); box-shadow:var(--shadow-strong)}
+    .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
     .btn:active{transform:translateY(0)}
 
-    /* ===== Secciones / Aire ===== */
-    section{padding:96px 0}         /* + aire entre bloques */
-    .section-title{
-      font:800 clamp(28px,3.8vw,40px)/1.12 Montserrat;
-      margin:0 0 14px;
-      letter-spacing:-.01em;
-    }
-    .lede{color:var(--muted); margin:0 0 28px}
+    /* Secciones y aire */
+    section{padding:96px 0}
+    .section-title{font:800 clamp(28px,3.8vw,40px)/1.12 Montserrat;margin:0 0 14px;letter-spacing:-.01em}
+    .lede{color:var(--muted);margin:0 0 28px}
 
-    /* ===== Hero ===== */
-    .hero{display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:64px; padding:84px 0 24px}
-    .eyebrow{font-weight:800; color:#9a7c10; letter-spacing:.08em; text-transform:uppercase; font-size:.9rem}
-    h1{font:800 clamp(34px,5.2vw,60px)/1.06 Montserrat; letter-spacing:-.02em; margin:.3em 0 0.5em}
-    .lead{color:var(--muted); max-width:52ch}
-    .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
-    .btn-outline{background:#fff; border:1px solid var(--line); font-weight:800}
-    .btn-accent{background:var(--accent); color:#fff}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:64px;padding:84px 0 24px}
+    .eyebrow{font-weight:800;color:#9a7c10;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem}
+    h1{font:800 clamp(34px,5.2vw,60px)/1.06 Montserrat;letter-spacing:-.02em;margin:.3em 0 .6em}
+    .lead{color:var(--muted);max-width:52ch}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn-outline{background:#fff;border:1px solid var(--line);font-weight:800}
+    .btn-accent{background:var(--accent);color:#fff}
 
     .photo-wrap{
-      position:relative; aspect-ratio:4/4; border-radius:28px; background:var(--amber);
-      display:grid; place-items:center; box-shadow:0 28px 80px rgba(231,185,8,.28); border:1px solid #f2e7b0;
-      padding:22px; overflow:hidden;
+      position:relative;aspect-ratio:4/4;border-radius:28px;background:var(--amber);
+      display:grid;place-items:center;box-shadow:0 28px 80px rgba(231,185,8,.28);border:1px solid #f2e7b0;
+      padding:22px;overflow:hidden;min-height:420px;
     }
     .photo{
-      width:min(420px,82%); height:auto; object-fit:contain;
+      width:min(440px,86%);height:auto;object-fit:contain;
       filter:drop-shadow(0 20px 28px rgba(0,0,0,.12));
     }
 
-    /* ===== Cards ===== */
-    .grid-cards{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
-    .card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 16px 14px; box-shadow:var(--shadow)}
-    .tag{display:inline-block; background:var(--amber-soft); color:#905b00; border:1px solid #f2e3a1; font-weight:800; padding:.25rem .6rem; border-radius:999px; font-size:.78rem}
+    /* Cards */
+    .grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 16px 14px;box-shadow:var(--shadow)}
+    .tag{display:inline-block;background:var(--amber-soft);color:#905b00;border:1px solid #f2e3a1;font-weight:800;padding:.25rem .6rem;border-radius:999px;font-size:.78rem}
     .card h3{margin:10px 0 6px}
-    .card p{margin:0; color:var(--muted)}
+    .card p{margin:0;color:var(--muted)}
 
-    /* ===== Honorarios ===== */
+    /* Honorarios */
     .fees{background:#f6f7fb}
-    .fees-wrap{display:grid; grid-template-columns:1fr; gap:24px}
-    .fee-rect{
-      background:#fff; border:1px solid var(--line); border-radius:22px; padding:28px 26px; box-shadow:var(--shadow)
-    }
+    .fees-wrap{display:grid;grid-template-columns:1fr;gap:24px}
+    .fee-rect{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px 26px;box-shadow:var(--shadow)}
     .fee-rect--ext{background:#eaf2ff}
     .fee-rect--ar{background:#fff6ee}
-    .pay-badges{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px}
-    .badge{
-      display:inline-flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--line);
-      border-radius:999px; padding:10px 14px; font-weight:800; box-shadow:var(--shadow)
-    }
-    .dot{width:10px; height:10px; border-radius:50%}
+    .pay-badges{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
+    .badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-weight:800;box-shadow:var(--shadow)}
+    .dot{width:10px;height:10px;border-radius:50%}
 
-    /* ===== Reservar / Calendario ===== */
-    .reserve{background:#fffaf0; border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+    /* Reservar / Calendario */
+    .reserve{background:#fffaf0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .reserve .lede{max-width:850px}
-    .pill{display:inline-block; background:#fff; border:1px solid #f1e6b2; border-radius:999px; padding:.55rem 1rem; font-weight:800; box-shadow:var(--shadow)}
-    .pill-amber{background:var(--amber-soft); border-color:#f2e3a1}
-
-    .stack{display:flex; flex-direction:column; gap:12px; margin-top:10px}
-    .check{display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px 12px; box-shadow:var(--shadow)}
+    .pill{display:inline-block;background:#fff;border:1px solid #f1e6b2;border-radius:999px;padding:.55rem 1rem;font-weight:800;box-shadow:var(--shadow)}
+    .pill-amber{background:var(--amber-soft);border-color:#f2e3a1}
+    .stack{display:flex;flex-direction:column;gap:12px;margin-top:10px}
+    .check{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;box-shadow:var(--shadow)}
     .check b{font-weight:800}
+    .calendar-frame{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-strong);padding:0;overflow:hidden;max-width:1024px;margin-left:auto;margin-right:auto}
+    .calendar-head{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff7d7;border-bottom:1px solid #f1e6b2;padding:14px 18px}
+    .calendly-inline-widget{min-width:320px;height:760px}
 
-    .calendar-frame{
-      margin-top:30px; background:#fff; border:1px solid var(--line); border-radius:22px;
-      box-shadow:var(--shadow-strong); padding:0; overflow:hidden;
-      max-width:1024px; margin-left:auto; margin-right:auto;
-    }
-    .calendar-head{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      background:#fff7d7; border-bottom:1px solid #f1e6b2; padding:14px 18px;
-    }
-    .calendly-inline-widget{min-width:320px; height:760px}
-
-    /* ===== FAQ ===== */
-    details{background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px 14px; box-shadow:var(--shadow)}
+    /* FAQ */
+    details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow)}
     details+details{margin-top:10px}
-    summary{cursor:pointer; font-weight:800}
+    summary{cursor:pointer;font-weight:800}
 
-    /* ===== CTA ===== */
-    .strip{background:var(--amber); color:#111; padding:34px 0}
-    .strip .row{display:flex; align-items:center; justify-content:space-between; gap:12px}
-    .strip .btn{background:#111; color:#fff}
+    /* CTA */
+    .strip{background:var(--amber);color:#111;padding:34px 0}
+    .strip .row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .strip .btn{background:#111;color:#fff}
 
-    /* ===== Footer ===== */
-    footer{border-top:1px solid var(--line); color:#737b88; padding:30px 0}
+    /* Footer */
+    footer{border-top:1px solid var(--line);color:#737b88;padding:30px 0}
 
-    /* ===== WhatsApp ===== */
-    :root{ --wa-offset: 20px; --wa-height: 64px }
-    #wa-pill{
-      position:fixed; right:var(--wa-offset); bottom:var(--wa-offset);
-      display:inline-flex; align-items:center; gap:12px; height:var(--wa-height); padding:0 20px;
-      background:#25D366; color:#fff; border-radius:999px; box-shadow:0 18px 36px rgba(0,0,0,.22);
-      font-weight:800; z-index:9999; transition:transform .15s ease, box-shadow .2s ease;
-    }
-    #wa-pill:hover{transform:translateY(-2px); box-shadow:0 22px 42px rgba(0,0,0,.26)}
+    /* WhatsApp */
+    :root{--wa-offset:20px;--wa-height:64px}
+    #wa-pill{position:fixed;right:var(--wa-offset);bottom:var(--wa-offset);display:inline-flex;align-items:center;gap:12px;height:var(--wa-height);padding:0 20px;background:#25D366;color:#fff;border-radius:999px;box-shadow:0 18px 36px rgba(0,0,0,.22);font-weight:800;z-index:9999;transition:transform .15s ease, box-shadow .2s ease}
+    #wa-pill:hover{transform:translateY(-2px);box-shadow:0 22px 42px rgba(0,0,0,.26)}
 
-    /* ===== Responsive ===== */
     @media (max-width:980px){
-      .hero{grid-template-columns:1fr; gap:28px; padding:60px 0 0}
+      .hero{grid-template-columns:1fr;gap:28px;padding:60px 0 0}
       .grid-cards{grid-template-columns:1fr}
+      .photo-wrap{min-height:360px}
     }
   </style>
 </head>
@@ -183,7 +150,7 @@
     <div class="container row">
       <div class="brand">
         <div class="logo">Daiana Beltrán</div>
-        <div class="scribble">psicología</div>
+        <div class="scribble">psicóloga</div>
       </div>
       <nav class="nav" aria-label="principal">
         <a href="#especialidades">Especialidades</a>
@@ -211,8 +178,13 @@
     </div>
 
     <div class="photo-wrap" aria-hidden="true">
-      <!-- Tu PNG recortado (transparente) -->
-      <img class="photo" src="assets/daiana-final.png" alt="Daiana Beltrán, Psicóloga">
+      <!-- Imagen con fallback automático -->
+      <img
+        class="photo"
+        src="assets/daiana.png"
+        alt="Daiana Beltrán, Psicóloga"
+        onerror="this.onerror=null;this.src='assets/portrait.png';"
+      >
     </div>
   </section>
 
@@ -245,7 +217,7 @@
     </p>
   </section>
 
-  <!-- Honorarios & pagos -->
+  <!-- Honorarios -->
   <section id="honorarios" class="fees">
     <div class="container">
       <h2 class="section-title">Honorarios & pagos</h2>
@@ -295,7 +267,6 @@
           <span class="pill">Seleccioná día y hora</span>
           <span class="pill pill-amber">Primera conversación breve · 20 min</span>
         </div>
-        <!-- Cambiá data-url si tu slug de Calendly es otro -->
         <div class="calendly-inline-widget"
              data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=0A0E19&primary_color=E7B908">
         </div>
@@ -303,7 +274,7 @@
     </div>
   </section>
 
-  <!-- Preguntas frecuentes -->
+  <!-- FAQ -->
   <section id="faq" class="container">
     <h2 class="section-title">Preguntas frecuentes</h2>
 
@@ -311,12 +282,10 @@
       <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
       <p>A veces hay síntomas claros; otras, el malestar es difuso: vivir en automático, cansancio, sin sentido. Si te lo estás planteando, ya es un indicador. En sesión vemos qué te dice ese malestar y cómo actuar.</p>
     </details>
-
     <details>
       <summary>¿Cuánto suele durar una psicoterapia?</summary>
       <p>Lo habitual es una sesión semanal o cada 15 días. Muchas terapias duran entre 6 y 10 meses, según objetivo e historia. Siempre lo acordamos con realismo y claridad.</p>
     </details>
-
     <details>
       <summary>¿Por qué hay tantos tipos de terapia y cómo elegir?</summary>
       <p>Más allá de la técnica, la evidencia muestra que la relación psicólogo–paciente es lo más influyente. Buscá conexión y confianza. Yo trabajo con enfoque humanista y práctico.</p>
@@ -326,14 +295,14 @@
   <!-- CTA -->
   <section class="strip">
     <div class="container row">
-      <h3 style="margin:0; font:800 26px/1 Montserrat">¿Coordinamos un turno?</h3>
+      <h3 style="margin:0;font:800 26px/1 Montserrat">¿Coordinamos un turno?</h3>
       <a class="btn" href="#reservar">Ir al calendario</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
       <small>© <span id="y"></span> Daiana Beltrán · Psicología online</small>
       <small>Hecho con foco en lo importante: las personas.</small>
     </div>
