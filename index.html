@@ -17,7 +17,7 @@
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700,1,800&display=swap" rel="stylesheet">
 
   <!-- Calendly -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -32,10 +32,9 @@
       --amber:#E7B908; --amber-soft:#FFF4CC; --accent:#FF6B4A;
       --max:1200px; --radius:22px; --shadow:0 14px 38px rgba(10,14,25,.08); --shadow-strong:0 28px 54px rgba(10,14,25,.14);
     }
-
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0}
-    body{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+    body{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--max);margin:auto;padding:0 28px}
@@ -55,15 +54,15 @@
     .btn-outline{background:#fff;border:1px solid var(--line);font-weight:800}
     .btn-accent{background:var(--accent);color:#fff}
 
-    /* Secciones y aire */
-    section{padding:120px 0}
-    .section-title{font:800 clamp(28px,3.8vw,40px)/1.12 Montserrat;margin:0 0 28px;letter-spacing:-.01em}
-    .lede{color:var(--muted);margin:0 0 36px}
+    /* Secciones */
+    section{padding:112px 0} /* levemente menos para ganar vertical */
+    .section-title{font:800 clamp(28px,3.8vw,40px)/1.12 Montserrat;margin:0 0 24px;letter-spacing:-.01em}
+    .lede{color:var(--muted);margin:0 0 30px}
 
     /* Hero */
-    .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:64px;padding:104px 0 24px}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:64px;padding:96px 0 12px}
     .eyebrow{font-weight:800;color:#9a7c10;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem}
-    h1{font:800 clamp(34px,5.2vw,60px)/1.06 Montserrat;letter-spacing:-.02em;margin:.3em 0 .9em}
+    h1{font:800 clamp(34px,5.2vw,60px)/1.06 Montserrat;letter-spacing:-.02em;margin:.35em 0 .9em}
     .lead{color:var(--muted);max-width:52ch}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
     .photo-wrap{position:relative;aspect-ratio:4/4;border-radius:28px;background:var(--amber);display:grid;place-items:center;box-shadow:0 28px 80px rgba(231,185,8,.28);border:1px solid #f2e7b0;padding:22px;overflow:hidden;min-height:420px}
@@ -76,9 +75,10 @@
     .card h3{margin:10px 0 6px}
     .card p{margin:0;color:var(--muted)}
 
-    /* Divisores suaves */
-    #especialidades .grid-cards{margin-bottom:72px}
-    #filosofia{padding-top:140px;border-top:1px solid var(--line);box-shadow:inset 0 24px 48px -32px rgba(231,185,8,.18)}
+    /* Divisores y ritmos */
+    #especialidades .grid-cards{margin-bottom:56px} /* menos gap hacia Filosofía */
+    #filosofia{padding-top:112px;border-top:1px solid var(--line);box-shadow:inset 0 24px 48px -32px rgba(231,185,8,.18)}
+    #contacto20{padding-top:128px} /* más aire antes del título de 20′ */
 
     /* Bloques informativos */
     .stack{display:flex;flex-direction:column;gap:12px;margin-top:10px}
@@ -86,18 +86,33 @@
     .pill{display:inline-block;background:#fff;border:1px solid #f1e6b2;border-radius:999px;padding:.55rem 1rem;font-weight:800;box-shadow:var(--shadow)}
     .pill-amber{background:var(--amber-soft);border-color:#f2e3a1}
 
-    /* Reserva (pago previo) */
+    /* Calendario (pago previo) */
     .reserve{background:#fffaf0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .reserve .lede{max-width:850px}
-    .calendar-frame{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-strong);padding:0;overflow:hidden;max-width:1024px;margin-left:auto;margin-right:auto}
+    .calendar-frame{
+      margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:22px;
+      box-shadow:var(--shadow-strong);overflow:hidden;max-width:1120px;margin-left:auto;margin-right:auto
+    }
     .calendar-head{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff7d7;border-bottom:1px solid #f1e6b2;padding:14px 18px}
 
-    /* >>> AJUSTE CLAVE: más alto para evitar scrollbar interno de Calendly */
-    .calendly-inline-widget{min-width:320px;height:1080px}
-    /* En móviles damos un poco más de alto porque Calendly ocupa más vertical */
-    @media (max-width:980px){
-      .calendly-inline-widget{height:1200px}
+    /* Encabezado estilo Calendly (texto que pediste) */
+    .cal-brief{display:flex;align-items:flex-start;gap:16px;padding:16px 18px;border-bottom:1px solid #f5eac7}
+    .cal-brief .dot{width:8px;height:8px;border-radius:999px;background:#E7B908;margin-top:10px}
+    .cal-brief h3{margin:0 0 2px;font:800 18px/1.2 Montserrat}
+    .cal-brief p{margin:0;color:#5c6473;font-weight:600;font-size:.95rem}
+
+    /* ALTURA GRANDE → sin scrollbar interno */
+    .calendly-inline-widget{min-width:320px;height:1240px}
+
+    .tz-note{color:#c1121f;font-weight:800;font-size:.95rem;text-align:right;padding:8px 14px 16px}
+
+    /* FAQ grande y con aire */
+    #faq .section-title{margin-bottom:12px}
+    #faq details{
+      background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:14px 0;box-shadow:var(--shadow)
     }
+    #faq summary{cursor:pointer;font-weight:800;font-size:18px}
+    #faq p{margin:10px 0 0;color:#4b5563;font-size:16px}
 
     /* CTA */
     .strip{background:var(--amber);color:#111;padding:34px 0}
@@ -112,15 +127,13 @@
     #wa-pill:hover{transform:translateY(-2px);box-shadow:0 22px 42px rgba(0,0,0,.26)}
 
     @media (max-width:980px){
-      .hero{grid-template-columns:1fr;gap:28px;padding:80px 0 0}
+      .hero{grid-template-columns:1fr;gap:28px;padding:86px 0 0}
       .grid-cards{grid-template-columns:1fr}
       .photo-wrap{min-height:360px}
       section{padding:96px 0}
-      #filosofia{padding-top:120px}
+      #filosofia{padding-top:108px}
+      .calendly-inline-widget{height:1320px} /* móvil necesita un poco más */
     }
-
-    /* Nota roja bajo el calendario */
-    .tz-note{color:#c1121f;font-weight:700;font-size:.95rem;text-align:right;padding:8px 14px 14px}
   </style>
 </head>
 <body>
@@ -132,8 +145,6 @@
         <div class="logo">Daiana Beltrán</div>
         <div class="scribble">psicóloga</div>
       </div>
-
-      <!-- Limpio duplicación: saco el link de “Primera conversación (20′)” y dejo un solo CTA -->
       <nav class="nav" aria-label="principal">
         <a href="#especialidades">Especialidades</a>
         <a href="#filosofia">Filosofía</a>
@@ -215,7 +226,7 @@
         Si es tu primer contacto, usá el botón de WhatsApp de arriba.
       </p>
 
-      <div class="stack">
+      <div class="stack" style="margin-bottom:10px">
         <div class="pill pill-amber"><b>Importante:</b> Solo para pacientes en proceso. Pago previo requerido.</div>
       </div>
 
@@ -224,10 +235,21 @@
           <span class="pill">Seleccioná día y hora</span>
           <span class="pill pill-amber">Sesión regular · 50 min</span>
         </div>
-        <!-- Alto mejorado: sin scroll interno -->
+
+        <!-- Encabezado solicitado tipo Calendly -->
+        <div class="cal-brief">
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <h3>comunicar · 50 Minute Meeting</h3>
+            <p>50 min · Web conferencing details provided upon confirmation.</p>
+          </div>
+        </div>
+
+        <!-- Calendly grande, sin scrollbar -->
         <div class="calendly-inline-widget"
              data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=0A0E19&primary_color=E7B908&hide_landing_page_details=1&locale=es">
         </div>
+
         <div class="tz-note">Verifica tu zona horaria</div>
       </div>
     </div>
@@ -250,7 +272,7 @@
     </details>
   </section>
 
-  <!-- CTA -->
+  <!-- CTA barra amarilla final -->
   <section class="strip">
     <div class="container row">
       <h3 style="margin:0;font:800 26px/1 Montserrat">¿Coordinamos un turno?</h3>
