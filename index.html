@@ -6,23 +6,23 @@
 
   <!-- SEO principal -->
   <title>Psicóloga ONLINE en Neuquén | Terapia por Google Meet – Daiana Beltrán</title>
-  <meta name="description" content="Psicoterapia online clara y humana por Google Meet. Ansiedad, depresión, regulación emocional, pareja, duelo y TCA. Primera conversación gratuita (20′). Reservá tu turno online."/>
-  <link rel="canonical" href="https://tudominio.com/"/>
-  <meta name="robots" content="index,follow"/>
+  <meta name="description" content="Psicoterapia online clara y humana por Google Meet. Ansiedad, depresión, regulación emocional, pareja, duelo y TCA. Primera conversación gratuita (20′). Reservá tu turno online.">
+  <link rel="canonical" href="https://tudominio.com/">
+  <meta name="robots" content="index,follow">
 
   <!-- Open Graph / Social -->
-  <meta property="og:locale" content="es_AR"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Psicóloga ONLINE – Terapia por Google Meet | Lic. Daiana Beltrán"/>
-  <meta property="og:description" content="Atención psicológica online. Primera conversación gratuita de 20′. Agenda fácil."/>
-  <meta property="og:image" content="/assets/og-image.jpg"/>
-  <meta property="og:url" content="https://tudominio.com/"/>
-  <meta name="twitter:card" content="summary_large_image"/>
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Psicóloga ONLINE – Terapia por Google Meet | Lic. Daiana Beltrán">
+  <meta property="og:description" content="Atención psicológica online. Primera conversación gratuita de 20′. Agenda fácil.">
+  <meta property="og:image" content="/assets/og-image.jpg">
+  <meta property="og:url" content="https://tudominio.com/">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700,1,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap" rel="stylesheet">
 
   <!-- Calendly -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -36,7 +36,7 @@
       --ink:#0A0E19; --muted:#5f6673; --bg:#fffdf7; --card:#ffffff; --line:#ece7d6;
       --amber:#E7B908; --amber-soft:#FFF4CC; --accent:#FF6B4A;
       --max:1200px; --radius:22px; --shadow:0 14px 38px rgba(10,14,25,.08); --shadow-strong:0 28px 54px rgba(10,14,25,.14);
-      /* Espaciado global (más aire) */
+      /* Espaciado global */
       --s1:clamp(12px,1.6vw,18px); --s2:clamp(18px,2.2vw,28px); --s3:clamp(28px,3vw,42px); --s4:clamp(56px,6vw,96px); --s5:clamp(80px,8vw,128px);
       --wa-offset:20px; --wa-height:64px;
     }
@@ -123,7 +123,7 @@
     #wa-pill{position:fixed;right:var(--wa-offset);bottom:var(--wa-offset);display:inline-flex;align-items:center;gap:12px;height:var(--wa-height);padding:0 20px;background:#25D366;color:#fff;border-radius:999px;box-shadow:0 18px 36px rgba(0,0,0,.22);font-weight:800;z-index:9999;transition:transform .15s ease, box-shadow .2s ease}
     #wa-pill:hover{transform:translateY(-2px);box-shadow:0 22px 42px rgba(0,0,0,.26)}
 
-    /* ——— Separación extra entre Especialidades y Filosofía ——— */
+    /* Corte visible entre Especialidades y Filosofía */
     #especialidades .grid-cards{ margin-bottom: clamp(28px, 4vw, 64px); }
     #filosofia{
       padding-top: calc(var(--s5) + 24px);
@@ -173,42 +173,21 @@
       </div>
     </div>
 
-    <!-- Foto del hero (usa /assets/portrait.png con fallbacks) -->
+    <!-- Foto del hero (usa /assets/portrait.png) -->
     <div class="photo-wrap" aria-hidden="true">
       <picture>
-        <source srcset="./assets/portrait.webp" type="image/webp">
+        <source srcset="/assets/portrait.webp" type="image/webp">
         <img
-          id="portrait"
           class="photo"
-          src="./assets/portrait.png"
+          src="/assets/portrait.png"
           alt="Daiana Beltrán, psicóloga — retrato"
-          width="900" height="1200"
-          loading="eager" fetchpriority="high"
-        >
+          width="900"
+          height="1200"
+          loading="eager"
+          fetchpriority="high">
       </picture>
     </div>
   </section>
-
-  <!-- Fallback de rutas (por si GitHub Pages sirve desde raíz o subcarpeta) -->
-  <script>
-  (function () {
-    const img = document.getElementById('portrait');
-    const tries = [
-      './assets/portrait.png',                               // relativa (recomendado)
-      '/assets/portrait.png',                                // raíz del sitio
-      'https://daiana-psicologa.github.io/assets/portrait.png' // absoluta a tu dominio
-    ];
-    let i = 0;
-    function tryNext() {
-      if (i >= tries.length) return;
-      const test = new Image();
-      test.onload = () => { img.src = tries[i]; };
-      test.onerror = () => { i++; tryNext(); };
-      test.src = tries[i];
-    }
-    img.onerror = () => { i = 1; tryNext(); };
-  })();
-  </script>
 
   <!-- Especialidades -->
   <section id="especialidades" class="container">
