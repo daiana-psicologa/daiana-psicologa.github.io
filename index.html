@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <title>Daiana Beltrán · Psicología online (Google Meet)</title>
-  <meta name="description" content="Psicoterapia online clara y humana por Google Meet. Ansiedad, depresión, regulación emocional, duelo y vínculos. Primera conversación gratuita de 20′.">
+  <meta name="description" content="Psicoterapia online clara y humana por Google Meet. Ansiedad, depresión, regulación emocional, duelo y vínculos. Primera conversación gratuita de 20′ por WhatsApp.">
   <meta name="robots" content="index,follow">
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Daiana Beltrán · Psicología online">
-  <meta property="og:description" content="Atención psicológica 100% online por Google Meet. Primera conversación gratis (20′).">
+  <meta property="og:description" content="Atención psicológica 100% online por Google Meet. Primera conversación gratis (20′) por WhatsApp.">
   <meta property="og:image" content="assets/og-image.jpg">
 
   <!-- Tipografías -->
@@ -54,7 +55,7 @@
     .btn-outline{background:#fff;border:1px solid var(--line);font-weight:800}
     .btn-accent{background:var(--accent);color:#fff}
 
-    /* Secciones y aire (más espacio) */
+    /* Secciones y aire */
     section{padding:120px 0}
     .section-title{font:800 clamp(28px,3.8vw,40px)/1.12 Montserrat;margin:0 0 28px;letter-spacing:-.01em}
     .lede{color:var(--muted);margin:0 0 36px}
@@ -76,36 +77,22 @@
     .card h3{margin:10px 0 6px}
     .card p{margin:0;color:var(--muted)}
 
-    /* Separación extra entre secciones */
+    /* Divisores suaves */
     #especialidades .grid-cards{margin-bottom:72px}
     #filosofia{padding-top:140px;border-top:1px solid var(--line);box-shadow:inset 0 24px 48px -32px rgba(231,185,8,.18)}
 
-    /* Honorarios */
-    .fees{background:#f6f7fb}
-    .fees-wrap{display:grid;grid-template-columns:1fr;gap:24px}
-    .fee-rect{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px 26px;box-shadow:var(--shadow)}
-    .fee-rect--ext{background:#eaf2ff}
-    .fee-rect--ar{background:#fff6ee}
-    .pay-badges{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
-    .badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-weight:800;box-shadow:var(--shadow)}
-    .dot{width:10px;height:10px;border-radius:50%}
-
-    /* Reservar / Calendario */
-    .reserve{background:#fffaf0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .reserve .lede{max-width:850px}
-    .pill{display:inline-block;background:#fff;border:1px solid #f1e6b2;border-radius:999px;padding:.55rem 1rem;font-weight:800;box-shadow:var(--shadow)}
-    .pill-amber{background:var(--amber-soft);border-color:#f2e3a1}
+    /* Bloques informativos */
     .stack{display:flex;flex-direction:column;gap:12px;margin-top:10px}
     .check{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;box-shadow:var(--shadow)}
-    .check b{font-weight:800}
+    .pill{display:inline-block;background:#fff;border:1px solid #f1e6b2;border-radius:999px;padding:.55rem 1rem;font-weight:800;box-shadow:var(--shadow)}
+    .pill-amber{background:var(--amber-soft);border-color:#f2e3a1}
+
+    /* Reserva (pago previo) */
+    .reserve{background:#fffaf0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .reserve .lede{max-width:850px}
     .calendar-frame{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-strong);padding:0;overflow:hidden;max-width:1024px;margin-left:auto;margin-right:auto}
     .calendar-head{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff7d7;border-bottom:1px solid #f1e6b2;padding:14px 18px}
     .calendly-inline-widget{min-width:320px;height:760px}
-
-    /* FAQ */
-    details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow)}
-    details+details{margin-top:10px}
-    summary{cursor:pointer;font-weight:800}
 
     /* CTA */
     .strip{background:var(--amber);color:#111;padding:34px 0}
@@ -115,7 +102,7 @@
     /* Footer */
     footer{border-top:1px solid var(--line);color:#737b88;padding:30px 0}
 
-    /* WhatsApp */
+    /* WhatsApp flotante */
     #wa-pill{position:fixed;right:20px;bottom:20px;display:inline-flex;align-items:center;gap:12px;height:64px;padding:0 20px;background:#25D366;color:#fff;border-radius:999px;box-shadow:0 18px 36px rgba(0,0,0,.22);font-weight:800;z-index:9999;transition:transform .15s ease, box-shadow .2s ease}
     #wa-pill:hover{transform:translateY(-2px);box-shadow:0 22px 42px rgba(0,0,0,.26)}
 
@@ -140,10 +127,10 @@
       <nav class="nav" aria-label="principal">
         <a href="#especialidades">Especialidades</a>
         <a href="#filosofia">Filosofía</a>
-        <a href="#honorarios">Honorarios</a>
+        <a href="#contacto20">Primera conversación (20′)</a>
         <a href="#reservar">Reservar</a>
         <a href="#faq">Preguntas</a>
-        <a class="btn" href="#reservar">Pedir turno</a>
+        <a class="btn" href="#contacto20">Pedir 20′ por WhatsApp</a>
       </nav>
     </div>
   </header>
@@ -154,20 +141,18 @@
       <div class="eyebrow">Psicología online</div>
       <h1>Psicoterapia ONLINE clara, humana y práctica</h1>
       <p class="lead">
-        Vamos a la causa, no solo al síntoma. Trabajo con ansiedad, depresión, gestión emocional, duelos, alimentación y vínculos. Videollamada por Google Meet.
+        Vamos a la causa, no solo al síntoma. Trabajo con ansiedad, depresión, gestión emocional, duelos,
+        alimentación y vínculos. Videollamada por Google Meet.
       </p>
       <div class="actions">
         <a class="btn btn-outline" href="#filosofia">Ver enfoque</a>
-        <a class="btn btn-accent" href="#reservar">Primera conversación gratis (20′)</a>
+        <a class="btn btn-accent" href="#contacto20">Primera conversación gratis (20′)</a>
       </div>
     </div>
 
     <div class="photo-wrap" aria-hidden="true">
-      <img
-        class="photo"
-        src="assets/daiana.png"
-        alt="Daiana Beltrán, Psicóloga"
-        onerror="this.onerror=null;this.src='assets/portrait.png';">
+      <img class="photo" src="assets/daiana.png" alt="Daiana Beltrán, Psicóloga"
+           onerror="this.onerror=null;this.src='assets/portrait.png';">
     </div>
   </section>
 
@@ -189,72 +174,49 @@
   <!-- Filosofía -->
   <section id="filosofia" class="container">
     <h2 class="section-title">Filosofía de trabajo</h2>
-    <p class="lede">
-      En terapia priorizo a la persona por encima de la técnica. Aunque los problemas (ansiedad, depresión, etc.) puedan ser comunes, tu historia y tus decisiones son únicas.
-    </p>
-    <p>
-      Trabajo desde un marco humanista, con énfasis en el vínculo terapéutico, la claridad y la acción. La literatura muestra que lo que más predice el éxito es la relación psicólogo–paciente: empatía, honestidad y un encuadre claro.
-    </p>
-    <p>
-      El objetivo no es solo aliviar síntomas, sino entender qué los sostiene para tomar decisiones reales que se noten en tu vida cotidiana.
-    </p>
+    <p class="lede">En terapia priorizo a la persona por encima de la técnica. Aunque los problemas puedan ser comunes, tu historia y tus decisiones son únicas.</p>
+    <p>Trabajo desde un marco humanista, con énfasis en el vínculo terapéutico, la claridad y la acción. La literatura muestra que lo que más predice el éxito es la relación psicólogo–paciente: empatía, honestidad y un encuadre claro.</p>
+    <p>El objetivo no es solo aliviar síntomas, sino entender qué los sostiene para tomar decisiones reales que se noten en tu vida cotidiana.</p>
   </section>
 
-  <!-- Honorarios -->
-  <section id="honorarios" class="fees">
-    <div class="container">
-      <h2 class="section-title">Honorarios & pagos</h2>
-      <p class="lede">Sin publicar precios fijos: <b>tarifa adaptable</b> según país y método de pago. Esto cuida la estabilidad del proceso.</p>
-
-      <div class="fees-wrap">
-        <article class="fee-rect fee-rect--ext">
-          <h3 style="margin:0 0 6px">Si residís en el exterior 🌍</h3>
-          <p style="margin:.2rem 0 0">Sesiones online en español. Valor actualizado y <b>pagos en EUR o USD</b>.</p>
-          <div class="pay-badges">
-            <span class="badge"><span class="dot" style="background:#00b894"></span> Wise</span>
-            <span class="badge"><span class="dot" style="background:#003087"></span> PayPal</span>
-            <span class="badge"><span class="dot" style="background:#34a853"></span> Google Meet</span>
-          </div>
-          <p style="margin:14px 0 0"><b>¿Sos argentino/a y vivís afuera?</b> Trabajo con <em>tarifa internacional</em> (EUR/USD) vía Wise o PayPal.</p>
-        </article>
-
-        <article class="fee-rect fee-rect--ar">
-          <h3 style="margin:0 0 6px">Si residís en Argentina 🇦🇷</h3>
-          <p style="margin:.2rem 0 0">Coordinamos el valor al momento de agendar (la economía cambia seguido).</p>
-          <div class="pay-badges">
-            <span class="badge"><span class="dot" style="background:#7b61ff"></span> Ualá</span>
-            <span class="badge"><span class="dot" style="background:#111"></span> Transferencia</span>
-            <span class="badge"><span class="dot" style="background:#00a8e0"></span> Mercado Pago</span>
-          </div>
-          <p style="margin:14px 0 0"><b>¿Vivís afuera pero querés pagar en ARS?</b> Prefiero pagos internacionales para mantener la estabilidad. Si necesitás otra opción, lo conversamos.</p>
-        </article>
-      </div>
+  <!-- 20′ por WhatsApp -->
+  <section id="contacto20" class="container">
+    <h2 class="section-title">Primera conversación gratuita (20′)</h2>
+    <p class="lede">
+      Para coordinar la <strong>primera conversación de 20′</strong> escribime por WhatsApp. Te respondo con disponibilidad
+      y el enlace de Google Meet.
+    </p>
+    <div class="stack">
+      <div class="check"><b>Google Meet.</b> Videollamada segura y simple.</div>
+      <div class="check"><b>Confidencialidad y respeto.</b> Encuadre claro.</div>
+      <div class="check"><b>Orientación.</b> Vemos tu motivo de consulta y el mejor próximo paso.</div>
+    </div>
+    <div style="margin-top:18px">
+      <a class="btn btn-accent" href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20la%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%27."
+         target="_blank" rel="noopener">Escribirme por WhatsApp</a>
     </div>
   </section>
 
-  <!-- Reservar -->
+  <!-- Reservar sesiones regulares (pago previo) -->
   <section id="reservar" class="reserve">
     <div class="container">
-      <h2 class="section-title">Primera conversación gratuita (20′)</h2>
-      <p class="lede">Agendá día y horario. Me contás tu motivo de consulta, te explico cómo trabajo y vemos el mejor próximo paso.</p>
+      <h2 class="section-title">Reservar sesiones regulares (50′)</h2>
+      <p class="lede">
+        Las sesiones regulares se reservan por calendario con <strong>pago previo</strong>.
+        Si es tu primer contacto, usá el botón de WhatsApp de arriba.
+      </p>
 
       <div class="stack">
-        <div class="check"><b>Google Meet.</b> Videollamada segura y simple.</div>
-        <div class="check"><b>Confidencialidad y respeto.</b> Encuadre claro.</div>
-        <div class="check"><b>Pagos y agenda.</b> Las sesiones regulares se acuerdan al confirmar.</div>
-        <div class="pill pill-amber"><b style="color:#c72525">El horario se adapta automáticamente a tu zona.</b></div>
-        <!-- Aclaración para evitar confusión 20′ vs 50′ -->
-        <div class="pill"><b>La primera conversación es de 20′.</b> La agenda muestra también sesiones regulares de 50′.</div>
+        <div class="pill pill-amber"><b>Importante:</b> Solo para pacientes en proceso. Pago previo requerido.</div>
       </div>
 
       <div class="calendar-frame">
         <div class="calendar-head">
           <span class="pill">Seleccioná día y hora</span>
-          <span class="pill pill-amber">Primera conversación breve · 20 min</span>
+          <span class="pill pill-amber">Sesión regular · 50 min</span>
         </div>
-        <div
-          class="calendly-inline-widget"
-          data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=0A0E19&primary_color=E7B908&hide_landing_page_details=1">
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=0A0E19&primary_color=E7B908&hide_landing_page_details=1">
         </div>
       </div>
     </div>
@@ -265,15 +227,15 @@
     <h2 class="section-title">Preguntas frecuentes</h2>
     <details>
       <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
-      <p>A veces hay síntomas claros; otras, el malestar es difuso: vivir en automático, cansancio, sin sentido. Si te lo estás planteando, ya es un indicador. En sesión vemos qué te dice ese malestar y cómo actuar.</p>
+      <p>Si el malestar se sostiene y afecta tu día a día, una conversación puede ordenar el panorama. Empezamos con 20′ por WhatsApp.</p>
     </details>
     <details>
       <summary>¿Cuánto suele durar una psicoterapia?</summary>
-      <p>Lo habitual es una sesión semanal o cada 15 días. Muchas terapias duran entre 6 y 10 meses, según objetivo e historia. Siempre lo acordamos con realismo y claridad.</p>
+      <p>Lo habitual es una sesión semanal o cada 15 días. Muchas terapias duran entre 6 y 10 meses, según objetivo e historia.</p>
     </details>
     <details>
-      <summary>¿Por qué hay tantos tipos de terapia y cómo elegir?</summary>
-      <p>Más allá de la técnica, la evidencia muestra que la relación psicólogo–paciente es lo más influyente. Buscá conexión y confianza. Yo trabajo con enfoque humanista y práctico.</p>
+      <summary>¿Cómo reservo si es la primera vez?</summary>
+      <p>Escribime por WhatsApp desde la sección “Primera conversación (20′)”. El calendario es solo para sesiones regulares con pago previo.</p>
     </details>
   </section>
 
@@ -281,7 +243,7 @@
   <section class="strip">
     <div class="container row">
       <h3 style="margin:0;font:800 26px/1 Montserrat">¿Coordinamos un turno?</h3>
-      <a class="btn" href="#reservar">Ir al calendario</a>
+      <a class="btn" href="#contacto20">20′ por WhatsApp</a>
     </div>
   </section>
 
@@ -294,9 +256,9 @@
     <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
   </footer>
 
-  <!-- WhatsApp -->
+  <!-- WhatsApp flotante -->
   <a id="wa-pill"
-     href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20agendar%20mi%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%E2%80%B2."
+     href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20la%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%27."
      target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
     <svg viewBox="0 0 256 256" width="22" height="22" aria-hidden="true">
       <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#25D366"/><stop offset="1" stop-color="#20BD5A"/></linearGradient></defs>
