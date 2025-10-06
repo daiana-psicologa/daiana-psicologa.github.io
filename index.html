@@ -1,24 +1,11 @@
 <!doctype html>
 <html lang="es">
 <head>
- <meta property="og:image" content="activos/og-image.jpg">
-  "image": "activos/retrato.png"
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-
-  <!-- SEO principal -->
-  <title>Psicóloga ONLINE en Neuquén | Terapia por Google Meet – Daiana Beltrán</title>
-  <meta name="description" content="Psicoterapia online clara y humana por Google Meet. Ansiedad, depresión, regulación emocional, pareja, duelo y TCA. Primera conversación gratuita (20′). Reservá tu turno online.">
-  <link rel="canonical" href="https://tudominio.com/">
-  <meta name="robots" content="index,follow">
-
-  <!-- Open Graph / Social -->
-  <meta property="og:locale" content="es_AR">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Psicóloga ONLINE – Terapia por Google Meet | Lic. Daiana Beltrán">
-  <meta property="og:description" content="Atención psicológica online. Primera conversación gratuita de 20′. Agenda fácil.">
-  <meta property="og:image" content="/assets/og-image.jpg">
-  <meta property="og:url" content="https://tudominio.com/">
-  <meta name="twitter:card" content="summary_large_image">
+  <title>Daiana Beltrán · Psicología online</title>
+  <meta name="description" content="Psicoterapia clara y humana. Primera conversación gratuita (20′) por Google Meet.">
 
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,12 +21,20 @@
 
   <style>
     :root{
-      --ink:#0A0E19; --muted:#5f6673; --bg:#fffdf7; --card:#ffffff; --line:#ece7d6;
-      --amber:#E7B908; --amber-soft:#FFF4CC; --accent:#FF6B4A;
-      --max:1200px; --radius:22px; --shadow:0 14px 38px rgba(10,14,25,.08); --shadow-strong:0 28px 54px rgba(10,14,25,.14);
-      /* Espaciado global */
-      --s1:clamp(12px,1.6vw,18px); --s2:clamp(18px,2.2vw,28px); --s3:clamp(28px,3vw,42px); --s4:clamp(56px,6vw,96px); --s5:clamp(80px,8vw,128px);
-      --wa-offset:20px; --wa-height:64px;
+      --ink:#0A0E19;
+      --muted:#5f6673;
+      --bg:#fffdf7;
+      --card:#ffffff;
+      --line:#ece7d6;
+
+      --amber:#E7B908;
+      --amber-soft:#FFF4CC;
+      --accent:#FF6B4A;
+
+      --max:1200px;
+      --radius:22px;
+      --shadow:0 14px 38px rgba(10,14,25,.08);
+      --shadow-strong:0 28px 54px rgba(10,14,25,.14);
     }
 
     *,*::before,*::after{box-sizing:border-box}
@@ -55,49 +50,44 @@
     .top .row{display:flex;align-items:center;justify-content:space-between;height:76px}
     .brand{display:flex;align-items:flex-end;gap:10px}
     .brand .logo{font:800 20px/1 Montserrat;letter-spacing:.2px}
-    .brand .scribble{font:italic 700 20px/1 "Playfair Display", serif;letter-spacing:.02em;color:#111;opacity:.95;transform:translateY(1px)}
+    .brand .scribble{
+      font:italic 700 20px/1 "Playfair Display", serif;
+      letter-spacing:.02em; color:#111; opacity:.95; transform:translateY(1px);
+    }
     .nav{display:flex;gap:22px;align-items:center}
     .nav a{font-weight:600;color:#2b2f3a}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid transparent;background:var(--amber);color:#101217;font-weight:800;padding:12px 18px;border-radius:999px;box-shadow:var(--shadow);transition:transform .15s ease, box-shadow .2s ease}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:1px solid transparent;background:var(--amber);color:#101217;
+      font-weight:800;padding:12px 18px;border-radius:999px;box-shadow:var(--shadow);
+      transition:transform .15s ease, box-shadow .2s ease;
+    }
     .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
     .btn:active{transform:translateY(0)}
+
+    /* Secciones y aire (⬅️ MÁS ESPACIO) */
+    section{padding:120px 0}                  /* antes 96px */
+    .section-title{font:800 clamp(28px,3.8vw,40px)/1.12 Montserrat;margin:0 0 28px;letter-spacing:-.01em} /* antes 14px */
+    .lede{color:var(--muted);margin:0 0 36px} /* antes 28px */
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:64px;padding:104px 0 24px} /* +20px arriba */
+    .eyebrow{font-weight:800;color:#9a7c10;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem}
+    h1{font:800 clamp(34px,5.2vw,60px)/1.06 Montserrat;letter-spacing:-.02em;margin:.3em 0 .9em} /* más margen abajo */
+    .lead{color:var(--muted);max-width:52ch}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
     .btn-outline{background:#fff;border:1px solid var(--line);font-weight:800}
     .btn-accent{background:var(--accent);color:#fff}
 
-    /* Secciones y aire */
-    section{scroll-margin-top:100px; padding: var(--s5) 0}
-    .section-title{font:800 clamp(28px,3.8vw,40px)/1.12 Montserrat;margin:0 0 var(--s2);letter-spacing:-.01em}
-    .lede{color:var(--muted);margin:0 0 var(--s2)}
-
-   <!-- Hero -->
-<section class="hero container">
-  <div>
-    <div class="eyebrow">Psicología online</div>
-    <h1>Psicoterapia <span style="white-space:nowrap">ONLINE</span> clara, humana y práctica</h1>
-    <p class="lead">
-      Trabajo 100% <strong>online</strong> por <strong>Google Meet</strong>. Abordo ansiedad, depresión, regulación emocional, duelos,
-      alimentación y vínculos. La primera conversación es gratuita para conocernos.
-    </p>
-    <div class="actions">
-      <a class="btn btn-outline" href="#filosofia">Ver enfoque</a>
-      <a class="btn btn-accent" href="#reservar">Primera conversación gratis (20′)</a>
-    </div>
-  </div>
-
-  <!-- Foto del hero (ruta real: activos/retrato.png) -->
-  <div class="photo-wrap" aria-hidden="true">
-    <img
-      class="photo"
-      src="activos/retrato.png"
-      alt="Daiana Beltrán, psicóloga — retrato"
-      width="900"
-      height="1200"
-      loading="eager"
-      fetchpriority="high"
-    >
-  </div>
-</section>
-
+    .photo-wrap{
+      position:relative;aspect-ratio:4/4;border-radius:28px;background:var(--amber);
+      display:grid;place-items:center;box-shadow:0 28px 80px rgba(231,185,8,.28);border:1px solid #f2e7b0;
+      padding:22px;overflow:hidden;min-height:420px;
+    }
+    .photo{
+      width:min(440px,86%);height:auto;object-fit:contain;
+      filter:drop-shadow(0 20px 28px rgba(0,0,0,.12));
+    }
 
     /* Cards */
     .grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -105,6 +95,10 @@
     .tag{display:inline-block;background:var(--amber-soft);color:#905b00;border:1px solid #f2e3a1;font-weight:800;padding:.25rem .6rem;border-radius:999px;font-size:.78rem}
     .card h3{margin:10px 0 6px}
     .card p{margin:0;color:var(--muted)}
+
+    /* Separación extra antes de Filosofía (⬅️ MÁS ESPACIO) */
+    #especialidades .grid-cards{margin-bottom:72px} /* deja aire bajo las tarjetas */
+    #filosofia{padding-top:140px;border-top:1px solid var(--line);box-shadow:inset 0 24px 48px -32px rgba(231,185,8,.18)}
 
     /* Honorarios */
     .fees{background:#f6f7fb}
@@ -126,7 +120,7 @@
     .check b{font-weight:800}
     .calendar-frame{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-strong);padding:0;overflow:hidden;max-width:1024px;margin-left:auto;margin-right:auto}
     .calendar-head{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff7d7;border-bottom:1px solid #f1e6b2;padding:14px 18px}
-    .calendly-inline-widget{min-width:320px;height:780px}
+    .calendly-inline-widget{min-width:320px;height:760px}
 
     /* FAQ */
     details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow)}
@@ -142,21 +136,16 @@
     footer{border-top:1px solid var(--line);color:#737b88;padding:30px 0}
 
     /* WhatsApp */
+    :root{--wa-offset:20px;--wa-height:64px}
     #wa-pill{position:fixed;right:var(--wa-offset);bottom:var(--wa-offset);display:inline-flex;align-items:center;gap:12px;height:var(--wa-height);padding:0 20px;background:#25D366;color:#fff;border-radius:999px;box-shadow:0 18px 36px rgba(0,0,0,.22);font-weight:800;z-index:9999;transition:transform .15s ease, box-shadow .2s ease}
     #wa-pill:hover{transform:translateY(-2px);box-shadow:0 22px 42px rgba(0,0,0,.26)}
 
-    /* Corte visible entre Especialidades y Filosofía */
-    #especialidades .grid-cards{ margin-bottom: clamp(28px, 4vw, 64px); }
-    #filosofia{
-      padding-top: calc(var(--s5) + 24px);
-      border-top: 1px solid var(--line);
-      box-shadow: inset 0 24px 40px -24px rgba(231,185,8,.12);
-    }
-
     @media (max-width:980px){
-      .hero{grid-template-columns:1fr;gap:28px;padding:var(--s4) 0 0}
+      .hero{grid-template-columns:1fr;gap:28px;padding:80px 0 0}
       .grid-cards{grid-template-columns:1fr}
       .photo-wrap{min-height:360px}
+      section{padding:96px 0} /* un poco menos en mobile */
+      #filosofia{padding-top:120px}
     }
   </style>
 </head>
@@ -184,10 +173,9 @@
   <section class="hero container">
     <div>
       <div class="eyebrow">Psicología online</div>
-      <h1>Psicoterapia <span style="white-space:nowrap">ONLINE</span> clara, humana y práctica</h1>
+      <h1>Psicoterapia clara, humana y práctica</h1>
       <p class="lead">
-        Trabajo 100% <strong>online</strong> por <strong>Google Meet</strong>. Abordo ansiedad, depresión, regulación emocional, duelos,
-        alimentación y vínculos. La primera conversación es gratuita para conocernos.
+        Vamos a la causa, no solo al síntoma. Trabajo con ansiedad, depresión, gestión emocional, duelos, alimentación y vínculos. Videollamada por Google Meet.
       </p>
       <div class="actions">
         <a class="btn btn-outline" href="#filosofia">Ver enfoque</a>
@@ -195,26 +183,21 @@
       </div>
     </div>
 
-    <!-- Foto del hero (usa /assets/portrait.png) -->
     <div class="photo-wrap" aria-hidden="true">
-      <picture>
-        <source srcset="/assets/portrait.webp" type="image/webp">
-        <img
-          class="photo"
-          src="/assets/portrait.png"
-          alt="Daiana Beltrán, psicóloga — retrato"
-          width="900"
-          height="1200"
-          loading="eager"
-          fetchpriority="high">
-      </picture>
+      <!-- Imagen con fallback automático (tu ruta actual) -->
+      <img
+        class="photo"
+        src="assets/daiana.png"
+        alt="Daiana Beltrán, Psicóloga"
+        onerror="this.onerror=null;this.src='assets/portrait.png';"
+      >
     </div>
   </section>
 
   <!-- Especialidades -->
   <section id="especialidades" class="container">
     <h2 class="section-title">Especialidades</h2>
-    <p class="lede">Problemas frecuentes con un abordaje claro y humano en <strong>terapia online</strong>.</p>
+    <p class="lede">Problemas frecuentes con un abordaje claro y humano.</p>
 
     <div class="grid-cards">
       <article class="card"><span class="tag">Emoción</span><h3>Ansiedad</h3><p>La ansiedad es una señal. Entendemos el origen y actuamos sobre eso.</p></article>
@@ -229,16 +212,22 @@
   <!-- Filosofía -->
   <section id="filosofia" class="container">
     <h2 class="section-title">Filosofía de trabajo</h2>
-    <p class="lede">En <strong>psicoterapia online</strong> priorizo a la persona por encima de la técnica. Aunque los problemas (ansiedad, depresión, etc.) puedan ser comunes, tu historia y tus decisiones son únicas.</p>
-    <p>Trabajo desde un marco humanista, con énfasis en el vínculo terapéutico, la claridad y la acción. La literatura muestra que lo que más predice el éxito es la relación psicólogo–paciente: empatía, honestidad y un encuadre claro.</p>
-    <p>El objetivo no es solo aliviar síntomas, sino entender qué los sostiene para tomar decisiones reales que se noten en tu vida cotidiana.</p>
+    <p class="lede">
+      En terapia priorizo a la persona por encima de la técnica. Aunque los problemas (ansiedad, depresión, etc.) puedan ser comunes, tu historia y tus decisiones son únicas.
+    </p>
+    <p>
+      Trabajo desde un marco humanista, con énfasis en el vínculo terapéutico, la claridad y la acción. La literatura muestra que lo que más predice el éxito es la relación psicólogo–paciente: empatía, honestidad y un encuadre claro.
+    </p>
+    <p>
+      El objetivo no es solo aliviar síntomas, sino entender qué los sostiene para tomar decisiones reales que se noten en tu vida cotidiana.
+    </p>
   </section>
 
   <!-- Honorarios -->
   <section id="honorarios" class="fees">
     <div class="container">
       <h2 class="section-title">Honorarios & pagos</h2>
-      <p class="lede">Trabajo con <strong>terapia online</strong> para Argentina y exterior. Tarifa adaptable según país y método de pago (evita desfasajes y cuida el proceso).</p>
+      <p class="lede">Sin publicar precios fijos: <b>tarifa adaptable</b> según país y método de pago. Esto cuida la estabilidad del proceso.</p>
 
       <div class="fees-wrap">
         <article class="fee-rect fee-rect--ext">
@@ -249,18 +238,18 @@
             <span class="badge"><span class="dot" style="background:#003087"></span> PayPal</span>
             <span class="badge"><span class="dot" style="background:#34a853"></span> Google Meet</span>
           </div>
-          <p style="margin:14px 0 0"><b>¿Sos argentino/a y vivís afuera?</b> Tarifa internacional (EUR/USD) vía Wise o PayPal.</p>
+          <p style="margin:14px 0 0"><b>¿Sos argentino/a y vivís afuera?</b> Trabajo con <em>tarifa internacional</em> (EUR/USD) vía Wise o PayPal.</p>
         </article>
 
         <article class="fee-rect fee-rect--ar">
           <h3 style="margin:0 0 6px">Si residís en Argentina 🇦🇷</h3>
-          <p style="margin:.2rem 0 0">Coordinamos el valor al momento de agendar.</p>
+          <p style="margin:.2rem 0 0">Coordinamos el valor al momento de agendar (la economía cambia seguido).</p>
           <div class="pay-badges">
             <span class="badge"><span class="dot" style="background:#7b61ff"></span> Ualá</span>
             <span class="badge"><span class="dot" style="background:#111"></span> Transferencia</span>
             <span class="badge"><span class="dot" style="background:#00a8e0"></span> Mercado Pago</span>
           </div>
-          <p style="margin:14px 0 0"><b>Seña y reprogramación.</b> Confirmamos turno con seña del 50%. Avisando con 24 h, la reusamos sin costo.</p>
+          <p style="margin:14px 0 0"><b>¿Vivís afuera pero querés pagar en ARS?</b> Prefiero pagos internacionales para mantener la estabilidad. Si necesitás otra opción, lo conversamos.</p>
         </article>
       </div>
     </div>
@@ -270,7 +259,7 @@
   <section id="reservar" class="reserve">
     <div class="container">
       <h2 class="section-title">Primera conversación gratuita (20′)</h2>
-      <p class="lede">Agendá día y horario. Me contás tu motivo de consulta, te explico cómo trabajo <strong>online</strong> y vemos el mejor próximo paso.</p>
+      <p class="lede">Agendá día y horario. Me contás tu motivo de consulta, te explico cómo trabajo y vemos el mejor próximo paso.</p>
 
       <div class="stack">
         <div class="check"><b>Google Meet.</b> Videollamada segura y simple.</div>
@@ -294,6 +283,7 @@
   <!-- FAQ -->
   <section id="faq" class="container">
     <h2 class="section-title">Preguntas frecuentes</h2>
+
     <details>
       <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
       <p>A veces hay síntomas claros; otras, el malestar es difuso: vivir en automático, cansancio, sin sentido. Si te lo estás planteando, ya es un indicador. En sesión vemos qué te dice ese malestar y cómo actuar.</p>
@@ -304,7 +294,7 @@
     </details>
     <details>
       <summary>¿Por qué hay tantos tipos de terapia y cómo elegir?</summary>
-      <p>Más allá de la técnica, la evidencia muestra que la relación psicólogo–paciente es lo más influyente. Buscá conexión y confianza. Trabajo con enfoque humanista y práctico en <strong>psicología online</strong>.</p>
+      <p>Más allá de la técnica, la evidencia muestra que la relación psicólogo–paciente es lo más influyente. Buscá conexión y confianza. Yo trabajo con enfoque humanista y práctico.</p>
     </details>
   </section>
 
@@ -336,32 +326,5 @@
     </svg>
     <span class="label">WhatsApp</span>
   </a>
-
-  <!-- Schema.org: LocalBusiness + FAQPage (SEO) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Lic. Daiana Beltrán — Psicóloga online",
-    "url": "https://tudominio.com/",
-    "areaServed": ["Argentina","España","Estados Unidos"],
-    "image": "/assets/portrait.png",
-    "priceRange": "$$",
-    "telephone": "+54 9 299-604-4900",
-    "address": {"@type":"PostalAddress","addressCountry":"AR","addressRegion":"Neuquén"},
-    "sameAs": []
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"¿Cómo saber si necesito ayuda psicológica?","acceptedAnswer":{"@type":"Answer","text":"Si el malestar se sostiene y afecta tu día a día, una conversación puede ordenar el panorama. Trabajo online por Google Meet."}},
-      {"@type":"Question","name":"¿Cuánto suele durar una psicoterapia?","acceptedAnswer":{"@type":"Answer","text":"Suele ser semanal o quincenal y puede durar de 6 a 10 meses según objetivo. Modalidad online."}},
-      {"@type":"Question","name":"¿Cómo es la reserva del turno?","acceptedAnswer":{"@type":"Answer","text":"Reservás día y horario en Calendly, confirmamos con seña del 50% y recibís el enlace de Google Meet."}}
-    ]
-  }
-  </script>
 </body>
 </html>
