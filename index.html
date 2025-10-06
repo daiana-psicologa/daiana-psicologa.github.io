@@ -17,7 +17,7 @@
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Calendly -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -30,8 +30,7 @@
     :root{
       --ink:#0A0E19; --muted:#5f6673; --bg:#fffdf7; --card:#ffffff; --line:#ece7d6;
       --amber:#E7B908; --amber-soft:#FFF4CC; --accent:#FF6B4A;
-      --max:1200px; --radius:22px; --shadow:0 14px 38px rgba(10,14,25,.08);
-      --shadow-strong:0 28px 54px rgba(10,14,25,.14);
+      --max:1200px; --shadow:0 14px 38px rgba(10,14,25,.08); --shadow-strong:0 28px 54px rgba(10,14,25,.14);
     }
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0}
@@ -41,53 +40,74 @@
     .container{max-width:var(--max);margin:auto;padding:0 28px}
     :focus-visible{outline:3px solid #8fb5ff;outline-offset:2px;border-radius:10px}
 
-    /* Header muy limpio */
+    /* Header */
     .top{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.92);backdrop-filter:saturate(1.15) blur(6px);border-bottom:1px solid var(--line)}
-    .top .row{display:flex;align-items:center;justify-content:space-between;gap:24px;height:78px}
-    .brand{display:flex;align-items:flex-end;gap:12px;white-space:nowrap}
+    .top .row{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+    .brand{display:flex;align-items:flex-end;gap:12px}
     .brand .logo{font:800 20px/1 Montserrat}
     .brand .scribble{font:italic 700 20px/1 "Playfair Display",serif;opacity:.92;transform:translateY(1px)}
     .nav{display:flex;gap:26px;align-items:center}
     .nav a{font-weight:800;color:#2b2f3a}
 
-    /* Secciones base */
+    /* Secciones */
     section{padding:120px 0}
+    .section-title{font:800 clamp(30px,3.9vw,44px)/1.12 Montserrat;margin:0 0 26px}
+    .lede{color:var(--muted);margin:0 0 40px;max-width:68ch}
 
-    /* ======= SECCIÓN CALENDARIO “IGUAL” ======= */
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:64px;padding:96px 0 8px}
+    h1{font:800 clamp(36px,5.2vw,62px)/1.05 Montserrat;margin:.3em 0 1em}
+    .lead{color:var(--muted);max-width:55ch}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid transparent;background:var(--amber);color:#101217;font-weight:900;padding:12px 18px;border-radius:999px;box-shadow:var(--shadow)}
+    .btn-outline{background:#fff;border:1px solid var(--line)}
+    .btn-accent{background:var(--accent);color:#fff}
+    .photo-wrap{position:relative;aspect-ratio:4/4;border-radius:28px;background:var(--amber);display:grid;place-items:center;box-shadow:0 28px 80px rgba(231,185,8,.28);border:1px solid #f2e7b0;padding:22px;overflow:hidden;min-height:420px}
+    .photo{width:min(440px,86%);filter:drop-shadow(0 20px 28px rgba(0,0,0,.12))}
+
+    /* Especialidades (cards) */
+    .grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 16px 14px;box-shadow:var(--shadow)}
+    .tag{display:inline-block;background:var(--amber-soft);color:#905b00;border:1px solid #f2e3a1;font-weight:800;padding:.25rem .6rem;border-radius:999px;font-size:.78rem}
+    .card h3{margin:10px 0 6px}
+    .card p{margin:0;color:var(--muted)}
+
+    /* Ajustes de ESPACIADOS que pediste */
+    #especialidades .grid-cards{margin-bottom:42px}     /* ↓ menos espacio antes de Filosofía */
+    #filosofia{padding-top:88px;border-top:1px solid var(--line);box-shadow:inset 0 24px 48px -32px rgba(231,185,8,.18)}
+    #contacto20{padding-top:148px}                      /* ↑ más aire antes del título 20′ */
+
+    /* Bloques informativos */
+    .stack{display:flex;flex-direction:column;gap:12px;margin-top:10px}
+    .check{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;box-shadow:var(--shadow)}
+
+    /* Calendario centrado estilo EstarContigo */
     .cal-outer{background:#fffaf0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .cal-wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.02fr 1.08fr;gap:40px;align-items:start}
-    .lead-left h2{
-      font-family:"Playfair Display",serif;
-      font-weight:800;
-      font-size:clamp(28px,3.6vw,40px);
-      line-height:1.15; letter-spacing:.2px; margin:0 0 18px;
-      color:#172033;
-    }
-    .lead-left h2 .strong{font-weight:800}
+    .lead-left h2{font-family:"Playfair Display",serif;font-weight:800;font-size:clamp(28px,3.6vw,40px);line-height:1.15;margin:0 0 18px;color:#172033}
     .lead-left p{color:#4b5563;max-width:46ch;margin:0 0 20px}
     .meet-row{display:flex;align-items:center;gap:12px;margin-top:14px}
     .meet-row span{font-weight:700;color:#2f3640}
 
     .card-right{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-strong);overflow:hidden}
-    .card-head{padding:16px 18px 0 18px}
+    .card-head{padding:16px 18px 0}
     .mini-banner{width:100%;height:86px;border-radius:14px;overflow:hidden}
-    /* SVG banner ya incluido visualmente */
     .card-body{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #f1e6b2}
     .left-meta{padding:18px 22px 22px;border-right:1px solid #f1e6b2}
     .left-meta h3{font:800 26px/1.2 Montserrat;margin:8px 0 8px}
     .meta-row{display:flex;align-items:center;gap:10px;color:#6b7280;font-weight:700}
     .meta-pin{margin:14px 0 10px;display:flex;align-items:center;gap:8px;color:#374151}
-    .cal-slot{padding:0}
     .cal-top{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff7d7;border-bottom:1px solid #f1e6b2;padding:14px 18px}
     .pill{display:inline-block;background:#fff;border:1px solid #f2e3a1;border-radius:999px;padding:.55rem 1rem;font-weight:800}
     .pill-amber{background:#FFF4CC}
     .calendly-inline-widget{min-width:320px;height:760px}
     .tz-note{font-size:.92rem;color:#c1121f;text-align:right;padding:8px 16px 16px}
 
-    /* Footer + CTA inferior opcional */
     footer{border-top:1px solid var(--line);color:#737b88;padding:34px 0;margin-top:40px}
 
     @media (max-width:1024px){
+      .grid-cards{grid-template-columns:1fr}
+      .hero{grid-template-columns:1fr;gap:28px;padding:86px 0 0}
       .cal-wrap{grid-template-columns:1fr}
       .card-body{grid-template-columns:1fr}
       .left-meta{border-right:0;border-bottom:1px solid #f1e6b2}
@@ -104,55 +124,103 @@
         <div class="scribble">psicóloga</div>
       </div>
       <nav class="nav" aria-label="principal">
+        <a href="#especialidades">Especialidades</a>
+        <a href="#filosofia">Filosofía</a>
         <a href="#calendario">Reservar</a>
         <a href="#faq">Preguntas</a>
       </nav>
     </div>
   </header>
 
-  <!-- CALENDARIO “IGUAL” -->
+  <!-- Hero -->
+  <section class="hero container">
+    <div>
+      <h1>Psicoterapia ONLINE clara, humana y práctica</h1>
+      <p class="lead">
+        Vamos a la causa, no solo al síntoma. Trabajo con ansiedad, depresión, gestión emocional,
+        duelos, alimentación y vínculos. Videollamada por Google Meet.
+      </p>
+      <div class="actions">
+        <a class="btn btn-outline" href="#filosofia">Ver enfoque</a>
+        <a class="btn btn-accent" href="#contacto20">Primera conversación <b>GRATIS</b> (20′)</a>
+      </div>
+    </div>
+    <div class="photo-wrap" aria-hidden="true">
+      <img class="photo" src="assets/daiana.png" alt="Daiana Beltrán, Psicóloga"
+           onerror="this.onerror=null;this.src='assets/portrait.png';">
+    </div>
+  </section>
+
+  <!-- Especialidades -->
+  <section id="especialidades" class="container">
+    <h2 class="section-title">Especialidades</h2>
+    <p class="lede">Problemas frecuentes con un abordaje claro y humano.</p>
+
+    <div class="grid-cards">
+      <article class="card"><span class="tag">Emoción</span><h3>Ansiedad</h3><p>La ansiedad es una señal. Entendemos el origen y actuamos sobre eso.</p></article>
+      <article class="card"><span class="tag">Ánimo</span><h3>Depresión</h3><p>No se trata de forzar positividad, sino de curar lo que duele.</p></article>
+      <article class="card"><span class="tag">Gestión</span><h3>Regulación emocional</h3><p>Menos bloqueo e impulsividad, más claridad para decidir.</p></article>
+      <article class="card"><span class="tag">Vínculos</span><h3>Pareja</h3><p>Comunicación, límites y decisiones. Objetivos concretos.</p></article>
+      <article class="card"><span class="tag">Historia</span><h3>Duelo / trauma</h3><p>Acompañamiento seguro para integrar lo vivido y recuperar agencia.</p></article>
+      <article class="card"><span class="tag">Hábitos</span><h3>Alimentación / TCA</h3><p>Más allá de la comida: ansiedad, control, calma.</p></article>
+    </div>
+  </section>
+
+  <!-- Filosofía -->
+  <section id="filosofia" class="container">
+    <h2 class="section-title">Filosofía de trabajo</h2>
+    <p class="lede">En terapia priorizo a la persona por encima de la técnica. Aunque los problemas puedan ser comunes, tu historia y tus decisiones son únicas.</p>
+    <p>Trabajo desde un marco humanista, con énfasis en el vínculo terapéutico, la claridad y la acción. La literatura muestra que lo que más predice el éxito es la relación psicólogo–paciente: empatía, honestidad y un encuadre claro.</p>
+    <p>El objetivo no es solo aliviar síntomas, sino entender qué los sostiene para tomar decisiones reales que se noten en tu vida cotidiana.</p>
+  </section>
+
+  <!-- 20′ por WhatsApp -->
+  <section id="contacto20" class="container">
+    <h2 class="section-title">Primera conversación <b>GRATIS</b> (20′)</h2>
+    <p class="lede">
+      Para coordinar la primera conversación de 20′, escribime por WhatsApp. Te respondo con disponibilidad
+      y el enlace de Google Meet.
+    </p>
+    <div class="stack">
+      <div class="check"><b>Google Meet.</b> Videollamada segura y simple.</div>
+      <div class="check"><b>Confidencialidad y respeto.</b> Encuadre claro.</div>
+      <div class="check"><b>Orientación.</b> Vemos tu motivo de consulta y el mejor próximo paso.</div>
+    </div>
+    <div style="margin-top:18px">
+      <a class="btn btn-accent" href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20la%20primera%20conversaci%C3%B3n%20GRATIS%20de%2020%27."
+         target="_blank" rel="noopener">Escribirme por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Reservar sesiones regulares (calendario centrado) -->
   <section id="calendario" class="cal-outer">
     <div class="cal-wrap">
-      <!-- Columna izquierda: texto + Meet -->
       <div class="lead-left">
         <h2>Reserva tu <span class="strong">sesión inicial gratuita</span> ahora.</h2>
         <p>Si has decidido priorizarte y aprender a gestionarte, queremos conocerte.</p>
         <div class="meet-row">
-          <!-- Google Meet logo (SVG para que se vea nítido) -->
           <svg width="28" height="20" viewBox="0 0 256 200" aria-hidden="true"><path fill="#1a73e8" d="M0 33a33 33 0 0 1 33-33h90v66H0Z"/><path fill="#ea4335" d="M123 0h33a33 33 0 0 1 33 33v33h-66Z"/><path fill="#34a853" d="M189 66v33l67-50V16a16 16 0 0 0-26-12Z"/><path fill="#fbbc05" d="M0 66h123v66H33A33 33 0 0 1 0 99Z"/><path fill="#188038" d="M189 99v33l41 31a16 16 0 0 0 26-12V83Z"/><path fill="#4285f4" d="M123 132v35H33A33 33 0 0 1 0 134v-2Z"/><path fill="#1967d2" d="M123 167h33a33 33 0 0 0 33-33v-2h-66Z"/></svg>
           <span>Google Meet</span>
         </div>
       </div>
 
-      <!-- Columna derecha: tarjeta + Calendly -->
       <div class="card-right">
         <div class="card-head">
           <div class="mini-banner" aria-hidden="true">
-            <!-- Puedes reemplazar este SVG por una imagen real: <img src="assets/card-banner.jpg" alt=""> -->
+            <!-- Reemplazable por <img src="assets/card-banner.jpg" alt=""> -->
             <svg viewBox="0 0 800 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#ffe2b0"/><stop offset="1" stop-color="#ffd4c7"/>
-                </linearGradient>
-              </defs>
+              <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe2b0"/><stop offset="1" stop-color="#ffd4c7"/></linearGradient></defs>
               <rect width="800" height="200" rx="16" fill="url(#g1)"/>
-              <circle cx="120" cy="100" r="44" fill="#ffb37a"/>
-              <circle cx="260" cy="70" r="22" fill="#f08e80"/>
-              <circle cx="640" cy="140" r="36" fill="#f2c94c"/>
-              <circle cx="520" cy="80" r="18" fill="#8cc0ff"/>
+              <circle cx="120" cy="100" r="44" fill="#ffb37a"/><circle cx="260" cy="70" r="22" fill="#f08e80"/><circle cx="640" cy="140" r="36" fill="#f2c94c"/><circle cx="520" cy="80" r="18" fill="#8cc0ff"/>
             </svg>
           </div>
         </div>
 
         <div class="card-body">
-          <!-- Meta izquierda -->
           <div class="left-meta">
-            <div class="meta-row" style="color:#6b7280">
-              <span>Reunión con Daiana Beltrán</span> • <span>50 min</span>
-            </div>
+            <div class="meta-row"><span>Reunión con Daiana Beltrán</span> • <span>50 min</span></div>
             <h3>Sesión regular · 50 min</h3>
             <div class="meta-pin">
-              <!-- Pin -->
               <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#E7B908" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
               <span>Vía Google Meet</span>
             </div>
@@ -160,14 +228,13 @@
             <p style="margin:10px 0 0;color:#4b5563">Requiere <b>pago previo</b>. Cambios con 24 h.</p>
           </div>
 
-          <!-- Calendly + cabecera y nota -->
-          <div class="cal-slot">
+          <div>
             <div class="cal-top">
               <span class="pill pill-amber">Seleccioná día y hora</span>
               <span class="pill">Calendario activo</span>
             </div>
             <div class="calendly-inline-widget"
-              data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=0A0E19&primary_color=E7B908&locale=es">
+                 data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=0A0E19&primary_color=E7B908&locale=es">
             </div>
             <div class="tz-note">Verifica tu zona horaria</div>
           </div>
@@ -176,8 +243,12 @@
     </div>
   </section>
 
-  <!-- FAQ (opcional) -->
+  <!-- FAQ -->
   <section id="faq" class="container">
+    <h2 class="section-title">Preguntas frecuentes</h2>
+    <details open><summary style="font-weight:800">¿Cómo saber si necesito ayuda psicológica?</summary>
+      <p>Si el malestar se sostiene y afecta tu día a día, una conversación puede ordenar el panorama. Empezamos con 20′ GRATIS por WhatsApp.</p>
+    </details>
     <details><summary style="font-weight:800">¿Cómo reservo si es la primera vez?</summary>
       <p>Podés tomar la sesión inicial gratuita o escribirme y coordinamos.</p>
     </details>
