@@ -15,14 +15,14 @@
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Psicóloga ONLINE – Terapia por Google Meet | Lic. Daiana Beltrán"/>
   <meta property="og:description" content="Atención psicológica online. Primera conversación gratuita de 20′. Agenda fácil."/>
-  <meta property="og:image" content="/activos/og-image.jpg"/>
+  <meta property="og:image" content="/assets/og-image.jpg"/>
   <meta property="og:url" content="https://tudominio.com/"/>
   <meta name="twitter:card" content="summary_large_image"/>
 
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700,1,800&display=swap" rel="stylesheet">
 
   <!-- Calendly -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -158,39 +158,57 @@
     </div>
   </header>
 
-<!-- Foto del hero (robusta con fallback de rutas) -->
-<div class="photo-wrap" aria-hidden="true">
-  <img
-    id="portrait"
-    class="photo"
-    src="./activos/retrato.png"        <!-- 1) relativa -->
-    alt="Daiana Beltrán, psicóloga — retrato"
-    width="900" height="1200"
-    loading="eager" fetchpriority="high"
-  >
-</div>
+  <!-- Hero -->
+  <section class="hero container">
+    <div>
+      <div class="eyebrow">Psicología online</div>
+      <h1>Psicoterapia <span style="white-space:nowrap">ONLINE</span> clara, humana y práctica</h1>
+      <p class="lead">
+        Trabajo 100% <strong>online</strong> por <strong>Google Meet</strong>. Abordo ansiedad, depresión, regulación emocional, duelos,
+        alimentación y vínculos. La primera conversación es gratuita para conocernos.
+      </p>
+      <div class="actions">
+        <a class="btn btn-outline" href="#filosofia">Ver enfoque</a>
+        <a class="btn btn-accent" href="#reservar">Primera conversación gratis (20′)</a>
+      </div>
+    </div>
 
-<script>
-(function(){
-  const img = document.getElementById('portrait');
-  const tries = [
-    './activos/retrato.png',                              // relativa (recomendado)
-    '/activos/retrato.png',                               // desde raíz del sitio
-    'https://daiana-psicologa.github.io/activos/retrato.png' // absoluta (dominio)
-  ];
-  let i = 0;
-  function swap(){
-    if(i >= tries.length) return; // nos quedamos con el último intento
-    const test = new Image();
-    test.onload = () => { img.src = tries[i]; };
-    test.onerror = () => { i++; swap(); };
-    test.src = tries[i];
-  }
-  // si la primera no carga, probamos las siguientes
-  img.onerror = () => { i = 1; swap(); };
-})();
-</script>
+    <!-- Foto del hero (usa /assets/portrait.png con fallbacks) -->
+    <div class="photo-wrap" aria-hidden="true">
+      <picture>
+        <source srcset="./assets/portrait.webp" type="image/webp">
+        <img
+          id="portrait"
+          class="photo"
+          src="./assets/portrait.png"
+          alt="Daiana Beltrán, psicóloga — retrato"
+          width="900" height="1200"
+          loading="eager" fetchpriority="high"
+        >
+      </picture>
+    </div>
+  </section>
 
+  <!-- Fallback de rutas (por si GitHub Pages sirve desde raíz o subcarpeta) -->
+  <script>
+  (function () {
+    const img = document.getElementById('portrait');
+    const tries = [
+      './assets/portrait.png',                               // relativa (recomendado)
+      '/assets/portrait.png',                                // raíz del sitio
+      'https://daiana-psicologa.github.io/assets/portrait.png' // absoluta a tu dominio
+    ];
+    let i = 0;
+    function tryNext() {
+      if (i >= tries.length) return;
+      const test = new Image();
+      test.onload = () => { img.src = tries[i]; };
+      test.onerror = () => { i++; tryNext(); };
+      test.src = tries[i];
+    }
+    img.onerror = () => { i = 1; tryNext(); };
+  })();
+  </script>
 
   <!-- Especialidades -->
   <section id="especialidades" class="container">
@@ -326,7 +344,7 @@
     "name": "Lic. Daiana Beltrán — Psicóloga online",
     "url": "https://tudominio.com/",
     "areaServed": ["Argentina","España","Estados Unidos"],
-    "image": "/activos/retrato.png",
+    "image": "/assets/portrait.png",
     "priceRange": "$$",
     "telephone": "+54 9 299-604-4900",
     "address": {"@type":"PostalAddress","addressCountry":"AR","addressRegion":"Neuquén"},
