@@ -1,297 +1,304 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Daiana Beltrán — Psicología online</title>
-<meta name="description" content="Psicoterapia online, clara y humana. Enfoque humanista: vamos a la causa del malestar, no solo al síntoma. Atención por Google Meet.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daiana Beltrán — Psicología online</title>
+  <meta name="description" content="Psicoterapia clara y humana. Enfoque humanista: vamos a la causa, no sólo al síntoma. Atención online por Google Meet.">
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Calendly -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-<!-- Fuentes -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* Paleta cálida y profesional al estilo Ventura / Estar Contigo */
+      --sand:#F7F3EA;        /* fondo cálido general */
+      --bg:#ffffff;
+      --ink:#172033;         /* texto principal */
+      --muted:#5c6473;       /* texto suave */
+      --accent:#CC8F00;      /* dorado vivo */
+      --accent-ink:#2d1c00;
+      --danger:#D83A34;      /* aviso en rojo */
+      --line:#E6E2D9;        /* líneas suaves */
+      --card:#ffffff;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(23,32,51,.08);
+      --shadow-strong:0 16px 40px rgba(23,32,51,.14);
+      --max:1160px;
+    }
 
-<!-- Calendly -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink); background:var(--bg); line-height:1.65;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    img{max-width:100%;display:block;height:auto}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:auto;padding:0 28px}
 
-<style>
-:root{
-  --ink:#0f172a;
-  --muted:#5b6475;
-  --brand:#E0B525;        /* mostaza tipo Ventura */
-  --brand-ink:#1e1e1e;
-  --surface:#fff;
-  --soft:#faf7f1;
-  --line:#eaedf3;
-  --radius:20px;
-  --shadow:0 12px 28px rgba(13,25,44,.10);
-  --shadow-strong:0 16px 44px rgba(13,25,44,.16);
-  --max:1180px;
-}
-*{box-sizing:border-box}
-html,body{margin:0}
-html{scroll-behavior:smooth}
-body{
-  background:var(--soft);
-  color:var(--ink);
-  font:400 17px/1.7 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
-}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-.container{max-width:var(--max);margin:0 auto;padding:0 28px}
-h1,h2,h3{margin:0 0 10px}
-h1{font:700 clamp(36px,5.6vw,64px)/1.05 "Playfair Display",Georgia,serif;letter-spacing:-.01em}
-h2{font:700 clamp(26px,3.2vw,40px)/1.15 "Playfair Display",Georgia,serif}
-.lead{color:var(--muted);font-size:18px}
+    /* Topbar */
+    header.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .top .row{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .brand{font-weight:900;letter-spacing:.2px}
+    nav.nav{display:flex;gap:22px;align-items:center}
+    .cta{background:var(--accent);color:#fff;padding:10px 18px;border-radius:999px;font-weight:900;box-shadow:var(--shadow)}
+    .cta:hover{transform:translateY(-1px)}
 
-/* Topbar */
-.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top .row{display:flex;align-items:center;justify-content:space-between;height:74px}
-.brand{display:flex;gap:12px;align-items:baseline;font-weight:800}
-.brand__kicker{font:700 14px/1 Inter;text-transform:uppercase;letter-spacing:.14em;color:#7f6a10;background:rgba(224,181,37,.22);padding:6px 10px;border-radius:999px}
-.nav{display:flex;gap:24px;align-items:center}
-.nav a{color:#2b3240;font-weight:600}
-.cta{background:var(--brand);color:var(--brand-ink);padding:12px 20px;border-radius:999px;font-weight:800;box-shadow:var(--shadow);border:1px solid #d9b01f;transition:transform .15s ease, box-shadow .2s ease}
-.cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
+    /* Hero breve */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:64px 0}
+    .eyebrow{color:var(--accent);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-size:clamp(32px,5vw,56px);line-height:1.08;margin:.15em 0}
+    .lead{color:var(--muted);font-size:1.05rem}
+    .hero .photo{border-radius:20px;border:1px solid var(--line);box-shadow:var(--shadow)}
 
-/* Hero */
-.hero{padding:80px 0}
-.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.kicker{color:#7f6a10;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:#fff;font-weight:800;box-shadow:var(--shadow)}
-.btn--brand{background:var(--brand);border-color:#d7aa0f;color:var(--brand-ink)}
-.hero-figure{position:relative}
-.blob{position:absolute;border-radius:40px;filter:blur(0);opacity:.9}
-.blob--1{right:14%;top:0;width:340px;height:220px;background:#ffd15a;z-index:0;border-radius:34px}
-.blob--2{right:4%;top:140px;width:220px;height:120px;background:#ff9f43;z-index:0;border-radius:34px;opacity:.6}
-.heroimg{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-strong);z-index:1}
-.heroimg::after{content:"";position:absolute;inset:auto 24px 24px;height:10px;background:rgba(224,181,37,.35);border-radius:999px;filter:blur(6px)}
+    /* HONORARIOS */
+    section.fees{background:linear-gradient(180deg,#fff, #f8f6f0);padding:68px 0 56px}
+    .fees h2{font-size:clamp(28px,4vw,42px);margin:0 0 6px}
+    .fees .lead{color:var(--muted);margin:0 0 26px}
+    .fees-grid{display:grid;gap:26px}
+    @media (min-width:980px){ .fees-grid{grid-template-columns:1fr 1fr} }
+    .fees-card{
+      background:var(--card); border:1px solid var(--line); border-radius:22px;
+      padding:30px 24px; box-shadow:var(--shadow); position:relative; overflow:hidden;
+    }
+    .fees-card.exterior{background:#ECF3FF;border-color:#DCE8FF} /* azul claro más vivo */
+    .fees-card.argentina{background:#FFF2E9;border-color:#FFE1CF}
+    .methods{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0 0}
+    .chip{
+      display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);
+      border-radius:999px;padding:10px 14px;font-weight:800;box-shadow:var(--shadow)
+    }
+    .dot{width:10px;height:10px;border-radius:50%}
+    .fees-note{
+      margin-top:14px;background:#fff; border:1px dashed #e8e0cf; padding:12px; border-radius:12px; color:#3f3b2f
+    }
 
-/* Especialidades */
-.specs{padding:60px 0;background:#fff}
-.cards{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px 14px;transition:.15s}
-.card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#e5e9f0}
-.tag{display:inline-block;font-weight:800;font-size:12.5px;padding:.34rem .6rem;border-radius:999px;background:#f3f5fa;color:#3a4252;border:1px solid var(--line)}
+    /* ====== RESERVA (calendario estilo Estar Contigo) ====== */
+    .et-reserve{background:var(--sand); padding:68px 0}
+    .et-wrap{max-width:var(--max);margin:auto;padding:0 28px;display:grid;grid-template-columns:1.05fr 1fr;gap:52px;align-items:start}
+    .et-eyebrow{color:var(--accent);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.92rem;margin-bottom:6px}
+    .et-title{font-size:clamp(28px,4.6vw,46px); line-height:1.1; margin:.1em 0 .35em}
+    .et-title span{font-weight:900}
+    .et-sub{color:var(--muted);margin:0 0 12px}
+    .et-points{list-style:none;margin:14px 0 8px;padding:0;display:grid;gap:10px}
+    .et-points li{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow)}
+    .et-points svg{flex:0 0 20px}
+    .et-note{color:var(--danger);font-weight:900;margin:10px 0 6px}
+    .et-illu{margin-top:16px;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+    .et-right{min-width:0}
+    .et-card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+    .et-card-head{display:flex;justify-content:flex-end;padding:14px 16px;background:linear-gradient(180deg,#fff, #faf7ef)}
+    .et-badge{background:rgba(204,143,0,.1);border:1px solid rgba(204,143,0,.35);color:var(--accent-ink);font-weight:800;border-radius:999px;padding:.35rem .7rem;font-size:.85rem}
+    .calendly-inline-widget{min-width:320px;height:720px}
 
-/* Honorarios */
-.fees{padding:84px 0;background:linear-gradient(#f4f7fb, #f7f4ea)}
-.fees .intro{color:#475068;max-width:860px}
-.fee-rect{background:#eaf2ff;border:1px solid #dfe9fb;border-radius:22px;padding:26px 26px 18px;box-shadow:var(--shadow)}
-.fee-rect--ar{background:#fff4ea;border-color:#ffe8d0}
-.fee-rect+ .fee-rect{margin-top:26px}
-.paychips{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px}
-.chip{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:800;box-shadow:var(--shadow)}
-.chip svg{width:22px;height:22px}
+    /* FAQ */
+    section.faq{padding:56px 0}
+    .faq h2{font-size:clamp(26px,3.6vw,36px);margin:0 0 10px}
+    details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:10px}
 
-/* Calendario */
-.reserve{padding:86px 0;background:#fff}
-.cal-box{background:#ffffff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow-strong)}
-.cal-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:8px}
-.cal-kicker{font-weight:800;color:#7f6a10;letter-spacing:.12em;text-transform:uppercase}
-.calendly-inline-widget{min-width:320px;width:100%;height:920px}
+    /* FOOTER */
+    footer{border-top:1px solid var(--line);color:#5c6069;padding:28px 0}
+    footer .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
-/* FAQ */
-.faq{padding:84px 0;background:#fff}
-details{border:1px solid var(--line);border-radius:14px;background:#fff;margin-top:10px;padding:14px 16px}
-summary{cursor:pointer;font-weight:800}
+    /* WhatsApp pill */
+    :root{ --wa-offset: 20px; --wa-height: 64px; --wa-radius: 999px; }
+    #wa-pill{
+      position: fixed; bottom: var(--wa-offset); right: var(--wa-offset);
+      display: inline-flex; align-items: center; gap: 12px;
+      height: var(--wa-height); padding: 0 22px;
+      background:#25D366; color:#fff; border-radius: var(--wa-radius);
+      box-shadow: 0 18px 36px rgba(0,0,0,.20), 0 8px 16px rgba(0,0,0,.12);
+      text-decoration:none; font: 800 16.5px/1 system-ui,-apple-system,Segoe UI,Roboto,"Montserrat",Arial,sans-serif;
+      z-index:9999; transition: transform .15s ease, box-shadow .2s ease, opacity .3s ease;
+    }
+    #wa-pill:hover{ transform: translateY(-2px); box-shadow:0 22px 42px rgba(0,0,0,.22),0 10px 20px rgba(0,0,0,.14) }
+    #wa-pill svg{ flex:0 0 auto; width:24px; height:24px } .label{ white-space:nowrap }
+    #wa-pill::before{ content:""; position:absolute; inset:-10px; border-radius:var(--wa-radius);
+      background: rgba(37,211,102,.22); filter: blur(8px); opacity:0; transform:scale(.95); transition:.25s ease }
+    #wa-pill:hover::before{ opacity:1; transform:scale(1) }
+    @media (max-width: 600px){ :root{ --wa-offset: 16px; --wa-height: 56px; } #wa-pill{ padding:0 18px; font-size:16px } }
+    @media (max-width: 380px){ #wa-pill .label{ display:none } #wa-pill{ width:56px; justify-content:center } }
 
-/* CTA */
-.strip{background:var(--brand);color:var(--brand-ink);padding:34px 0}
-.strip .row{display:flex;align-items:center;justify-content:space-between;gap:16px}
-
-/* Footer */
-footer{border-top:1px solid var(--line);padding:26px 0;color:#737a89;background:#fff}
-
-/* Responsive */
-@media (max-width:1000px){
-  .hero .grid{grid-template-columns:1fr}
-  .cards{grid-template-columns:1fr}
-}
-</style>
+    /* Responsive ajustes */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .et-wrap{grid-template-columns:1fr;gap:28px}
+      .fees-grid{grid-template-columns:1fr !important}
+    }
+  </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="container row">
-    <div class="brand"><span class="brand__kicker">PSICOLOGÍA</span><strong>Daiana Beltrán</strong></div>
-    <nav class="nav">
-      <a href="#especialidades">Especialidades</a>
-      <a href="#honorarios">Honorarios</a>
-      <a href="#reservar">Reservar</a>
-      <a href="#faq">Preguntas</a>
-      <a class="cta" href="#reservar">Pedir turno</a>
-    </nav>
-  </div>
-</header>
+  <!-- Topbar -->
+  <header class="top">
+    <div class="container row">
+      <div class="brand">Daiana Beltrán</div>
+      <nav class="nav" aria-label="Principal">
+        <a href="#honorarios">Honorarios</a>
+        <a href="#reservar">Reservar</a>
+        <a href="#faq">Preguntas</a>
+        <a class="cta" href="#reservar">Pedir turno</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero">
-  <div class="container grid">
+  <!-- Hero -->
+  <section class="hero container">
     <div>
-      <div class="kicker">Psicología online</div>
+      <div class="eyebrow">Psicología online</div>
       <h1>Psicoterapia clara, humana y práctica</h1>
-      <p class="lead">Trabajo con ansiedad, depresión, gestión emocional, duelos, alimentación y vínculos. Vamos a la <strong>causa</strong>, no solo al síntoma. Decisiones reales que se notan en tu día a día.</p>
-      <div class="actions">
-        <a class="btn" href="#faq">Ver enfoque</a>
-        <a class="btn btn--brand" href="#reservar">Reservar turno</a>
+      <p class="lead">
+        Enfoque humanista y centrado en la persona. Vamos a la <strong>causa</strong>, no sólo al síntoma.
+        Trabajo con ansiedad, depresión, gestión emocional, duelos, alimentación y vínculos.
+      </p>
+      <p><a class="cta" href="#reservar">Reservar turno</a></p>
+    </div>
+    <div>
+      <img class="photo" src="assets/portrait.png" alt="Daiana Beltrán, Psicóloga">
+    </div>
+  </section>
+
+  <!-- HONORARIOS -->
+  <section id="honorarios" class="fees">
+    <div class="container">
+      <h2>Honorarios & pagos</h2>
+      <p class="lead">Sin publicar precios fijos: <strong>tarifa adaptable</strong> según país y medio de pago. Esto cuida la estabilidad del proceso y evita sorpresas.</p>
+
+      <div class="fees-grid">
+        <!-- Exterior -->
+        <article class="fees-card exterior">
+          <h3>Si residís en el exterior 🌍</h3>
+          <p>Sesiones por videollamada en español. Valor actualizado y <strong>pagos en EUR o USD</strong>.</p>
+          <div class="methods">
+            <span class="chip"><span class="dot" style="background:#00b7a2"></span> Wise</span>
+            <span class="chip"><span class="dot" style="background:#0a2a8a"></span> PayPal</span>
+            <span class="chip"><span class="dot" style="background:#1f9c3a"></span> Google&nbsp;Meet</span>
+          </div>
+          <div class="fees-note"><strong>¿Sos argentino/a y vivís afuera?</strong> Para cuidar la estabilidad, trabajo con <em>tarifa internacional</em> (EUR/USD) vía Wise o PayPal.</div>
+        </article>
+
+        <!-- Argentina -->
+        <article class="fees-card argentina">
+          <h3>Si residís en Argentina</h3>
+          <p>Coordinamos el valor al agendar (la economía cambia seguido).</p>
+          <div class="methods">
+            <span class="chip"><span class="dot" style="background:#7b61ff"></span> Ualá</span>
+            <span class="chip"><span class="dot" style="background:#111"></span> Transferencia</span>
+            <span class="chip"><span class="dot" style="background:#00a8e0"></span> Mercado Pago</span>
+          </div>
+          <div class="fees-note"><strong>¿Vivís afuera pero querés pagar en ARS?</strong> Prefiero pagos internacionales para mantener estabilidad de honorarios. Si necesitás otra opción, lo conversamos.</div>
+        </article>
       </div>
     </div>
+  </section>
 
-    <div class="hero-figure">
-      <span class="blob blob--1" aria-hidden="true"></span>
-      <span class="blob blob--2" aria-hidden="true"></span>
-      <!-- tu foto arriba de las formas -->
-      <div class="heroimg">
-        <img src="assets/portrait.png" alt="Daiana Beltrán, Psicóloga online">
+  <!-- RESERVAR (Calendario) -->
+  <section id="reservar" class="et-reserve">
+    <div class="et-wrap">
+      <!-- Izquierda -->
+      <div class="et-left">
+        <div class="et-eyebrow">Agenda online · Google Meet</div>
+        <h2 class="et-title">Reservá tu <span>sesión inicial gratuita</span> (20&nbsp;min)</h2>
+        <p class="et-sub">Si decidiste priorizarte y aprender a gestionarte, quiero conocerte.</p>
+
+        <ul class="et-points">
+          <li>
+            <!-- Meet -->
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h6A2.5 2.5 0 0 1 14 7.5v9A2.5 2.5 0 0 1 11.5 19h-6A2.5 2.5 0 0 1 3 16.5v-9Z" fill="#34A853"/><path d="M14 9.2l4.6-3A1 1 0 0 1 20 7v10a1 1 0 0 1-1.4.9L14 14.8V9.2Z" fill="#EA4335"/><path d="M11.5 5H13v14h-1.5A2.5 2.5 0 0 1 9 16.5v-9A2.5 2.5 0 0 1 11.5 5Z" fill="#4285F4"/></svg>
+            Videollamada por Google Meet.
+          </li>
+          <li>
+            <!-- Candado -->
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V7a5 5 0 1 1 10 0v3" fill="none" stroke="#111827" stroke-width="1.6"/><rect x="4" y="10" width="16" height="10" rx="2.5" fill="none" stroke="#111827" stroke-width="1.6"/></svg>
+            Confidencialidad y respeto. Encuadre claro.
+          </li>
+          <li>
+            <!-- Tarjeta -->
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2.5" fill="none" stroke="#111827" stroke-width="1.6"/><path d="M2 10h20" stroke="#111827" stroke-width="1.6"/></svg>
+            Para sostener agenda y espacios, el pago de sesiones regulares se acuerda al confirmar turno.
+          </li>
+        </ul>
+
+        <p class="et-note">El horario se adapta <strong>automáticamente a tu zona</strong>.</p>
+
+        <div class="et-illu">
+          <!-- Reemplazá por tu imagen/ilustración -->
+          <img src="assets/abstract-therapy.png" alt="Ilustración: acompañamiento y claridad" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Derecha -->
+      <div class="et-right">
+        <div class="et-card">
+          <div class="et-card-head">
+            <span class="et-badge">Primera conversación breve · 20&nbsp;min</span>
+          </div>
+          <!-- Calendly embed: CAMBIÁ data-url si tu slug es distinto -->
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_event_type_details=1&hide_gdpr_banner=1&text_color=172033&primary_color=cc8f00&background_color=ffffff"
+            style="min-width:320px;height:720px">
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="especialidades" class="specs">
-  <div class="container">
-    <h2>Especialidades</h2>
-    <div class="cards">
-      <article class="card"><span class="tag">Emoción</span><h3>Ansiedad</h3><p>La ansiedad es una alarma. Al resolver el origen, baja sola. Trabajamos eso.</p></article>
-      <article class="card"><span class="tag">Estado de ánimo</span><h3>Depresión</h3><p>No es “ver el lado bueno” por fuerza. Curar la herida devuelve energía y sentido.</p></article>
-      <article class="card"><span class="tag">Habilidad</span><h3>Gestión emocional</h3><p>Menos impulsividad y bloqueo. Entender lo que sentís para elegir mejor.</p></article>
-      <article class="card"><span class="tag">Vínculos</span><h3>Pareja</h3><p>Límites, comunicación y decisiones con objetivos claros y medibles.</p></article>
-      <article class="card"><span class="tag">Hábitos</span><h3>Alimentación / TCA</h3><p>Más allá de la comida: ansiedad, control, calma. Intervenciones realistas.</p></article>
-      <article class="card"><span class="tag">Pérdidas</span><h3>Duelo</h3><p>Acompañamiento humano para elaborar pérdidas y rearmar tu vida con sentido.</p></article>
-    </div>
-  </div>
-</section>
-
-<section id="honorarios" class="fees">
-  <div class="container">
-    <h2>Honorarios &amp; pagos</h2>
-    <p class="intro">Sin publicar precios fijos: <strong>tarifa adaptable</strong> según país y medio de pago. Esto cuida la estabilidad del proceso y evita sorpresas.</p>
-
-    <!-- EXTERIOR -->
-    <div class="fee-rect" style="margin-top:26px">
-      <h3 style="margin:0 0 6px">Si residís en el exterior 🌍</h3>
-      <p style="margin:0 0 6px">Sesiones por videollamada en español. Valor actualizado y <strong>pagos en EUR o USD</strong>.</p>
-      <p><strong>¿Sos argentino/a y vivís afuera?</strong> Para cuidar la estabilidad, trabajo con <em>tarifa internacional</em> (EUR/USD) vía Wise o PayPal.</p>
-      <div class="paychips" aria-label="Medios de pago exterior">
-        <!-- Wise -->
-        <span class="chip" title="Wise">
-          <svg viewBox="0 0 256 256" aria-hidden="true"><path fill="#00BFA5" d="M198 30 83 118l39 6-58 102 150-115-48-7z"/></svg>
-          Wise
-        </span>
-        <!-- PayPal -->
-        <span class="chip" title="PayPal">
-          <svg viewBox="0 0 256 256" aria-hidden="true">
-            <path fill="#253B80" d="M160 30c37 0 62 20 62 51 0 45-36 69-86 69h-20l-13 76H57l28-175c2-12 9-21 29-21h46z"/>
-            <path fill="#179BD7" d="M185 64c16 0 27 7 27 20 0 29-28 38-61 38h-23l10-58c2-13 10-20 26-20h21z"/>
-          </svg>
-          PayPal
-        </span>
-        <!-- Google Meet -->
-        <span class="chip" title="Google Meet">
-          <svg viewBox="0 0 256 256" aria-hidden="true">
-            <path fill="#34A853" d="M110 60h56l30 30v86c0 11-9 20-20 20h-66z"/>
-            <path fill="#EA4335" d="M110 60v56L70 80V70c0-6 4-10 10-10h30z"/>
-            <path fill="#FBBC05" d="M70 80l40 36v24L70 176z"/>
-            <path fill="#4285F4" d="M110 196v-56l30 26v30z"/>
-          </svg>
-          Google Meet
-        </span>
-      </div>
-    </div>
-
-    <!-- ARGENTINA -->
-    <div class="fee-rect fee-rect--ar">
-      <h3 style="margin:0 0 6px">Si residís en Argentina</h3>
-      <p class="lead" style="margin:0 0 6px">Coordinamos el valor al agendar (la economía cambia seguido).</p>
-      <p><strong>¿Vivís afuera pero querés pagar en ARS?</strong> Prefiero pagos internacionales para mantener estabilidad de honorarios. Si necesitás otra opción, lo conversamos.</p>
-      <div class="paychips" aria-label="Medios de pago Argentina">
-        <!-- Ualá -->
-        <span class="chip" title="Ualá">
-          <svg viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="110" fill="#7C5BFF"/><path fill="#fff" d="M78 96h20v44c0 18 10 24 22 24s22-6 22-24V96h20v44c0 28-17 44-42 44s-42-16-42-44V96z"/></svg>
-          Ualá
-        </span>
-        <!-- Transferencia (bank) -->
-        <span class="chip" title="Transferencia">
-          <svg viewBox="0 0 256 256" aria-hidden="true"><path fill="#1F2937" d="M128 36 36 84v16h184V84L128 36zM52 116v88h36v-88H52zm58 0v88h36v-88h-36zm58 0v88h36v-88h-36z"/></svg>
-          Transferencia
-        </span>
-        <!-- Mercado Pago -->
-        <span class="chip" title="Mercado Pago">
-          <svg viewBox="0 0 256 256" aria-hidden="true"><ellipse cx="128" cy="126" rx="108" ry="70" fill="#00AEEF"/><path fill="#fff" d="M80 124c16-24 80-24 96 0-10 18-30 30-48 30s-38-12-48-30z"/></svg>
-          Mercado Pago
-        </span>
-      </div>
-      <div style="margin-top:22px;display:flex;gap:14px;flex-wrap:wrap">
-        <a class="cta" href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quisiera%20coordinar%20honorarios%20y%20turno.">Consultar por WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="reservar" class="reserve">
-  <div class="container">
-    <h2>Reservá tu primera sesión</h2>
-    <p class="lead">Elegí día y hora según tu huso horario. Si preferís, primero podemos tener una breve conversación de encuadre (20–30 min) para ver tu motivo de consulta; es opcional y sin costo.</p>
-
-    <div class="cal-box" role="region" aria-label="Calendario de turnos">
-      <div class="cal-head">
-        <div class="cal-kicker">Agenda online · Google Meet</div>
-        <small style="color:var(--muted)">El horario se adapta automáticamente a tu zona</small>
-      </div>
-      <div class="calendly-inline-widget"
-           data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=0f172a&primary_color=E0B525">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="faq" class="faq">
-  <div class="container">
+  <!-- FAQ -->
+  <section id="faq" class="faq container">
     <h2>Preguntas frecuentes</h2>
-
     <details>
       <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
-      <p>Suele ser claro cuando hay síntomas como ansiedad, falta de energía, obsesiones o angustia. Otras veces el malestar es difuso: sin sentido, “piloto automático”, cansancio o agobio. Si te lo estás planteando, ya es una señal de que algo no va bien.</p>
-      <p>Mi criterio es simple: <strong>escucharte</strong>. En sesión vemos qué te dice ese malestar y salimos de dudas, encontrando si hay algo importante que no estás pudiendo enfrentar ahora mismo.</p>
+      <p>Suele ser más claro cuando hay síntomas (ansiedad, falta de energía, obsesiones), pero otras veces el malestar es difuso (sin sentido, automático, cansancio). Si te lo estás planteando, ya es una señal. En sesión vemos qué te está indicando ese malestar y si hay algo que no estás enfrentando.</p>
     </details>
-
     <details>
       <summary>¿Cuánto suele durar una psicoterapia?</summary>
-      <p>Lo honesto y eficaz es una frecuencia de una vez por semana o cada 15 días. Menos de eso no permite sostener el proceso.</p>
-      <p>En mi práctica, alrededor del 70% de las terapias dura entre <strong>6 y 10 meses</strong>, aunque algunos casos requieren más tiempo. Son estimaciones; cada historia es distinta.</p>
+      <p>Lo habitual es una sesión semanal o cada 15 días. Muchas terapias que acompaño duran entre 6 y 10 meses; depende del objetivo y la historia de cada persona. Prefiero un encuadre honesto que sea realmente útil.</p>
     </details>
-
     <details>
-      <summary>¿Por qué hay tantos tipos de terapia y cómo elijo?</summary>
-      <p>Existen corrientes como la cognitivo-conductual, el psicoanálisis, la sistémica y el humanismo. Comparten claves: no reprimir emociones, vínculo terapéutico de calidad y conciencia del mundo interno.</p>
-      <p>Mi recomendación: priorizá la <strong>conexión con tu psicóloga</strong>. La evidencia muestra que el vínculo es el mejor predictor de éxito terapéutico.</p>
+      <summary>¿Por qué hay tantos tipos de terapia y cómo elegir?</summary>
+      <p>Existen diferentes corrientes, pero el mayor predictor de éxito es la relación terapeuta–paciente. Buscá conexión y confianza; yo aporto un enfoque humanista y centrado en procesos emocionales con herramientas concretas.</p>
     </details>
-
     <details>
       <summary>¿Cómo es una psicoterapia conmigo?</summary>
-      <p>Trabajo desde un <strong>enfoque humanista</strong>: la técnica está al servicio de la persona. Aunque dos problemas se llamen “ansiedad”, cada vida es única; por eso parto de lo que sentís y lo que necesitás.</p>
-      <p>Integro psicoterapias humanistas y, cuando ayuda, elementos de filosofía existencial. La meta no es tapar síntomas sino <strong>afrontar la vida real</strong>, con un estilo claro y respetuoso, para que el cambio se note fuera de sesión.</p>
+      <p>Trabajo centrado en la persona: comprender qué mantiene el problema y actuar sobre ello. Menos “recetas”, más decisiones reales que se notan en tu vida. Cálido, claro y práctico.</p>
     </details>
-  </div>
-</section>
+  </section>
 
-<section class="strip">
-  <div class="container row">
-    <h2 style="margin:0">¿Coordinamos un turno?</h2>
-    <a class="btn" href="#reservar" style="background:#fff;border-color:#fff;color:var(--brand-ink);font-weight:800">Ir al calendario</a>
-  </div>
-</section>
+  <!-- Footer -->
+  <footer>
+    <div class="container foot">
+      <small>© <span id="y"></span> Daiana Beltrán · Psicología online</small>
+      <small>Hecho con foco en lo importante: las personas.</small>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  </footer>
 
-<footer>
-  <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-    <small>© <span id="y"></span> Daiana Beltrán · Psicología online</small>
-    <small>Hecho con foco en lo importante: las personas.</small>
-  </div>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-</footer>
+  <!-- WhatsApp pill -->
+  <a id="wa-pill"
+     href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20agendar%20una%20sesión%20online."
+     target="_blank" rel="noopener"
+     aria-label="Chatear por WhatsApp">
+    <svg viewBox="0 0 256 256" aria-hidden="true">
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#25D366"/><stop offset="1" stop-color="#20BD5A"/></linearGradient></defs>
+      <circle cx="128" cy="128" r="116" fill="url(#g)"/>
+      <path fill="#fff" d="M128 50c-42.9 0-77.7 34.8-77.7 77.7 0 13.7 3.6 27 10.4 38.7l-6.9 25.2 25.9-6.8c11.3 6.2 24 9.5 36.9 9.5 42.9 0 77.7-34.8 77.7-77.7S170.9 50 128 50Zm45 88.6c-1.9 9-8.9 20.4-24.6 23.3-6.6 1.2-15 2.2-43.5-13.1-36.5-19.6-31.5-38.4-31.5-38.4s3.4-14.4 15.8-22.1c2.1-1.3 4.7-1.1 6.5.5 2.5 2.1 6.3 8.2 6.9 10.2.7 2.2.1 4.7-1.5 6.3l-3.6 3.6c-1.7 1.7-2.2 4.2-1.2 6.4 2.6 5.5 9.3 13.1 19.9 18.6 9.5 4.9 15.4 5.9 21.3 4.1 2.2-.7 4.1-2.2 5.3-4.2l2.5-4.3c1.1-2 3.4-3 5.7-2.6 2.5.4 9.8 3 12.4 4.6 2 .9 3.2 3.2 2.8 5.5Z"/>
+    </svg>
+    <span class="label">WhatsApp</span>
+  </a>
 
+  <script>
+    // fade-in de la pastilla
+    window.addEventListener('load', ()=>{
+      const p = document.getElementById('wa-pill');
+      p.style.opacity='0'; setTimeout(()=>{ p.style.opacity='1'; }, 250);
+    });
+  </script>
 </body>
 </html>
