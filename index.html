@@ -88,23 +88,39 @@
       box-shadow:var(--shadow);border:1px solid var(--line);background:#fff
     }
 
-    /* Calendario (pago previo) — grande y sin scroll */
+    /* Calendario (pago previo) — grande y sin espacios extra */
     .reserve{background:#fffaf0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .reserve .lede{max-width:850px}
     .calendar-frame{
       margin-top:28px;background:#fff;border:1px solid var(--line);border-radius:22px;
-      box-shadow:var(--shadow-strong);overflow:hidden;max-width:1120px;margin-left:auto;margin-right:auto
+      box-shadow:var(--shadow-strong);overflow:hidden;max-width:1120px;margin-left:auto;margin-right:auto;
+      position:relative;
     }
-    .calendar-head{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff7d7;border-bottom:1px solid #f1e6b2;padding:14px 18px}
 
-    /* Encabezado extra sobre el widget */
-    .cal-brief{display:flex;align-items:flex-start;gap:16px;padding:16px 18px;border-bottom:1px solid #f5eac7}
-    .cal-brief .dot{width:8px;height:8px;border-radius:999px;background:#E7B908;margin-top:10px}
-    .cal-brief h3{margin:0 0 2px;font:800 18px/1.2 Montserrat}
-    .cal-brief p{margin:0;color:#5c6473;font-weight:600;font-size:.95rem}
+    /* Encabezado con miniatura */
+    .cal-hero{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:14px 18px;border-bottom:1px solid #f1e6b2;background:#fff7d7;
+    }
+    .cal-card{display:flex;align-items:center;gap:14px}
+    .cal-thumb{
+      width:220px;height:76px;object-fit:cover;border-radius:14px;border:1px solid #efd992;background:#fff;box-shadow:var(--shadow);
+    }
+    .cal-meta h3{margin:0 0 4px;font:800 18px/1.2 Montserrat}
+    .cal-meta p{margin:0;color:#5c6473;font-weight:600;font-size:.95rem}
+    .cal-cta{display:flex;gap:10px;align-items:center}
+    .pill{display:inline-block;background:#fff;border:1px solid #f1e6b2;border-radius:999px;padding:.55rem 1rem;font-weight:800;box-shadow:var(--shadow)}
+    .pill-amber{background:var(--amber-soft);border-color:#f2e3a1}
 
-    .calendly-inline-widget{min-width:320px;height:1280px}
-    .tz-note{color:#c1121f;font-weight:800;font-size:.95rem;text-align:right;padding:8px 14px 18px}
+    /* Altura justa del widget (sin scroll interno ni blanco al final) */
+    .calendly-inline-widget{min-width:320px;height:1040px}
+
+    /* Leyenda fija abajo-derecha sin empujar el layout */
+    .tz-note{
+      position:absolute;right:14px;bottom:10px;
+      color:#c1121f;font-weight:800;font-size:.95rem;background:rgba(255,255,255,.85);
+      padding:2px 8px;border-radius:8px
+    }
 
     /* FAQ */
     #faq .section-title{margin-bottom:12px}
@@ -120,9 +136,40 @@
     /* Footer */
     footer{border-top:1px solid var(--line);color:#737b88;padding:30px 0}
 
-    /* WhatsApp flotante */
-    #wa-pill{position:fixed;right:20px;bottom:20px;display:inline-flex;align-items:center;gap:12px;height:64px;padding:0 20px;background:#25D366;color:#fff;border-radius:999px;box-shadow:0 18px 36px rgba(0,0,0,.22);font-weight:800;z-index:9999;transition:transform .15s ease, box-shadow .2s ease}
-    #wa-pill:hover{transform:translateY(-2px);box-shadow:0 22px 42px rgba(0,0,0,.26)}
+    /* === Barra fija de acciones (WhatsApp + Tel + CTA) === */
+    .floating-cta{
+      position:fixed; left:0; right:0; bottom:14px; z-index:10000;
+      pointer-events:none;
+    }
+    .floating-cta .cta-row{
+      pointer-events:auto;
+      max-width:var(--max); margin:auto; padding:0 16px;
+      display:flex; align-items:center; justify-content:center; gap:14px;
+    }
+    .icon-btn{
+      width:56px; height:56px; border-radius:999px; display:inline-flex;
+      align-items:center; justify-content:center;
+      box-shadow:var(--shadow-strong); border:1px solid #f1e6b2; background:#fdd17a;
+      transition:transform .15s ease, box-shadow .2s ease;
+    }
+    .icon-btn:hover{ transform:translateY(-2px); box-shadow:0 22px 42px rgba(0,0,0,.18) }
+    .icon-btn svg{ width:26px; height:26px; }
+    .icon-btn.whats{ background:#25D366; border-color:#20BD5A }
+    .icon-btn.whats svg{ fill:#fff }
+    .icon-btn.phone{ background:#E7B908; }
+    .icon-btn.phone svg{ fill:#fff }
+    .cta-btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      height:56px; padding:0 22px; border-radius:999px;
+      background:var(--accent); color:#fff; font-weight:800; letter-spacing:.02em;
+      box-shadow:var(--shadow-strong); border:1px solid rgba(0,0,0,.04);
+      transition:transform .15s ease, box-shadow .2s ease;
+      white-space:nowrap;
+    }
+    .cta-btn:hover{ transform:translateY(-2px); box-shadow:0 24px 46px rgba(0,0,0,.18) }
+
+    /* Oculta la píldora flotante antigua para no duplicar */
+    #wa-pill{ display:none !important; }
 
     @media (max-width:980px){
       .hero{grid-template-columns:1fr;gap:28px;padding:86px 0 0}
@@ -130,7 +177,12 @@
       .photo-wrap{min-height:360px}
       section{padding:96px 0}
       #filosofia{padding-top:108px}
-      .calendly-inline-widget{height:1360px}
+      .calendly-inline-widget{height:1180px}
+      .cal-thumb{width:180px;height:64px}
+    }
+    @media (max-width:560px){
+      .cta-btn{ font-size:.94rem; padding:0 18px; }
+      .icon-btn{ width:52px; height:52px }
     }
   </style>
 </head>
@@ -236,17 +288,18 @@
       </div>
 
       <div class="calendar-frame">
-        <div class="calendar-head">
-          <span class="pill">Seleccioná día y hora</span>
-          <span class="pill pill-amber">Sesión regular · 50 min</span>
-        </div>
-
-        <!-- Encabezado extra -->
-        <div class="cal-brief">
-          <div class="dot" aria-hidden="true"></div>
-          <div>
-            <h3>comunicar · 50 Minute Meeting</h3>
-            <p>50 min · Web conferencing details provided upon confirmation.</p>
+        <!-- Encabezado con miniatura -->
+        <div class="cal-hero">
+          <div class="cal-card">
+            <img class="cal-thumb" src="assets/TE%20ACOMPA%C3%91O.png" alt="Miniatura de acompañamiento" loading="lazy" decoding="async">
+            <div class="cal-meta">
+              <h3>Sesión regular · 50 min</h3>
+              <p>Vía Google Meet · comunicar · 50 Minute Meeting</p>
+            </div>
+          </div>
+          <div class="cal-cta">
+            <span class="pill">Seleccioná día y hora</span>
+            <span class="pill pill-amber">Calendario activo</span>
           </div>
         </div>
 
@@ -294,7 +347,27 @@
     <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
   </footer>
 
-  <!-- WhatsApp flotante -->
+  <!-- Barra fija inferior (WhatsApp + Teléfono + CTA) -->
+  <div class="floating-cta" role="region" aria-label="Acciones rápidas">
+    <div class="cta-row">
+      <!-- WhatsApp -->
+      <a class="icon-btn whats" aria-label="Escribir por WhatsApp"
+         href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20mi%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%20min."
+         target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.2 18.6L2 22l3.5-1.1A11 11 0 1 0 20.5 3.5Zm-8.7 17.1a9 9 0 0 1-4.6-1.3l-.3-.2-2.7.8.9-2.6-.2-.3a9 9 0 1 1 7 3.6ZM17 14.3c-.2-.1-1.5-.8-1.7-.8s-.3-.1-.5.1-.6.8-.7.9-.3.2-.6.1a7.3 7.3 0 0 1-3.4-2.1 12.4 12.4 0 0 1-1.3-1.7c-.1-.3 0-.5.1-.6l.4-.5.2-.4c.1-.1 0-.3 0-.4 0-.1-.5-1.3-.7-1.8s-.4-.4-.6-.4h-.5c-.2 0-.4.2-.6.4s-.8.8-.8 2c0 1.1.8 2.2 1 2.3.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.2.5.5.2 1 .2 1.4.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2Z"/></svg>
+      </a>
+
+      <!-- Teléfono -->
+      <a class="icon-btn phone" aria-label="Llamar por teléfono" href="tel:+5492996044900">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l1.5-1.5c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3 .5.7 0 1.3.6 1.3 1.3V20c0 .7-.6 1.3-1.3 1.3A17.6 17.6 0 0 1 3 6.7 1.3 1.3 0 0 1 4.3 5.4h2.6c.7 0 1.3.6 1.3 1.3 0 1 .2 2 .5 3 .1.4 0 .9-.3 1.2l-1.8 1.9Z"/></svg>
+      </a>
+
+      <!-- CTA principal -->
+      <a class="cta-btn" href="#contacto20">PIDE TU SESIÓN GRATUITA</a>
+    </div>
+  </div>
+
+  <!-- (Opcional) WhatsApp flotante antiguo: oculto por CSS -->
   <a id="wa-pill"
      href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20la%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%27."
      target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
@@ -305,5 +378,11 @@
     </svg>
     <span class="label">WhatsApp</span>
   </a>
+
+  <script>
+    // Año en footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
