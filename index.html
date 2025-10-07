@@ -31,6 +31,7 @@
       --ink:#0A0E19; --muted:#5f6673; --bg:#fffdf7; --card:#ffffff; --line:#ece7d6;
       --amber:#E7B908; --amber-soft:#FFF4CC; --accent:#FF6B4A;
       --max:1200px; --radius:22px; --shadow:0 14px 38px rgba(10,14,25,.08); --shadow-strong:0 28px 54px rgba(10,14,25,.14);
+      --sand:#E8E1B3; --sand-line:#d9d0a1; /* franja estilo EstarContigo */
     }
 
     *,*::before,*::after{box-sizing:border-box}
@@ -69,6 +70,17 @@
     .photo-wrap{position:relative;aspect-ratio:4/4;border-radius:28px;background:var(--amber);display:grid;place-items:center;box-shadow:0 28px 80px rgba(231,185,8,.28);border:1px solid #f2e7b0;padding:22px;overflow:hidden;min-height:420px}
     .photo{width:min(440px,86%);height:auto;object-fit:contain;filter:drop-shadow(0 20px 28px rgba(0,0,0,.12))}
 
+    /* Franja destacada (color arena + foto grande) */
+    .feature-wrap{background:var(--sand);border-top:1px solid var(--sand-line);border-bottom:1px solid var(--sand-line)}
+    .feature{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;padding:76px 0}
+    .feature .eyebrow{font-weight:800;color:#9a7c10;letter-spacing:.08em;text-transform:uppercase;font-size:.92rem;margin-bottom:8px}
+    .feature h2{margin:0 0 14px;font:800 clamp(34px,5.2vw,56px)/1.08 Montserrat;letter-spacing:-.02em}
+    .feature .lede{color:#4b5563;max-width:52ch;margin:0 0 22px}
+    .feature .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .feature .btn{box-shadow:0 12px 28px rgba(0,0,0,.08)}
+    .feature-figure{position:relative;aspect-ratio:4/4;border-radius:28px;background:#f4cc39;box-shadow:0 28px 80px rgba(10,14,25,.14);border:1px solid #ead480;padding:22px;overflow:hidden;min-height:420px}
+    .feature-figure img{width:min(520px,92%);height:auto;object-fit:contain;filter:drop-shadow(0 22px 32px rgba(0,0,0,.14));margin:auto}
+
     /* Cards */
     .grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
     .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 16px 14px;box-shadow:var(--shadow)}
@@ -81,46 +93,20 @@
     #filosofia{padding-top:110px;border-top:1px solid var(--line);box-shadow:inset 0 24px 48px -32px rgba(231,185,8,.18)}
     #contacto20{padding-top:120px}
 
-    /* Ilustración “Te acompaño en…” */
-    .support-illus{margin:10px 0 26px;display:flex;justify-content:center}
-    .support-illus img{
-      width:min(820px,100%);height:auto;border-radius:16px;
-      box-shadow:var(--shadow);border:1px solid var(--line);background:#fff
-    }
-
-    /* Calendario (pago previo) — grande y sin espacios extra */
+    /* Calendario (pago previo) */
     .reserve{background:#fffaf0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .reserve .lede{max-width:850px}
-    .calendar-frame{
-      margin-top:28px;background:#fff;border:1px solid var(--line);border-radius:22px;
-      box-shadow:var(--shadow-strong);overflow:hidden;max-width:1120px;margin-left:auto;margin-right:auto;
-      position:relative;
-    }
-
-    /* Encabezado con miniatura */
-    .cal-hero{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-      padding:14px 18px;border-bottom:1px solid #f1e6b2;background:#fff7d7;
-    }
+    .calendar-frame{margin:24px auto 14px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-strong);overflow:hidden;max-width:1120px;position:relative}
+    .cal-hero{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;border-bottom:1px solid #f1e6b2;background:#fff7d7}
     .cal-card{display:flex;align-items:center;gap:14px}
-    .cal-thumb{
-      width:220px;height:76px;object-fit:cover;border-radius:14px;border:1px solid #efd992;background:#fff;box-shadow:var(--shadow);
-    }
+    .cal-thumb{height:96px;width:auto;max-width:300px;object-fit:cover;border-radius:14px;border:1px solid #efd992;background:#fff;box-shadow:var(--shadow)}
     .cal-meta h3{margin:0 0 4px;font:800 18px/1.2 Montserrat}
     .cal-meta p{margin:0;color:#5c6473;font-weight:600;font-size:.95rem}
     .cal-cta{display:flex;gap:10px;align-items:center}
     .pill{display:inline-block;background:#fff;border:1px solid #f1e6b2;border-radius:999px;padding:.55rem 1rem;font-weight:800;box-shadow:var(--shadow)}
     .pill-amber{background:var(--amber-soft);border-color:#f2e3a1}
-
-    /* Altura justa del widget (sin scroll interno ni blanco al final) */
-    .calendly-inline-widget{min-width:320px;height:1040px}
-
-    /* Leyenda fija abajo-derecha sin empujar el layout */
-    .tz-note{
-      position:absolute;right:14px;bottom:10px;
-      color:#c1121f;font-weight:800;font-size:.95rem;background:rgba(255,255,255,.85);
-      padding:2px 8px;border-radius:8px
-    }
+    .calendly-inline-widget{min-width:320px;height:920px} /* altura justa, sin blanco extra */
+    .tz-note{position:absolute;right:14px;bottom:8px;color:#c1121f;font-weight:800;font-size:.95rem;background:rgba(255,255,255,.85);padding:2px 8px;border-radius:8px}
 
     /* FAQ */
     #faq .section-title{margin-bottom:12px}
@@ -136,53 +122,35 @@
     /* Footer */
     footer{border-top:1px solid var(--line);color:#737b88;padding:30px 0}
 
-    /* === Barra fija de acciones (WhatsApp + Tel + CTA) === */
-    .floating-cta{
-      position:fixed; left:0; right:0; bottom:14px; z-index:10000;
-      pointer-events:none;
-    }
-    .floating-cta .cta-row{
-      pointer-events:auto;
-      max-width:var(--max); margin:auto; padding:0 16px;
-      display:flex; align-items:center; justify-content:center; gap:14px;
-    }
-    .icon-btn{
-      width:56px; height:56px; border-radius:999px; display:inline-flex;
-      align-items:center; justify-content:center;
-      box-shadow:var(--shadow-strong); border:1px solid #f1e6b2; background:#fdd17a;
-      transition:transform .15s ease, box-shadow .2s ease;
-    }
-    .icon-btn:hover{ transform:translateY(-2px); box-shadow:0 22px 42px rgba(0,0,0,.18) }
-    .icon-btn svg{ width:26px; height:26px; }
-    .icon-btn.whats{ background:#25D366; border-color:#20BD5A }
-    .icon-btn.whats svg{ fill:#fff }
-    .icon-btn.phone{ background:#E7B908; }
-    .icon-btn.phone svg{ fill:#fff }
-    .cta-btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      height:56px; padding:0 22px; border-radius:999px;
-      background:var(--accent); color:#fff; font-weight:800; letter-spacing:.02em;
-      box-shadow:var(--shadow-strong); border:1px solid rgba(0,0,0,.04);
-      transition:transform .15s ease, box-shadow .2s ease;
-      white-space:nowrap;
-    }
-    .cta-btn:hover{ transform:translateY(-2px); box-shadow:0 24px 46px rgba(0,0,0,.18) }
+    /* Barra fija inferior (WhatsApp + Teléfono + CTA) */
+    .floating-cta{position:fixed;left:0;right:0;bottom:14px;z-index:10000;pointer-events:none}
+    .floating-cta .cta-row{pointer-events:auto;max-width:var(--max);margin:auto;padding:0 16px;display:flex;align-items:center;justify-content:center;gap:14px}
+    .icon-btn{width:56px;height:56px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--shadow-strong);border:1px solid #f1e6b2;background:#fdd17a;transition:transform .15s ease, box-shadow .2s ease}
+    .icon-btn:hover{transform:translateY(-2px);box-shadow:0 22px 42px rgba(0,0,0,.18)}
+    .icon-btn svg{width:26px;height:26px}
+    .icon-btn.whats{background:#25D366;border-color:#20BD5A}
+    .icon-btn.whats svg{fill:#fff}
+    .icon-btn.phone{background:#E7B908}
+    .icon-btn.phone svg{fill:#fff}
+    .cta-btn{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 22px;border-radius:999px;background:var(--accent);color:#fff;font-weight:800;letter-spacing:.02em;box-shadow:var(--shadow-strong);border:1px solid rgba(0,0,0,.04);transition:transform .15s ease, box-shadow .2s ease;white-space:nowrap}
+    .cta-btn:hover{transform:translateY(-2px);box-shadow:0 24px 46px rgba(0,0,0,.18)}
 
     /* Oculta la píldora flotante antigua para no duplicar */
-    #wa-pill{ display:none !important; }
+    #wa-pill{display:none !important;}
 
     @media (max-width:980px){
       .hero{grid-template-columns:1fr;gap:28px;padding:86px 0 0}
+      .feature{grid-template-columns:1fr;padding:62px 0}
       .grid-cards{grid-template-columns:1fr}
       .photo-wrap{min-height:360px}
       section{padding:96px 0}
       #filosofia{padding-top:108px}
-      .calendly-inline-widget{height:1180px}
-      .cal-thumb{width:180px;height:64px}
+      .calendly-inline-widget{height:1020px}
+      .cal-thumb{height:84px;max-width:240px}
     }
     @media (max-width:560px){
-      .cta-btn{ font-size:.94rem; padding:0 18px; }
-      .icon-btn{ width:52px; height:52px }
+      .cta-btn{font-size:.94rem;padding:0 18px}
+      .icon-btn{width:52px;height:52px}
     }
   </style>
 </head>
@@ -226,17 +194,32 @@
     </div>
   </section>
 
-  <!-- “Te acompaño en…” -->
+  <!-- Franja destacada estilo EstarContigo -->
+  <section class="feature-wrap">
+    <div class="container feature">
+      <div>
+        <div class="eyebrow">Psicología online</div>
+        <h2>Psicólogos online, cerca de vos</h2>
+        <p class="lede">
+          Te acompaño a entender lo que te pasa y a tomar decisiones claras que se noten en tu día a día.
+          Atención 100% online por Google Meet.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-accent" href="#contacto20">Primera conversación GRATIS (20′)</a>
+          <a class="btn btn-outline" href="#reservar">Ver calendario</a>
+        </div>
+      </div>
+
+      <figure class="feature-figure" aria-hidden="true">
+        <img src="assets/daiana.png" alt="Daiana Beltrán" onerror="this.onerror=null;this.src='assets/portrait.png';">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Te acompaño en… (solo tarjetas) -->
   <section id="especialidades" class="container">
     <h2 class="section-title">Te acompaño en…</h2>
     <p class="lede">Ansiedad, depresión, regulación emocional, duelos, vínculos y alimentación.</p>
-
-    <figure class="support-illus">
-      <img src="assets/TE%20ACOMPA%C3%91O.png"
-           alt="Ilustración de una mano tendida ofreciendo ayuda a una persona: acompañamiento humano en terapia"
-           loading="lazy" decoding="async"
-           onerror="this.onerror=null;this.src='assets/portrait.png';">
-    </figure>
 
     <div class="grid-cards">
       <article class="card"><span class="tag">Emoción</span><h3>Ansiedad</h3><p>La ansiedad es una señal. Entendemos el origen y actuamos sobre eso.</p></article>
@@ -288,7 +271,6 @@
       </div>
 
       <div class="calendar-frame">
-        <!-- Encabezado con miniatura -->
         <div class="cal-hero">
           <div class="cal-card">
             <img class="cal-thumb" src="assets/TE%20ACOMPA%C3%91O.png" alt="Miniatura de acompañamiento" loading="lazy" decoding="async">
@@ -303,7 +285,6 @@
           </div>
         </div>
 
-        <!-- Calendly grande -->
         <div class="calendly-inline-widget"
              data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=0A0E19&primary_color=E7B908&hide_landing_page_details=1&locale=es">
         </div>
@@ -350,24 +331,21 @@
   <!-- Barra fija inferior (WhatsApp + Teléfono + CTA) -->
   <div class="floating-cta" role="region" aria-label="Acciones rápidas">
     <div class="cta-row">
-      <!-- WhatsApp -->
       <a class="icon-btn whats" aria-label="Escribir por WhatsApp"
          href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20mi%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%20min."
          target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.2 18.6L2 22l3.5-1.1A11 11 0 1 0 20.5 3.5Zm-8.7 17.1a9 9 0 0 1-4.6-1.3l-.3-.2-2.7.8.9-2.6-.2-.3a9 9 0 1 1 7 3.6ZM17 14.3c-.2-.1-1.5-.8-1.7-.8s-.3-.1-.5.1-.6.8-.7.9-.3.2-.6.1a7.3 7.3 0 0 1-3.4-2.1 12.4 12.4 0 0 1-1.3-1.7c-.1-.3 0-.5.1-.6l.4-.5.2-.4c.1-.1 0-.3 0-.4 0-.1-.5-1.3-.7-1.8s-.4-.4-.6-.4h-.5c-.2 0-.4.2-.6.4s-.8.8-.8 2c0 1.1.8 2.2 1 2.3.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.2.5.5.2 1 .2 1.4.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2Z"/></svg>
       </a>
 
-      <!-- Teléfono -->
       <a class="icon-btn phone" aria-label="Llamar por teléfono" href="tel:+5492996044900">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l1.5-1.5c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3 .5.7 0 1.3.6 1.3 1.3V20c0 .7-.6 1.3-1.3 1.3A17.6 17.6 0 0 1 3 6.7 1.3 1.3 0 0 1 4.3 5.4h2.6c.7 0 1.3.6 1.3 1.3 0 1 .2 2 .5 3 .1.4 0 .9-.3 1.2l-1.8 1.9Z"/></svg>
       </a>
 
-      <!-- CTA principal -->
       <a class="cta-btn" href="#contacto20">PIDE TU SESIÓN GRATUITA</a>
     </div>
   </div>
 
-  <!-- (Opcional) WhatsApp flotante antiguo: oculto por CSS -->
+  <!-- (Antiguo WhatsApp flotante oculto por CSS para evitar duplicado) -->
   <a id="wa-pill"
      href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20la%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%27."
      target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
@@ -380,9 +358,9 @@
   </a>
 
   <script>
-    // Año en footer
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
 
