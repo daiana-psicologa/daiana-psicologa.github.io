@@ -26,12 +26,12 @@
       --shadow-strong:0 22px 52px rgba(13,18,33,.14);
       --max:1160px;
 
-            /* ===== Espaciado compacto equilibrado ===== */
-      --space-section:40px;   /* distancia entre secciones (antes 52) */
-      --space-title:8px;      /* aire bajo títulos (antes 12) */
-      --box-pad-y:12px;       /* padding vertical de rectángulos (antes 16) */
-      --box-pad-x:14px;       /* padding horizontal (antes 18) */
-      --grid-gap:12px;        /* separación de cards (antes 16) */
+      /* Espaciado */
+      --space-section:40px;
+      --space-title:8px;
+      --box-pad-y:12px;
+      --box-pad-x:14px;
+      --grid-gap:12px;
     }
 
     *{box-sizing:border-box}
@@ -60,7 +60,7 @@
     .cta{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:999px;border:1px solid transparent;background-image:linear-gradient(90deg,var(--c1),var(--c2));color:#fff;font-weight:900;box-shadow:var(--shadow);transition:transform .12s ease, box-shadow .2s ease}
     .cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
 
-    /* Secciones + “rectángulos” */
+    /* Secciones + cards */
     section{padding:var(--space-section) 0}
     h1,h2{letter-spacing:-.02em;margin:0 0 var(--space-title)}
     h1{font:900 clamp(34px,5.6vw,56px)/1.08 Inter}
@@ -136,27 +136,9 @@
 
     footer{border-top:1px solid var(--line);padding:26px 0;color:#6b7280;margin-top:8px}
 
-    /* ==== Acento Argentina para la caja de pago === */
-    .ar-box{
-      position: relative;
-      border: 1px solid #D7E9FF;
-      background: linear-gradient(180deg, rgba(99,175,255,.06), rgba(255,255,255,0)) no-repeat, #fff;
-    }
-    .ar-box::before{
-      content:"";
-      position:absolute; left:0; top:14px; bottom:14px; width:6px;
-      border-radius:8px;
-      background:linear-gradient(180deg,#75B8FF 0%, #FFFFFF 50%, #75B8FF 100%);
-      box-shadow:0 0 0 1px rgba(117,184,255,.25);
-    }
-    .ar-flag{
-      width:22px; height:22px; border-radius:4px; display:inline-block;
-      background:linear-gradient(#75B8FF 0 33%, #F9F7E6 0 66%, #75B8FF 0);
-      border:1px solid rgba(0,0,0,.06);
-      box-shadow:0 2px 8px rgba(21,101,192,.18) inset;
-      margin-right:8px;
-    }
-    .ar-hint{ color:#3B82F6; font-weight:800 }
+    /* Acento Argentina dentro del bloque único de pagos */
+    .ar-chip{font-size:12px;font-weight:600;color:#16a34a;background:#eaf8ef;border:1px solid #ccefd7;border-radius:999px;padding:6px 10px}
+    .eu-chip{font-size:12px;font-weight:600;color:#0ea5e9;background:#e6f6fd;border:1px solid #bfe8fb;border-radius:999px;padding:6px 10px}
 
     /* Responsive */
     @media (max-width:980px){
@@ -227,7 +209,7 @@
   </section>
 
   <!-- MI FILOSOFÍA (detalle) -->
-  <section id="mi-filosofia">
+  <section id="filosofia">
     <div class="container section-box">
       <h2>Mi filosofía de trabajo</h2>
       <div class="spacer"></div>
@@ -250,9 +232,7 @@
 
       <p>No creo en imponer técnicas como un protocolo rígido. La felicidad y el bienestar son procesos personales, no listas de pasos. Mi foco es adaptarme a tu realidad subjetiva, respetando tu ritmo, tus valores y tu contexto.</p>
 
-      <p>Desde lo clínico, trabajo con un <strong>enfoque humanista e integrativo</strong>: utilizo recursos de la Terapia Focalizada en la Emoción (EFT) y aportes existenciales (Rogers, Frankl, Perls) cuando necesitamos sentido y dirección, aunque no haya un “síntoma” claro. Si el caso lo requiere, incorporo una <strong>mirada sistémica familiar</strong> para ampliar perspectivas, destrabar dinámicas y abrir caminos de cambio.</p>
-
-      <p>Mi forma de acompañar es diferente a la que suele verse: prioriza la relación psicóloga–paciente por sobre la técnica, reconociendo el dolor sin reducirte a un diagnóstico. Confío en tu capacidad natural de regularte, crecer y vivir con mayor libertad, y pongo mis herramientas al servicio de eso.</p>
+      <p>Desde lo clínico, trabajo con un <strong>enfoque humanista e integrativo</strong>: utilizo recursos de la Terapia Focalizada en la Emoción (EFT) y aportes existenciales (Rogers, Frankl, Perls). Si el caso lo requiere, incorporo <strong>mirada sistémica familiar</strong> para ampliar perspectivas y destrabar dinámicas.</p>
 
       <div class="chips" style="margin-top:10px">
         <span class="chip">Modalidad: online por Google Meet</span>
@@ -261,29 +241,43 @@
     </div>
   </section>
 
-  <!-- 20' GRATIS -->
+  <!-- 20' GRATIS – DESTACADA -->
   <section id="contacto20">
-    <div class="container section-box">
-      <h2>Primera conversación gratuita (20′)</h2>
-      <div class="spacer"></div>
-      <p class="lede">Para coordinar la <strong>primera conversación de 20′</strong>, escribime por WhatsApp. Te respondo con disponibilidad y el enlace de Google Meet.</p>
-      <div class="chips" style="margin-top:10px">
-        <span class="chip">Google Meet. Videollamada segura y simple.</span>
-        <span class="chip">Confidencialidad y respeto. Encuadre claro.</span>
-        <span class="chip">Orientación y mejor próximo paso.</span>
+    <div class="container" style="background:linear-gradient(180deg,#f1f8ff 0%, #ffffff 100%);border:1.5px solid #cfe7ff;border-radius:16px;box-shadow:0 14px 34px rgba(14,165,233,.15);padding:22px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px">
+            <span style="font-size:12px;font-weight:800;color:#0b87d0;background:#e1f3ff;border:1px solid #bfe7ff;border-radius:999px;padding:4px 10px;letter-spacing:.2px">
+              GRATIS 20′
+            </span>
+            <span style="font-size:12px;color:#0f172a;opacity:.6">por WhatsApp</span>
+          </div>
+          <h2 style="margin:0 0 6px 0;font-size:28px;line-height:1.25">Primera conversación gratuita (20′)</h2>
+          <p class="lede" style="margin:0">Escribime por WhatsApp y coordinamos tu primera charla. Te respondo con disponibilidad y el enlace de Google Meet.</p>
+          <div class="chips" style="margin-top:10px">
+            <span class="chip">Google Meet seguro</span>
+            <span class="chip">Confidencialidad y respeto</span>
+            <span class="chip">Orientación y próximo paso</span>
+          </div>
+        </div>
+        <a href="https://wa.me/5492996044900?text=Hola%20Daiana,%20me%20gustar%C3%ADa%20tener%20la%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%20min."
+           style="display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;
+                  background:linear-gradient(90deg,#0ea5e9,#2563eb); color:#fff; box-shadow:0 8px 22px rgba(37,99,235,.35)">
+          💬 Escribirme por WhatsApp
+        </a>
       </div>
-      <a class="btn-grad" style="margin-top:10px" href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20me%20gustar%C3%ADa%20coordinar%20la%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%20min." target="_blank" rel="noopener">Escribirme por WhatsApp</a>
     </div>
   </section>
 
-  <!-- PAGOS (España/UE + Wise) -->
-  <section>
-    <div class="container section-box">
-      <h2>Pagar sesión (50′) antes de reservar</h2>
-      <div class="spacer"></div>
-      <p class="lede">El pago confirma y habilita la reserva en el calendario. Elegí el método que te quede mejor:</p>
-      <div class="pay-wrap" style="margin-top:10px">
-        <!-- ONE (tarjetas) -->
+  <!-- PAGOS – BLOQUE ÚNICO CONTINUO -->
+  <section id="pago-sesion">
+    <div class="container section-box" style="padding:22px 22px 14px">
+      <h2 style="margin:0 0 6px 0;font-size:28px;line-height:1.25">Pagar sesión (50′) <span style="opacity:.85">antes de reservar</span></h2>
+      <p class="lede" style="margin:0 0 18px 0">El pago confirma y habilita la reserva en el calendario. Elegí la opción que te quede mejor.</p>
+
+      <!-- España / UE -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 10px 0">
+        <span class="eu-chip">España / UE</span>
         <a class="pay-btn" id="btn-one" href="#" title="Pago con tarjeta (ONE)">
           <span class="cards">
             <svg viewBox="0 0 24 16" aria-hidden="true"><rect rx="3" width="24" height="16" fill="#1A1F71"/><path fill="#fff" d="M7.6 11H6l1.2-6h1.7L7.6 11Zm7.5-5.8c-.4-.1-1-.2-1.6-.2-1.8 0-3 1-3 2.4 0 1 .9 1.5 1.6 1.8s1 .5 1 .8c0 .4-.6.6-1.1.6-.8 0-1.3-.1-2-.4l-.3 1.4c.5.2 1.4.4 2.3.4 2 0 3.2-1 3.2-2.5 0-.8-.5-1.4-1.6-1.9-.7-.3-1.1-.5-1.1-.8 0-.3.3-.5.9-.5.6 0 1 .1 1.3.2l.4-1.3Zm3.3-.2c-.4 0-.8.1-1 .2l-.1-1.1h-1.6l-.8 4.6c0 .9.6 1.5 1.8 1.5.5 0 1-.1 1.3-.2l.2-1.4c-.2.1-.6.2-1 .2-.3 0-.6-.1-.6-.4l.2-1h1.9l.3-1.4h-1.9l.1-.7c.1-.2.4-.3.8-.3.3 0 .6 0 .8.1l.2-1.1c-.2-.1-.7-.2-1.2-.2Z"/></svg>
@@ -292,52 +286,37 @@
           </span>
           Pagar con tarjeta (España/UE)
         </a>
-        <!-- Wise (EUR) -->
         <a class="pay-btn" id="btn-wise" href="#" title="Transferencia o link — Wise (EUR)">
           <svg viewBox="0 0 28 16" aria-hidden="true"><path fill="#1FC4B9" d="M0 12.5 5.6 0H11L8.5 5.6H14l-5.6 10.2-1.6-3.3H0Z"/></svg>
           Transferencia (Wise · EUR)
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- PAGO ARGENTINA (destacado) -->
-  <section id="pago-ar">
-    <div class="container section-box ar-box">
-      <h2 style="display:flex;align-items:center;margin:0 0 6px 0">
-        <span class="ar-flag" aria-hidden="true"></span>
-        Pagar sesión (50′) antes de reservar — <strong style="margin-left:6px">Argentina</strong>
-      </h2>
-      <div class="spacer"></div>
+      <hr style="border:none;border-top:1px solid #eef2f7;margin:10px 0 14px 0">
 
-      <p class="lede">
-        Recibo pagos en Argentina por <strong>transferencia bancaria (alias/CVU Ualá)</strong>.
-        <span class="ar-hint">Tu pago habilita el turno en el calendario.</span>
-      </p>
-
-      <div class="pay-wrap" style="margin-top:10px">
+      <!-- Argentina -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 10px 0">
+        <span class="ar-chip">Argentina</span>
         <button type="button" class="pill-btn"
-                onclick="document.getElementById('datos-uala').style.display='block'">
-          ⚡ Ver datos de transferencia (Alias/CVU)
+          onclick="document.getElementById('datos-uala').style.display = (document.getElementById('datos-uala').style.display==='block'?'none':'block')">
+          🧾 Ver datos de transferencia (Alias/CVU)
         </button>
-        <a class="pill-btn" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20reservar%20una%20sesion%20online.%20Pasame%20el%20alias%20y%20el%20monto%20por%20favor."
+        <a class="pill-btn" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20reservar%20una%20sesi%C3%B3n%20online.%20Pasame%20alias%20y%20monto%20por%20favor."
            target="_blank" rel="noopener">
           📲 Escribirme por WhatsApp
         </a>
       </div>
 
-      <div id="datos-uala" style="display:none;margin-top:12px;padding:12px;border:1px dashed #cfe3ff;border-radius:12px;background:#fbfdff">
-        <p style="margin:0"><strong>Alias (Ualá):</strong> rocio866.uala</p>
-        <p style="margin:6px 0 0 0;font-size:14px;color:#64748b">
-          Concepto: “Reserva sesión”. Enviá el comprobante por WhatsApp para confirmar tu turno.
-        </p>
+      <div id="datos-uala" style="display:none;margin:6px 0 0 0;padding:12px;border:1px dashed #e5e7eb;border-radius:12px;background:#fafcff">
+        <p style="margin:0 0 4px 0"><strong>Alias (Ualá):</strong> rocio866.uala</p>
+        <p style="margin:0;font-size:14px;color:#64748b">Concepto: “Reserva sesión”. Enviá el comprobante por WhatsApp para confirmar tu turno.</p>
       </div>
 
-      <hr style="margin:16px 0;border-color:#E4F0FF">
-      <p style="font-size:14px;margin:0;color:#64748b">
-        <strong>Política:</strong> seña 50% para reservar (o pago total).
-        Cancelaciones con 24 h se reprograman sin costo; con menos de 24 h, la seña no es reembolsable.
-      </p>
+      <div style="margin-top:14px;padding-top:12px;border-top:1px dashed #eef2f7">
+        <p style="font-size:13px;margin:0;color:#64748b">
+          <strong>Política:</strong> la reserva se confirma con pago previo (seña 50% o total). Cancelaciones con 24 h se reprograman sin costo; con menos de 24 h, la seña no es reembolsable.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -414,3 +393,4 @@
 
 </body>
 </html>
+
