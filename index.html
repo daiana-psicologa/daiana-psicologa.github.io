@@ -136,9 +136,14 @@
 
     footer{border-top:1px solid var(--line);padding:26px 0;color:#6b7280;margin-top:8px}
 
-    /* Acento Argentina dentro del bloque único de pagos */
+    /* Chips país para pagos */
     .ar-chip{font-size:12px;font-weight:600;color:#16a34a;background:#eaf8ef;border:1px solid #ccefd7;border-radius:999px;padding:6px 10px}
     .eu-chip{font-size:12px;font-weight:600;color:#0ea5e9;background:#e6f6fd;border:1px solid #bfe8fb;border-radius:999px;padding:6px 10px}
+
+    /* Extra POP para el CTA de la sección GRATIS 20' */
+    #contacto20 .chips .chip{font-weight:900}
+    #contacto20 a[href*="wa.me"]{transform:translateY(0);transition:transform .15s ease, box-shadow .2s ease}
+    #contacto20 a[href*="wa.me"]:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(37,99,235,.35)}
 
     /* Responsive */
     @media (max-width:980px){
@@ -146,14 +151,24 @@
       .grid-3{grid-template-columns:1fr}
       .cal-grid{grid-template-columns:1fr;gap:12px}
       .calendly-inline-widget{height:880px}
-      :root{
-        --space-section:46px;
-        --space-title:10px;
-        --box-pad-y:14px; --box-pad-x:16px;
-        --grid-gap:14px;
-      }
+      :root{ --space-section:46px; --space-title:10px; --box-pad-y:14px; --box-pad-x:16px; --grid-gap:14px; }
     }
   </style>
+
+  <!-- Scroll suave entre secciones -->
+  <script>
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const id = a.getAttribute('href');
+      const el = document.querySelector(id);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.pushState(null, '', id);
+      }
+    });
+  </script>
 </head>
 <body>
 
@@ -167,6 +182,7 @@
       <nav class="nav" aria-label="principal">
         <a href="#especialidades">Especialidades</a>
         <a href="#filosofia">Filosofía</a>
+        <a href="#pago-sesion">Pagos</a>
         <a href="#reservar">Reservar</a>
         <a href="#faq">Preguntas</a>
         <a class="cta" href="#contacto20">Agenda 20′ GRATIS</a>
@@ -208,7 +224,7 @@
     </div>
   </section>
 
-  <!-- MI FILOSOFÍA (detalle) -->
+  <!-- MI FILOSOFÍA -->
   <section id="filosofia">
     <div class="container section-box">
       <h2>Mi filosofía de trabajo</h2>
@@ -216,22 +232,12 @@
       <p class="lede">Trabajo 100% online con una forma de hacer terapia clara, humana y práctica. Tengo algunas máximas que me guían:</p>
 
       <ol style="margin:12px 0 8px 18px; padding:0">
-        <li style="margin:8px 0">
-          <strong>Yo sé de psicoterapia; vos sabés de tu vida.</strong><br>
-          Mi tarea es sumar mis herramientas clínicas a tu propia sabiduría sobre vos mismo/a. Lo que importa no es “lo que hay que hacer”, sino lo que realmente te funciona.
-        </li>
-        <li style="margin:8px 0">
-          <strong>Si más de lo mismo no funciona, probamos algo distinto.</strong><br>
-          Repetir estrategias que no dieron resultado solo agota. En sesión abrimos alternativas concretas y posibles para hoy, no recetas generales.
-        </li>
-        <li style="margin:8px 0">
-          <strong>La relación terapéutica es el núcleo.</strong><br>
-          Sin conexión, la terapia no avanza. Si sentís que “tenés que adaptarte” a mí, no es el encuadre adecuado; en ese caso te derivo con honestidad y cuidado.
-        </li>
+        <li style="margin:8px 0"><strong>Yo sé de psicoterapia; vos sabés de tu vida.</strong><br>Mi tarea es sumar mis herramientas clínicas a tu propia sabiduría sobre vos mismo/a. Lo que importa no es “lo que hay que hacer”, sino lo que realmente te funciona.</li>
+        <li style="margin:8px 0"><strong>Si más de lo mismo no funciona, probamos algo distinto.</strong><br>Repetir estrategias que no dieron resultado solo agota. En sesión abrimos alternativas concretas y posibles para hoy, no recetas generales.</li>
+        <li style="margin:8px 0"><strong>La relación terapéutica es el núcleo.</strong><br>Sin conexión, la terapia no avanza. Si sentís que “tenés que adaptarte” a mí, no es el encuadre adecuado; en ese caso te derivo con honestidad y cuidado.</li>
       </ol>
 
       <p>No creo en imponer técnicas como un protocolo rígido. La felicidad y el bienestar son procesos personales, no listas de pasos. Mi foco es adaptarme a tu realidad subjetiva, respetando tu ritmo, tus valores y tu contexto.</p>
-
       <p>Desde lo clínico, trabajo con un <strong>enfoque humanista e integrativo</strong>: utilizo recursos de la Terapia Focalizada en la Emoción (EFT) y aportes existenciales (Rogers, Frankl, Perls). Si el caso lo requiere, incorporo <strong>mirada sistémica familiar</strong> para ampliar perspectivas y destrabar dinámicas.</p>
 
       <div class="chips" style="margin-top:10px">
@@ -247,9 +253,7 @@
       <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap">
         <div>
           <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px">
-            <span style="font-size:12px;font-weight:800;color:#0b87d0;background:#e1f3ff;border:1px solid #bfe7ff;border-radius:999px;padding:4px 10px;letter-spacing:.2px">
-              GRATIS 20′
-            </span>
+            <span style="font-size:12px;font-weight:800;color:#0b87d0;background:#e1f3ff;border:1px solid #bfe7ff;border-radius:999px;padding:4px 10px;letter-spacing:.2px">GRATIS 20′</span>
             <span style="font-size:12px;color:#0f172a;opacity:.6">por WhatsApp</span>
           </div>
           <h2 style="margin:0 0 6px 0;font-size:28px;line-height:1.25">Primera conversación gratuita (20′)</h2>
@@ -393,3 +397,4 @@
 
 </body>
 </html>
+
