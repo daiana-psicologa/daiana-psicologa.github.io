@@ -3,235 +3,184 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
   <title>Daiana Beltrán · Psicología online (Google Meet)</title>
-  <meta name="description" content="Psicoterapia online clara y humana por Google Meet. Ansiedad, depresión, gestión emocional, duelo y vínculos. Primera conversación gratuita de 20′ por WhatsApp.">
+  <meta name="description" content="Psicoterapia online clara y humana por Google Meet. Ansiedad, depresión, regulación emocional, duelo y vínculos. Primera conversación gratuita.">
   <meta name="robots" content="index,follow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Daiana Beltrán · Psicología online">
-  <meta property="og:description" content="Atención psicológica 100% online por Google Meet. Primera conversación gratis (20′) por WhatsApp.">
+  <meta property="og:description" content="Atención psicológica 100% online por Google Meet. Primera conversación gratis.">
   <meta property="og:image" content="assets/og-image.jpg">
 
-  <!-- Fonts -->
+  <!-- Fonts (Ventura-like vibe) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700,1,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Calendly -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" async type="text/javascript"></script>
 
-  <!-- Favicon (usa icon-db.svg si lo subís) -->
-  <link rel="icon" href="assets/icon-db.svg">
+  <!-- Favicon: mini “DB” -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%2355E0D6"/><text x="50%" y="54%" font-size="26" font-family="Poppins" font-weight="800" text-anchor="middle" fill="%23101b3a">DB</text></svg>'>
 
   <style>
-    /* PALETA BRILLANTE (tipo Canva) */
     :root{
-      --ink:#0A0E19;
-      --muted:#616a78;
-      --bg:#F6F7FF;
-      --card:#ffffff;
-      --line:#EBECF5;
-
-      /* Degradé turquesa > violeta */
-      --c1:#27E0D0; /* turquesa */
-      --c2:#7FE3FF; /* celeste */
-      --c3:#B6B2FF; /* lila */
-      --c4:#6C4CFF; /* violeta */
-
-      --accent:#6C4CFF; /* para botones principales */
-
-      --max:1200px;
-      --radius:28px;
-      --shadow:0 14px 38px rgba(108,76,255,.18);
-      --shadow-strong:0 28px 54px rgba(108,76,255,.25);
+      /* Ink & neutrales */
+      --ink:#0e1424; --muted:#5f6673; --bg:#f9faff; --card:#ffffff; --line:#e8eaf3;
+      /* Canva-like gradient (turquesa→violeta) */
+      --g1:#28e1cb; --g2:#6851ff; --g3:#9b7bff;
+      /* Botón y sombras */
+      --shadow:0 14px 38px rgba(14,20,36,.08);
+      --shadow-strong:0 28px 54px rgba(14,20,36,.18);
+      --radius:28px; --max:1200px;
     }
-
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0}
-    body{
-      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--ink);
-      line-height:1.7;
+    body{background:
+        radial-gradient(1400px 500px at 20% -10%, rgba(85,224,214,.18), transparent 60%),
+        radial-gradient(1300px 600px at 90% -10%, rgba(150,128,255,.22), transparent 55%),
+        var(--bg);
+      color:var(--ink); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.7;
+    }
+    img{max-width:100%; display:block}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:auto; padding:0 28px}
+    h1,h2,h3{font-family:Poppins, Inter, sans-serif; letter-spacing:-.02em; margin:0 0 14px}
+    h1{font-weight:800; font-size:clamp(36px,6vw,60px); line-height:1.07}
+    h2{font-weight:800; font-size:clamp(28px,3.4vw,40px)}
+    h3{font-weight:700; font-size:clamp(18px,2vw,22px)}
+
+    /* Top */
+    .top{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8px);
+      background:linear-gradient(90deg, rgba(40,225,203,.08), rgba(104,81,255,.10));
+      border-bottom:1px solid var(--line);
+    }
+    .row-top{display:flex; align-items:center; justify-content:space-between; height:78px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand img{height:34px; width:auto}
+    .brand .txt{font:700 18px/1 Poppins, sans-serif}
+    .nav{display:flex; gap:28px; align-items:center}
+    .nav a{font-weight:600; color:#222; font-size:16px}
+    .cta{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 20px;
+      font:800 16px/1 Poppins; color:#fff; border-radius:999px; border:0;
+      background:linear-gradient(90deg, var(--g1), var(--g2) 60%, var(--g3));
+      box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .2s ease}
+    .cta:hover{transform:translateY(-2px); box-shadow:var(--shadow-strong)}
+
+    /* Secciones */
+    section{padding:96px 0}
+    .lede{color:var(--muted); max-width:58ch}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:64px; padding-top:42px}
+    .eyebrow{font:800 14px/1 Poppins; color:#6b6f8c; letter-spacing:.08em; text-transform:uppercase; margin-bottom:18px}
+    .actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:20px}
+    .btn-outline{display:inline-flex; align-items:center; justify-content:center; height:48px; padding:0 18px;
+      border:1px solid var(--line); background:#fff; border-radius:999px; font-weight:700; color:#202437}
+    .btn-grad{height:48px; padding:0 22px; border-radius:999px; border:0; color:#fff;
+      font:800 14px/1 Poppins; background:linear-gradient(90deg, var(--g1), var(--g2) 60%, var(--g3));
+      box-shadow:var(--shadow)}
+
+    .photo-wrap{display:grid; place-items:center}
+    .stage{position:relative; width:min(560px,94%); aspect-ratio:1/1}
+    .stage::before{
+      content:""; position:absolute; inset:6%;
       background:
-        radial-gradient(1600px 600px at 20% -200px, var(--c1) 0%, transparent 55%),
-        radial-gradient(1400px 700px at 85% -250px, var(--c4) 0%, transparent 60%),
-        linear-gradient(180deg, #FBFCFF 0%, #F2F3FF 100%);
+        radial-gradient(110% 80% at 20% 10%, rgba(40,225,203,.45), rgba(40,225,203,0) 50%),
+        radial-gradient(120% 80% at 85% 15%, rgba(104,81,255,.55), rgba(104,81,255,0) 55%),
+        linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.92));
+      border-radius:24px; box-shadow:0 24px 60px rgba(14,20,36,.18);
     }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:var(--max);margin:auto;padding:0 28px}
-    :focus-visible{outline:3px solid #9EC5FF;outline-offset:2px;border-radius:10px}
+    .photo{position:absolute; inset:10% 10% 8% 10%; object-fit:contain; filter:drop-shadow(0 14px 24px rgba(0,0,0,.12))}
 
-    /* TOP */
-    .top{
-      position:sticky;top:0;z-index:50;
-      background:rgba(248,249,255,.85);backdrop-filter:saturate(1.15) blur(8px);
-      border-bottom:1px solid var(--line)
-    }
-    .top .row{display:flex;align-items:center;justify-content:space-between;height:82px;gap:14px}
-    .brandwrap{display:flex;align-items:center;gap:14px}
-    .brandwrap img{height:46px;width:auto;display:block}
+    /* Cards especialidades */
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; box-shadow:var(--shadow)}
+    .tag{display:inline-block; background:rgba(104,81,255,.10); color:#5c4cf3; border:1px solid rgba(104,81,255,.25);
+      font:800 12px/1 Poppins; padding:6px 10px; border-radius:999px}
 
-    .nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-    .nav a{font-weight:700;color:#2b2f3a}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      border:1px solid transparent;border-radius:999px;
-      background:linear-gradient(90deg, var(--c1), var(--c4));
-      color:#fff;font-weight:900;letter-spacing:.02em;
-      height:48px;padding:0 22px; box-shadow:var(--shadow);
-      transition:transform .15s ease, box-shadow .2s ease
-    }
-    .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
-    .btn-xl{height:54px;padding:0 26px;font-size:16.5px} /* MÁS GRANDE header */
-    .btn-outline{
-      background:#fff;color:#3c3f51;border:1px solid var(--line);
-      box-shadow:0 6px 18px rgba(0,0,0,.06)
-    }
-    .chip{
-      display:inline-flex;align-items:center;gap:8px;
-      border:1px solid #E7E9FB;background:#FFFFFF; color:#3b3f54;
-      padding:.55rem 1rem;border-radius:999px;font-weight:800
-    }
+    /* Reservas / Pago previo */
+    .stripe{background:#ffffffcc; border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+    .pay-box{display:flex; gap:12px; flex-wrap:wrap; margin:16px 0 26px}
+    .pill{display:inline-block; padding:.6rem 1rem; border-radius:999px; font-weight:800; border:1px solid var(--line); background:#fff}
+    .pill-grad{background:linear-gradient(90deg, var(--g1), var(--g2) 60%, var(--g3)); color:#fff; border:none}
+    .calendar-frame{margin:18px auto 8px; background:#fff; border:1px solid var(--line); border-radius:22px; box-shadow:var(--shadow-strong); overflow:hidden; max-width:1120px}
+    .calendly-inline-widget{min-width:320px; height:860px}
+    .tz-note{margin:10px auto 0; max-width:1120px; color:#c1121f; font-weight:800}
 
-    /* SECCIONES */
-    section{padding:98px 0}
-    .section-title{font:800 clamp(30px,3.8vw,42px)/1.12 Montserrat;margin:0 0 26px}
-    .lede{color:var(--muted);margin:0 0 28px}
+    /* FAQ boxed */
+    #faq .wrap{max-width:1000px; margin:auto}
+    details{border:1px solid var(--line); background:#fff; border-radius:14px; padding:14px 16px; margin:12px 0; box-shadow:var(--shadow)}
+    summary{cursor:pointer; font:700 18px/1.4 Poppins}
+    details p{margin:10px 0 0; color:#394150}
 
-    /* HERO */
-    .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:64px;padding:92px 0 32px}
-    .eyebrow{font-weight:900;color:#5c57d1;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem}
-    h1{font:800 clamp(34px,5.2vw,60px)/1.06 Montserrat;letter-spacing:-.02em;margin:.35em 0 .9em}
-    .lead{color:var(--muted);max-width:60ch}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    /* Footer & floating CTA */
+    footer{border-top:1px solid var(--line); color:#768097; padding:30px 0; background:#fff}
+    .floating{position:fixed; left:0; right:0; bottom:14px; z-index:1000; pointer-events:none}
+    .floating .row{pointer-events:auto; max-width:var(--max); margin:auto; padding:0 16px; display:flex; gap:12px; justify-content:center; align-items:center}
+    .icon-btn{width:54px; height:54px; border-radius:999px; display:inline-flex; justify-content:center; align-items:center; border:1px solid var(--line); background:#fff; box-shadow:var(--shadow-strong)}
+    .icon-btn.whats{background:#25D366; border-color:#20BD5A}
+    .icon-btn svg{width:24px; height:24px; fill:#fff}
+    .cta-bar{height:54px; padding:0 22px; border-radius:999px; border:0; color:#fff; font:800 14px/1 Poppins;
+      background:linear-gradient(90deg, var(--g1), var(--g2) 60%, var(--g3)); box-shadow:var(--shadow-strong)}
 
-    .stage{
-      position:relative;width:min(560px,94%);aspect-ratio:1/1;border-radius:26px;overflow:hidden;
-      background:radial-gradient(120% 120% at 20% 0%, var(--c1) 0%, transparent 40%),
-                 radial-gradient(120% 120% at 100% 30%, var(--c4) 0%, transparent 40%),
-                 linear-gradient(180deg,#f6f7ff 0%, #ecedff 100%);
-      box-shadow:0 24px 64px rgba(108,76,255,.25), inset 0 1px 0 rgba(255,255,255,.6);
-      display:grid;place-items:center
-    }
-    .portrait{width:86%;height:86%;object-fit:contain;filter:drop-shadow(0 18px 28px rgba(0,0,0,.14));transform:translateY(2%) scale(1.04)}
-
-    /* CARDS */
-    .grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 16px 14px;box-shadow:var(--shadow)}
-    .tag{display:inline-block;background:rgba(127,227,255,.25);color:#3c60b2;border:1px solid rgba(127,227,255,.6);font-weight:800;padding:.25rem .6rem;border-radius:999px;font-size:.78rem}
-    .card h3{margin:10px 0 6px}
-    .card p{margin:0;color:var(--muted)}
-
-    /* FILOSOFÍA */
-    #filosofia{padding-top:108px;border-top:1px solid var(--line);box-shadow:inset 0 24px 64px -36px rgba(108,76,255,.20)}
-
-    /* CTA 20 min (con más aire arriba) */
-    #contacto20{padding-top:86px;margin-top:14px}
-
-    /* RESERVAS + PAGO PREVIO */
-    .reserve{background:#FBFAFF;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:90px 0}
-    .cal-header{
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-      background:#ffffff;border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin-bottom:12px;box-shadow:var(--shadow)
-    }
-    .cal-meta{display:flex;align-items:center;gap:14px}
-    .cal-meta svg{width:28px;height:28px}
-    .cal-chip{display:inline-flex;align-items:center;gap:8px;padding:.45rem .9rem;border-radius:999px;background:rgba(108,76,255,.1);border:1px solid rgba(108,76,255,.25);font-weight:800;color:#4a3fc5}
-    .calendar-frame{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-strong);overflow:hidden}
-    .calendly-inline-widget{min-width:320px;height:820px}
-    .tz-note{margin:10px 0 0;color:#c1121f;font-weight:800;font-size:.97rem}
-
-    /* PAGOS */
-    .pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:740px}
-    .pay-btn{
-      display:flex;align-items:center;justify-content:center;gap:10px;
-      border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:#fff;
-      box-shadow:0 10px 26px rgba(0,0,0,.06);font-weight:800
-    }
-    .pay-btn span{opacity:.75;font-weight:700}
-
-    /* CTA inferior flotante */
-    .floating-cta{position:fixed;left:0;right:0;bottom:14px;z-index:10000;pointer-events:none}
-    .floating-cta .cta-row{pointer-events:auto;max-width:var(--max);margin:auto;padding:0 16px;display:flex;align-items:center;justify-content:center;gap:14px}
-    .icon-btn{width:56px;height:56px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--shadow-strong);border:1px solid #E8E9FF;background:linear-gradient(90deg,var(--c1),var(--c3));transition:transform .15s ease, box-shadow .2s ease}
-    .icon-btn:hover{transform:translateY(-2px);box-shadow:0 22px 42px rgba(0,0,0,.18)}
-    .icon-btn svg{width:26px;height:26px;fill:#fff}
-    .cta-btn{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 22px;border-radius:999px;background:linear-gradient(90deg,var(--c1),var(--c4));color:#fff;font-weight:900;letter-spacing:.02em;box-shadow:var(--shadow-strong);border:1px solid rgba(0,0,0,.04);transition:transform .15s ease, box-shadow .2s ease;white-space:nowrap}
-    .cta-btn:hover{transform:translateY(-2px);box-shadow:0 24px 46px rgba(0,0,0,.18)}
-    #wa-pill{display:none !important;}
-
-    /* FOOTER */
-    footer{border-top:1px solid var(--line);color:#737b88;padding:30px 0}
+    /* Espaciado consistente */
+    .mt-l{margin-top:22px}
+    .mt-xl{margin-top:34px}
 
     @media (max-width:980px){
-      .hero{grid-template-columns:1fr;gap:28px;padding:80px 0 0}
-      .grid-cards{grid-template-columns:1fr}
-      section{padding:92px 0}
-      .calendly-inline-widget{height:940px}
-      .btn-xl{height:50px;padding:0 22px}
-      .pay-grid{grid-template-columns:1fr}
-    }
-    @media (max-width:560px){
-      .cta-btn{font-size:.94rem;padding:0 18px}
-      .icon-btn{width:52px;height:52px}
-      .brandwrap img{height:40px}
+      .hero{grid-template-columns:1fr; gap:26px}
+      .grid{grid-template-columns:1fr}
+      .calendly-inline-widget{height:980px}
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP -->
+  <!-- Top -->
   <header class="top">
-    <div class="container row">
-      <div class="brandwrap">
-        <!-- LOGO NUEVO -->
-        <img src="assets/logo-daiana.svg" alt="Daiana Beltrán · psicóloga" loading="eager" decoding="async">
-      </div>
-
+    <div class="container row-top">
+      <a class="brand" href="#top" aria-label="Inicio">
+        <!-- Logo SVG -->
+        <img src="assets/logo-daiana.svg" alt="Daiana Beltrán · psicóloga" onerror="this.style.display='none'">
+        <span class="txt">Daiana Beltrán · psicóloga</span>
+      </a>
       <nav class="nav" aria-label="principal">
         <a href="#especialidades">Especialidades</a>
         <a href="#filosofia">Filosofía</a>
         <a href="#reservar">Reservar</a>
         <a href="#faq">Preguntas</a>
-        <a class="btn btn-xl" href="#contacto20">Agenda 20′ GRATIS</a>
+        <a class="cta" href="#contacto20">Agenda 20′ GRATIS</a>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero container">
+  <section class="hero container" id="top">
     <div>
       <div class="eyebrow">Psicología online</div>
-      <h1>
-        <span style="background:linear-gradient(90deg,var(--c4),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent">
-          Psicoterapia ONLINE
-        </span> clara, humana y práctica
-      </h1>
-      <p class="lead">
-        Vamos a la causa, no solo al síntoma. Trabajo con ansiedad, depresión, gestión emocional, duelos,
-        alimentación y vínculos. Videollamada por Google Meet.
-      </p>
+      <h1>Psicoterapia ONLINE clara, humana y práctica</h1>
+      <p class="lede">Vamos a la causa, no solo al síntoma. Trabajo con ansiedad, depresión, gestión emocional, duelos, alimentación y vínculos. Videollamada por Google Meet.</p>
       <div class="actions">
-        <a class="btn btn-outline" href="#filosofia">Ver enfoque</a>
-        <a class="btn" href="#contacto20">Primera conversación gratis (20′)</a>
+        <a class="btn-outline" href="#filosofia">Ver enfoque</a>
+        <a class="btn-grad" href="#contacto20">Primera conversación gratis (20′)</a>
       </div>
     </div>
 
-    <div class="stage" aria-hidden="true">
-      <img class="portrait" src="assets/portrait.png" alt="Daiana Beltrán" onerror="this.onerror=null;this.src='assets/portrait.png'">
+    <div class="photo-wrap" aria-hidden="true">
+      <figure class="stage">
+        <img class="photo" src="assets/portrait.png" alt="Daiana Beltrán retrato">
+      </figure>
     </div>
   </section>
 
-  <!-- Te acompaño en… -->
+  <!-- ESPECIALIDADES -->
   <section id="especialidades" class="container">
-    <h2 class="section-title">Te acompaño en…</h2>
+    <h2>Te acompaño en…</h2>
     <p class="lede">Ansiedad, depresión, regulación emocional, duelos, vínculos y alimentación.</p>
-
-    <div class="grid-cards">
+    <div class="grid mt-l">
       <article class="card"><span class="tag">Emoción</span><h3>Ansiedad</h3><p>La ansiedad es una señal. Entendemos el origen y actuamos sobre eso.</p></article>
       <article class="card"><span class="tag">Ánimo</span><h3>Depresión</h3><p>No se trata de forzar positividad, sino de curar lo que duele.</p></article>
       <article class="card"><span class="tag">Gestión</span><h3>Regulación emocional</h3><p>Menos bloqueo e impulsividad, más claridad para decidir.</p></article>
@@ -243,91 +192,70 @@
 
   <!-- FILOSOFÍA -->
   <section id="filosofia" class="container">
-    <h2 class="section-title">Filosofía de trabajo</h2>
+    <h2>Filosofía de trabajo</h2>
     <p class="lede">En terapia priorizo a la persona por encima de la técnica. Aunque los problemas puedan ser comunes, tu historia y tus decisiones son únicas.</p>
-    <p>Trabajo desde un marco humanista, con énfasis en el vínculo terapéutico, la claridad y la acción. La literatura muestra que lo que más predice el éxito es la relación psicólogo–paciente: empatía, honestidad y un encuadre claro.</p>
-    <p>El objetivo no es solo aliviar síntomas, sino entender qué los sostiene para tomar decisiones reales que se noten en tu vida cotidiana.</p>
+    <p>Trabajo desde un marco humanista, con énfasis en el vínculo terapéutico, la claridad y la acción. La literatura muestra que lo que más predice el éxito es la relación psicólogo–paciente: empatía, honestidad y un encuadre claro. El objetivo no es solo aliviar síntomas, sino entender qué los sostiene para tomar decisiones reales que se noten en tu vida cotidiana.</p>
   </section>
 
-  <!-- CTA: 20 MIN -->
+  <!-- 20′ x WhatsApp -->
   <section id="contacto20" class="container">
-    <h2 class="section-title">Primera conversación gratuita (20′)</h2>
-    <p class="lede">
-      Para coordinar la <strong>primera conversación de 20′</strong> escribime por WhatsApp. Te respondo con disponibilidad
-      y el enlace de Google Meet.
-    </p>
-
-    <div class="chip">Google Meet: Videollamada segura y simple.</div>
-    <div class="chip">Confidencialidad y respeto. Encuadre claro.</div>
-    <div class="chip">Orientación. Vemos tu motivo de consulta y el mejor próximo paso.</div>
-
-    <div style="margin-top:18px">
-      <a class="btn" href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20la%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%27."
-         target="_blank" rel="noopener">Escribirme por WhatsApp</a>
+    <h2>Primera conversación gratuita (20′)</h2>
+    <p class="lede">Para coordinar la primera conversación escribime por WhatsApp. Te respondo con disponibilidad y el enlace de Google Meet.</p>
+    <div class="pay-box">
+      <span class="pill">Google Meet. Videollamada segura y simple.</span>
+      <span class="pill">Confidencialidad y respeto. Encuadre claro.</span>
+      <span class="pill">Orientación y mejor próximo paso.</span>
     </div>
+    <a class="cta" href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20la%20primera%20conversaci%C3%B3n%20gratuita." target="_blank" rel="noopener">Escribirme por WhatsApp</a>
   </section>
 
-  <!-- PAGO PREVIO -->
-  <section id="pago" class="container">
-    <h2 class="section-title">Pagar sesión (50′) antes de reservar</h2>
-    <p class="lede">El pago confirma y habilita la reserva en el calendario. Elegí el método que prefieras:</p>
-
-    <div class="pay-grid">
-      <a class="pay-btn" href="https://www.one.lat/es-AR?utm_source=checkout" target="_blank" rel="noopener">
-        💳 Pagar con One.lat <span>(EUR / USD / ARS)</span>
-      </a>
-      <a class="pay-btn" href="#" target="_blank" rel="noopener">
-        💳 Pagar con Mercado Pago <span>(ARS)</span>
-      </a>
-    </div>
-    <p class="lede" style="margin-top:12px">Después de pagar, reservá tu horario abajo en “Reservar sesiones regulares”.</p>
-  </section>
-
-  <!-- RESERVAS -->
-  <section id="reservar" class="reserve">
+  <!-- PAGO PREVIO + RESERVA -->
+  <section id="reservar" class="stripe">
     <div class="container">
-      <h2 class="section-title">Reservar sesiones regulares (50′)</h2>
-      <p class="lede">Si es tu primer contacto, usá el botón de WhatsApp de arriba. Las sesiones regulares se reservan por calendario con <strong>pago previo</strong>.</p>
-
-      <div class="cal-header">
-        <div class="cal-meta">
-          <!-- Icono Meet -->
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#6C4CFF" d="M17 10V6c0-1.1-.9-2-2-2H5C3.9 4 3 4.9 3 6v8c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-4l4 4V6l-4 4zM5 6h10v8H5V6z"/></svg>
-          <div>
-            <div style="font-weight:900">Reunión con Daiana · Google Meet</div>
-            <div style="color:#667088;font-weight:700;font-size:.95rem">Seleccioná día y hora</div>
-          </div>
-        </div>
-        <div class="cal-chip">Calendario activo</div>
+      <h2>Pagar sesión (50′) antes de reservar</h2>
+      <p class="lede">El pago confirma y habilita la reserva en el calendario.</p>
+      <div class="pay-box">
+        <!-- Reemplaza # por tu checkout de ONE.lat -->
+        <a class="pill pill-grad" href="#" target="_blank" rel="noopener">Pagar con tarjeta (España/UE)</a>
+        <!-- Reemplaza # por una página /medios-de-pago con datos de Wise -->
+        <a class="pill" href="#" target="_blank" rel="noopener">Transferencia (Wise · EUR)</a>
       </div>
 
       <div class="calendar-frame">
-        <!-- El color primario del widget va al violeta -->
         <div class="calendly-inline-widget"
-          data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=0A0E19&primary_color=6C4CFF&hide_landing_page_details=1&locale=es">
+          data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=0E1424&primary_color=6851FF&hide_landing_page_details=1&locale=es">
         </div>
       </div>
 
-      <!-- Nota debajo de Time zone -->
-      <div class="tz-note">🕒 Verifica tu zona horaria (debajo de “Time zone”).</div>
+      <div class="tz-note">✔ Verifica tu zona horaria en el calendario (sección “Time zone”).</div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- FAQ EN CAJA -->
   <section id="faq" class="container">
-    <h2 class="section-title">Preguntas frecuentes</h2>
-    <details>
-      <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
-      <p>Si el malestar se sostiene y afecta tu día a día, una conversación puede ordenar el panorama. Empezamos con 20′ por WhatsApp.</p>
-    </details>
-    <details>
-      <summary>¿Cuánto suele durar una psicoterapia?</summary>
-      <p>Lo habitual es una sesión semanal o cada 15 días. Muchas terapias duran entre 6 y 10 meses, según objetivo e historia.</p>
-    </details>
-    <details>
-      <summary>¿Cómo reservo si es la primera vez?</summary>
-      <p>Primero toma la conversación de 20′ por WhatsApp; si acordamos seguir, abonás y reservás tu sesión regular en el calendario.</p>
-    </details>
+    <div class="wrap">
+      <h2>Preguntas frecuentes</h2>
+
+      <details open>
+        <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
+        <p>Si el malestar se sostiene y afecta tu día a día, una conversación puede ordenar el panorama. Empezamos con 20′ por WhatsApp.</p>
+      </details>
+
+      <details>
+        <summary>¿Cuánto suele durar una psicoterapia?</summary>
+        <p>Lo habitual es una sesión semanal o cada 15 días. Muchas terapias duran entre 6 y 10 meses; depende de tu objetivo e historia.</p>
+      </details>
+
+      <details>
+        <summary>¿Por qué hay tantos tipos de terapia y cómo sé la que necesito?</summary>
+        <p>Las escuelas tienen enfoques distintos, pero lo que mejor predice el éxito es el vínculo terapéutico. Buscamos que te sientas comprendida y con claridad para actuar.</p>
+      </details>
+
+      <details>
+        <summary>¿Cómo es una psicoterapia conmigo?</summary>
+        <p>Trabajo con enfoque humanista, claridad y acción concreta. El objetivo es que tus decisiones se noten en tu vida cotidiana.</p>
+      </details>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -339,21 +267,17 @@
     <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
   </footer>
 
-  <!-- BARRA FLOTANTE -->
-  <div class="floating-cta" role="region" aria-label="Acciones rápidas">
-    <div class="cta-row">
-      <a class="icon-btn" aria-label="Escribir por WhatsApp"
-         href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20mi%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%20min."
+  <!-- CTA flotante -->
+  <div class="floating" role="region" aria-label="Acciones rápidas">
+    <div class="row">
+      <a class="icon-btn whats" aria-label="WhatsApp"
+         href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20mi%20primera%20conversaci%C3%B3n%20gratuita."
          target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.2 18.6L2 22l3.5-1.1A11 11 0 1 0 20.5 3.5Zm-8.7 17.1a9 9 0 0 1-4.6-1.3l-.3-.2-2.7.8.9-2.6-.2-.3a9 9 0 1 1 7 3.6ZM17 14.3c-.2-.1-1.5-.8-1.7-.8s-.3-.1-.5.1-.6.8-.7.9-.3.2-.6.1a7.3 7.3 0 0 1-3.4-2.1 12.4 12.4 0 0 1-1.3-1.7c-.1-.3 0-.5.1-.6l.4-.5.2-.4c.1-.1 0-.3 0-.4 0-.1-.5-1.3-.7-1.8s-.4-.4-.6-.4h-.5c-.2 0-.4.2-.6.4s-.8.8-.8 2c0 1.1.8 2.2 1 2.3.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.2.5.5.2 1 .2 1.4.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2Z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M20.5 3.5A11 11 0 0 0 3.2 18.6L2 22l3.5-1.1A11 11 0 1 0 20.5 3.5Zm-8.7 17.1a9 9 0 0 1-4.6-1.3l-.3-.2-2.7.8.9-2.6-.2-.3a9 9 0 1 1 7 3.6ZM17 14.3c-.2-.1-1.5-.8-1.7-.8s-.3-.1-.5.1-.6.8-.7.9-.3.2-.6.1a7.3 7.3 0 0 1-3.4-2.1 12.4 12.4 0 0 1-1.3-1.7c-.1-.3 0-.5.1-.6l.4-.5.2-.4c.1-.1 0-.3 0-.4 0-.1-.5-1.3-.7-1.8s-.4-.4-.6-.4h-.5c-.2 0-.4.2-.6.4s-.8.8-.8 2c0 1.1.8 2.2 1 2.3.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.2.5.5.2 1 .2 1.4.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2Z"/></svg>
       </a>
-
-      <a class="cta-btn" href="#contacto20">PIDE TU SESIÓN GRATUITA</a>
+      <button class="cta-bar" onclick="location.href='#contacto20'">PIDE TU SESIÓN GRATUITA</button>
     </div>
   </div>
-
-  <!-- Oculta pill viejo de WhatsApp -->
-  <a id="wa-pill" href="https://wa.me/5492996044900" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp"></a>
 </body>
 </html>
 
