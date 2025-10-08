@@ -26,8 +26,8 @@
       --shadow-strong:0 26px 64px rgba(13,18,33,.14);
       --max:1160px;
 
-      /* Espaciado “medio” */
-      --space-section:84px;
+      /* ESPACIADO COMPACTO */
+      --space-section:60px;
     }
 
     *{box-sizing:border-box}
@@ -58,29 +58,29 @@
 
     /* Secciones + “rectángulos” */
     section{padding:var(--space-section) 0}
-    h1,h2{letter-spacing:-.02em;margin:0 0 14px}
+    h1,h2{letter-spacing:-.02em;margin:0 0 12px}
     h1{font:900 clamp(34px,5.6vw,56px)/1.08 Inter}
-    h2{font:800 clamp(26px,3.4vw,38px)/1.15 Inter;margin-bottom:18px}
+    h2{font:800 clamp(26px,3.4vw,38px)/1.15 Inter}
     .lede{color:var(--muted);max-width:68ch}
     .section-box{
       background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
-      padding:22px 24px; box-shadow:var(--shadow);
+      padding:16px 18px; box-shadow:var(--shadow);
     }
-    .section-box + .section-box{margin-top:18px}
-    .spacer{height:22px}
+    .section-box + .section-box{margin-top:12px}
+    .spacer{height:12px}
 
     /* HERO */
-    .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;padding:80px 0 28px}
-    .eyebrow{font-weight:900;color:#5f6bff;letter-spacing:.12em;text-transform:uppercase;font-size:.86rem;margin-bottom:10px}
+    .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;padding:60px 0 20px}
+    .eyebrow{font-weight:900;color:#5f6bff;letter-spacing:.12em;text-transform:uppercase;font-size:.86rem;margin-bottom:8px}
     .title-gradient{
       background-image:linear-gradient(90deg,var(--c2) 10%,#7e6df6 40%, #a9bdfb 100%);
       -webkit-background-clip:text;background-clip:text;color:transparent;
       font-style:italic;font-weight:900;
       text-shadow:0 18px 38px rgba(91,75,235,.28);
     }
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
     .btn-outline{background:#fff;border:1px solid var(--line);border-radius:999px;padding:12px 18px;font-weight:800;color:#1c2230;box-shadow:var(--shadow)}
-    .btn-grad{display:inline-flex;align-items:center;justify-content:center;padding:13px 24px;border-radius:999px;border:0;text-decoration:none;font-weight:900;background-image:linear-gradient(90deg,var(--c1),var(--c2));color:#fff;box-shadow:var(--shadow)}
+    .btn-grad{display:inline-flex;align-items:center;justify-content:center;padding:12px 22px;border-radius:999px;border:0;text-decoration:none;font-weight:900;background-image:linear-gradient(90deg,var(--c1),var(--c2));color:#fff;box-shadow:var(--shadow)}
 
     /* Foto con halo */
     .photo-wrap{display:grid;place-items:center}
@@ -88,54 +88,82 @@
     .stage img{position:absolute;inset:6% 6% -4% 6%;width:auto;height:98%;object-fit:contain;filter:drop-shadow(0 22px 36px rgba(0,0,0,.12))}
 
     /* Tarjetas especialidades */
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px 14px;box-shadow:var(--shadow)}
-    .tag{display:inline-block;background:rgba(48,227,217,.10);border:1px solid #d7fbf6;color:#0e766e;font-weight:900;padding:.28rem .66rem;border-radius:999px;font-size:.78rem}
-    .card h3{margin:10px 0 6px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 16px 12px;box-shadow:var(--shadow)}
+    .tag{display:inline-block;background:rgba(48,227,217,.10);border:1px solid #d7fbf6;color:#0e766e;font-weight:900;padding:.24rem .6rem;border-radius:999px;font-size:.78rem}
+    .card h3{margin:8px 0 6px}
     .card p{margin:0;color:var(--muted)}
 
     /* Chips 20' */
-    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 6px}
-    .chip{background:#fff;border:1px solid var(--line);padding:.6rem 1rem;border-radius:999px;font-weight:800;color:#263045;box-shadow:var(--shadow)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px}
+    .chip{background:#fff;border:1px solid var(--line);padding:.55rem .9rem;border-radius:999px;font-weight:800;color:#263045;box-shadow:var(--shadow)}
+
+    /* Botones reutilizables */
+    .pill-btn{
+      display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;
+      background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);font-weight:900;color:#1f2431;text-decoration:none;cursor:pointer
+    }
 
     /* Pagos */
-    .pay-wrap{display:flex;flex-wrap:wrap;gap:12px}
+    .pay-wrap{display:flex;flex-wrap:wrap;gap:10px}
     .pay-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);font-weight:900;color:#1f2431;text-decoration:none}
     .pay-btn svg{height:20px;width:auto}
     .pay-btn .cards{display:inline-flex;gap:8px;align-items:center}
 
     /* Reserva / Calendly */
-    .cal-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-    .cal-info{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+    .cal-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .cal-info{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
     .cal-info h3{margin:0 0 6px}
-    .cal-info p{margin:0;color:#muted;font-weight:600}
-    .calendly-inline-widget{min-width:320px;height:820px;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
-    .tz-note{font-weight:800;color:#b91c1c;margin-top:10px}
+    .cal-info p{margin:0;color:#5b6475;font-weight:600}
+    .calendly-inline-widget{min-width:320px;height:800px;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+    .tz-note{font-weight:800;color:#b91c1c;margin-top:8px}
 
     /* FAQ */
-    .faq-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
-    #faq details{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0}
+    .faq-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:var(--shadow)}
+    #faq details{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:10px 0}
     #faq summary{cursor:pointer;font-weight:900}
-    #faq p{margin:10px 2px 4px;color:#4b5563}
+    #faq p{margin:8px 2px 4px;color:#4b5563}
 
     /* CTA flotante */
     .floating-cta{position:fixed;left:0;right:0;bottom:14px;z-index:1000;pointer-events:none}
-    .floating-cta .row{pointer-events:auto;max-width:var(--max);margin:auto;padding:0 16px;display:flex;justify-content:center;gap:12px}
-    .pill-cta{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 22px;border-radius:999px;background-image:linear-gradient(90deg,var(--c1),var(--c2));color:#fff;border:0;font-weight:900;box-shadow:var(--shadow-strong);text-decoration:none}
+    .floating-cta .row{pointer-events:auto;max-width:var(--max);margin:auto;padding:0 16px;display:flex;justify-content:center;gap:10px}
+    .pill-cta{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 20px;border-radius:999px;background-image:linear-gradient(90deg,var(--c1),var(--c2));color:#fff;border:0;font-weight:900;box-shadow:var(--shadow-strong);text-decoration:none}
     .icon{width:50px;height:50px;border-radius:999px;background:#25D366;display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--shadow-strong)}
     .icon svg{fill:#fff;width:26px;height:26px}
 
-    footer{border-top:1px solid var(--line);padding:34px 0;color:#6b7280;margin-top:10px}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:#6b7280;margin-top:10px}
+
+    /* ==== Acento Argentina para la caja de pago === */
+    .ar-box{
+      position: relative;
+      border: 1px solid #D7E9FF;
+      background: linear-gradient(180deg, rgba(99,175,255,.06), rgba(255,255,255,0)) no-repeat, #fff;
+    }
+    .ar-box::before{
+      content:"";
+      position:absolute; left:0; top:16px; bottom:16px; width:6px;
+      border-radius:8px;
+      background:linear-gradient(180deg,#75B8FF 0%, #FFFFFF 50%, #75B8FF 100%);
+      box-shadow:0 0 0 1px rgba(117,184,255,.25);
+    }
+    .ar-flag{
+      width:22px; height:22px; border-radius:4px; display:inline-block;
+      background:linear-gradient(#75B8FF 0 33%, #F9F7E6 0 66%, #75B8FF 0);
+      border:1px solid rgba(0,0,0,.06);
+      box-shadow:0 2px 8px rgba(21,101,192,.18) inset;
+      margin-right:8px;
+    }
+    .ar-hint{ color:#3B82F6; font-weight:800 }
 
     /* Responsive */
     @media (max-width:980px){
-      .hero{grid-template-columns:1fr;gap:28px;padding-top:72px}
+      .hero{grid-template-columns:1fr;gap:24px;padding-top:56px}
       .grid-3{grid-template-columns:1fr}
-      .cal-grid{grid-template-columns:1fr}
-      .calendly-inline-widget{height:920px}
-      .section-box{padding:18px}
-      .spacer{height:16px}
-      :root{ --space-section:68px; }
+      .cal-grid{grid-template-columns:1fr;gap:12px}
+      .calendly-inline-widget{height:900px}
+      .section-box{padding:14px 16px}
+      .spacer{height:10px}
+      :root{ --space-section:52px; }
     }
   </style>
 </head>
@@ -175,13 +203,13 @@
     </div>
   </section>
 
-  <!-- ESPECIALIDADES (caja) -->
+  <!-- ESPECIALIDADES -->
   <section id="especialidades">
     <div class="container section-box">
       <h2>Te acompaño en…</h2>
       <div class="spacer"></div>
       <p class="lede">Ansiedad, depresión, regulación emocional, duelos, vínculos y alimentación.</p>
-      <div class="grid-3" style="margin-top:18px">
+      <div class="grid-3" style="margin-top:12px">
         <article class="card"><span class="tag">Emoción</span><h3>Ansiedad</h3><p>La ansiedad es una señal. Entendemos el origen y actuamos sobre eso.</p></article>
         <article class="card"><span class="tag">Ánimo</span><h3>Depresión</h3><p>No se trata de forzar positividad, sino de curar lo que duele.</p></article>
         <article class="card"><span class="tag">Gestión</span><h3>Regulación emocional</h3><p>Menos bloqueo e impulsividad, más claridad para decidir.</p></article>
@@ -192,39 +220,74 @@
     </div>
   </section>
 
-  <!-- FILOSOFÍA (caja) -->
+  <!-- FILOSOFÍA (resumen) -->
   <section id="filosofia">
     <div class="container section-box">
       <h2>Filosofía de trabajo</h2>
       <div class="spacer"></div>
       <p class="lede">En terapia priorizo a la persona por encima de la técnica. Aunque los problemas puedan ser comunes, tu historia y tus decisiones son únicas.</p>
-      <p style="margin-top:8px">Trabajo desde un marco humanista, con énfasis en el vínculo terapéutico, la claridad y la acción. La literatura muestra que lo que más predice el éxito es la relación psicólogo–paciente: empatía, honestidad y un encuadre claro.</p>
+      <p style="margin-top:6px">Trabajo desde un marco humanista, con énfasis en el vínculo terapéutico, la claridad y la acción. La literatura muestra que lo que más predice el éxito es la relación psicólogo–paciente: empatía, honestidad y un encuadre claro.</p>
       <p>El objetivo no es solo aliviar síntomas, sino entender qué los sostiene para tomar decisiones reales que se noten en tu vida cotidiana.</p>
     </div>
   </section>
 
-  <!-- 20' GRATIS (caja) -->
+  <!-- MI FILOSOFÍA (detalle) -->
+  <section id="mi-filosofia">
+    <div class="container section-box">
+      <h2>Mi filosofía de trabajo</h2>
+      <div class="spacer"></div>
+      <p class="lede">Trabajo 100% online con una forma de hacer terapia clara, humana y práctica. Tengo algunas máximas que me guían:</p>
+
+      <ol style="margin:12px 0 8px 18px; padding:0">
+        <li style="margin:8px 0">
+          <strong>Yo sé de psicoterapia; vos sabés de tu vida.</strong><br>
+          Mi tarea es sumar mis herramientas clínicas a tu propia sabiduría sobre vos mismo/a. Lo que importa no es “lo que hay que hacer”, sino lo que realmente te funciona.
+        </li>
+        <li style="margin:8px 0">
+          <strong>Si más de lo mismo no funciona, probamos algo distinto.</strong><br>
+          Repetir estrategias que no dieron resultado solo agota. En sesión abrimos alternativas concretas y posibles para hoy, no recetas generales.
+        </li>
+        <li style="margin:8px 0">
+          <strong>La relación terapéutica es el núcleo.</strong><br>
+          Sin conexión, la terapia no avanza. Si sentís que “tenés que adaptarte” a mí, no es el encuadre adecuado; en ese caso te derivo con honestidad y cuidado.
+        </li>
+      </ol>
+
+      <p>No creo en imponer técnicas como un protocolo rígido. La felicidad y el bienestar son procesos personales, no listas de pasos. Mi foco es adaptarme a tu realidad subjetiva, respetando tu ritmo, tus valores y tu contexto.</p>
+
+      <p>Desde lo clínico, trabajo con un <strong>enfoque humanista e integrativo</strong>: utilizo recursos de la Terapia Focalizada en la Emoción (EFT) y aportes existenciales (Rogers, Frankl, Perls) cuando necesitamos sentido y dirección, aunque no haya un “síntoma” claro. Si el caso lo requiere, incorporo una <strong>mirada sistémica familiar</strong> para ampliar perspectivas, destrabar dinámicas y abrir caminos de cambio.</p>
+
+      <p>Mi forma de acompañar es diferente a la que suele verse: prioriza la relación psicóloga–paciente por sobre la técnica, reconociendo el dolor sin reducirte a un diagnóstico. Confío en tu capacidad natural de regularte, crecer y vivir con mayor libertad, y pongo mis herramientas al servicio de eso.</p>
+
+      <div class="chips" style="margin-top:10px">
+        <span class="chip">Modalidad: online por Google Meet</span>
+        <span class="chip">Primer contacto: 20′ gratis por WhatsApp</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 20' GRATIS -->
   <section id="contacto20">
     <div class="container section-box">
       <h2>Primera conversación gratuita (20′)</h2>
       <div class="spacer"></div>
       <p class="lede">Para coordinar la <strong>primera conversación de 20′</strong>, escribime por WhatsApp. Te respondo con disponibilidad y el enlace de Google Meet.</p>
-      <div class="chips" style="margin-top:12px">
+      <div class="chips" style="margin-top:10px">
         <span class="chip">Google Meet. Videollamada segura y simple.</span>
         <span class="chip">Confidencialidad y respeto. Encuadre claro.</span>
         <span class="chip">Orientación y mejor próximo paso.</span>
       </div>
-      <a class="btn-grad" style="margin-top:12px" href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20me%20gustar%C3%ADa%20coordinar%20la%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%20min." target="_blank" rel="noopener">Escribirme por WhatsApp</a>
+      <a class="btn-grad" style="margin-top:10px" href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20me%20gustar%C3%ADa%20coordinar%20la%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%20min." target="_blank" rel="noopener">Escribirme por WhatsApp</a>
     </div>
   </section>
 
-  <!-- PAGOS (caja) -->
+  <!-- PAGOS (España/UE + Wise) -->
   <section>
     <div class="container section-box">
       <h2>Pagar sesión (50′) antes de reservar</h2>
       <div class="spacer"></div>
       <p class="lede">El pago confirma y habilita la reserva en el calendario. Elegí el método que te quede mejor:</p>
-      <div class="pay-wrap" style="margin-top:14px">
+      <div class="pay-wrap" style="margin-top:12px">
         <!-- ONE (tarjetas) -->
         <a class="pay-btn" id="btn-one" href="#" title="Pago con tarjeta (ONE)">
           <span class="cards">
@@ -243,17 +306,57 @@
     </div>
   </section>
 
-  <!-- RESERVAS (caja doble) -->
+  <!-- PAGO ARGENTINA (destacado) -->
+  <section id="pago-ar">
+    <div class="container section-box ar-box">
+      <h2 style="display:flex;align-items:center;margin:0 0 6px 0">
+        <span class="ar-flag" aria-hidden="true"></span>
+        Pagar sesión (50′) antes de reservar — <strong style="margin-left:6px">Argentina</strong>
+      </h2>
+      <div class="spacer"></div>
+
+      <p class="lede">
+        Recibo pagos en Argentina por <strong>transferencia bancaria (alias/CVU Ualá)</strong>.
+        <span class="ar-hint">Tu pago habilita el turno en el calendario.</span>
+      </p>
+
+      <div class="pay-wrap" style="margin-top:10px">
+        <button type="button" class="pill-btn"
+                onclick="document.getElementById('datos-uala').style.display='block'">
+          ⚡ Ver datos de transferencia (Alias/CVU)
+        </button>
+        <a class="pill-btn" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20reservar%20una%20sesion%20online.%20Pasame%20el%20alias%20y%20el%20monto%20por%20favor."
+           target="_blank" rel="noopener">
+          📲 Escribirme por WhatsApp
+        </a>
+      </div>
+
+      <div id="datos-uala" style="display:none;margin-top:12px;padding:12px;border:1px dashed #cfe3ff;border-radius:12px;background:#fbfdff">
+        <p style="margin:0"><strong>Alias (Ualá):</strong> rocio866.uala</p>
+        <p style="margin:6px 0 0 0;font-size:14px;color:#64748b">
+          Concepto: “Reserva sesión”. Enviá el comprobante por WhatsApp para confirmar tu turno.
+        </p>
+      </div>
+
+      <hr style="margin:16px 0;border-color:#E4F0FF">
+      <p style="font-size:14px;margin:0;color:#64748b">
+        <strong>Política:</strong> seña 50% para reservar (o pago total).
+        Cancelaciones con 24 h se reprograman sin costo; con menos de 24 h, la seña no es reembolsable.
+      </p>
+    </div>
+  </section>
+
+  <!-- RESERVAS -->
   <section id="reservar">
     <div class="container section-box">
       <h2>Reservar sesiones regulares (50′)</h2>
       <div class="spacer"></div>
       <p class="lede">Las sesiones regulares se reservan por calendario con <strong>pago previo</strong>. Si es tu primer contacto, usá el botón de WhatsApp de arriba.</p>
-      <div class="cal-grid" style="margin-top:18px">
+      <div class="cal-grid" style="margin-top:12px">
         <div class="cal-info">
           <h3>Reunión con Daiana (50 min)</h3>
           <p>Vía Google Meet · 50 Minute Meeting</p>
-          <div style="margin-top:12px;display:flex;align-items:center;gap:10px">
+          <div style="margin-top:10px;display:flex;align-items:center;gap:10px">
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
               <path fill="#34A853" d="M10 7H6a2 2 0 0 0-2 2v6h6V7Z"/>
               <path fill="#4285F4" d="M10 7h4l3 3v5h-7V7Z"/>
@@ -273,10 +376,10 @@
     </div>
   </section>
 
-  <!-- FAQ (caja) -->
+  <!-- FAQ -->
   <section id="faq">
     <div class="container faq-box">
-      <h2 style="margin-top:6px">Preguntas frecuentes</h2>
+      <h2 style="margin-top:4px">Preguntas frecuentes</h2>
       <div class="spacer"></div>
       <details open>
         <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
@@ -316,3 +419,4 @@
 
 </body>
 </html>
+
