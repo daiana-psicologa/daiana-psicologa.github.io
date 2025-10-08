@@ -3,16 +3,31 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
   <title>Daiana Beltrán · Psicología online (Google Meet)</title>
-  <meta name="description" content="Psicoterapia online clara y humana por Google Meet. Ansiedad, depresión, regulación emocional, duelo y vínculos. Primera conversación gratuita de 20′ por WhatsApp.">
+  <meta name="description" content="Psicoterapia online clara, humana y práctica por Google Meet. Ansiedad, depresión, regulación emocional, duelo y vínculos. Primera conversación gratuita de 20′ por WhatsApp.">
   <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://daiana-psicologa.github.io/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Daiana Beltrán · Psicología online">
   <meta property="og:description" content="Atención psicológica 100% online por Google Meet. Primera conversación gratis (20′) por WhatsApp.">
   <meta property="og:image" content="assets/og-image.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"Daiana Beltrán · Psicología online",
+    "url":"https://daiana-psicologa.github.io/",
+    "areaServed":["Argentina","España","LatAm"],
+    "sameAs":[],
+    "image":"https://daiana-psicologa.github.io/assets/og-image.jpg",
+    "serviceType":"Psicoterapia online",
+    "availableChannel":{"@type":"ServiceChannel","serviceUrl":"https://wa.me/5492996044900"}
+  }
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,48 +36,39 @@
 
   <!-- Calendly -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" async type="text/javascript"></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-  <!-- Favicon (rápido) -->
+  <!-- Favicon rápido -->
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%2395F3EB"/><rect x="5" y="5" width="54" height="54" rx="12" fill="%238B6CFF" opacity=".15"/><text x="50%" y="56%" font-size="26" font-family="Montserrat" font-weight="800" text-anchor="middle" fill="%23ffffff">DB</text></svg>'>
 
   <style>
     :root{
       /* Colores base */
-      --ink:#0a0f1c;
-      --muted:#5f6673;
-      --bg:#f8f9ff;
-      --card:#ffffff;
-      --line:#eaeaf5;
-
-      /* Degradé turquesa → violeta */
-      --g1:#7EF2E2;
-      --g2:#6EA3FF;
-      --g3:#7E57FF;
-
+      --ink:#0B1020; --muted:#60677A; --bg:#F7F8FF; --card:#ffffff; --line:#E9EBF5;
+      /* Degradé “aura” */
+      --g1:#7EF2E2; --g2:#6EA3FF; --g3:#7E57FF;
       /* Layout */
-      --max:1200px;
-      --radius:28px;
-      --shadow:0 18px 48px rgba(16,24,40,.12);
+      --max:1180px; --radius:28px; --shadow:0 18px 48px rgba(16,24,40,.12);
       --shadow-soft:0 28px 80px rgba(126,87,255,.14);
     }
-
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0}
-    body{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:
-      radial-gradient(1200px 320px at 60% 0%, rgba(126,87,255,.08), transparent 50%),
-      linear-gradient(180deg, #f7fbff 0%, #f5f4ff 100%);
-      color:var(--ink); line-height:1.7}
-
+    body{
+      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink); line-height:1.7;
+      background:
+        radial-gradient(1200px 300px at 70% -10%, rgba(126,87,255,.08), transparent 50%),
+        linear-gradient(180deg,#F8FBFF 0%, #F4F2FF 100%);
+    }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     .container{max-width:var(--max);margin:auto;padding:0 28px}
 
     /* Top */
-    .top{position:sticky;top:0;z-index:50;background:rgba(250,250,255,.75);backdrop-filter:saturate(1.1) blur(6px);border-bottom:1px solid var(--line)}
+    .top{position:sticky;top:0;z-index:50;background:rgba(250,250,255,.78);backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid var(--line)}
     .top .row{display:flex;align-items:center;justify-content:space-between;height:76px}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:22px;width:auto}
+    .brand img{height:22px}
     .brand .name{font:800 18px/1 Montserrat}
     .nav{display:flex;gap:22px;align-items:center}
     .nav a{font-weight:700}
@@ -71,51 +77,43 @@
     .btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
     .chip{display:inline-block;padding:.55rem 1rem;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:800;color:#3a3f4a;box-shadow:0 10px 24px rgba(16,24,40,.06)}
 
+    /* Secciones y “aura” de títulos */
+    section{padding:96px 0}
+    .eyebrow{font-weight:800;color:#5b6ee6;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem}
+    h1{font:800 clamp(36px,5.4vw,62px)/1.06 Montserrat;letter-spacing:-.02em;margin:.35em 0 .8em;
+       background:linear-gradient(90deg,var(--ink) 0%, #2B2F52 40%, #3B3F78 70%); -webkit-background-clip:text; color:transparent;
+       text-shadow: 0 2px 0 rgba(255,255,255,.6), 0 18px 40px rgba(126,87,255,.20);}
+    .section-title{
+      --underline:linear-gradient(90deg, transparent, var(--g1), var(--g2), var(--g3), transparent);
+      font:800 clamp(28px,3.8vw,40px)/1.12 Montserrat;margin:0 0 18px;
+      text-shadow:0 12px 36px rgba(126,87,255,.18);
+    }
+    .section-title + .divider{
+      height:6px; border-radius:999px; background:var(--underline); filter:blur(.2px); margin:8px 0 26px;
+      box-shadow:0 10px 24px rgba(126,87,255,.18);
+    }
+
     /* HERO */
     .hero{display:grid;grid-template-columns:1.06fr .94fr;align-items:center;gap:64px;padding:90px 0 10px}
-    .eyebrow{font-weight:800;color:#5b6ee6;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem}
-    h1{font:800 clamp(34px,5.2vw,60px)/1.06 Montserrat;letter-spacing:-.02em;margin:.35em 0 .9em}
     .lead{color:var(--muted);max-width:52ch}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
 
-    /* Foto “adelante” + cuadrado “atrás” */
+    /* Foto delante + cuadrado atrás */
     .photo-wrap{display:grid;place-items:center}
-    .photo-stage{
-      position:relative;
-      width:min(560px,92%);
-      aspect-ratio:1/1;
-      overflow:visible;
-    }
-    /* El cuadrado degradé detrás */
+    .photo-stage{position:relative;width:min(560px,92%);aspect-ratio:1/1}
     .photo-stage::before{
-      content:"";
-      position:absolute; inset:7%;
-      border-radius:24px;
+      content:"";position:absolute;inset:7%;border-radius:24px;
       background: radial-gradient(120% 120% at 0% 0%, var(--g1) 0%, #EAF6FF 40%, transparent 60%),
                   linear-gradient(135deg, #EDF6FF 0%, #EFEAFF 60%, #F1EAFE 100%);
-      box-shadow:
-        0 1px 0 rgba(255,255,255,.8) inset,
-        0 50px 120px rgba(126,87,255,.22),
-        0 18px 48px rgba(16,24,40,.12);
+      box-shadow:0 1px 0 rgba(255,255,255,.8) inset, 0 50px 120px rgba(126,87,255,.22), 0 18px 48px rgba(16,24,40,.12);
       z-index:0;
     }
-    /* La foto por delante con leve “pop” */
-    .photo{
-      position:relative; z-index:1;
-      width:88%; height:88%;
-      object-fit:contain; object-position:center;
-      filter: drop-shadow(0 18px 26px rgba(16,24,40,.18));
-      transform: translateY(2%) scale(1.05);
-      transition: transform .25s ease, filter .25s ease;
-    }
-    .photo-stage:hover .photo{
-      transform: translateY(0%) scale(1.06);
-      filter: drop-shadow(0 22px 34px rgba(16,24,40,.2));
-    }
+    .photo{position:relative; z-index:1; width:88%; height:88%; object-fit:contain; object-position:center;
+      filter: drop-shadow(0 18px 26px rgba(16,24,40,.18)); transform: translateY(2%) scale(1.05);
+      transition: transform .25s ease, filter .25s ease;}
+    .photo-stage:hover .photo{transform: translateY(0%) scale(1.06); filter: drop-shadow(0 22px 34px rgba(16,24,40,.2));}
 
-    /* Tarjetas simples */
-    section{padding:96px 0}
-    .section-title{font:800 clamp(28px,3.8vw,40px)/1.12 Montserrat;margin:0 0 26px}
+    /* Tarjetas */
     .grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
     .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 16px 14px;box-shadow:var(--shadow)}
     .card .tag{display:inline-block;background:rgba(126,87,255,.10);color:#5a3dfa;border:1px solid #e8e1ff;font-weight:800;padding:.25rem .6rem;border-radius:999px;font-size:.78rem}
@@ -127,37 +125,21 @@
     .pay{display:inline-flex;align-items:center;gap:10px;padding:.7rem 1rem;border-radius:999px;border:1px solid var(--line);background:#fff;box-shadow:0 10px 24px rgba(16,24,40,.06);font-weight:800}
     .pay img{height:16px}
 
-    /* Calendario a una columna (recorte) */
-    .calendar-frame{margin:22px auto 10px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;max-width:1120px}
+    /* Calendly responsive (100% visible) */
+    .calendar-frame{margin:22px auto 10px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
     .cal-hero{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;border-bottom:1px solid #eceef4;background:#fafbff}
     .cal-meta h3{margin:0 0 4px;font:800 18px/1.2 Montserrat}
     .cal-meta p{margin:0;color:#5c6473;font-weight:600;font-size:.95rem}
-    .calendar-crop{
-      --crop-w: 980px;   /* ancho visible */
-      --crop-h: 760px;   /* alto visible */
-      --iframe-w: 1600px;/* ancho virtual del iframe */
-      --shift-x: -560px; /* mover a la izq (negativo) */
-      --shift-y: -10px;
-      position: relative;
-      width: var(--crop-w); height: var(--crop-h);
-      margin: 18px auto 0; border-radius: 22px; overflow: hidden;
-      background:#fff; border:1px solid #eceef4; box-shadow:var(--shadow);
-    }
-    .calendar-crop iframe{
-      position:absolute; top:0; left:0;
-      width: var(--iframe-w);
-      height: calc(var(--crop-h) + 220px);
-      transform: translate(var(--shift-x), var(--shift-y));
-      border:0;
-    }
-    .tz-note{margin:8px auto 24px;max-width:var(--crop-w);color:#c1121f;font-weight:800;font-size:.95rem}
+    .cal-wrapper{width:100%;min-height:820px}
+    .calendly-inline-widget{min-width:100%; height:820px;}
+    .tz-note{margin:8px auto 24px;color:#c1121f;font-weight:800;font-size:.95rem}
 
-    /* FAQ en caja */
+    /* FAQ */
     #faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;box-shadow:var(--shadow)}
     #faq summary{cursor:pointer;font-weight:800;font-size:18px}
     #faq p{margin:10px 0 0;color:#4b5563;font-size:16px}
 
-    /* CTA inferior fijo */
+    /* CTA inferior fija */
     .floating-cta{position:fixed;left:0;right:0;bottom:14px;z-index:10000;pointer-events:none}
     .floating-cta .cta-row{pointer-events:auto;max-width:var(--max);margin:auto;padding:0 16px;display:flex;align-items:center;justify-content:center;gap:14px}
     .icon-btn{width:56px;height:56px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--shadow);border:1px solid #e6e9ff;background:#25D366;transition:transform .15s ease}
@@ -172,14 +154,12 @@
       .hero{grid-template-columns:1fr;gap:28px;padding:80px 0 0}
       .grid-cards{grid-template-columns:1fr}
       section{padding:92px 0}
-      .calendar-crop{
-        --crop-w: 92vw; --crop-h: 820px; --iframe-w: 1500px; --shift-x: -520px;
-      }
-      .tz-note{max-width:92vw}
+      .calendly-inline-widget{height:900px}
+      .cal-wrapper{min-height:900px}
     }
     @media (max-width:640px){
-      .photo{width:90%;height:90%}
-      .calendar-crop{--crop-h: 900px; --shift-x:-500px}
+      .calendly-inline-widget{height:980px}
+      .cal-wrapper{min-height:980px}
     }
   </style>
 </head>
@@ -203,7 +183,7 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero container">
+  <section class="hero container" id="inicio">
     <div>
       <div class="eyebrow">Psicología online</div>
       <h1>Psicoterapia ONLINE clara, humana y práctica</h1>
@@ -214,17 +194,18 @@
       </div>
     </div>
 
-    <!-- Foto por delante, cuadrado atrás -->
+    <!-- Foto delante, cuadrado atrás -->
     <div class="photo-wrap" aria-hidden="true">
       <figure class="photo-stage">
-        <img class="photo" src="assets/portrait.png" alt="Daiana Beltrán" onerror="this.onerror=null;this.src='assets/portrait.png'">
+        <img class="photo" src="assets/portrait.png" alt="Daiana Beltrán" loading="eager">
       </figure>
     </div>
   </section>
 
   <!-- Especialidades -->
-  <section id="especialidades" class="container">
-    <h2 class="section-title">Te acompaño en…</h2>
+  <section id="especialidades" class="container" aria-labelledby="t-especialidades">
+    <h2 id="t-especialidades" class="section-title">Te acompaño en…</h2>
+    <div class="divider" aria-hidden="true"></div>
     <div class="grid-cards">
       <article class="card"><span class="tag">Emoción</span><h3>Ansiedad</h3><p>La ansiedad es una señal. Entendemos el origen y actuamos sobre eso.</p></article>
       <article class="card"><span class="tag">Ánimo</span><h3>Depresión</h3><p>No se trata de forzar positividad, sino de curar lo que duele.</p></article>
@@ -233,40 +214,46 @@
   </section>
 
   <!-- Filosofía -->
-  <section id="filosofia" class="container">
-    <h2 class="section-title">Filosofía de trabajo</h2>
+  <section id="filosofia" class="container" aria-labelledby="t-filosofia">
+    <h2 id="t-filosofia" class="section-title">Filosofía de trabajo</h2>
+    <div class="divider" aria-hidden="true"></div>
     <p>En terapia priorizo a la persona por encima de la técnica. Aunque los problemas puedan ser comunes, tu historia y tus decisiones son únicas. El objetivo no es solo aliviar síntomas, sino entender qué los sostiene para tomar decisiones reales que se noten en tu vida cotidiana.</p>
   </section>
 
   <!-- 20′ por WhatsApp -->
-  <section id="contacto20" class="container">
-    <h2 class="section-title">Primera conversación gratuita (20′)</h2>
+  <section id="contacto20" class="container" aria-labelledby="t-20min">
+    <h2 id="t-20min" class="section-title">Primera conversación gratuita (20′)</h2>
+    <div class="divider" aria-hidden="true"></div>
     <p class="lead">Para coordinar la <strong>primera conversación de 20′</strong> escribime por WhatsApp. Te respondo con disponibilidad y el enlace de Google Meet.</p>
-    <div class="actions"><a class="btn" href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20la%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%27." target="_blank" rel="noopener">Escribirme por WhatsApp</a></div>
+    <div class="actions">
+      <a class="btn" href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20la%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%27." target="_blank" rel="noopener">Escribirme por WhatsApp</a>
+    </div>
   </section>
 
   <!-- Pagar -->
-  <section class="container">
-    <h2 class="section-title">Pagar sesión (50′) antes de reservar</h2>
+  <section class="container" aria-labelledby="t-pagar">
+    <h2 id="t-pagar" class="section-title">Pagar sesión (50′) antes de reservar</h2>
+    <div class="divider" aria-hidden="true"></div>
     <p>El pago confirma y habilita la reserva en el calendario. Elegí el método que te quede mejor:</p>
     <div class="pay-row">
-      <a class="pay" href="#pago-tarjeta" title="Tarjeta España/UE">
-        <img alt="Visa" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png">
-        <img alt="Mastercard" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg">
+      <a class="pay" href="#" title="Tarjeta España/UE">
+        <img alt="Visa" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" loading="lazy">
+        <img alt="Mastercard" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" loading="lazy">
         <span>Pagar con tarjeta (España/UE)</span>
       </a>
-      <a class="pay" href="#pago-wise" title="Transferencia Wise EUR">
-        <img alt="Lightning" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Lightning_icon.svg">
+      <a class="pay" href="#" title="Transferencia Wise EUR">
+        <img alt="Lightning" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Lightning_icon.svg" loading="lazy">
         <span>Transferencia (Wise · EUR)</span>
       </a>
     </div>
   </section>
 
   <!-- Reservar -->
-  <section id="reservar" class="container" style="padding-top:40px">
-    <h2 class="section-title">Reservar sesiones regulares (50′)</h2>
+  <section id="reservar" class="container" aria-labelledby="t-reservar" style="padding-top:40px">
+    <h2 id="t-reservar" class="section-title">Reservar sesiones regulares (50′)</h2>
+    <div class="divider" aria-hidden="true"></div>
 
-    <div class="calendar-frame">
+    <div class="calendar-frame" role="region" aria-label="Calendario de reservas">
       <div class="cal-hero">
         <div class="cal-meta">
           <h3>Reunión con Daiana (50 min)</h3>
@@ -275,20 +262,21 @@
         <div class="chip">Google Meet</div>
       </div>
 
-      <!-- Calendario recortado a una columna -->
-      <div class="calendar-crop">
+      <!-- Calendly 100% visible -->
+      <div class="cal-wrapper">
         <div class="calendly-inline-widget"
-          data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=0A0E19&primary_color=5B7CFF&hide_landing_page_details=1&locale=es">
+             data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=0A0E19&primary_color=5B7CFF&hide_landing_page_details=1&locale=es">
         </div>
       </div>
     </div>
 
-    <div class="tz-note">✓ Verificá tu zona horaria debajo de “Time zone” en el calendario.</div>
+    <p class="tz-note">✓ Verificá tu zona horaria debajo de “Time zone” en el calendario.</p>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="container">
-    <h2 class="section-title">Preguntas frecuentes</h2>
+  <section id="faq" class="container" aria-labelledby="t-faq">
+    <h2 id="t-faq" class="section-title">Preguntas frecuentes</h2>
+    <div class="divider" aria-hidden="true"></div>
     <details open>
       <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
       <p>Si el malestar se sostiene y afecta tu día a día, una conversación puede ordenar el panorama. Empezamos con 20′ por WhatsApp.</p>
