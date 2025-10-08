@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <title>Daiana Beltrán · Psicología online (Google Meet)</title>
-  <meta name="description" content="Psicoterapia online clara y humana por Google Meet. Ansiedad, depresión, regulación emocional, duelo y vínculos. Primera conversación gratuita de 20′ por WhatsApp.">
+  <meta name="description" content="Psicoterapia online clara y humana por Google Meet. Ansiedad, depresión, gestión emocional, duelo y vínculos. Primera conversación gratuita de 20′ por WhatsApp.">
   <meta name="robots" content="index,follow">
 
   <!-- Open Graph -->
@@ -23,215 +23,181 @@
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" async type="text/javascript"></script>
 
-  <!-- Favicon (violeta) -->
-  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%236A5AE0"/><text x="50%" y="54%" font-size="26" font-family="Montserrat" font-weight="800" text-anchor="middle" fill="white">DB</text></svg>'>
+  <!-- Favicon (usa icon-db.svg si lo subís) -->
+  <link rel="icon" href="assets/icon-db.svg">
 
   <style>
-    /* =========================
-       Paleta violeta–lila–aqua
-       ========================= */
+    /* PALETA BRILLANTE (tipo Canva) */
     :root{
-      --ink:#1B1E2B;        /* texto titular */
-      --muted:#596074;      /* texto cuerpo */
-      --bg:#F7F7FB;         /* fondo general */
-      --card:#ffffff;       /* cards */
-      --line:#E8E6F4;       /* líneas suaves */
+      --ink:#0A0E19;
+      --muted:#616a78;
+      --bg:#F6F7FF;
+      --card:#ffffff;
+      --line:#EBECF5;
 
-      --violet:#6A5AE0;     /* principal */
-      --violet-2:#7C6FF1;   /* más claro */
-      --violet-dark:#5848CC;
-      --lilac:#B7A6F6;      /* apoyo */
-      --aqua:#A6E3E9;       /* apoyo */
-      --pink:#FF7EDB;       /* brillo sutil */
+      /* Degradé turquesa > violeta */
+      --c1:#27E0D0; /* turquesa */
+      --c2:#7FE3FF; /* celeste */
+      --c3:#B6B2FF; /* lila */
+      --c4:#6C4CFF; /* violeta */
+
+      --accent:#6C4CFF; /* para botones principales */
 
       --max:1200px;
       --radius:28px;
-      --shadow:0 14px 38px rgba(16, 12, 60, .08);
-      --shadow-strong:0 28px 54px rgba(16, 12, 60, .16);
+      --shadow:0 14px 38px rgba(108,76,255,.18);
+      --shadow-strong:0 28px 54px rgba(108,76,255,.25);
     }
 
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0}
     body{
       font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
       color:var(--ink);
       line-height:1.7;
-    }
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--max);margin:auto;padding:0 28px}
-    :focus-visible{outline:3px solid #8fb5ff;outline-offset:2px;border-radius:10px}
-
-    /* =========================
-       Cinta superior con degradado
-       ========================= */
-    .gradient-band{
-      position:fixed; inset:0 0 auto 0; height:210px; z-index:-1;
       background:
-        radial-gradient(1200px 220px at 10% -40%, var(--aqua) 0%, transparent 60%),
-        radial-gradient(1200px 220px at 90% -40%, var(--lilac) 0%, transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.00) 0%, rgba(242,240,255,.7) 50%, rgba(247,247,251,1) 100%);
-      filter:saturate(1.06);
+        radial-gradient(1600px 600px at 20% -200px, var(--c1) 0%, transparent 55%),
+        radial-gradient(1400px 700px at 85% -250px, var(--c4) 0%, transparent 60%),
+        linear-gradient(180deg, #FBFCFF 0%, #F2F3FF 100%);
     }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--max);margin:auto;padding:0 28px}
+    :focus-visible{outline:3px solid #9EC5FF;outline-offset:2px;border-radius:10px}
 
-    /* Top */
+    /* TOP */
     .top{
-      position:sticky; top:0; z-index:50;
-      background:rgba(247,247,251,.85);
-      backdrop-filter:saturate(1.15) blur(8px);
+      position:sticky;top:0;z-index:50;
+      background:rgba(248,249,255,.85);backdrop-filter:saturate(1.15) blur(8px);
       border-bottom:1px solid var(--line)
     }
-    .top .row{display:flex;align-items:center;justify-content:space-between;height:76px}
-    .brand{display:flex;align-items:flex-end;gap:10px}
-    .brand .logo{font:800 20px/1 Montserrat}
-    .brand .scribble{font:italic 700 20px/1 "Playfair Display", serif;transform:translateY(1px)}
-    .nav{display:flex;gap:22px;align-items:center}
-    .nav a{font-weight:600;color:#2b2f3a}
+    .top .row{display:flex;align-items:center;justify-content:space-between;height:82px;gap:14px}
+    .brandwrap{display:flex;align-items:center;gap:14px}
+    .brandwrap img{height:46px;width:auto;display:block}
 
-    /* Botones */
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid transparent;padding:12px 18px;border-radius:999px;box-shadow:var(--shadow);transition:transform .15s ease, box-shadow .2s ease}
+    .nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+    .nav a{font-weight:700;color:#2b2f3a}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:1px solid transparent;border-radius:999px;
+      background:linear-gradient(90deg, var(--c1), var(--c4));
+      color:#fff;font-weight:900;letter-spacing:.02em;
+      height:48px;padding:0 22px; box-shadow:var(--shadow);
+      transition:transform .15s ease, box-shadow .2s ease
+    }
     .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
-    .btn:active{transform:translateY(0)}
-    .btn-primary{
-      color:#fff;
-      background:linear-gradient(90deg, var(--violet) 0%, var(--violet-2) 50%, var(--lilac) 100%);
-      border:1px solid rgba(98,73,255,.18);
-    }
-    .btn-primary:hover{filter:brightness(1.06) saturate(1.05)}
+    .btn-xl{height:54px;padding:0 26px;font-size:16.5px} /* MÁS GRANDE header */
     .btn-outline{
-      background:#fff;border:1px solid var(--line);color:var(--violet);font-weight:800
+      background:#fff;color:#3c3f51;border:1px solid var(--line);
+      box-shadow:0 6px 18px rgba(0,0,0,.06)
+    }
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid #E7E9FB;background:#FFFFFF; color:#3b3f54;
+      padding:.55rem 1rem;border-radius:999px;font-weight:800
     }
 
-    /* Secciones */
-    section{padding:96px 0}
-    .section-title{font:800 clamp(28px,3.8vw,40px)/1.12 Montserrat;margin:0 0 26px}
+    /* SECCIONES */
+    section{padding:98px 0}
+    .section-title{font:800 clamp(30px,3.8vw,42px)/1.12 Montserrat;margin:0 0 26px}
     .lede{color:var(--muted);margin:0 0 28px}
 
     /* HERO */
-    .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:64px;padding:92px 0 20px}
-    .eyebrow{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem;color:var(--violet)}
-    /* Título con degradado en el texto */
-    h1{
-      font:800 clamp(34px,5.2vw,60px)/1.06 Montserrat;letter-spacing:-.02em;margin:.35em 0 .9em;
-      background:linear-gradient(90deg, #5B8BF7 0%, var(--violet) 35%, var(--pink) 70%);
-      -webkit-background-clip:text;background-clip:text;color:transparent;
-      text-shadow:0 0 0 rgba(0,0,0,0); /* mantiene nítido */
-    }
-    .lead{color:var(--muted);max-width:52ch}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:64px;padding:92px 0 32px}
+    .eyebrow{font-weight:900;color:#5c57d1;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem}
+    h1{font:800 clamp(34px,5.2vw,60px)/1.06 Montserrat;letter-spacing:-.02em;margin:.35em 0 .9em}
+    .lead{color:var(--muted);max-width:60ch}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
 
-    /* Stage para la foto (lila + aqua con glow) */
-    .photo-wrap{display:grid;place-items:center}
-    .photo-stage{position:relative;width:min(560px,92%);aspect-ratio:1/1;overflow:visible}
-    .photo-stage::before{
-      content:"";position:absolute;inset:7%;
-      background:
-        radial-gradient(140% 100% at 85% 15%, var(--lilac), transparent 65%),
-        radial-gradient(120% 100% at 20% 90%, var(--aqua), transparent 60%),
-        linear-gradient(135deg, rgba(255,255,255,.5), #EEE9FF);
-      border-radius:var(--radius);
-      box-shadow:
-        0 32px 86px rgba(123, 102, 255, .28),
-        0 1px 0 rgba(255,255,255,.8) inset;
-      z-index:0;
+    .stage{
+      position:relative;width:min(560px,94%);aspect-ratio:1/1;border-radius:26px;overflow:hidden;
+      background:radial-gradient(120% 120% at 20% 0%, var(--c1) 0%, transparent 40%),
+                 radial-gradient(120% 120% at 100% 30%, var(--c4) 0%, transparent 40%),
+                 linear-gradient(180deg,#f6f7ff 0%, #ecedff 100%);
+      box-shadow:0 24px 64px rgba(108,76,255,.25), inset 0 1px 0 rgba(255,255,255,.6);
+      display:grid;place-items:center
     }
-    .photo{
-      position:relative;z-index:1;
-      width:88%;height:88%;
-      object-fit:contain;object-position:center;
-      filter:drop-shadow(0 20px 28px rgba(32,28,84,.18));
-      transform:translateY(3%) scale(1.06);
-    }
+    .portrait{width:86%;height:86%;object-fit:contain;filter:drop-shadow(0 18px 28px rgba(0,0,0,.14));transform:translateY(2%) scale(1.04)}
 
-    /* Tarjetas */
+    /* CARDS */
     .grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 16px 14px;box-shadow:var(--shadow)}
-    .tag{display:inline-block;background:#EFEAFF;color:#4B36B5;border:1px solid #DFD6FF;font-weight:800;padding:.25rem .6rem;border-radius:999px;font-size:.78rem}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 16px 14px;box-shadow:var(--shadow)}
+    .tag{display:inline-block;background:rgba(127,227,255,.25);color:#3c60b2;border:1px solid rgba(127,227,255,.6);font-weight:800;padding:.25rem .6rem;border-radius:999px;font-size:.78rem}
     .card h3{margin:10px 0 6px}
     .card p{margin:0;color:var(--muted)}
 
-    /* Filosofía con halo sutil violeta */
-    #filosofia{padding-top:108px;border-top:1px solid var(--line);box-shadow:inset 0 24px 48px -32px rgba(107,90,224,.18)}
+    /* FILOSOFÍA */
+    #filosofia{padding-top:108px;border-top:1px solid var(--line);box-shadow:inset 0 24px 64px -36px rgba(108,76,255,.20)}
 
-    /* Reservas (pago previo) */
-    .reserve{background:#F7F4FF;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:86px 0 74px}
-    .reserve .lede{max-width:850px}
-    .calendar-frame{margin:22px auto 10px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-strong);overflow:hidden;max-width:1120px}
-    .cal-hero{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;border-bottom:1px solid #EAE5FF;background:#F4F1FF}
-    .cal-card{display:flex;align-items:center;gap:14px}
-    .cal-thumb{height:110px;width:auto;max-width:320px;object-fit:cover;border-radius:14px;border:1px solid #E3DCFF;background:#fff;box-shadow:var(--shadow)}
-    .cal-meta h3{margin:0 0 4px;font:800 18px/1.2 Montserrat}
-    .cal-meta p{margin:0;color:#5c6473;font-weight:600;font-size:.95rem}
-    .cal-cta{display:flex;gap:10px;align-items:center}
-    .pill{display:inline-block;background:#fff;border:1px solid #EAE5FF;border-radius:999px;padding:.55rem 1rem;font-weight:800;box-shadow:var(--shadow)}
-    .pill-vi{background:#EFEAFF;border-color:#DFD6FF;color:#4B36B5}
-    .calendly-inline-widget{min-width:320px;height:820px}
-    .tz-note{margin:6px auto 0;max-width:1120px;padding:2px 6px;color:#4B36B5;font-weight:800;font-size:.95rem}
+    /* CTA 20 min (con más aire arriba) */
+    #contacto20{padding-top:86px;margin-top:14px}
 
-    /* FAQ */
-    #faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;box-shadow:var(--shadow)}
-    #faq summary{cursor:pointer;font-weight:800;font-size:18px}
-    #faq p{margin:10px 0 0;color:#4b5563;font-size:16px}
-
-    /* CTA final */
-    .strip{
-      background:linear-gradient(90deg, var(--aqua) 0%, var(--lilac) 60%);
-      color:#111;padding:34px 0
+    /* RESERVAS + PAGO PREVIO */
+    .reserve{background:#FBFAFF;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:90px 0}
+    .cal-header{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      background:#ffffff;border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin-bottom:12px;box-shadow:var(--shadow)
     }
-    .strip .row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .strip .btn{background:linear-gradient(90deg, var(--violet) 0%, var(--violet-2) 100%);color:#fff}
+    .cal-meta{display:flex;align-items:center;gap:14px}
+    .cal-meta svg{width:28px;height:28px}
+    .cal-chip{display:inline-flex;align-items:center;gap:8px;padding:.45rem .9rem;border-radius:999px;background:rgba(108,76,255,.1);border:1px solid rgba(108,76,255,.25);font-weight:800;color:#4a3fc5}
+    .calendar-frame{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-strong);overflow:hidden}
+    .calendly-inline-widget{min-width:320px;height:820px}
+    .tz-note{margin:10px 0 0;color:#c1121f;font-weight:800;font-size:.97rem}
 
-    /* Footer */
-    footer{border-top:1px solid var(--line);color:#737b88;padding:30px 0}
+    /* PAGOS */
+    .pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:740px}
+    .pay-btn{
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:#fff;
+      box-shadow:0 10px 26px rgba(0,0,0,.06);font-weight:800
+    }
+    .pay-btn span{opacity:.75;font-weight:700}
 
-    /* Barra fija inferior */
+    /* CTA inferior flotante */
     .floating-cta{position:fixed;left:0;right:0;bottom:14px;z-index:10000;pointer-events:none}
     .floating-cta .cta-row{pointer-events:auto;max-width:var(--max);margin:auto;padding:0 16px;display:flex;align-items:center;justify-content:center;gap:14px}
-    .icon-btn{width:56px;height:56px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--shadow-strong);border:1px solid #EAE5FF;background:#EEE9FF;transition:transform .15s ease, box-shadow .2s ease}
+    .icon-btn{width:56px;height:56px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--shadow-strong);border:1px solid #E8E9FF;background:linear-gradient(90deg,var(--c1),var(--c3));transition:transform .15s ease, box-shadow .2s ease}
     .icon-btn:hover{transform:translateY(-2px);box-shadow:0 22px 42px rgba(0,0,0,.18)}
-    .icon-btn svg{width:26px;height:26px}
-    .icon-btn.whats{background:#25D366;border-color:#20BD5A}
-    .icon-btn.whats svg{fill:#fff}
-    .icon-btn.phone{background:linear-gradient(90deg, var(--violet) 0%, var(--violet-2) 100%);border-color:transparent}
-    .icon-btn.phone svg{fill:#fff}
-    .cta-btn{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 22px;border-radius:999px;background:linear-gradient(90deg, var(--violet) 0%, var(--violet-2) 50%, var(--lilac) 100%);color:#fff;font-weight:800;letter-spacing:.02em;box-shadow:var(--shadow-strong);border:1px solid rgba(0,0,0,.04);transition:transform .15s ease, box-shadow .2s ease;white-space:nowrap}
+    .icon-btn svg{width:26px;height:26px;fill:#fff}
+    .cta-btn{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 22px;border-radius:999px;background:linear-gradient(90deg,var(--c1),var(--c4));color:#fff;font-weight:900;letter-spacing:.02em;box-shadow:var(--shadow-strong);border:1px solid rgba(0,0,0,.04);transition:transform .15s ease, box-shadow .2s ease;white-space:nowrap}
     .cta-btn:hover{transform:translateY(-2px);box-shadow:0 24px 46px rgba(0,0,0,.18)}
-    #wa-pill{display:none !important;} /* oculta el viejo pill */
+    #wa-pill{display:none !important;}
 
-    /* Responsive */
+    /* FOOTER */
+    footer{border-top:1px solid var(--line);color:#737b88;padding:30px 0}
+
     @media (max-width:980px){
       .hero{grid-template-columns:1fr;gap:28px;padding:80px 0 0}
       .grid-cards{grid-template-columns:1fr}
       section{padding:92px 0}
-      #filosofia{padding-top:100px}
       .calendly-inline-widget{height:940px}
-      .cal-thumb{height:92px;max-width:240px}
+      .btn-xl{height:50px;padding:0 22px}
+      .pay-grid{grid-template-columns:1fr}
     }
     @media (max-width:560px){
       .cta-btn{font-size:.94rem;padding:0 18px}
       .icon-btn{width:52px;height:52px}
+      .brandwrap img{height:40px}
     }
   </style>
 </head>
 <body>
 
-  <!-- Cinta con degradado (look Canva) -->
-  <div class="gradient-band" aria-hidden="true"></div>
-
-  <!-- Top -->
+  <!-- TOP -->
   <header class="top">
     <div class="container row">
-      <div class="brand">
-        <div class="logo">Daiana Beltrán</div>
-        <div class="scribble">psicóloga</div>
+      <div class="brandwrap">
+        <!-- LOGO NUEVO -->
+        <img src="assets/logo-daiana.svg" alt="Daiana Beltrán · psicóloga" loading="eager" decoding="async">
       </div>
+
       <nav class="nav" aria-label="principal">
         <a href="#especialidades">Especialidades</a>
         <a href="#filosofia">Filosofía</a>
         <a href="#reservar">Reservar</a>
         <a href="#faq">Preguntas</a>
-        <a class="btn btn-primary" href="#contacto20">Agenda 20′ GRATIS</a>
+        <a class="btn btn-xl" href="#contacto20">Agenda 20′ GRATIS</a>
       </nav>
     </div>
   </header>
@@ -240,22 +206,23 @@
   <section class="hero container">
     <div>
       <div class="eyebrow">Psicología online</div>
-      <h1>Psicoterapia ONLINE clara, humana y práctica</h1>
+      <h1>
+        <span style="background:linear-gradient(90deg,var(--c4),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent">
+          Psicoterapia ONLINE
+        </span> clara, humana y práctica
+      </h1>
       <p class="lead">
         Vamos a la causa, no solo al síntoma. Trabajo con ansiedad, depresión, gestión emocional, duelos,
         alimentación y vínculos. Videollamada por Google Meet.
       </p>
       <div class="actions">
         <a class="btn btn-outline" href="#filosofia">Ver enfoque</a>
-        <a class="btn btn-primary" href="#contacto20">Primera conversación gratis (20′)</a>
+        <a class="btn" href="#contacto20">Primera conversación gratis (20′)</a>
       </div>
     </div>
 
-    <div class="photo-wrap" aria-hidden="true">
-      <figure class="photo-stage">
-        <img class="photo" src="assets/daiana.png" alt="Daiana Beltrán, Psicóloga"
-             onerror="this.onerror=null;this.src='assets/portrait.png';">
-      </figure>
+    <div class="stage" aria-hidden="true">
+      <img class="portrait" src="assets/portrait.png" alt="Daiana Beltrán" onerror="this.onerror=null;this.src='assets/portrait.png'">
     </div>
   </section>
 
@@ -274,7 +241,7 @@
     </div>
   </section>
 
-  <!-- Filosofía -->
+  <!-- FILOSOFÍA -->
   <section id="filosofia" class="container">
     <h2 class="section-title">Filosofía de trabajo</h2>
     <p class="lede">En terapia priorizo a la persona por encima de la técnica. Aunque los problemas puedan ser comunes, tu historia y tus decisiones son únicas.</p>
@@ -282,58 +249,67 @@
     <p>El objetivo no es solo aliviar síntomas, sino entender qué los sostiene para tomar decisiones reales que se noten en tu vida cotidiana.</p>
   </section>
 
-  <!-- 20′ por WhatsApp -->
+  <!-- CTA: 20 MIN -->
   <section id="contacto20" class="container">
     <h2 class="section-title">Primera conversación gratuita (20′)</h2>
     <p class="lede">
       Para coordinar la <strong>primera conversación de 20′</strong> escribime por WhatsApp. Te respondo con disponibilidad
       y el enlace de Google Meet.
     </p>
-    <div class="stack">
-      <div class="pill pill-vi"><b>Google Meet.</b> Videollamada segura y simple.</div>
-      <div class="pill pill-vi"><b>Confidencialidad y respeto.</b> Encuadre claro.</div>
-      <div class="pill pill-vi"><b>Orientación.</b> Vemos tu motivo de consulta y el mejor próximo paso.</div>
-    </div>
+
+    <div class="chip">Google Meet: Videollamada segura y simple.</div>
+    <div class="chip">Confidencialidad y respeto. Encuadre claro.</div>
+    <div class="chip">Orientación. Vemos tu motivo de consulta y el mejor próximo paso.</div>
+
     <div style="margin-top:18px">
-      <a class="btn btn-primary" href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20la%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%27."
+      <a class="btn" href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20la%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%27."
          target="_blank" rel="noopener">Escribirme por WhatsApp</a>
     </div>
   </section>
 
-  <!-- Reservas (pago previo) -->
+  <!-- PAGO PREVIO -->
+  <section id="pago" class="container">
+    <h2 class="section-title">Pagar sesión (50′) antes de reservar</h2>
+    <p class="lede">El pago confirma y habilita la reserva en el calendario. Elegí el método que prefieras:</p>
+
+    <div class="pay-grid">
+      <a class="pay-btn" href="https://www.one.lat/es-AR?utm_source=checkout" target="_blank" rel="noopener">
+        💳 Pagar con One.lat <span>(EUR / USD / ARS)</span>
+      </a>
+      <a class="pay-btn" href="#" target="_blank" rel="noopener">
+        💳 Pagar con Mercado Pago <span>(ARS)</span>
+      </a>
+    </div>
+    <p class="lede" style="margin-top:12px">Después de pagar, reservá tu horario abajo en “Reservar sesiones regulares”.</p>
+  </section>
+
+  <!-- RESERVAS -->
   <section id="reservar" class="reserve">
     <div class="container">
       <h2 class="section-title">Reservar sesiones regulares (50′)</h2>
-      <p class="lede">
-        Las sesiones regulares se reservan por calendario con <strong>pago previo</strong>.
-        Si es tu primer contacto, usá el botón de WhatsApp de arriba.
-      </p>
+      <p class="lede">Si es tu primer contacto, usá el botón de WhatsApp de arriba. Las sesiones regulares se reservan por calendario con <strong>pago previo</strong>.</p>
 
-      <div class="stack" style="margin-bottom:8px">
-        <div class="pill pill-vi"><b>Importante:</b> Solo para pacientes en proceso. Pago previo requerido.</div>
+      <div class="cal-header">
+        <div class="cal-meta">
+          <!-- Icono Meet -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#6C4CFF" d="M17 10V6c0-1.1-.9-2-2-2H5C3.9 4 3 4.9 3 6v8c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-4l4 4V6l-4 4zM5 6h10v8H5V6z"/></svg>
+          <div>
+            <div style="font-weight:900">Reunión con Daiana · Google Meet</div>
+            <div style="color:#667088;font-weight:700;font-size:.95rem">Seleccioná día y hora</div>
+          </div>
+        </div>
+        <div class="cal-chip">Calendario activo</div>
       </div>
 
       <div class="calendar-frame">
-        <div class="cal-hero">
-          <div class="cal-card">
-            <img class="cal-thumb" src="assets/TE%20ACOMPA%C3%91O.png" alt="Miniatura de acompañamiento" loading="lazy" decoding="async">
-            <div class="cal-meta">
-              <h3>Sesión regular · 50 min</h3>
-              <p>Vía Google Meet · comunicar · 50 Minute Meeting</p>
-            </div>
-          </div>
-          <div class="cal-cta">
-            <span class="pill">Seleccioná día y hora</span>
-            <span class="pill pill-vi">Calendario activo</span>
-          </div>
-        </div>
-
+        <!-- El color primario del widget va al violeta -->
         <div class="calendly-inline-widget"
-          data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=1B1E2B&primary_color=6A5AE0&hide_landing_page_details=1&locale=es">
+          data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=ffffff&text_color=0A0E19&primary_color=6C4CFF&hide_landing_page_details=1&locale=es">
         </div>
       </div>
 
-      <div class="tz-note">Verifica tu zona horaria</div>
+      <!-- Nota debajo de Time zone -->
+      <div class="tz-note">🕒 Verifica tu zona horaria (debajo de “Time zone”).</div>
     </div>
   </section>
 
@@ -350,19 +326,11 @@
     </details>
     <details>
       <summary>¿Cómo reservo si es la primera vez?</summary>
-      <p>Escribime por WhatsApp desde la sección “Primera conversación (20′)”. El calendario es solo para sesiones regulares con pago previo.</p>
+      <p>Primero toma la conversación de 20′ por WhatsApp; si acordamos seguir, abonás y reservás tu sesión regular en el calendario.</p>
     </details>
   </section>
 
-  <!-- CTA final -->
-  <section class="strip">
-    <div class="container row">
-      <h3 style="margin:0;font:800 26px/1 Montserrat">¿Coordinamos un turno?</h3>
-      <a class="btn" href="#contacto20">20′ por WhatsApp</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
       <small>© <span id="y"></span> Daiana Beltrán · Psicología online</small>
@@ -371,24 +339,20 @@
     <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
   </footer>
 
-  <!-- Barra fija inferior -->
+  <!-- BARRA FLOTANTE -->
   <div class="floating-cta" role="region" aria-label="Acciones rápidas">
     <div class="cta-row">
-      <a class="icon-btn whats" aria-label="Escribir por WhatsApp"
+      <a class="icon-btn" aria-label="Escribir por WhatsApp"
          href="https://wa.me/5492996044900?text=Hola%20Daiana%2C%20quiero%20coordinar%20mi%20primera%20conversaci%C3%B3n%20gratuita%20de%2020%20min."
          target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.2 18.6L2 22l3.5-1.1A11 11 0 1 0 20.5 3.5Zm-8.7 17.1a9 9 0 0 1-4.6-1.3l-.3-.2-2.7.8.9-2.6-.2-.3a9 9 0 1 1 7 3.6ZM17 14.3c-.2-.1-1.5-.8-1.7-.8s-.3-.1-.5.1-.6.8-.7.9-.3.2-.6.1a7.3 7.3 0 0 1-3.4-2.1 12.4 12.4 0 0 1-1.3-1.7c-.1-.3 0-.5.1-.6l.4-.5.2-.4c.1-.1 0-.3 0-.4 0-.1-.5-1.3-.7-1.8s-.4-.4-.6-.4h-.5c-.2 0-.4.2-.6.4s-.8.8-.8 2c0 1.1.8 2.2 1 2.3.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.2.5.5.2 1 .2 1.4.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2Z"/></svg>
-      </a>
-
-      <a class="icon-btn phone" aria-label="Llamar por teléfono" href="tel:+5492996044900">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l1.5-1.5c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3 .5.7 0 1.3.6 1.3 1.3V20c0 .7-.6 1.3-1.3 1.3A17.6 17.6 0 0 1 3 6.7 1.3 1.3 0 0 1 4.3 5.4h2.6c.7 0 1.3.6 1.3 1.3 0 1 .2 2 .5 3 .1.4 0 .9-.3 1.2l-1.8 1.9Z"/></svg>
       </a>
 
       <a class="cta-btn" href="#contacto20">PIDE TU SESIÓN GRATUITA</a>
     </div>
   </div>
 
-  <!-- (Antiguo pill de WhatsApp oculto vía CSS) -->
+  <!-- Oculta pill viejo de WhatsApp -->
   <a id="wa-pill" href="https://wa.me/5492996044900" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp"></a>
 </body>
 </html>
