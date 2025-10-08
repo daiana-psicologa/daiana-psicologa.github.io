@@ -24,6 +24,7 @@
       --line:#e9eef7;
       --radius:18px;
       --shadow-soft:0 8px 28px rgba(13,18,33,.08);
+      --shadow-strong:0 22px 52px rgba(13,18,33,.14);
       --max:1160px;
     }
 
@@ -33,12 +34,16 @@
       font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--ink); line-height:1.65; background:var(--bg);
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      overflow-x:hidden;
     }
     img{max-width:100%;display:block}
+    /* Parche anti-SVG gigante */
+    svg{display:inline-block;max-width:100%;height:auto}
+
     .container{max-width:var(--max);margin:auto;padding:0 24px}
 
     /* ===== Top nav */
-    header.top{position:sticky;top:0;z-index:50;background:rgba(248,250,255,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    header.top{position:sticky;top:0;z-index:80;background:rgba(248,250,255,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
     .top-row{display:flex;align-items:center;justify-content:space-between;height:74px}
     .brand{display:flex;align-items:center;gap:12px}
     .brand img{height:26px}
@@ -76,7 +81,7 @@
       background:radial-gradient(120% 120% at 20% 0%, #c6fff6 0%, #efefff 45%, #d8d2ff 75%)}
     .stage img{position:absolute;inset:6% 6% -4% 6%;height:98%;object-fit:contain;filter:drop-shadow(0 22px 36px rgba(0,0,0,.12))}
 
-    /* ===== Cards sin borde */
+    /* ===== Cards */
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:#fff;border-radius:16px;padding:18px 18px 14px;box-shadow:var(--shadow-soft)}
     .tag{display:inline-block;background:#eefbf9;color:#0e766e;font-weight:900;padding:.24rem .6rem;border-radius:999px;font-size:.78rem}
@@ -91,7 +96,9 @@
     .highlight{
       background:linear-gradient(180deg,#eef6ff 0%, #ffffff 100%);
       border:1px solid #d8e8ff; border-radius:18px; padding:20px 22px; box-shadow:0 16px 36px rgba(14,165,233,.12);
+      margin-top:22px;  /* centra mejor el bloque y le da aire */
     }
+    .highlight .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
     .highlight .cta-wa{
       display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;font-weight:800;
       color:#fff;text-decoration:none;background:linear-gradient(90deg,var(--accent),var(--accent2));
@@ -123,7 +130,7 @@
     .faq p{margin:8px 2px 4px;color:#4b5563}
 
     /* ===== Opiniones / Carrusel ===== */
-    .reviews{padding:64px 0}
+    .reviews{padding:48px 0}
     .reviews .heading{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
     .reviews .heading h2{margin:0}
     .reviews .meta{color:#596072;font-weight:600}
@@ -140,11 +147,17 @@
     }
     .review-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
     .avatar{width:40px;height:40px;border-radius:999px;object-fit:cover}
+    .avatar-initial{
+      width:40px;height:40px;border-radius:999px;display:grid;place-items:center;
+      background:linear-gradient(135deg,#e0e7ff,#c7f7f2); color:#0b1120;font-weight:900;
+    }
     .name{font-weight:800}
     .date{font-size:12px;color:#6b7280}
     .stars{display:flex;gap:2px;margin:4px 0}
     .star{width:16px;height:16px;fill:#f59e0b}
     .review-text{color:#424a5d;margin:6px 0 0}
+    .g-badge{margin-left:auto;display:inline-flex;align-items:center;gap:6px}
+    .g-badge svg{width:18px;height:18px}
     .carousel-nav{
       position:absolute; inset:50% auto auto 0; width:100%; transform:translateY(-50%);
       display:flex; justify-content:space-between; pointer-events:none;
@@ -155,21 +168,15 @@
     }
     .carousel-btn svg{width:18px;height:18px}
 
-    /* ===== Footer ===== */
-    .site-footer{background:#f1f4fb;border-top:1px solid #e4e9f7;padding:46px 0 0}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px}
-    .footer-brand{display:flex;flex-direction:column;gap:8px}
-    .footer-brand img{height:28px}
-    .footer-brand .claim{color:#616b7e}
-    .footer-col h4{margin:0 0 10px;font-weight:900}
-    .footer-list{display:flex;flex-direction:column;gap:8px}
-    .footer-list a{color:#1b2437;text-decoration:none}
-    .footer-list a:hover{text-decoration:underline}
-    .footer-contact{color:#1b2437}
-    .footer-contact a{color:#1b2437;text-decoration:none}
-    .footer-social{display:flex;gap:10px;margin-top:8px}
-    .social{width:34px;height:34px;border-radius:999px;background:#fff;border:1px solid #dfe5f4;display:grid;place-items:center}
-    .footer-legal{border-top:1px solid #e4e9f7;margin-top:24px;padding:16px 0;color:#6b7280;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    /* ===== CTA flotante */
+    .floating-cta{position:fixed;left:0;right:0;bottom:14px;z-index:1000;pointer-events:none}
+    .floating-cta .row{pointer-events:auto;max-width:var(--max);margin:auto;padding:0 16px;display:flex;justify-content:center;gap:10px}
+    .pill-cta{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 20px;border-radius:999px;background-image:linear-gradient(90deg,var(--c1),var(--c2));color:#fff;border:0;font-weight:900;box-shadow:var(--shadow-strong);text-decoration:none}
+    .icon{width:50px;height:50px;border-radius:999px;background:#25D366;display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--shadow-strong)}
+    .icon svg{fill:#fff;width:26px;height:26px}
+
+    /* Aire antes de FILOSOFÍA + corrección de anclaje */
+    #filosofia{padding-top:40px; scroll-margin-top:90px}
 
     /* Responsive */
     @media (max-width:980px){
@@ -177,7 +184,6 @@
       .grid-3{grid-template-columns:1fr}
       .cal-grid{grid-template-columns:1fr;gap:14px}
       .calendly-inline-widget{height:880px}
-      .footer-grid{grid-template-columns:1fr;gap:18px}
     }
   </style>
 
@@ -265,10 +271,10 @@
 
     <div class="divider"></div>
 
-    <!-- 20' GRATIS – destacado -->
+    <!-- 20' GRATIS – destacado centrado -->
     <section id="contacto20" class="highlight">
       <div class="container" style="padding:0">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap">
+        <div class="wrap">
           <div>
             <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px">
               <span style="font-size:12px;font-weight:800;color:#0b87d0;background:#e1f3ff;border:1px solid #bfe7ff;border-radius:999px;padding:4px 10px">GRATIS 20′</span>
@@ -288,7 +294,7 @@
     </section>
   </section>
 
-  <!-- Opiniones (carrusel) -->
+  <!-- Opiniones (carrusel con autoplay) -->
   <section class="container reviews" id="opiniones">
     <div class="heading">
       <h2>Opiniones sobre la terapia</h2>
@@ -298,14 +304,17 @@
     <div class="carousel">
       <div class="carousel-viewport">
         <div class="carousel-track" id="reviewsTrack">
-          <!-- Tarjeta 1 -->
+
+          <!-- Macarena Cid -->
           <article class="review-card">
             <div class="review-top">
-              <img class="avatar" src="assets/av1.jpg" alt="Avatar" onerror="this.style.display='none'">
+              <div class="avatar-initial" aria-hidden="true">M</div>
               <div>
-                <div class="name">Sofía M.</div>
-                <div class="date">31/10/2025</div>
+                <div class="name">Macarena Cid</div>
+                <div class="date">Hace 1 semana</div>
               </div>
+              <div class="g-badge" title="Google reviews" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.4c-.2 1-.8 2-1.7 2.7v2.3h2.8c1.7-1.6 2.7-3.9 2.7-6.7Z"/><path fill="#34A853" d="M12 22c2.4 0 4.3-.8 5.7-2.2l-2.8-2.3c-.8.5-1.9.8-3 .8-2.3 0-4.3-1.5-5-3.6H4v2.3C5.4 20.2 8.4 22 12 22Z"/><path fill="#FBBC05" d="M6.9 14.7c-.2-.5-.3-1.1-.3-1.7s.1-1.2.3-1.7V9H4a10 10 0 0 0 0 6l2.9-2.3Z"/><path fill="#EA4335" d="M12 6.5c1.3 0 2.5.4 3.4 1.2l2.5-2.5C16.3 3.8 14.4 3 12 3 8.4 3 5.4 4.8 4 7.6L6.9 10c.7-2.1 2.7-3.6 5.1-3.6Z"/></svg>
             </div>
             <div class="stars" aria-label="5 estrellas">
               <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
@@ -314,44 +323,47 @@
               <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
               <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
             </div>
-            <p class="review-text">Llegué con mucha ansiedad; me ayudó a ordenar, entender y actuar. La recomiendo por su calidez y claridad.</p>
+            <p class="review-text">La Lic. Daiana me brindó un espacio claro y respetuoso. Con herramientas simples pude entender mejor lo que me pasaba y avanzar. Profesional y muy humana. Recomendada.</p>
           </article>
 
-          <!-- Tarjeta 2 -->
+          <!-- Marla Julieta Requena -->
           <article class="review-card">
             <div class="review-top">
-              <img class="avatar" src="assets/av2.jpg" alt="Avatar" onerror="this.style.display='none'">
+              <div class="avatar-initial" aria-hidden="true">M</div>
               <div>
-                <div class="name">Lucas R.</div>
-                <div class="date">12/09/2025</div>
+                <div class="name">Marla Julieta Requena</div>
+                <div class="date">Hace 2 semanas</div>
               </div>
+              <div class="g-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.4c-.2 1-.8 2-1.7 2.7v2.3h2.8c1.7-1.6 2.7-3.9 2.7-6.7Z"/><path fill="#34A853" d="M12 22c2.4 0 4.3-.8 5.7-2.2l-2.8-2.3c-.8.5-1.9.8-3 .8-2.3 0-4.3-1.5-5-3.6H4v2.3C5.4 20.2 8.4 22 12 22Z"/><path fill="#FBBC05" d="M6.9 14.7c-.2-.5-.3-1.1-.3-1.7s.1-1.2.3-1.7V9H4a10 10 0 0 0 0 6l2.9-2.3Z"/><path fill="#EA4335" d="M12 6.5c1.3 0 2.5.4 3.4 1.2l2.5-2.5C16.3 3.8 14.4 3 12 3 8.4 3 5.4 4.8 4 7.6L6.9 10c.7-2.1 2.7-3.6 5.1-3.6Z"/></svg>
             </div>
             <div class="stars" aria-label="5 estrellas">
               <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
             </div>
-            <p class="review-text">Muy buena escucha y herramientas prácticas. Sentí avances desde las primeras sesiones.</p>
+            <p class="review-text">Me gustó su forma clara de explicar y dejarme tareas que realmente me sirvieron. Sentí acompañamiento y cambios.</p>
           </article>
 
-          <!-- Tarjeta 3 -->
+          <!-- Natu Lucero -->
           <article class="review-card">
             <div class="review-top">
-              <img class="avatar" src="assets/av3.jpg" alt="Avatar" onerror="this.style.display='none'">
+              <div class="avatar-initial" aria-hidden="true">N</div>
               <div>
-                <div class="name">Carla P.</div>
-                <div class="date">22/08/2025</div>
+                <div class="name">Natu Lucero</div>
+                <div class="date">Hace 2 semanas</div>
               </div>
+              <div class="g-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.4c-.2 1-.8 2-1.7 2.7v2.3h2.8c1.7-1.6 2.7-3.9 2.7-6.7Z"/><path fill="#34A853" d="M12 22c2.4 0 4.3-.8 5.7-2.2l-2.8-2.3c-.8.5-1.9.8-3 .8-2.3 0-4.3-1.5-5-3.6H4v2.3C5.4 20.2 8.4 22 12 22Z"/><path fill="#FBBC05" d="M6.9 14.7c-.2-.5-.3-1.1-.3-1.7s.1-1.2.3-1.7V9H4a10 10 0 0 0 0 6l2.9-2.3Z"/><path fill="#EA4335" d="M12 6.5c1.3 0 2.5.4 3.4 1.2l2.5-2.5C16.3 3.8 14.4 3 12 3 8.4 3 5.4 4.8 4 7.6L6.9 10c.7-2.1 2.7-3.6 5.1-3.6Z"/></svg>
             </div>
             <div class="stars" aria-label="5 estrellas">
               <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
             </div>
-            <p class="review-text">Acompañamiento cálido y profesional. Me ayudó a poner límites y a bajar la rumiación.</p>
+            <p class="review-text">Gracias, Lic. Daiana Beltrán, por estar conmigo desde lo más humano. Me sentí escuchada sin juicios, con una guía clara y respetuosa. Tu profesionalismo hizo toda la diferencia. 100% recomendada.</p>
           </article>
 
           <!--  duplicar más .review-card si querés -->
         </div>
       </div>
 
-      <!-- Botones -->
       <div class="carousel-nav">
         <button class="carousel-btn" aria-label="Anterior" onclick="scrollReviews(-1)">
           <svg viewBox="0 0 20 20"><path d="M12.7 3.3 6 10l6.7 6.7 1.4-1.4L8.8 10l5.3-5.3-1.4-1.4Z"/></svg>
@@ -470,7 +482,7 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer (igual al anterior que te pasé) -->
   <footer class="site-footer" id="contacto">
     <div class="container footer-grid">
       <div class="footer-brand">
@@ -482,7 +494,7 @@
             <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#25D366" d="M20.5 3.5A11 11 0 0 0 3.2 18.6L2 22l3.5-1.1A11 11 0 1 0 20.5 3.5Z"/></svg>
           </a>
           <a class="social" href="#" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#E1306C" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.2 2.4.4.6.2 1 .4 1.5.9.5.5.7.9.9 1.5.2.5.3 1.2.4 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.9-.4 2.4-.2.6-.4 1-.9 1.5-.5.5-.9.7-1.5.9-.5.2-1.2.3-2.4.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.2-2.4-.4-.6-.2-1-.4-1.5-.9-.5-.5-.7-.9-.9-1.5-.2-.5-.3-1.2-.4-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.9.3-2.4.2-.6.4-1 .9-1.5.5-.5.9-.7 1.5-.9.5-.2 1.2-.3 2.4-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 2.1c-3.1 0-3.4 0-4.6.1-1 .1-1.6.2-1.9.3-.5.2-.8.4-1.2.8-.4.4-.6.7-.8 1.2-.1.3-.2.9-.3 1.9-.1 1.2-.1 1.5-.1 4.6s0 3.4.1 4.6c.1 1 .2 1.6.3 1.9.2.5.4.8.8 1.2.4.4.7.6 1.2.8.3.1.9.2 1.9.3 1.2.1 1.5.1 4.6.1s3.4 0 4.6-.1c1-.1 1.6-.2 1.9-.3.5-.2.8-.4 1.2-.8.4-.4.6-.7.8-1.2.1-.3.2-.9.3-1.9.1-1.2.1-1.5.1-4.6s0-3.4-.1-4.6c-.1-1-.2-1.6-.3-1.9-.2-.5-.4-.8-.8-1.2-.4-.4-.7-.6-1.2-.8-.3-.1-.9-.2-1.9-.3-1.2-.1-1.5-.1-4.6-.1Zm0 2.8a5.9 5.9 0 1 1 0 11.8 5.9 5.9 0 0 1 0-11.8Zm7-1.4a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8Z"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#E1306C" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.2 2.4.4.6.2 1 .4 1.5.9.5.5.7.9.9 1.5.2.5.3 1.2.4 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.9-.4 2.4-.2.6-.4 1-.9 1.5-.5.5-.9.7-1.5.9-.5.2-1.2.3-2.4.4-1.3.1-1.7.1-4.9.1s-3.4 0-4.6-.1c-1-.1-1.6-.2-1.9-.3-.6-.2-1-.4-1.5-.9-.5-.5-.7-.9-.9-1.5-.2-.5-.3-1.2-.4-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.9.3-2.4.2-.6.4-1 .9-1.5.5-.5.9-.7 1.5-.9.5-.2 1.2-.3 2.4-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 2.8a5.9 5.9 0 1 1 0 11.8 5.9 5.9 0 0 1 0-11.8Zm7-1.4a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8Z"/></svg>
           </a>
           <a class="social" href="mailto:tuemail@dominio.com" aria-label="Email">
             <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#374151" d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm18 0-8 5L4 6h16Zm0 12V8l-8 5-8-5v10h16Z"/></svg>
@@ -518,17 +530,38 @@
     </div>
   </footer>
 
-  <!-- JS: año + carrusel -->
+  <!-- JS: año, carrusel (botones + autoplay + pausa) -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    const track = document.getElementById('reviewsTrack');
     function scrollReviews(dir){
-      const track = document.getElementById('reviewsTrack');
       const card = track.querySelector('.review-card');
       const step = card ? (card.offsetWidth + 16) : 340;
       track.scrollBy({ left: dir * step, behavior: 'smooth' });
     }
+    // Autoplay suave
+    let auto = setInterval(()=>scrollReviews(1), 4000);
+    track.addEventListener('mouseenter', ()=>clearInterval(auto));
+    track.addEventListener('mouseleave', ()=>auto = setInterval(()=>scrollReviews(1), 4000));
+  </script>
+
+  <!-- JSON-LD SEO (opcional) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Daiana Beltrán · Psicóloga online",
+    "url":"https://tudominio.com/",
+    "image":"https://tudominio.com/assets/portrait.png",
+    "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"3"},
+    "review":[
+      {"@type":"Review","author":{"@type":"Person","name":"Macarena Cid"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"La Lic. Daiana me brindó un espacio claro y respetuoso. Recomendada."},
+      {"@type":"Review","author":{"@type":"Person","name":"Marla Julieta Requena"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Forma clara de explicar y tareas que me sirvieron. Cambios reales."},
+      {"@type":"Review","author":{"@type":"Person","name":"Natu Lucero"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Me sentí escuchada sin juicios, guía clara y respetuosa. 100% recomendada."}
+    ]
+  }
   </script>
 </body>
 </html>
-
 
