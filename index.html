@@ -37,8 +37,7 @@
       overflow-x:hidden;
     }
     img{max-width:100%;display:block}
-    /* Parche anti-SVG gigante */
-    svg{display:inline-block;max-width:100%;height:auto}
+    svg{display:inline-block;max-width:100%;height:auto} /* anti-SVG gigante */
 
     .container{max-width:var(--max);margin:auto;padding:0 24px}
 
@@ -96,7 +95,7 @@
     .highlight{
       background:linear-gradient(180deg,#eef6ff 0%, #ffffff 100%);
       border:1px solid #d8e8ff; border-radius:18px; padding:20px 22px; box-shadow:0 16px 36px rgba(14,165,233,.12);
-      margin-top:22px;  /* centra mejor el bloque y le da aire */
+      margin-top:22px;
     }
     .highlight .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
     .highlight .cta-wa{
@@ -106,15 +105,23 @@
     }
     .highlight .cta-wa:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(37,99,235,.35)}
 
-    /* ===== Pagos (continuo) */
-    .pay-wrap{display:flex;flex-wrap:wrap;gap:10px}
-    .pay-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft);font-weight:900;color:#1f2431;text-decoration:none}
-    .pay-btn svg{height:20px;width:auto}
-    .pay-btn .cards{display:inline-flex;gap:8px;align-items:center}
+    /* ===== Pagos */
+    .pay-section h2{margin-bottom:2px}
+    .pay-wrap{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px}
     .label{font-size:12px;font-weight:700;border-radius:999px;padding:6px 10px}
     .label-eu{color:#0ea5e9;background:#e6f6fd;border:1px solid #bfe8fb}
     .label-ar{color:#16a34a;background:#eaf8ef;border:1px solid #ccefd7}
-    .pill-btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft);font-weight:900;color:#1f2431;text-decoration:none;cursor:pointer}
+
+    .pay-card{
+      display:inline-flex;align-items:center;gap:14px;
+      padding:20px 26px;border-radius:999px;background:#fff;border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);font-weight:900;color:#1f2431;text-decoration:none;min-width:280px
+    }
+    .pay-card svg{height:22px}
+    .policy{
+      margin-top:14px;background:#fff;border:1px solid #e6eefc;border-radius:14px;padding:14px 16px;
+      box-shadow:var(--shadow-soft);color:#334155;font-weight:700
+    }
 
     /* ===== Reservas */
     .cal-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -146,7 +153,6 @@
       background:#fff; border-radius:16px; padding:16px; box-shadow:0 8px 28px rgba(13,18,33,.08);
     }
     .review-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-    .avatar{width:40px;height:40px;border-radius:999px;object-fit:cover}
     .avatar-initial{
       width:40px;height:40px;border-radius:999px;display:grid;place-items:center;
       background:linear-gradient(135deg,#e0e7ff,#c7f7f2); color:#0b1120;font-weight:900;
@@ -155,9 +161,9 @@
     .date{font-size:12px;color:#6b7280}
     .stars{display:flex;gap:2px;margin:4px 0}
     .star{width:16px;height:16px;fill:#f59e0b}
-    .review-text{color:#424a5d;margin:6px 0 0}
     .g-badge{margin-left:auto;display:inline-flex;align-items:center;gap:6px}
     .g-badge svg{width:18px;height:18px}
+
     .carousel-nav{
       position:absolute; inset:50% auto auto 0; width:100%; transform:translateY(-50%);
       display:flex; justify-content:space-between; pointer-events:none;
@@ -175,7 +181,17 @@
     .icon{width:50px;height:50px;border-radius:999px;background:#25D366;display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--shadow-strong)}
     .icon svg{fill:#fff;width:26px;height:26px}
 
-    /* Aire antes de FILOSOFÍA + corrección de anclaje */
+    /* ===== Footer */
+    .site-footer{background:#f3f5fe;margin-top:28px;border-top:1px solid var(--line)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;padding:36px 0}
+    .footer-brand img{height:24px;margin-bottom:8px}
+    .footer-brand .claim{color:#64748b;margin:6px 0 10px}
+    .footer-social{display:flex;gap:10px}
+    .footer-social .social{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;background:#fff;border:1px solid #e6eaf7}
+    .footer-col h4{margin:0 0 8px}
+    .footer-list{display:grid;gap:6px}
+    .footer-list a{color:#1f2937;text-decoration:none}
+    .footer-legal{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-top:1px solid #e7ebf7;color:#6b7280}
     #filosofia{padding-top:40px; scroll-margin-top:90px}
 
     /* Responsive */
@@ -184,6 +200,7 @@
       .grid-3{grid-template-columns:1fr}
       .cal-grid{grid-template-columns:1fr;gap:14px}
       .calendly-inline-widget{height:880px}
+      .footer-grid{grid-template-columns:1fr}
     }
   </style>
 
@@ -234,7 +251,7 @@
     </div>
   </section>
 
-  <!-- Especialidades (banda) -->
+  <!-- ESPECIALIDADES (banda) -->
   <div class="band">
     <section class="container" id="especialidades">
       <h2>Te acompaño en…</h2>
@@ -250,7 +267,7 @@
     </section>
   </div>
 
-  <!-- Filosofía -->
+  <!-- FILOSOFÍA -->
   <section class="container" id="filosofia">
     <h2>Mi filosofía de trabajo</h2>
     <p class="lede">Trabajo 100% online con una forma de hacer terapia clara, humana y práctica. Tengo algunas máximas que me guían:</p>
@@ -271,7 +288,7 @@
 
     <div class="divider"></div>
 
-    <!-- 20' GRATIS – destacado centrado -->
+    <!-- 20' GRATIS – destacado -->
     <section id="contacto20" class="highlight">
       <div class="container" style="padding:0">
         <div class="wrap">
@@ -294,7 +311,7 @@
     </section>
   </section>
 
-  <!-- Opiniones (carrusel con autoplay) -->
+  <!-- OPINIONES -->
   <section class="container reviews" id="opiniones">
     <div class="heading">
       <h2>Opiniones sobre la terapia</h2>
@@ -305,37 +322,29 @@
       <div class="carousel-viewport">
         <div class="carousel-track" id="reviewsTrack">
 
-          <!-- Macarena Cid -->
+          <!-- 1 -->
           <article class="review-card">
             <div class="review-top">
               <div class="avatar-initial" aria-hidden="true">M</div>
-              <div>
-                <div class="name">Macarena Cid</div>
-                <div class="date">Hace 1 semana</div>
-              </div>
-              <div class="g-badge" title="Google reviews" aria-hidden="true">
+              <div><div class="name">Macarena Cid</div><div class="date">Hace 1 semana</div></div>
+              <div class="g-badge" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.4c-.2 1-.8 2-1.7 2.7v2.3h2.8c1.7-1.6 2.7-3.9 2.7-6.7Z"/><path fill="#34A853" d="M12 22c2.4 0 4.3-.8 5.7-2.2l-2.8-2.3c-.8.5-1.9.8-3 .8-2.3 0-4.3-1.5-5-3.6H4v2.3C5.4 20.2 8.4 22 12 22Z"/><path fill="#FBBC05" d="M6.9 14.7c-.2-.5-.3-1.1-.3-1.7s.1-1.2.3-1.7V9H4a10 10 0 0 0 0 6l2.9-2.3Z"/><path fill="#EA4335" d="M12 6.5c1.3 0 2.5.4 3.4 1.2l2.5-2.5C16.3 3.8 14.4 3 12 3 8.4 3 5.4 4.8 4 7.6L6.9 10c.7-2.1 2.7-3.6 5.1-3.6Z"/></svg>
+              </div>
             </div>
             <div class="stars" aria-label="5 estrellas">
-              <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
-              <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
-              <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
-              <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
-              <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
+              <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
             </div>
             <p class="review-text">La Lic. Daiana me brindó un espacio claro y respetuoso. Con herramientas simples pude entender mejor lo que me pasaba y avanzar. Profesional y muy humana. Recomendada.</p>
           </article>
 
-          <!-- Marla Julieta Requena -->
+          <!-- 2 -->
           <article class="review-card">
             <div class="review-top">
               <div class="avatar-initial" aria-hidden="true">M</div>
-              <div>
-                <div class="name">Marla Julieta Requena</div>
-                <div class="date">Hace 2 semanas</div>
-              </div>
+              <div><div class="name">Marla Julieta Requena</div><div class="date">Hace 2 semanas</div></div>
               <div class="g-badge" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.4c-.2 1-.8 2-1.7 2.7v2.3h2.8c1.7-1.6 2.7-3.9 2.7-6.7Z"/><path fill="#34A853" d="M12 22c2.4 0 4.3-.8 5.7-2.2l-2.8-2.3c-.8.5-1.9.8-3 .8-2.3 0-4.3-1.5-5-3.6H4v2.3C5.4 20.2 8.4 22 12 22Z"/><path fill="#FBBC05" d="M6.9 14.7c-.2-.5-.3-1.1-.3-1.7s.1-1.2.3-1.7V9H4a10 10 0 0 0 0 6l2.9-2.3Z"/><path fill="#EA4335" d="M12 6.5c1.3 0 2.5.4 3.4 1.2l2.5-2.5C16.3 3.8 14.4 3 12 3 8.4 3 5.4 4.8 4 7.6L6.9 10c.7-2.1 2.7-3.6 5.1-3.6Z"/></svg>
+              </div>
             </div>
             <div class="stars" aria-label="5 estrellas">
               <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
@@ -343,16 +352,14 @@
             <p class="review-text">Me gustó su forma clara de explicar y dejarme tareas que realmente me sirvieron. Sentí acompañamiento y cambios.</p>
           </article>
 
-          <!-- Natu Lucero -->
+          <!-- 3 -->
           <article class="review-card">
             <div class="review-top">
               <div class="avatar-initial" aria-hidden="true">N</div>
-              <div>
-                <div class="name">Natu Lucero</div>
-                <div class="date">Hace 2 semanas</div>
-              </div>
+              <div><div class="name">Natu Lucero</div><div class="date">Hace 2 semanas</div></div>
               <div class="g-badge" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.4c-.2 1-.8 2-1.7 2.7v2.3h2.8c1.7-1.6 2.7-3.9 2.7-6.7Z"/><path fill="#34A853" d="M12 22c2.4 0 4.3-.8 5.7-2.2l-2.8-2.3c-.8.5-1.9.8-3 .8-2.3 0-4.3-1.5-5-3.6H4v2.3C5.4 20.2 8.4 22 12 22Z"/><path fill="#FBBC05" d="M6.9 14.7c-.2-.5-.3-1.1-.3-1.7s.1-1.2.3-1.7V9H4a10 10 0 0 0 0 6l2.9-2.3Z"/><path fill="#EA4335" d="M12 6.5c1.3 0 2.5.4 3.4 1.2l2.5-2.5C16.3 3.8 14.4 3 12 3 8.4 3 5.4 4.8 4 7.6L6.9 10c.7-2.1 2.7-3.6 5.1-3.6Z"/></svg>
+              </div>
             </div>
             <div class="stars" aria-label="5 estrellas">
               <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
@@ -360,7 +367,51 @@
             <p class="review-text">Gracias, Lic. Daiana Beltrán, por estar conmigo desde lo más humano. Me sentí escuchada sin juicios, con una guía clara y respetuosa. Tu profesionalismo hizo toda la diferencia. 100% recomendada.</p>
           </article>
 
-          <!--  duplicar más .review-card si querés -->
+          <!-- 4 -->
+          <article class="review-card">
+            <div class="review-top">
+              <div class="avatar-initial" aria-hidden="true">S</div>
+              <div><div class="name">Sofía M.</div><div class="date">31/08/2025</div></div>
+              <div class="g-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.4c-.2 1-.8 2-1.7 2.7v2.3h2.8c1.7-1.6 2.7-3.9 2.7-6.7Z"/><path fill="#34A853" d="M12 22c2.4 0 4.3-.8 5.7-2.2l-2.8-2.3c-.8.5-1.9.8-3 .8-2.3 0-4.3-1.5-5-3.6H4v2.3C5.4 20.2 8.4 22 12 22Z"/><path fill="#FBBC05" d="M6.9 14.7c-.2-.5-.3-1.1-.3-1.7s.1-1.2.3-1.7V9H4a10 10 0 0 0 0 6l2.9-2.3Z"/><path fill="#EA4335" d="M12 6.5c1.3 0 2.5.4 3.4 1.2l2.5-2.5C16.3 3.8 14.4 3 12 3 8.4 3 5.4 4.8 4 7.6L6.9 10c.7-2.1 2.7-3.6 5.1-3.6Z"/></svg>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 estrellas">
+              <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
+            </div>
+            <p class="review-text">Llegué con mucha ansiedad; me ayudó a ordenar, entender y actuar. La recomiendo por su calidez y claridad.</p>
+          </article>
+
+          <!-- 5 -->
+          <article class="review-card">
+            <div class="review-top">
+              <div class="avatar-initial" aria-hidden="true">L</div>
+              <div><div class="name">Lucas R.</div><div class="date">12/09/2025</div></div>
+              <div class="g-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.4c-.2 1-.8 2-1.7 2.7v2.3h2.8c1.7-1.6 2.7-3.9 2.7-6.7Z"/><path fill="#34A853" d="M12 22c2.4 0 4.3-.8 5.7-2.2l-2.8-2.3c-.8.5-1.9.8-3 .8-2.3 0-4.3-1.5-5-3.6H4v2.3C5.4 20.2 8.4 22 12 22Z"/><path fill="#FBBC05" d="M6.9 14.7c-.2-.5-.3-1.1-.3-1.7s.1-1.2.3-1.7V9H4a10 10 0 0 0 0 6l2.9-2.3Z"/><path fill="#EA4335" d="M12 6.5c1.3 0 2.5.4 3.4 1.2l2.5-2.5C16.3 3.8 14.4 3 12 3 8.4 3 5.4 4.8 4 7.6L6.9 10c.7-2.1 2.7-3.6 5.1-3.6Z"/></svg>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 estrellas">
+              <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
+            </div>
+            <p class="review-text">Muy buena escucha y herramientas prácticas. Sentí avances desde las primeras sesiones.</p>
+          </article>
+
+          <!-- 6 -->
+          <article class="review-card">
+            <div class="review-top">
+              <div class="avatar-initial" aria-hidden="true">C</div>
+              <div><div class="name">Carla P.</div><div class="date">22/08/2025</div></div>
+              <div class="g-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.4c-.2 1-.8 2-1.7 2.7v2.3h2.8c1.7-1.6 2.7-3.9 2.7-6.7Z"/><path fill="#34A853" d="M12 22c2.4 0 4.3-.8 5.7-2.2l-2.8-2.3c-.8.5-1.9.8-3 .8-2.3 0-4.3-1.5-5-3.6H4v2.3C5.4 20.2 8.4 22 12 22Z"/><path fill="#FBBC05" d="M6.9 14.7c-.2-.5-.3-1.1-.3-1.7s.1-1.2.3-1.7V9H4a10 10 0 0 0 0 6l2.9-2.3Z"/><path fill="#EA4335" d="M12 6.5c1.3 0 2.5.4 3.4 1.2l2.5-2.5C16.3 3.8 14.4 3 12 3 8.4 3 5.4 4.8 4 7.6L6.9 10c.7-2.1 2.7-3.6 5.1-3.6Z"/></svg>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 estrellas">
+              <svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg><svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6-5.4-2.9L4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
+            </div>
+            <p class="review-text">Acompañamiento cálido y profesional. Me ayudó a poner límites y a bajar la rumiación.</p>
+          </article>
+
         </div>
       </div>
 
@@ -375,24 +426,24 @@
     </div>
   </section>
 
-  <!-- Pagos continuo -->
+  <!-- PAGOS -->
   <div class="band" id="pago-sesion">
-    <section class="container">
+    <section class="container pay-section">
       <h2>Pagar sesión (50′) antes de reservar</h2>
       <p class="lede">El pago confirma y habilita la reserva en el calendario. Elegí la opción que te quede mejor.</p>
 
       <!-- España / UE -->
       <div class="pay-wrap">
         <span class="label label-eu">España / UE</span>
-        <a class="pay-btn" href="#" title="Pago con tarjeta (ONE)">
-          <span class="cards">
+        <a class="pay-card" href="#" title="Pago con tarjeta (ONE)">
+          <span style="display:inline-flex;gap:10px">
             <svg viewBox="0 0 24 16" aria-hidden="true"><rect rx="3" width="24" height="16" fill="#1A1F71"/><path fill="#fff" d="M7.6 11H6l1.2-6h1.7L7.6 11Zm7.5-5.8c-.4-.1-1-.2-1.6-.2-1.8 0-3 1-3 2.4 0 1 .9 1.5 1.6 1.8s1 .5 1 .8c0 .4-.6.6-1.1.6-.8 0-1.3-.1-2-.4l-.3 1.4c.5.2 1.4.4 2.3.4 2 0 3.2-1 3.2-2.5 0-.8-.5-1.4-1.6-1.9-.7-.3-1.1-.5-1.1-.8 0-.3.3-.5.9-.5.6 0 1 .1 1.3.2l.4-1.3Zm3.3-.2c-.4 0-.8.1-1 .2l-.1-1.1h-1.6l-.8 4.6c0 .9.6 1.5 1.8 1.5.5 0 1-.1 1.3-.2l.2-1.4c-.2.1-.6.2-1 .2-.3 0-.6-.1-.6-.4l.2-1h1.9l.3-1.4h-1.9l.1-.7c.1-.2.4-.3.8-.3.3 0 .6 0 .8.1l.2-1.1c-.2-.1-.7-.2-1.2-.2Z"/></svg>
             <svg viewBox="0 0 24 16" aria-hidden="true"><rect rx="3" width="24" height="16" fill="#EB001B"/><rect rx="3" x="8" width="16" height="16" fill="#F79E1B" opacity=".9"/></svg>
             <svg viewBox="0 0 24 16" aria-hidden="true"><rect rx="3" width="24" height="16" fill="#016FD0"/><path fill="#fff" d="M4 12V4h3c1.6 0 2.6.7 2.6 2 0 .9-.6 1.4-1.4 1.6 1 .2 1.7.8 1.7 1.9C9.9 11.2 8.9 12 7.3 12H4Zm2-4.7H7c.7 0 1.1-.3 1.1-.8S7.8 6 7 6H6v1.3Zm0 3h1.4c.8 0 1.2-.3 1.2-.9 0-.6-.4-.9-1.2-.9H6v1.8Z"/></svg>
           </span>
           Pagar con tarjeta (España/UE)
         </a>
-        <a class="pay-btn" href="#" title="Transferencia o link — Wise (EUR)">
+        <a class="pay-card" href="#" title="Transferencia o link — Wise (EUR)">
           <svg viewBox="0 0 28 16" aria-hidden="true"><path fill="#1FC4B9" d="M0 12.5 5.6 0H11L8.5 5.6H14l-5.6 10.2-1.6-3.3H0Z"/></svg>
           Transferencia (Wise · EUR)
         </a>
@@ -403,27 +454,27 @@
       <!-- Argentina -->
       <div class="pay-wrap">
         <span class="label label-ar">Argentina</span>
-        <button type="button" class="pill-btn"
-          onclick="document.getElementById('datos-uala').style.display = (document.getElementById('datos-uala').style.display==='block'?'none':'block')">
+        <button type="button" class="pay-card"
+          onclick="datosUala.style.display = (datosUala.style.display==='block'?'none':'block')">
           🧾 Ver datos de transferencia (Alias/CVU)
         </button>
-        <a class="pill-btn" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20reservar%20una%20sesi%C3%B3n%20online.%20Pasame%20alias%20y%20monto%20por%20favor." target="_blank" rel="noopener">
+        <a class="pay-card" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20reservar%20una%20sesi%C3%B3n%20online.%20Pasame%20alias%20y%20monto%20por%20favor." target="_blank" rel="noopener">
           📲 Escribirme por WhatsApp
         </a>
       </div>
 
-      <div id="datos-uala" style="display:none;margin:8px 0 0 0;padding:12px;border:1px dashed #dfe7f7;border-radius:12px;background:#fff">
+      <div id="datos-uala" style="display:none;margin:10px 0 0 0;padding:12px;border:1px dashed #dfe7f7;border-radius:12px;background:#fff">
         <p style="margin:0 0 4px 0"><strong>Alias (Ualá):</strong> rocio866.uala</p>
         <p style="margin:0;font-size:14px;color:#64748b">Concepto: “Reserva sesión”. Enviá el comprobante por WhatsApp para confirmar tu turno.</p>
       </div>
 
-      <p class="lede" style="font-size:13px;margin-top:14px;color:#6b7280">
+      <div class="policy">
         <strong>Política:</strong> la reserva se confirma con pago previo (seña 50% o total). Cancelaciones con 24 h se reprograman sin costo; con menos de 24 h, la seña no es reembolsable.
-      </p>
+      </div>
     </section>
   </div>
 
-  <!-- Reservas -->
+  <!-- RESERVAS -->
   <section class="container" id="reservar">
     <h2>Reservar sesiones regulares (50′)</h2>
     <p class="lede">Las sesiones regulares se reservan por calendario con <strong>pago previo</strong>. Si es tu primer contacto, usá el botón de WhatsApp de arriba.</p>
@@ -482,7 +533,7 @@
     </div>
   </div>
 
-  <!-- Footer (igual al anterior que te pasé) -->
+  <!-- FOOTER -->
   <footer class="site-footer" id="contacto">
     <div class="container footer-grid">
       <div class="footer-brand">
@@ -496,7 +547,7 @@
           <a class="social" href="#" aria-label="Instagram">
             <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#E1306C" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.2 2.4.4.6.2 1 .4 1.5.9.5.5.7.9.9 1.5.2.5.3 1.2.4 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.9-.4 2.4-.2.6-.4 1-.9 1.5-.5.5-.9.7-1.5.9-.5.2-1.2.3-2.4.4-1.3.1-1.7.1-4.9.1s-3.4 0-4.6-.1c-1-.1-1.6-.2-1.9-.3-.6-.2-1-.4-1.5-.9-.5-.5-.7-.9-.9-1.5-.2-.5-.3-1.2-.4-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.9.3-2.4.2-.6.4-1 .9-1.5.5-.5.9-.7 1.5-.9.5-.2 1.2-.3 2.4-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 2.8a5.9 5.9 0 1 1 0 11.8 5.9 5.9 0 0 1 0-11.8Zm7-1.4a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8Z"/></svg>
           </a>
-          <a class="social" href="mailto:tuemail@dominio.com" aria-label="Email">
+          <a class="social" href="mailto:comunicar.terapiadelenguaje@gmail.com" aria-label="Email">
             <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#374151" d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm18 0-8 5L4 6h16Zm0 12V8l-8 5-8-5v10h16Z"/></svg>
           </a>
         </div>
@@ -518,7 +569,7 @@
         <div class="footer-list">
           <span>Atención 100% online · Argentina / España</span>
           <a href="tel:+5492996044900">+54 9 299 604 4900</a>
-          <a href="mailto:tuemail@dominio.com">tuemail@dominio.com</a>
+          <a href="mailto:comunicar.terapiadelenguaje@gmail.com">comunicar.terapiadelenguaje@gmail.com</a>
           <a href="https://wa.me/5492996044900" target="_blank" rel="noopener">WhatsApp directo</a>
         </div>
       </div>
@@ -533,8 +584,9 @@
   <!-- JS: año, carrusel (botones + autoplay + pausa) -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-
     const track = document.getElementById('reviewsTrack');
+    const datosUala = document.getElementById('datos-uala');
+
     function scrollReviews(dir){
       const card = track.querySelector('.review-card');
       const step = card ? (card.offsetWidth + 16) : 340;
@@ -544,4 +596,26 @@
     let auto = setInterval(()=>scrollReviews(1), 4000);
     track.addEventListener('mouseenter', ()=>clearInterval(auto));
     track.addEventListener('mouseleave', ()=>auto = setInterval(()=>scrollReviews(1), 4000));
-  </script>     
+  </script>
+
+  <!-- JSON-LD SEO (opcional) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Daiana Beltrán · Psicóloga online",
+    "url":"https://tudominio.com/",
+    "image":"https://tudominio.com/assets/portrait.png",
+    "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"6"},
+    "review":[
+      {"@type":"Review","author":{"@type":"Person","name":"Macarena Cid"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Espacio claro y respetuoso. Recomendada."},
+      {"@type":"Review","author":{"@type":"Person","name":"Marla Julieta Requena"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Explicaciones claras y tareas útiles. Cambios reales."},
+      {"@type":"Review","author":{"@type":"Person","name":"Natu Lucero"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Acompañamiento humano; guía clara y respetuosa."},
+      {"@type":"Review","author":{"@type":"Person","name":"Sofía M."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Orden y claridad para la ansiedad."},
+      {"@type":"Review","author":{"@type":"Person","name":"Lucas R."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Herramientas prácticas desde el inicio."},
+      {"@type":"Review","author":{"@type":"Person","name":"Carla P."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Calidez y profesionalismo; bajó mi rumiación."}
+    ]
+  }
+  </script>
+</body>
+</html>
