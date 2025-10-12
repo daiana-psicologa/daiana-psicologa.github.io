@@ -302,41 +302,61 @@ footer{background:#f7f3e6;border-top:1px solid var(--line);margin-top:28px}
   </section>
 </div>
 
-<!-- ===================== FILOSOFÍA ===================== -->
+<!-- ======= MI FILOSOFÍA DE TRABAJO (listado NO desplegable) ======= -->
 <section class="container" id="filosofia">
   <h2>Mi filosofía de trabajo</h2>
-  <div class="filo">
-    <p>La terapia se apoya en pocas ideas sencillas y firmes: claridad, humanidad y práctica. No se busca aplicar una receta; se construye un proceso que tenga sentido para la persona y su contexto.</p>
 
-    <details open>
-      <summary>Lo clínico se une a tu sabiduría</summary>
-      <div>
-        <p>La profesional aporta experiencia y marco clínico; la persona aporta el conocimiento más valioso sobre su vida. El trabajo consiste en combinar ambos para crear un camino propio y útil.</p>
-      </div>
-    </details>
+  <!-- estilos mínimos solo para este bloque -->
+  <style>
+    #filosofia .box{
+      background:#fff;border:1px solid var(--line);border-radius:16px;
+      padding:16px 18px;box-shadow:var(--shadow-s)
+    }
+    #filosofia .lead{margin:0 0 12px;color:#4b463f}
+    #filosofia .item{padding:12px 0}
+    #filosofia .item + .item{border-top:1px dashed var(--line)}
+    #filosofia .item h3{margin:0 0 4px;font:900 1rem/1.2 Inter,system-ui}
+    #filosofia .item p{margin:0;color:#3a352e}
+  </style>
 
-    <details>
-      <summary>Si lo de siempre no funciona, se prueba distinto</summary>
-      <div>
-        <p>Repetir estrategias que no dieron resultado desgasta. En sesión se exploran alternativas realistas para hoy, no fórmulas generales.</p>
-      </div>
-    </details>
+  <div class="box">
+    <p class="lead">
+      Trabajo con pocas ideas claras: sencillez, humanidad y práctica clínica rigurosa. 
+      No aplico recetas; cada proceso se diseña con la persona y su contexto para que tenga sentido en su vida diaria.
+    </p>
 
-    <details>
-      <summary>La relación terapéutica es el centro</summary>
-      <div>
-        <p>Sin sensación de conexión, la terapia no avanza. Si la persona siente que debe “adaptarse” a la profesional, se revisa honestamente y, de ser necesario, se deriva con cuidado.</p>
-      </div>
-    </details>
+    <div class="item">
+      <h3>Lo clínico se une a tu sabiduría</h3>
+      <p>Yo aporto marco y herramientas; tú aportas el conocimiento más valioso sobre tu historia. El avance aparece cuando unimos ambas miradas.</p>
+    </div>
 
-    <details>
-      <summary>Humanista e integrativa</summary>
-      <div>
-        <p>Se integra Terapia Focalizada en la Emoción con perspectivas existenciales (Rogers, Frankl, Perls) y, cuando ayuda, una mirada sistémica familiar. La técnica está al servicio de la relación, no al revés.</p>
-      </div>
-    </details>
+    <div class="item">
+      <h3>Si lo de siempre no funciona, probamos algo distinto</h3>
+      <p>Repetir estrategias que no dieron resultado solo desgasta. En sesión buscamos alternativas realistas y aplicables, no fórmulas generales.</p>
+    </div>
+
+    <div class="item">
+      <h3>La relación terapéutica es el centro</h3>
+      <p>Sin conexión, la terapia no avanza. Si en algún momento sientes que debes “adaptarte” a mí o que el espacio no te cuida, lo revisamos con honestidad y hacemos los ajustes necesarios —incluida una derivación, si conviene.</p>
+    </div>
+
+    <div class="item">
+      <h3>Técnica al servicio de la persona</h3>
+      <p>No creo en protocolos rígidos ni en “trucos” universales. La intervención se ajusta a tu ritmo, valores y circunstancias; buscamos cambios que se noten fuera de la sesión.</p>
+    </div>
+
+    <div class="item">
+      <h3>Humanista e integrativa</h3>
+      <p>Trabajo principalmente desde la Terapia Focalizada en la Emoción y perspectivas existenciales (Rogers, Frankl, Perls). Cuando ayuda, incorporo una mirada sistémica familiar para abrir nuevas comprensiones y salir de bucles repetidos.</p>
+    </div>
+
+    <div class="item">
+      <h3>Formato y objetivo</h3>
+      <p>La atención es 100% online. Objetivo: más claridad para decidir, límites más sanos y una vida que se sienta propia.</p>
+    </div>
   </div>
 </section>
+
 
 <!-- ===================== OPINIONES ===================== -->
 <section class="reviews" id="opiniones">
@@ -471,32 +491,107 @@ footer{background:#f7f3e6;border-top:1px solid var(--line);margin-top:28px}
   </div>
 </section>
 
-<!-- ===================== FAQ (opcional original) ===================== -->
-<div class="faq-band" id="faq" style="margin-top:22px">
-  <section class="faq container narrow">
+<!-- ===== Preguntas Frecuentes (estilo acordeón con “+”) ===== -->
+<div class="faq-band" id="faq">
+  <section class="faq">
     <h2 style="padding:24px 0 10px;margin:0">Preguntas Frecuentes</h2>
-    <div class="acc">
+
+    <div class="acc" id="faq-acc">
+      <!-- 1 -->
       <details>
         <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
-        <div class="content" style="padding:0 16px 14px;color:#4b463f">
-          <p>Si te lo preguntas, probablemente ya percibes que algo no marcha bien. La terapia sirve para escuchar esa señal, aclarar dudas y decidir pasos concretos.</p>
+        <div class="content">
+          <p>
+            Es una duda muy habitual. A veces es evidente —ansiedad, ideas repetitivas,
+            apatía o desesperanza— y otras el malestar es más difuso: sensación de vacío,
+            vivir en piloto automático, cansancio constante o agobio.
+          </p>
+          <p>
+            La mejor referencia suele ser la propia persona: si te estás planteando ir a terapia,
+            probablemente ya notes una inquietud de fondo que indica que algo no va bien.
+          </p>
+          <p>
+            Mi propuesta es sencilla: usar una primera sesión para entender qué está señalando ese
+            malestar y salir de dudas, viendo si hay temas pendientes que conviene abordar con apoyo.
+          </p>
         </div>
       </details>
+
+      <!-- 2 -->
       <details>
         <summary>¿Cuánto suele durar una psicoterapia?</summary>
-        <div class="content" style="padding:0 16px 14px;color:#4b463f">
-          <p>Lo más útil es semanal o quincenal. La duración depende de objetivos, ritmo y lo que se vaya encontrando.</p>
+        <div class="content">
+          <p>
+            Lo más útil es trabajar semanalmente o cada dos semanas. Menor frecuencia suele
+            restar eficacia y alargar procesos.
+          </p>
+          <p>
+            Como orientación, la mayoría de acompañamientos se sitúan entre 6 y 10 meses; algunos
+            casos necesitan menos tiempo y otros más. Es una estimación general: depende de tus
+            objetivos, tu ritmo y lo que vayamos encontrando en el proceso.
+          </p>
         </div>
       </details>
+
+      <!-- 3 -->
       <details>
-        <summary>¿Por qué hay tantos tipos de terapia y cómo elegir?</summary>
-        <div class="content" style="padding:0 16px 14px;color:#4b463f">
-          <p>Más que la etiqueta, importa la conexión con la profesional. La alianza terapéutica es el mejor predictor de éxito.</p>
+        <summary>¿Por qué hay tantos tipos de terapia y cómo sé cuál necesito?</summary>
+        <div class="content">
+          <p>
+            Existen muchas modalidades (cognitivo-conductual, psicodinámica/psicoanálisis,
+            humanista, sistémica…). Cada una entiende de forma distinta el origen del
+            malestar y propone herramientas diferentes.
+          </p>
+          <p>
+            Aun así, todas comparten elementos clave: no reprimir emociones, cuidar la relación
+            terapeuta-paciente y tomar conciencia del mundo interno.
+          </p>
+          <p>
+            Recomendación práctica: más que obsesionarte con la “etiqueta”, elige a una
+            profesional con la que sientas conexión, seguridad y respeto. La alianza terapéutica
+            es el mejor predictor de resultados.
+          </p>
+        </div>
+      </details>
+
+      <!-- 4 -->
+      <details>
+        <summary>¿Cómo es una psicoterapia conmigo?</summary>
+        <div class="content">
+          <p>
+            El foco está en la persona por encima del protocolo. Aunque la ansiedad o la
+            depresión sean diagnósticos frecuentes, cada historia es única; adapto la intervención
+            a tu contexto y tus metas.
+          </p>
+          <p>
+            Trabajo desde un enfoque humanista e integrativo, con especial atención a los
+            procesos emocionales y a la relación terapéutica. Cuando ayuda, incorporo una mirada
+            existencial y sistémica para ampliar perspectivas y desbloquear bucles repetidos.
+          </p>
+          <p>
+            Busco una terapia honesta y directa, siempre con empatía y cuidado. El objetivo no es
+            solo que baje el síntoma, sino cambiar lo que lo sostiene para que se note en la vida
+            real: decisiones más claras, límites más sanos y bienestar sostenible.
+          </p>
         </div>
       </details>
     </div>
   </section>
 </div>
+
+<script>
+  // Abrir de a uno: al abrir un <details>, cierra los demás
+  document.querySelectorAll('#faq-acc details').forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (d.open) {
+        document.querySelectorAll('#faq-acc details').forEach(o => {
+          if (o !== d) o.removeAttribute('open');
+        });
+      }
+    });
+  });
+</script>
+
 
 <footer>
   <div class="container footer">
