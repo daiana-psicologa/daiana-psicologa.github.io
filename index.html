@@ -4,11 +4,11 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Daiana Beltrán · Psicología online</title>
-<meta name="description" content="Psicoterapia online clara, humana y práctica. Ansiedad, depresión, gestión emocional, duelos, vínculos y alimentación. Primera conversación por WhatsApp."/>
+<meta name="description" content="Psicoterapia online clara, humana y práctica. Ansiedad, depresión, regulación emocional, duelos, vínculos y alimentación. Primera conversación por WhatsApp."/>
 
 <link rel="icon" href="/assets/daiana-beltran-logo-primary-amarillo-1024x1024-v1.png" type="image/png"/>
 
-<!-- Open Graph -->
+<!-- Open Graph básico -->
 <meta property="og:title" content="Daiana Beltrán · Psicología online"/>
 <meta property="og:description" content="Psicoterapia online clara, humana y práctica. Ansiedad, depresión, gestión emocional, duelos, vínculos y alimentación."/>
 <meta property="og:image" content="https://daiana-psicologa.github.io/assets/daiana-beltran-logo-primary-amarillo-1024x1024-v1.png"/>
@@ -61,52 +61,64 @@ h1{font:900 clamp(34px,5.6vw,62px)/1.06 Inter;margin:0 0 10px}
 .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-weight:900;text-decoration:none}
 .btn-outline{background:#fff6e6;border:1px solid var(--line);padding:12px 18px;color:#3a352e;box-shadow:var(--shadow-s)}
 .btn-grad{padding:12px 22px;background-image:linear-gradient(90deg,var(--c1),var(--c2));color:#fff;box-shadow:var(--shadow-s)}
+/* escenario: rectángulo mostaza detrás y tu retrato delante */
 .photo{position:relative;display:grid;place-items:center}
 .rect{width:min(540px,90%);aspect-ratio:1/1;border-radius:30px;background:#e4b227;box-shadow:0 20px 40px rgba(234,179,8,.25)}
 .portrait{position:absolute;inset:auto;bottom:-12px;right:6%;width:min(660px,96%);max-width:640px;z-index:2;filter:drop-shadow(0 26px 46px rgba(0,0,0,.18))}
 
-/* Band */
+/* CARDS Te acompaño */
 .band{background:var(--band)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow-s)}
+.card .tag{display:inline-block;background:#fff0cc;color:#a16207;font-weight:900;padding:.28rem .6rem;border-radius:999px;font-size:.78rem}
+.card h3{margin:10px 0 6px}
+.card p{margin:0;color:var(--muted)}
+.read{margin-top:8px}
+.read summary{cursor:pointer;font-weight:800;list-style:none}
+.read summary::after{content:"Leer más";color:#b45309;margin-left:6px}
+.read[open] summary::after{content:"Leer menos"}
 
-/* ===================== ESPECIALIDADES (ACORDEONES) ===================== */
-.sec-especialidades{padding:48px 0;background:var(--bg)}
-.grid-e{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
-@media (max-width:980px){.grid-e{grid-template-columns:1fr}}
-.e-card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 26px rgba(90,70,30,.08);padding:16px}
-.e-card h3{margin:0 0 .35rem;font:800 1.05rem/1.3 Inter}
-.e-lead{margin:0 0 .6rem;color:#4b463f}
-.read details{border-top:1px dashed var(--line);padding-top:10px;margin-top:8px}
-.read summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-weight:800;color:#b45309}
-.read summary::-webkit-details-marker{display:none}
-.read summary::before{content:"▸";display:inline-block;transform:translateY(-1px);transition:transform .2s}
-.read details[open] summary::before{transform:rotate(90deg)}
-.read .more{margin:.5rem 0 0;color:#3a352e}
+/* Filosofía */
+#filosofia{padding-top:30px}
+.filo{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow-s)}
+.filo p{margin:.4rem 0;color:#4b463f}
 
-/* ========================= MI FILOSOFÍA (ACORDEONES) ========================= */
-.sec-filosofia{padding:44px 0;background:var(--band)}
-.fil-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 8px 26px rgba(90,70,30,.08)}
-.fil-box p{margin:.5rem 0;color:#3a352e}
-.fil-acc details{border-top:1px dashed var(--line);padding-top:10px;margin-top:8px}
-.fil-acc summary{list-style:none;cursor:pointer;font-weight:900;color:#8a5a12}
-.fil-acc summary::-webkit-details-marker{display:none}
-.fil-acc summary::before{content:"▸";display:inline-block;margin-right:6px;transition:.2s}
-.fil-acc details[open] summary::before{transform:rotate(90deg)}
-.sec-title{font:900 clamp(22px,3.8vw,32px)/1.15 Inter;margin:0 0 10px}
-.sec-lede{margin:0 0 16px;color:#68635d}
+/* Opiniones - carrusel centrado */
+.reviews{padding:54px 0;background:var(--band)}
+.reviews .head{text-align:center}
+.reviews .narrow{max-width:var(--narrow)}
+.stars-google{display:flex;justify-content:center;gap:2px;margin:6px 0}
+.stars-google svg{width:18px;height:18px;fill:#f59e0b}
+.carousel{position:relative;margin-top:14px}
+.track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.rev{flex:0 0 24.2%;min-width:240px;max-width:260px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-s);padding:14px;scroll-snap-align:start}
+.rev .top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.initial{width:38px;height:38px;border-radius:999px;display:grid;place-items:center;background:linear-gradient(135deg,#fde68a,#fecaca);font-weight:900}
+.rev .star{width:14px;height:14px;fill:#f59e0b}
+.navc{position:absolute;inset:50% 0 auto 0;transform:translateY(-50%);display:flex;justify-content:space-between;pointer-events:none}
+.navc button{pointer-events:auto;width:40px;height:40px;border-radius:999px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;box-shadow:var(--shadow-s)}
+.navc svg{width:18px;height:18px}
 
-/* ============================ PAGOS (ONE) ============================ */
+/* PAGOS - NUEVO (tarjetas grandes con logos) */
 .pay{padding-top:48px}
 .pay h2{margin:0 0 8px}
 .pay p.lede{margin:0 0 10px}
-.paygrid-new{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:10px 0}
-.paycard{display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-s);padding:18px;min-height:200px}
+.paygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:10px 0}
+.paycard{
+  display:flex;flex-direction:column;align-items:center;justify-content:space-between;
+  text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);
+  border-radius:16px;box-shadow:var(--shadow-s);padding:18px;min-height:200px
+}
 .paycard:hover{transform:translateY(-1px);box-shadow:var(--shadow-m)}
 .paycard h3{margin:2px 0 8px;font:800 16px Inter;text-align:center}
 .pay-price{font:900 28px/1 Inter;margin:0 0 14px;text-align:center}
 .pay-logos{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:auto}
 .pay-logos svg{width:64px;height:28px;flex:0 0 auto;border-radius:4px;box-shadow:0 1px 0 rgba(0,0,0,.06)}
 
-/* ============================ CALENDARIO ============================ */
+.policy{margin:12px 0 24px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow-s);color:#4b463f;font-weight:700}
+
+/* Calendario */
 .calwrap{background:var(--band);border:1px solid var(--line);border-radius:16px;padding:16px}
 .calgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .calbox{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-s);padding:14px;position:relative;min-height:340px}
@@ -114,30 +126,20 @@ h1{font:900 clamp(34px,5.6vw,62px)/1.06 Inter;margin:0 0 10px}
 .subtle{color:#7c7163}
 .gm{display:inline-flex;align-items:center;gap:8px;font-weight:800;margin-top:6px}
 .gm svg{width:18px;height:18px}
+.decor{position:absolute;right:14px;bottom:14px;width:220px;opacity:.9;pointer-events:none}
 .calendly-inline-widget{min-width:320px;height:820px;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-s);background:#fff}
 .tz{font-weight:800;color:#b45309;margin-top:8px}
 
-/* ============================ OPINIONES ============================ */
-.reviews{padding:54px 0;background:var(--band)}
-.reviews .narrow{max-width:var(--narrow);margin:auto;padding:0 22px}
-.rev-head{text-align:center}
-.rev-title{font:900 clamp(22px,3.8vw,32px)/1.15 Inter;margin:0 0 4px}
-.rev-lede{margin:0 0 12px;color:#68635d}
-.rev-grade{font-weight:900;margin-top:6px}
-.stars-google{display:flex;justify-content:center;gap:2px;margin:6px 0}
-.stars-google svg{width:18px;height:18px;fill:#f59e0b}
-.rev-google{display:inline-flex;align-items:center;gap:8px}
-.rev-google img{height:16px;vertical-align:middle}
-.carousel{position:relative;margin-top:14px}
-.track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.track::-webkit-scrollbar{display:none}
-.rev{flex:0 0 24.2%;min-width:240px;max-width:260px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-s);padding:14px;scroll-snap-align:start}
-.rev .top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-.initial{width:38px;height:38px;border-radius:999px;display:grid;place-items:center;background:linear-gradient(135deg,#fde68a,#fecaca);font-weight:900}
-.rev .star{width:14px;height:14px;fill:#f59e0b}
-.navc{position:absolute;inset:50% 0 auto 0;transform:translateY(-50%);display:flex;justify-content:space-between;pointer-events:none}
-.navc button{pointer-events:auto;width:40px;height:40px;border-radius:999px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;box-shadow:var(--shadow-s)}
-.navc svg{width:18px;height:18px}
+/* FAQ acordeón */
+.faq-band{background:var(--band)}
+.faq{max-width:var(--narrow);margin:auto}
+.acc{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-s)}
+.acc details{border-top:1px solid var(--line)}
+.acc details:first-child{border-top:0}
+.acc summary{cursor:pointer;padding:14px 16px;font-weight:900;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.acc summary::after{content:"+";font-weight:900;color:#7c7163}
+.acc details[open] summary::after{content:"–"}
+.acc .content{padding:0 16px 14px 16px;color:#4b463f}
 
 /* Footer */
 footer{background:#f7f3e6;border-top:1px solid var(--line);margin-top:28px}
@@ -149,11 +151,12 @@ footer{background:#f7f3e6;border-top:1px solid var(--line);margin-top:28px}
 /* Responsive */
 @media (max-width:980px){
   .hero{grid-template-columns:1fr;gap:22px;padding-top:56px}
+  .grid-3{grid-template-columns:1fr}
+  .paygrid{grid-template-columns:1fr}
   .calgrid{grid-template-columns:1fr}
-  .rect{width:min(520px,88%)}
   .portrait{right:auto;left:50%;transform:translateX(-50%);width:min(560px,92%)}
-  .paygrid-new{grid-template-columns:1fr}
-  .rev{flex:0 0 72%}
+  .rect{width:min(520px,88%)}
+  .rev{flex:0 0 70%}
   .calendly-inline-widget{height:880px}
 }
 </style>
@@ -193,156 +196,119 @@ footer{background:#f7f3e6;border-top:1px solid var(--line);margin-top:28px}
   </div>
 </section>
 
-<!-- ===================== ESPECIALIDADES ===================== -->
-<section class="sec-especialidades" id="especialidades">
-  <div class="container">
-    <h2 class="sec-title">Te acompaño en…</h2>
-    <p class="sec-lede">Ansiedad, depresión, gestión emocional, vínculos, alimentación y procesos de duelo o trauma. Todo 100% online por Google Meet.</p>
+<!-- ESPECIALIDADES -->
+<div class="band" id="especialidades">
+  <section class="container">
+    <h2>Te acompaño en…</h2>
+    <p class="lede">Ansiedad, depresión, regulación emocional, duelos, vínculos y alimentación.</p>
 
-    <div class="grid-e">
+    <div class="grid-3" style="margin-top:14px">
       <!-- Ansiedad -->
-      <article class="e-card">
+      <article class="card">
+        <span class="tag">Emoción</span>
         <h3>Ansiedad (Terapia online)</h3>
-        <p class="e-lead">La ansiedad es un sistema de alarma sano; si está encendida todo el tiempo, algo necesita atención.</p>
-        <div class="read">
-          <details>
-            <summary>Leer más</summary>
-            <div class="more">
-              <p>La ansiedad es el sistema de alarma del cuerpo: una reacción natural de un organismo sano, aunque resulte incómoda. Igual que la fiebre señala que algo no va bien, la ansiedad aparece cuando percibimos una amenaza o un desajuste en nuestra vida. Si nunca se activa, pasamos por alto señales importantes; si está encendida todo el tiempo, algo necesita atención.</p>
-              <p>El objetivo no es “controlarla” a la fuerza, sino escuchar su origen: ¿estás sosteniendo vínculos, rutinas o responsabilidades que no elegiste? ¿Tu nivel de exigencia es insostenible? ¿Hay miedos o riesgos reales para vos o para lo que valorás? Cuando abordamos la causa, la alarma disminuye sola.</p>
-              <p>En sesión trabajamos dos frentes: (1) bajar la activación con recursos concretos (respiración, anclajes, organización del día, límites) y (2) comprender el porqué para resolverlo de raíz. Si esta mirada te resuena y querés aprender a manejar tu ansiedad de forma eficaz, puedo acompañarte por videollamada.</p>
-            </div>
-          </details>
-        </div>
+        <p>La ansiedad es el sistema de alarma del cuerpo: una reacción natural de un organismo sano…</p>
+        <details class="read"><summary></summary>
+          <div class="content">
+            <p>Igual que la fiebre señala que algo no va bien, la ansiedad aparece cuando percibimos una amenaza o un desajuste en nuestra vida. Si nunca se activa, pasamos por alto señales importantes; si está encendida todo el tiempo, algo necesita atención.</p>
+            <p>El objetivo no es “controlarla” a la fuerza, sino escuchar su origen: ¿estás sosteniendo vínculos, rutinas o responsabilidades que no elegiste? ¿Tu nivel de exigencia es insostenible? ¿Hay miedos o riesgos reales para ti o para lo que valoras? Cuando abordamos la causa, la alarma disminuye sola.</p>
+            <p>En sesión trabajamos dos frentes: (1) bajar la activación con recursos concretos (respiración, anclajes, organización del día, límites) y (2) comprender el porqué para resolverlo de raíz. Si esta mirada te resuena y quieres aprender a manejar tu ansiedad de forma eficaz, puedo acompañarte por videollamada.</p>
+          </div>
+        </details>
       </article>
 
       <!-- Depresión -->
-      <article class="e-card">
+      <article class="card">
+        <span class="tag">Ánimo</span>
         <h3>Depresión (Terapia online)</h3>
-        <p class="e-lead">No es “estar bajón”: implica tristeza intensa, apatía y autocrítica. Necesita comprensión y dirección.</p>
-        <div class="read">
-          <details>
-            <summary>Leer más</summary>
-            <div class="more">
-              <p>La depresión no es “estar bajón”. Se vive como una tristeza intensa, falta de energía, pérdida del disfrute y pensamientos muy críticos hacia uno mismo. No “aparece de la nada”: suele ser una respuesta ante pérdidas, rupturas internas, falta de sentido o acumulación de exigencias que superan nuestras fuerzas.</p>
-              <p>No se trata de culparte por “no ser positivo”. Se trata de entender el motivo por el que tu ánimo cayó y curar esa herida. En terapia exploramos qué necesitás, qué cambió y qué te duele, para que el malestar tenga palabras y dirección. A la vez, incorporamos pequeñas acciones posibles para recuperar ritmo, descanso y conexión con lo valioso.</p>
-              <p>Si te reconocés en esta descripción y querés atravesar este proceso con apoyo profesional, trabajo 100% online con un enfoque claro, humano y realista.</p>
-            </div>
-          </details>
-        </div>
+        <p>No es “estar de bajón”. Se vive como tristeza intensa, falta de energía y autocrítica…</p>
+        <details class="read"><summary></summary>
+          <div class="content">
+            <p>No “aparece de la nada”: suele ser respuesta a pérdidas, rupturas internas, falta de sentido o acumulación de exigencias. No se trata de culparte por “no ser positiva/o”, sino de entender por qué cayó tu ánimo y curar esa herida.</p>
+            <p>En terapia exploramos qué necesitas, qué cambió y qué te duele, para que el malestar tenga palabras y dirección. A la vez, sumamos acciones posibles para recuperar ritmo, descanso y conexión con lo valioso. Trabajo 100% online con un enfoque claro, humano y realista.</p>
+          </div>
+        </details>
       </article>
 
       <!-- Gestión emocional -->
-      <article class="e-card">
+      <article class="card">
+        <span class="tag">Gestión</span>
         <h3>Gestión emocional (Terapia online)</h3>
-        <p class="e-lead">No podemos evitar sentir, pero sí aprender a regular lo que sentimos y cómo actuamos.</p>
-        <div class="read">
-          <details>
-            <summary>Leer más</summary>
-            <div class="more">
-              <p>No podemos evitar sentir, pero sí podemos aprender a regular lo que sentimos y cómo actuamos a partir de eso. Muchas veces el problema no es el hecho en sí, sino cómo nos impacta emocionalmente: ansiedad que se dispara, culpa que frena, rabia que desborda o tristeza que paraliza.</p>
-              <p>Mi enfoque combina psicoeducación sencilla con práctica: identificar emociones, comprender qué necesidad señalan (proteger, reparar, poner límites) y elegir respuestas más útiles. No buscamos “dominar” las emociones, sino escucharlas y darles un lugar, para que dejen de manejar tu conducta desde el piloto automático.</p>
-              <p>Trabajamos con herramientas aplicables al día a día: límites claros, comunicación asertiva, tolerancia a la incomodidad, planificación amable y ejercicios breves de regulación. Objetivo: que puedas sentirte mejor y decidir mejor.</p>
-            </div>
-          </details>
-        </div>
-      </article>
-
-      <!-- Alimentación y emociones -->
-      <article class="e-card">
-        <h3>Alimentación y emociones (Terapia online)</h3>
-        <p class="e-lead">La clave no es solo “qué y cuánto comer”, sino el para qué: calmar, tapar o aliviar.</p>
-        <div class="read">
-          <details>
-            <summary>Leer más</summary>
-            <div class="more">
-              <p>Los problemas con la comida no se reducen a “qué y cuánto comer”. Muchas veces la función de comer (calmar ansiedad, tapar tristeza, suavizar el estrés) es lo que sostiene el ciclo. En una cultura que exige cuerpos “perfectos”, la presión aumenta, pero no todas las personas desarrollan la misma dificultad: hay más variables en juego.</p>
-              <p>Mi trabajo se centra en entender para qué aparece esa relación con la comida y cubrir esa necesidad de forma más saludable: regulación emocional, manejo del estrés, límites, autocuidado y construcción de una imagen corporal más amable. Las pautas de alimentación pueden ayudar, pero sin abordar el trasfondo emocional el cambio no se sostiene.</p>
-              <p>Acompaño online procesos de ansiedad por comer, atracones, restricción, culpa y sobrepeso desde una mirada respetuosa y realista, paso a paso.</p>
-            </div>
-          </details>
-        </div>
+        <p>No podemos evitar sentir, pero sí aprender a regular lo que sentimos y cómo actuamos…</p>
+        <details class="read"><summary></summary>
+          <div class="content">
+            <p>Mi enfoque combina psicoeducación sencilla con práctica: identificar emociones, comprender qué necesidad señalan (proteger, reparar, poner límites) y elegir respuestas más útiles. No buscamos “dominar” emociones, sino escucharlas y darles lugar.</p>
+            <p>Trabajamos con herramientas aplicables al día a día: límites claros, comunicación asertiva, tolerancia a la incomodidad, planificación amable y ejercicios de regulación. Objetivo: que puedas sentirte mejor y decidir mejor.</p>
+          </div>
+        </details>
       </article>
 
       <!-- Pareja -->
-      <article class="e-card">
+      <article class="card">
+        <span class="tag">Vínculos</span>
         <h3>Terapia de pareja (Terapia online)</h3>
-        <p class="e-lead">Espacio seguro para hablar de lo que realmente duele y cambiar patrones.</p>
-        <div class="read">
-          <details>
-            <summary>Leer más</summary>
-            <div class="more">
-              <p>Cuando una pareja consulta, suele haber heridas abiertas, reproches acumulados y diálogos que se volvieron imposibles. No prometo soluciones mágicas, pero sí un espacio seguro para hablar de lo que realmente duele, más allá de la “primera capa” de quejas.</p>
-              <p>El trabajo consiste en comprender lo que hay debajo: necesidades no dichas, miedos, historias personales que chocan, estilos de vincularse que lastiman sin querer. Propongo conversaciones guiadas y ejercicios prácticos para cambiar patrones, recuperar la escucha y tomar decisiones conscientes: cómo reparar, cómo pedir, cómo poner límites y cómo cuidarse.</p>
-              <p>Si sienten que repiten siempre lo mismo y no alcanza, la terapia online puede ser ese alto en el camino para reordenar y decidir.</p>
-            </div>
-          </details>
-        </div>
+        <p>Suele haber heridas abiertas, reproches acumulados y diálogos difíciles…</p>
+        <details class="read"><summary></summary>
+          <div class="content">
+            <p>No prometo soluciones mágicas, pero sí un espacio seguro para hablar de lo que realmente duele, más allá de la primera capa de quejas. Comprendemos lo que hay debajo: necesidades no dichas, miedos e historias personales que chocan.</p>
+            <p>Propongo conversaciones guiadas y ejercicios para cambiar patrones, recuperar la escucha y tomar decisiones conscientes. Si sientes que repiten siempre lo mismo, este alto puede ordenar y clarificar.</p>
+          </div>
+        </details>
       </article>
 
-      <!-- Duelo / trauma -->
-      <article class="e-card">
+      <!-- Duelo y trauma -->
+      <article class="card">
+        <span class="tag">Historia</span>
         <h3>Duelo y trauma (Terapia online)</h3>
-        <p class="e-lead">Acompañamiento seguro para integrar lo vivido y recuperar agencia.</p>
-        <div class="read">
-          <details>
-            <summary>Leer más</summary>
-            <div class="more">
-              <p>Perder a alguien o atravesar un hecho impactante desestructura: aparece dolor, entumecimiento, confusión. No hay formas “correctas” de vivirlo, pero sí maneras seguras de transitarlo.</p>
-              <p>En sesiones online trabajamos en tres pasos: (1) estabilizar (bajar activación, recuperar sueño y rutina), (2) poner en palabras lo vivido sin forzar tiempos y (3) reconectar con lo valioso para recuperar agencia: pequeñas acciones, apoyo vincular y sentido cotidiano.</p>
-              <p>El objetivo no es olvidar, sino integrar lo ocurrido para poder seguir adelante con menos peso y más cuidado hacia vos.</p>
-            </div>
-          </details>
-        </div>
+        <p>Perder a alguien o vivir un hecho impactante desestructura: dolor, entumecimiento…</p>
+        <details class="read"><summary></summary>
+          <div class="content">
+            <p>Trabajamos en tres pasos: (1) estabilizar (bajar activación, recuperar sueño y rutina), (2) poner en palabras lo vivido sin forzar tiempos, y (3) reconectar con lo valioso para recuperar agencia.</p>
+            <p>El objetivo no es olvidar, sino integrar lo ocurrido para seguir adelante con menos peso y más cuidado hacia ti.</p>
+          </div>
+        </details>
+      </article>
+
+      <!-- Alimentación -->
+      <article class="card">
+        <span class="tag">Hábitos</span>
+        <h3>Alimentación y emociones (Terapia online)</h3>
+        <p>Los problemas con la comida no son solo “qué y cuánto comer” sino para qué comemos…</p>
+        <details class="read"><summary></summary>
+          <div class="content">
+            <p>Trabajo para entender qué función cumple (calmar, tapar, aliviar) y cubrir esa necesidad de forma más saludable: regulación emocional, manejo del estrés, límites y autocuidado. También imagen corporal más amable.</p>
+            <p>Acompaño procesos de ansiedad por comer, atracones, restricción, culpa y sobrepeso desde una mirada respetuosa y realista, paso a paso.</p>
+          </div>
+        </details>
       </article>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
-<!-- ========================= MI FILOSOFÍA (ACORDEONES) ========================= -->
-<section class="sec-filosofia" id="filosofia">
-  <div class="container">
-    <h2 class="sec-title">Mi filosofía de trabajo</h2>
-    <div class="fil-box">
-      <p>Trabajo 100% online con una forma de hacer terapia clara, humana y práctica. Estas son algunas ideas que me guían:</p>
-
-      <div class="fil-acc">
-        <details>
-          <summary>Yo sé de psicoterapia; tú sabes de tu vida</summary>
-          <div><p>Mi tarea es sumar recursos clínicos a tu propia sabiduría sobre ti misma/o. No va de “lo que hay que hacer”, sino de lo que a ti te funciona.</p></div>
-        </details>
-
-        <details>
-          <summary>Si hacer más de lo mismo no funciona, probamos algo distinto</summary>
-          <div><p>Repetir estrategias que no dieron resultado desgasta. En sesión abrimos alternativas concretas y realistas para hoy, no recetas generales.</p></div>
-        </details>
-
-        <details>
-          <summary>La relación terapéutica es el núcleo</summary>
-          <div><p>Sin conexión, la terapia no avanza. Si sientes que tienes que “adaptarte” a mí, es que no encaja; en ese caso te derivaré con honestidad y cuidado.</p></div>
-        </details>
-
-        <details>
-          <summary>Una terapia honesta y adaptada a tu contexto</summary>
-          <div><p>No impongo técnicas como un protocolo rígido. La felicidad y el bienestar son procesos personales. Me adapto a tu realidad, tu ritmo, tus valores y tu contexto.</p></div>
-        </details>
-
-        <details>
-          <summary>Enfoque humanista e integrativo</summary>
-          <div><p>Integro Terapia Focalizada en la Emoción (EFT) y aportes de la psicología existencial (Rogers, Frankl, Perls). Cuando es útil, incorporo mirada sistémica familiar para ampliar perspectivas y desbloquear dinámicas.</p></div>
-        </details>
-      </div>
+<!-- Filosofía -->
+<section class="container" id="filosofia">
+  <h2>Mi filosofía de trabajo</h2>
+  <div class="filo">
+    <p>Trabajo 100% online con una forma de hacer terapia clara, humana y práctica. Estas son algunas ideas que me guían:</p>
+    <p><strong>Yo sé de psicoterapia; tú sabes de tu vida.</strong> Mi tarea es sumar recursos clínicos a tu propia sabiduría sobre ti misma/o. No va de “lo que hay que hacer”, sino de lo que a ti te funciona.</p>
+    <p><strong>Si hacer más de lo mismo no funciona, probamos algo distinto.</strong> Repetir estrategias que no dieron resultado desgasta. En sesión abrimos alternativas concretas y realistas para hoy, no recetas generales.</p>
+    <p><strong>La relación terapéutica es el núcleo.</strong> Sin conexión, la terapia no avanza. Si sientes que tienes que “adaptarte” a mí, es que no encaja; en ese caso te derivaré con honestidad y cuidado.</p>
+    <p>No impongo técnicas como si fueran un protocolo rígido. La felicidad y el bienestar son procesos personales, no listas de pasos. Mi foco está en adaptarme a tu realidad, tu ritmo, tus valores y tu contexto.</p>
+    <p>Desde lo clínico, trabajo con un enfoque humanista e integrativo: utilizo elementos de la Terapia Focalizada en la Emoción (EFT) y aportes de la psicología existencial (Rogers, Frankl, Perls). Cuando es útil, incorporo mirada sistémica familiar para ampliar perspectivas y desbloquear dinámicas.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+      <span class="btn btn-outline">Modalidad: online por Google Meet</span>
+      <span class="btn btn-outline">Primer contacto: WhatsApp</span>
     </div>
   </div>
 </section>
 
-<!-- ============================= OPINIONES ============================= -->
+<!-- Opiniones -->
 <section class="reviews" id="opiniones">
   <div class="narrow">
-    <div class="rev-head">
-      <h2 class="rev-title">Opiniones sobre mí y la terapia que practico</h2>
-      <p class="rev-lede">Esto dicen pacientes que confían en mi trabajo.</p>
-      <div class="rev-grade">EXCELENTE</div>
+    <div class="head" style="text-align:center">
+      <h2>Opiniones sobre mí y la terapia que practico</h2>
+      <p class="lede">A continuación puedes encontrar algunas de las calificaciones y comentarios que han compartido mis pacientes en Google.</p>
+      <div style="font-weight:900;margin-top:6px">EXCELENTE</div>
       <div class="stars-google">
         <svg viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6L10 15.2 4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
         <svg viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6L10 15.2 4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
@@ -350,14 +316,15 @@ footer{background:#f7f3e6;border-top:1px solid var(--line);margin-top:28px}
         <svg viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6L10 15.2 4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
         <svg viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6L10 15.2 4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>
       </div>
-      <small class="rev-google">
-        <img src="https://cdn.trustindex.io/assets/platform/Google/logo.svg" alt="Google">
+      <small style="display:inline-flex;align-items:center;gap:8px">
+        <img src="https://cdn.trustindex.io/assets/platform/Google/logo.svg" alt="Google" style="height:16px;vertical-align:middle">
         A base de 112 reseñas
       </small>
     </div>
 
     <div class="carousel">
       <div class="track" id="revTrack">
+        <!-- Tarjetas de opinión (las estrellas se agregan por JS) -->
         <article class="rev"><div class="top"><div class="initial">M</div><div><strong>Macarena Cid</strong><br><small class="subtle">Hace 2 semanas</small></div></div><p>Espacio claro y respetuoso. Herramientas simples y avances. Muy humana. Recomendada.</p></article>
         <article class="rev"><div class="top"><div class="initial">M</div><div><strong>Marla Julieta Requena</strong><br><small class="subtle">Hace 2 semanas</small></div></div><p>Explicaciones claras y tareas útiles. Cambios concretos semana a semana. Súper recomiendo.</p></article>
         <article class="rev"><div class="top"><div class="initial">N</div><div><strong>Natu Lucero</strong><br><small class="subtle">Hace 2 semanas</small></div></div><p>Me sentí escuchada sin juicios, con una guía clara y respetuosa. 100% recomendada.</p></article>
@@ -376,13 +343,13 @@ footer{background:#f7f3e6;border-top:1px solid var(--line);margin-top:28px}
   </div>
 </section>
 
-<!-- ============================= PAGOS (ONE) ============================= -->
+<!-- PAGOS (ONE) -->
 <section class="container pay" id="pagos">
   <h2>Abona tu sesión online y agenda al instante</h2>
-  <p class="lede">El pago se confirma en ONE y te lleva directo al calendario. Acepto <strong>tarjeta</strong> y <strong>QR/transferencia</strong>.</p>
+  <p class="lede">El pago confirma tu reserva. Acepto <strong>tarjeta</strong> y <strong>QR/transferencia</strong> vía ONE.</p>
 
-  <div class="paygrid-new">
-    <a class="paycard" href="https://onei.la/Uz1" target="_blank" rel="noopener" aria-label="Pagar sesión individual con tarjeta o QR">
+  <div class="paygrid">
+    <a class="paycard" href="https://onei.la/Uz1" target="_blank" rel="noopener" aria-label="Pagar sesión individual (ONE)">
       <h3>Sesión individual (50’)</h3>
       <div class="pay-price">$45.000</div>
       <div class="pay-logos" aria-hidden="true">
@@ -393,7 +360,7 @@ footer{background:#f7f3e6;border-top:1px solid var(--line);margin-top:28px}
       </div>
     </a>
 
-    <a class="paycard" href="https://onei.la/6pp" target="_blank" rel="noopener" aria-label="Comprar pack 4 con tarjeta o QR">
+    <a class="paycard" href="https://onei.la/6pp" target="_blank" rel="noopener" aria-label="Comprar pack 4 (ONE)">
       <h3>Pack 4 sesiones</h3>
       <div class="pay-price">$170.000</div>
       <div class="pay-logos" aria-hidden="true">
@@ -404,7 +371,7 @@ footer{background:#f7f3e6;border-top:1px solid var(--line);margin-top:28px}
       </div>
     </a>
 
-    <a class="paycard" href="https://onei.la/5eY" target="_blank" rel="noopener" aria-label="Comprar pack 8 con tarjeta o QR">
+    <a class="paycard" href="https://onei.la/5eY" target="_blank" rel="noopener" aria-label="Comprar pack 8 (ONE)">
       <h3>Pack 8 sesiones</h3>
       <div class="pay-price">$328.000</div>
       <div class="pay-logos" aria-hidden="true">
@@ -417,34 +384,82 @@ footer{background:#f7f3e6;border-top:1px solid var(--line);margin-top:28px}
   </div>
 
   <p class="subtle" style="font-weight:700;margin:6px 0 0">Pagos procesados por <strong>ONE</strong>. Recibirás comprobante automático.</p>
-  <div class="policy"><strong>Reprogramaciones:</strong> con 48 h de aviso. Con menos antelación, la sesión se contabiliza como realizada.</div>
+
+  <div class="policy">
+    <strong>Política:</strong> La reserva se concreta con el <strong>pago total</strong> de la sesión. Para reprogramar, se requiere aviso de cancelación <strong>con 48 h</strong> de antelación. Con menos de 48 h, el pago no es reembolsable.
+  </div>
 </section>
 
-<!-- ============================= CALENDARIO ============================= -->
+<!-- Calendario -->
 <section class="container" id="reservar">
   <h2 style="margin-top:8px">Calendario de sesiones (50′)</h2>
-  <p class="lede">Las sesiones se reservan por calendario con <strong>pago previo</strong>. Si es tu primer contacto, usa el botón de WhatsApp del encabezado.</p>
+  <p class="lede">Las sesiones regulares se reservan por calendario con <strong>pago previo</strong>. Si es tu primer contacto, usa el botón de WhatsApp del encabezado.</p>
 
   <div class="calwrap" style="margin-top:12px">
     <div class="calgrid">
+      <!-- Columna izquierda (texto + logo decorativo) -->
       <div class="calbox">
         <h3>Reserva tu sesión ahora</h3>
         <p class="subtle">Si has decidido priorizarte y aprender a gestionarte, te acompaño.</p>
         <div class="gm" aria-label="Reunión vía Google Meet">
+          <!-- ícono Meet -->
           <svg viewBox="0 0 48 48"><path fill="#00832D" d="M29 15h-8a6 6 0 0 0-6 6v6a6 6 0 0 0 6 6h8z"/><path fill="#00A152" d="M29 33h-8a6 6 0 0 1-6-6v-6a6 6 0 0 1 6-6h8z"/><path fill="#5BB974" d="M29 15h6l6 6v6l-6 6h-6z"/><path fill="#FFCD40" d="M41 21v6l5-3z"/></svg>
           Reunión vía Google Meet
         </div>
+        <!-- Decor opcional -->
+        <!-- <img class="decor" src="/activos/tu-imagen.png" alt=""> -->
       </div>
 
+      <!-- Calendly -->
       <div>
         <div class="calendly-inline-widget"
-          data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=fffef8&text_color=2d2a26&primary_color=f59e1b&hide_landing_page_details=1&locale=es">
+          data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=fffef8&text_color=2d2a26&primary_color=f59e0b&hide_landing_page_details=1&locale=es">
         </div>
         <div class="tz">✓ Si estás en España/UE, cambia la <em>Time zone</em> a tu ciudad antes de reservar.</div>
       </div>
     </div>
   </div>
 </section>
+
+<div class="faq-band" id="faq" style="margin-top:22px">
+  <section class="faq">
+    <h2 style="padding:24px 0 10px;margin:0">Preguntas Frecuentes</h2>
+
+    <div class="acc">
+      <details>
+        <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
+        <div class="content">
+          <p>Es una duda muy habitual. A veces es evidente —ansiedad, ideas obsesivas, apatía, desesperanza— y otras veces el malestar es difuso: sensación de vacío, vivir en piloto automático, cansancio constante o agobio. Si te estás planteando ir a terapia, probablemente ya percibes que algo no marcha bien.</p>
+          <p>La propuesta es sencilla: usar la terapia para entender qué te está señalando ese malestar y despejar dudas. Juntas/os revisaremos si hay asuntos que estás evitando, decisiones pendientes o dinámicas que te están haciendo daño, y cómo abordarlas.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>¿Cuánto suele durar una psicoterapia?</summary>
+        <div class="content">
+          <p>Lo más útil es trabajar semanalmente o cada dos semanas. Menor frecuencia suele restar eficacia y alargar procesos. Aproximadamente un 70% de los tratamientos se mueve entre 6 y 10 meses; algunos casos necesitan menos tiempo y otros más. Es orientativo: depende de tus objetivos, tu ritmo y lo que vayamos encontrando.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>¿Por qué hay tantos tipos de terapia y cómo elegir?</summary>
+        <div class="content">
+          <p>Existen muchas modalidades. A grandes rasgos, se agrupan en cuatro corrientes: cognitivo-conductual, psicoanálisis/psicodinámica, humanista y sistémica. Comparten puntos en común: no reprimir emociones, cuidar la relación terapeuta-paciente y tomar conciencia del mundo interno.</p>
+          <p>Recomendación práctica: más que obsesionarte con la etiqueta, elige a una profesional con la que sientas conexión, seguridad y respeto. La alianza terapéutica es el mejor predictor de éxito.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>¿Cómo trabajo yo en psicoterapia?</summary>
+        <div class="content">
+          <p>Mi foco está en la persona por encima del protocolo. Aunque la ansiedad o la depresión sean diagnósticos frecuentes, cada historia es única; adapto la intervención a tu contexto y tus metas.</p>
+          <p>Enfoque humanista e integrativo: prioriza la relación terapéutica, la experiencia emocional y el sentido personal. Integro recursos basados en la evidencia con trabajo experiencial para pasar de “sé lo que tengo que hacer” a “puedo hacerlo”. Cuando es útil, añado mirada sistémica (familia, vínculos) y referencias existenciales.</p>
+          <p>Busco una terapia honesta y directa, siempre con empatía y cuidado. El objetivo no es sólo que baje el síntoma, sino cambiar lo que lo sostiene para que se note en tu día a día: decisiones más claras, límites más sanos y mayor bienestar.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+</div>
 
 <footer>
   <div class="container footer">
@@ -463,7 +478,7 @@ footer{background:#f7f3e6;border-top:1px solid var(--line);margin-top:28px}
         <a href="#especialidades">Especialidades</a>
         <a href="#reservar">Calendario</a>
         <a href="#opiniones">Opiniones</a>
-        <a href="#pagos">Pagos</a>
+        <a href="#faq">Preguntas</a>
       </div>
     </div>
     <div>
@@ -483,16 +498,16 @@ footer{background:#f7f3e6;border-top:1px solid var(--line);margin-top:28px}
 </footer>
 
 <script>
-/* scroll suave */
+/* scroll suave para anchors */
 document.addEventListener('click', (e) => {
   const a = e.target.closest('a[href^="#"]'); if (!a) return;
   const id = a.getAttribute('href'); const el = document.querySelector(id);
   if (el) { e.preventDefault(); el.scrollIntoView({ behavior:'smooth', block:'start' }); history.pushState(null,'',id); }
 });
-/* año */
+/* año footer */
 document.getElementById('y').textContent = new Date().getFullYear();
 
-/* carrusel opiniones (auto + botones) */
+/* Carrusel opiniones (auto + botones) */
 const track = document.getElementById('revTrack');
 function scrollRev(dir){
   const card = track?.querySelector('.rev');
@@ -503,21 +518,23 @@ let auto = setInterval(()=>scrollRev(1), 3400);
 track.addEventListener('mouseenter', ()=>clearInterval(auto));
 track.addEventListener('mouseleave', ()=>auto = setInterval(()=>scrollRev(1), 3400));
 
-/* 5 estrellas en cada .rev */
-document.querySelectorAll('.rev').forEach(card=>{
-  if (!card.querySelector('.stars')) {
-    const row = document.createElement('div');
-    row.className = 'stars';
-    row.style.display = 'flex';
-    row.style.gap = '2px';
-    row.style.margin = '6px 0';
-    const star = '<svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6L10 15.2 4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>';
-    row.innerHTML = star+star+star+star+star;
-    card.querySelector('.top').insertAdjacentElement('afterend', row);
-  }
-});
+/* 5 estrellas en cada .rev (inserta fila debajo del encabezado de cada tarjeta) */
+(function ensureStars(){
+  const star = '<svg class="star" viewBox="0 0 20 20"><path d="M10 1.5 12.8 7l6 .9-4.4 4.2 1 6L10 15.2 4.6 18l1-6L1.2 7.9l6-.9L10 1.5Z"/></svg>';
+  document.querySelectorAll('.rev').forEach(card=>{
+    if (!card.querySelector('.stars')) {
+      const row = document.createElement('div');
+      row.className = 'stars';
+      row.style.display = 'flex';
+      row.style.gap = '2px';
+      row.style.margin = '6px 0';
+      row.innerHTML = star+star+star+star+star;
+      const top = card.querySelector('.top');
+      if (top) top.insertAdjacentElement('afterend', row);
+    }
+  });
+})();
 </script>
 
 </body>
 </html>
-
