@@ -52,6 +52,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Playfair Display para el título del calendario -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800;900&display=swap" rel="stylesheet">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
@@ -181,6 +183,12 @@ details[open] summary .t::after{content:"Ver menos"}
   background:#fff; border:1px solid var(--line); border-radius:16px; padding:18px;
   box-shadow:var(--shadow-s); min-height:320px;
 }
+.calbox h3{
+  font-family:"Playfair Display", Georgia, "Times New Roman", serif;
+  font-weight:900; font-size:clamp(30px,4.6vw,48px); line-height:1.1;
+  letter-spacing:-0.01em; margin:0 0 6px;
+}
+.calbox .subtle{ font-size:clamp(14px,1.2vw,18px); line-height:1.6; color:#5b5b5b }
 .gm{ display:inline-flex; align-items:center; gap:8px; font-weight:800; margin-top:8px }
 .calendly-inline-widget{ min-width:100%; height:720px }
 .tz{ font-size:.92rem; color:#7a6d5d; padding:8px 12px 14px }
@@ -220,6 +228,25 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
   .footer{grid-template-columns:1fr}
 }
 </style>
+
+<!-- MasterCard SVG para las badges -->
+<template id="mc-icon">
+  <svg viewBox="0 0 40 24" aria-hidden="true">
+    <circle cx="15" cy="12" r="9" fill="#EB001B"></circle>
+    <circle cx="25" cy="12" r="9" fill="#F79E1B" style="mix-blend-mode:multiply"></circle>
+  </svg>
+</template>
+<script>
+  // Inserta el logo dentro de cada .badge.mc
+  document.addEventListener('DOMContentLoaded', ()=>{
+    document.querySelectorAll('.badge.mc').forEach(b=>{
+      if(!b.querySelector('svg')){
+        const t = document.getElementById('mc-icon');
+        b.appendChild(t.content.cloneNode(true));
+      }
+    });
+  });
+</script>
 </head>
 
 <body>
@@ -261,6 +288,178 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
     <img class="portrait" src="/assets/portrait.png" alt="Daiana Beltrán">
   </div>
 </section>
+
+<!-- ===================== PAGOS ===================== -->
+<section class="container pay" id="pagos">
+  <h2>Aboná tu sesión online y agendá al instante</h2>
+  <p class="lede">El pago se confirma en ONE y te lleva directo al calendario. Acepto <strong>tarjeta</strong> y <strong>QR/transferencia</strong>.</p>
+
+  <div class="paygrid">
+    <a class="paycard" href="https://onei.la/Uz1" target="_blank" rel="noopener" aria-label="Pagar sesión individual">
+      <h3>Sesión individual (40′)</h3>
+      <div class="pay-price">$35.000 AR</div>
+      <div class="icons" aria-hidden="true">
+        <span class="badge visa"></span>
+        <span class="badge mc"></span>
+        <span class="badge amex"></span>
+        <span class="badge qr"></span>
+      </div>
+    </a>
+
+    <a class="paycard" href="https://onei.la/6pp" target="_blank" rel="noopener" aria-label="Comprar abono de 4 sesiones">
+      <h3>Abono de 4 sesiones (40′)</h3>
+      <div class="pay-price">$136.000 AR</div>
+      <div class="icons" aria-hidden="true">
+        <span class="badge visa"></span>
+        <span class="badge mc"></span>
+        <span class="badge amex"></span>
+        <span class="badge qr"></span>
+      </div>
+    </a>
+
+    <a class="paycard" href="https://onei.la/5eY" target="_blank" rel="noopener" aria-label="Comprar abono de 8 sesiones">
+      <h3>Abono de 8 sesiones (40′)</h3>
+      <div class="pay-price">$260.000 AR</div>
+      <div class="icons" aria-hidden="true">
+        <span class="badge visa"></span>
+        <span class="badge mc"></span>
+        <span class="badge amex"></span>
+        <span class="badge qr"></span>
+      </div>
+    </a>
+  </div>
+
+  <p class="note"><strong>Reprogramaciones:</strong> con 48 h de aviso. Con menos antelación, la sesión se contabiliza como realizada.</p>
+</section>
+
+<!-- ===================== CALENDARIO ===================== -->
+<section class="container" id="reservar">
+  <h2 style="margin-top:8px">Calendario de sesiones (40′)</h2>
+  <p class="lede">Las sesiones se reservan por calendario con <strong>pago previo</strong>. Si es tu primer contacto, usá el botón de WhatsApp del encabezado.</p>
+
+  <div class="calgrid">
+    <div class="calbox">
+      <h3>Reservá tu <em>sesión inicial</em> gratuita ahora.</h3>
+      <p class="subtle">Si has decidido priorizarte y aprender a gestionarte, te acompaño.</p>
+      <div class="gm" aria-label="Reunión vía Google Meet">
+        <svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><path fill="#00832D" d="M29 15h-8a6 6 0 0 0-6 6v6a6 6 0 0 0 6 6h8z"/><path fill="#00A152" d="M29 33h-8a6 6 0 0 1-6-6v-6a6 6 0 0 1 6-6h8z"/><path fill="#5BB974" d="M29 15h6l6 6v6l-6 6h-6z"/><path fill="#FFCD40" d="M41 21v6l5-3z"/></svg>
+        Reunión vía Google Meet
+      </div>
+    </div>
+
+    <div class="calembed">
+      <div class="calendly-inline-widget"
+        data-url="https://calendly.com/comunicar-terapiadelenguaje/50-minute-meeting?hide_gdpr_banner=1&background_color=fffef8&text_color=2d2a26&primary_color=f59e1b&hide_landing_page_details=1&locale=es">
+      </div>
+      <div class="tz">✓ Si estás en España/UE, cambiá la <em>Time zone</em> a tu ciudad antes de reservar.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PREGUNTAS FRECUENTES ===================== -->
+<section id="faq" class="faq-band">
+  <div class="faq">
+    <h2 class="faq-title">Preguntas Frecuentes</h2>
+
+    <div class="acc" id="faqAcc">
+      <details>
+        <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
+        <div class="content">
+          <p>Es una duda habitual. A veces lo indican señales claras (ansiedad, obsesiones, apatía, desesperanza). Otras veces el malestar es difuso: sensación de vacío, vivir en automático, cansancio o agobio constante. Si te lo estás planteando, probablemente ya notas que algo no va bien.</p>
+          <p>Lo más útil es conversar en terapia para entender qué está señalando ese malestar y despejar dudas: ver si hay asuntos que estás evitando, decisiones pendientes o dinámicas que te están haciendo daño y cómo abordarlas.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>¿Cuánto suele durar una psicoterapia?</summary>
+        <div class="content">
+          <p>La frecuencia más efectiva es semanal o quincenal. Con menor frecuencia el proceso pierde fuerza. De forma orientativa, muchos tratamientos se mueven entre <strong>6 y 10 meses</strong>; algunos casos requieren menos tiempo y otros más.</p>
+          <p>La duración exacta depende de los objetivos, el ritmo y lo que vayamos encontrando. En psicología no es honesto prometer cifras cerradas: se evalúa contigo y se revisa durante el proceso.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>¿Por qué hay tantos tipos de terapia y cómo sé cuál necesito?</summary>
+        <div class="content">
+          <p>Existen diferentes corrientes (cognitivo-conductual, psicodinámica, humanista, sistémica…). Cada una entiende el malestar desde un ángulo y propone recursos propios. Aun así, comparten bases como no reprimir emociones, cuidar la relación terapeuta-paciente y tomar conciencia del mundo interno.</p>
+          <p>Mi recomendación práctica: priorizá la <strong>conexión y confianza</strong> con la profesional. La investigación muestra que la alianza terapéutica es el mejor predictor de buenos resultados.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>¿Cómo es una psicoterapia conmigo?</summary>
+        <div class="content">
+          <p>Me centro en la persona por encima del protocolo. Aunque diagnósticos como ansiedad o depresión se repitan, cada historia es única; adapto la intervención a tu contexto y metas.</p>
+          <p>Trabajo con un enfoque humanista e integrativo: prioriza la relación, la experiencia emocional y el sentido personal. Integro recursos con base empírica y trabajo experiencial para pasar de “sé lo que tendría que hacer” a “puedo hacerlo”. Cuando es útil, incorporo mirada sistémica y referencias existenciales.</p>
+          <p>Busco una terapia honesta y directa, siempre con empatía y cuidado. No solo aliviar síntomas: cambiar lo que los sostiene para que se note en lo cotidiano (decisiones más claras, límites más sanos y mayor bienestar).</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container footer">
+    <div>
+      <img class="logo" src="/assets/daiana-beltran-logo-primary-amarillo-1024x1024-v1.png" alt="Daiana Beltrán">
+      <strong>Daiana Beltrán · Psicóloga online</strong>
+      <p class="subtle" style="margin:6px 0 10px">Psicoterapia clara, humana y práctica. Atención 100% online por Google Meet.</p>
+      <div style="display:flex;gap:10px">
+        <a class="btn btn-outline" href="https://wa.me/5492996044900" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-outline" href="#reservar">Calendario</a>
+      </div>
+    </div>
+    <div>
+      <h4>Secciones</h4>
+      <div style="display:grid;gap:6px">
+        <a href="#especialidades">Especialidades</a>
+        <a href="#pagos">Pagos</a>
+        <a href="#reservar">Calendario</a>
+        <a href="#faq">Preguntas</a>
+      </div>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <div style="display:grid;gap:6px">
+        <span>Atención 100% online · Argentina</span>
+        <a href="tel:+5492996044900">+54 9 299 604 4900</a>
+        <a href="mailto:comunicar.terapiadelenguaje@gmail.com">comunicar.terapiadelenguaje@gmail.com</a>
+        <a href="https://wa.me/5492996044900" target="_blank" rel="noopener">WhatsApp directo</a>
+      </div>
+    </div>
+  </div>
+  <div class="container legal">
+    <small>© <span id="y"></span> Daiana Beltrán · Psicología online</small>
+    <small><a href="https://wa.me/5492996044900" target="_blank" rel="noopener">Escribirme por WhatsApp</a></small>
+  </div>
+</footer>
+
+<script>
+  // Año dinámico
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Scroll suave entre anclas
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]'); if (!a) return;
+    const id = a.getAttribute('href'); const el = document.querySelector(id);
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior:'smooth', block:'start' }); history.pushState(null,'',id); }
+  });
+
+  // FAQ: abrir solo una
+  (function(){
+    const wrap = document.getElementById('faqAcc');
+    if(!wrap) return;
+    wrap.addEventListener('toggle', (ev)=>{
+      const d = ev.target;
+      if(d.tagName !== 'DETAILS' || !d.open) return;
+      wrap.querySelectorAll('details[open]').forEach(x=>{ if(x!==d) x.open=false; });
+    }, true);
+  })();
+</script>
+</body>
+</html>
+
 
 <!-- ===================== TE ACOMPAÑO / ESPECIALIDADES ===================== -->
 <div class="band" id="especialidades">
@@ -727,8 +926,8 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
 
       <div class="calembed">
         <div class="calendly-inline-widget"
-          data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-40min?hide_gdpr_banner=1&background_color=fffef8&text_color=2d2a26&primary_color=f59e1b&hide_landing_page_details=1&locale=es">
-        </div>
+  data-url="https://calendly.com/comunicar-terapiadelenguaje/50-minute-meeting?hide_gdpr_banner=1&background_color=fffef8&text_color=2d2a26&primary_color=f59e1b&hide_landing_page_details=1&locale=es">
+</div>
         <div class="tz">✓ Si estás en España/UE, cambiá la <em>Time zone</em> a tu ciudad antes de reservar.</div>
       </div>
     </div>
