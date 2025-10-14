@@ -190,8 +190,16 @@ details[open] summary .t::after{content:"Ver menos"}
 }
 .calbox .subtle{ font-size:clamp(14px,1.2vw,18px); line-height:1.6; color:#5b5b5b }
 .gm{ display:inline-flex; align-items:center; gap:8px; font-weight:800; margin-top:8px }
-.calendly-inline-widget { width:100%; min-width:320px; height:760px; }
+.calendly-inline-widget { width:100%; min-width:320px; height:820px; }
 .tz{ font-size:.92rem; color:#7a6d5d; padding:8px 12px 14px }
+/* Estilo del contenedor del Calendly */
+.calembed{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:var(--shadow-s);
+  overflow:hidden; /* asegura el borde redondeado del iframe */
+}
 
 /* ====== FAQ ====== */
 .faq-band{background:var(--band);padding:28px 0}
@@ -224,7 +232,7 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
 @media (max-width:960px){
   .hero{grid-template-columns:1fr}
   .calgrid{ grid-template-columns:1fr; }
-  .calendly-inline-widget{ height:680px; }
+  .calendly-inline-widget{ height:720px; }
   .footer{grid-template-columns:1fr}
 }
 </style>
@@ -500,10 +508,10 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
 
     <div class="calembed">
       <div class="calendly-inline-widget"
-           data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=f7f2e8&text_color=1f2937&primary_color=ff6b4a"
-           style="width:100%; min-width:320px; height:760px;"></div>
+           data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=fff7e6&text_color=2d2a26&primary_color=ff6b4a"
+           style="width:100%; min-width:320px; height:820px;"></div>
     </div>
-  </div>
+  </div> <!-- 👈 cierre de .calgrid -->
 </section>
 
 <!-- Cargar una sola vez antes de </body> -->
