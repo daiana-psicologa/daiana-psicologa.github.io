@@ -236,6 +236,16 @@ details[open] summary .t::after{content:"Ver menos"}
   .calgrid{ grid-template-columns:1fr; }
   .calendly-inline-widget{ height:720px; }
 }
+  /* ---- Centrar y dar ancho al calendario (override) ---- */
+.calgrid{               /* ya no es 2 columnas */
+  display:block;
+}
+
+.calcard{               /* centrado y ancho cómodo */
+  max-width:980px;      /* ajustá si querés más/menos ancho */
+  margin:0 auto;
+  width:100%;
+}
   
 /* ====== FAQ ====== */
 .faq-band{background:var(--band);padding:28px 0}
@@ -332,6 +342,7 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
     <img class="portrait" src="/assets/portrait.png" alt="Daiana Beltrán">
   </div>
 </section>
+
 
   <!-- ===================== TE ACOMPAÑO / ESPECIALIDADES ===================== -->
 <div class="band" id="especialidades">
