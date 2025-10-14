@@ -183,11 +183,17 @@ details[open] summary .t::after{content:"Ver menos"}
   background:#fff; border:1px solid var(--line); border-radius:16px; padding:18px;
   box-shadow:var(--shadow-s); min-height:320px;
 }
-.calbox h3{
+
+  /* Título más chico en la caja izquierda del calendario */
+.t-cal{
   font-family:"Playfair Display", Georgia, "Times New Roman", serif;
-  font-weight:900; font-size:clamp(30px,4.6vw,48px); line-height:1.1;
-  letter-spacing:-0.01em; margin:0 0 6px;
+  font-weight:900;
+  font-size:clamp(24px,3.4vw,34px);
+  line-height:1.12;
+  letter-spacing:-0.01em;
+  margin:0 0 6px;
 }
+
 .calbox .subtle{ font-size:clamp(14px,1.2vw,18px); line-height:1.6; color:#5b5b5b }
 .gm{ display:inline-flex; align-items:center; gap:8px; font-weight:800; margin-top:8px }
 .calendly-inline-widget { width:100%; min-width:320px; height:820px; }
@@ -201,14 +207,28 @@ details[open] summary .t::after{content:"Ver menos"}
   padding:0;
 }
 
-/* Card visual tipo “bonito” del calendario */
-.calcard{ ... }
-.calcard-head{ ... }
-.calcard-banner{ ... }
-.calcard-meta{ ... }
-.calcard-title{ ... }
-.calcard-sub{ ... }
+/* Card visual tipo “burbujitas/papelitos” */
+.calcard{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:var(--shadow-s);
+  overflow:hidden;
+}
 
+/* Cabecera con banner decorativo */
+.calcard-head{ position:relative }
+.calcard-head img{ display:block; width:100%; height:138px; object-fit:cover }
+.calcard-banner{
+  height:138px; width:100%;
+  background:
+    radial-gradient(120px 80px at 14% 36%, #fde7c4 0%, transparent 60%),
+    radial-gradient(120px 80px at 86% 26%, #ffd7bf 0%, transparent 60%),
+    radial-gradient(160px 120px at 70% 92%, #ffe9c2 0%, transparent 60%),
+    #fff7e6;
+}
+
+/* Altura móvil y columna única */
 @media (max-width:960px){
   .calgrid{ grid-template-columns:1fr; }
   .calendly-inline-widget{ height:720px; }
@@ -511,7 +531,7 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
 
   <div class="calgrid">
     <div class="calbox">
-      <h3>Reservá tu <em>sesión online</em> (40′).</h3>
+      <h3 class="t-cal">Reservá tu <em>sesión online</em> (40′).</h3>
       <p class="subtle">Atención 100% online por Google Meet. Pago previo y agenda instantánea.</p>
       <div class="gm" aria-label="Reunión vía Google Meet">
         <svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><path fill="#00832D" d="M29 15h-8a6 6 0 0 0-6 6v6a6 6 0 0 0 6 6h8z"/><path fill="#00A152" d="M29 33h-8a6 6 0 0 1-6-6v-6a6 6 0 0 1 6-6h8z"/><path fill="#5BB974" d="M29 15h6l6 6v6l-6 6h-6z"/><path fill="#FFCD40" d="M41 21v6l5-3z"/></svg>
@@ -519,33 +539,23 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
       </div>
     </div>
 
-    <!-- Card visual del calendario (banner + datos) -->
-<div class="calcard">
-  <div class="calcard-head">
-    <!-- Si algún día querés, podés usar una imagen real:
-    <img src="/assets/calendario-banner.jpg" alt="" loading="lazy"> -->
-    <div class="calcard-banner" aria-hidden="true"></div>
+    <!-- Card visual del calendario (banner + calendario) -->
+    <div class="calcard">
+      <div class="calcard-head">
+        <!-- Si algún día querés, podés usar una imagen real:
+        <img src="/assets/calendario-banner.jpg" alt="" loading="lazy"> -->
+        <div class="calcard-banner" aria-hidden="true"></div>
+      </div>
 
-    <div class="calcard-meta">
-      <div class="calcard-title">Sesión psicológica online (40′)</div>
-      <div class="calcard-sub">
-        <span>Vía Google Meet</span> • <span>40 min</span>
+      <div class="calembed">
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&hide_event_type_details=1&hide_landing_page_details=1&background_color=fff7e6&text_color=2d2a26&primary_color=ff6b4a"
+             style="width:100%; min-width:320px; height:680px;"></div>
       </div>
     </div>
-  </div>
-
-  <div class="calembed">
-    <div class="calendly-inline-widget"
-         data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&hide_event_type_details=1&hide_landing_page_details=1&background_color=fff7e6&text_color=2d2a26&primary_color=ff6b4a"
-         style="width:100%; min-width:320px; height:820px;"></div>
-  </div>
-</div>
-
   </div> <!-- 👈 cierre de .calgrid -->
 </section>
 
-<!-- Cargar una sola vez antes de </body> -->
-<script async src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 
 <!-- ===================== PREGUNTAS FRECUENTES ===================== -->
 <section id="faq" class="faq-band">
