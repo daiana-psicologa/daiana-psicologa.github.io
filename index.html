@@ -57,6 +57,7 @@
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
+  
 <style>
 /* ===== Variables y base ===== */
 :root{
@@ -281,6 +282,36 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
   .calendly-inline-widget{ height:720px; }
   .footer{grid-template-columns:1fr}
 }
+  /* ==== FIX corte de texto en Calendario (#reservar) ==== */
+#reservar{
+  padding-bottom:16px;
+  overflow:visible !important;
+}
+#reservar .lede{
+  display:block;
+  margin:6px 0 16px;
+  line-height:1.5;
+  white-space:normal;
+  overflow:visible;
+  text-overflow:clip;
+  -webkit-line-clamp:unset;
+  -webkit-box-orient:vertical;
+}
+#reservar .calgrid,
+#reservar .calcard,
+#reservar .calembed{
+  height:auto !important;
+  overflow:visible !important;
+}
+#reservar .calendly-inline-widget{
+  width:100% !important;
+  min-width:320px !important;
+  min-height:720px !important;
+}
+@media (max-width:640px){
+  #reservar .calendly-inline-widget{ min-height:720px !important; }
+}
+
 </style>
 
 <!-- MasterCard SVG para las badges -->
@@ -541,7 +572,11 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
 <!-- ===================== CALENDARIO ===================== -->
 <section class="container" id="reservar">
   <h2 style="margin-top:8px">Calendario de sesiones (40′)</h2>
-  <p class="lede">Las sesiones se reservan por calendario con <strong>pago previo</strong>. Si es tu primer contacto, usá el botón de WhatsApp del encabezado.</p>
+
+  <p class="lede">
+    Las sesiones se reservan por calendario con <strong>pago previo</strong>. 
+    Si es tu primer contacto y tenés alguna duda, podés usar el botón de WhatsApp del encabezado.
+  </p>
 
   <div class="calgrid">
     <!-- Card visual del calendario (banner + calendario) -->
@@ -553,12 +588,11 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
       <div class="calembed">
         <div
           class="calendly-inline-widget"
-          data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&hide_event_type_details=1&hide_landing_page_details=1&background_color=fff7e6&text_color=2d2a26&primary_color=ff6b4a"
-          style="width:100%; min-width:320px; height:760px;">
+          data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&hide_event_type_details=1&hide_landing_page_details=1&background_color=fff7e6&text_color=2d2a26&primary_color=e7b908">
         </div>
       </div>
     </div>
-  </div> <!-- 👈 cierre de .calgrid -->
+  </div>
 </section>
 
 <!-- ===================== PREGUNTAS FRECUENTES ===================== -->
