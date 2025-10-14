@@ -190,7 +190,7 @@ details[open] summary .t::after{content:"Ver menos"}
 }
 .calbox .subtle{ font-size:clamp(14px,1.2vw,18px); line-height:1.6; color:#5b5b5b }
 .gm{ display:inline-flex; align-items:center; gap:8px; font-weight:800; margin-top:8px }
-.calendly-inline-widget{ min-width:100%; height:720px }
+.calendly-inline-widget { width:100%; min-width:320px; height:760px; }
 .tz{ font-size:.92rem; color:#7a6d5d; padding:8px 12px 14px }
 
 /* ====== FAQ ====== */
@@ -490,8 +490,8 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
 
   <div class="calgrid">
     <div class="calbox">
-      <h3>Reservá tu <em>sesión inicial</em> gratuita ahora.</h3>
-      <p class="subtle">Si has decidido priorizarte y aprender a gestionarte, te acompaño.</p>
+      <h3>Reservá tu <em>sesión online</em> (40′).</h3>
+      <p class="subtle">Atención 100% online por Google Meet. Pago previo y agenda instantánea.</p>
       <div class="gm" aria-label="Reunión vía Google Meet">
         <svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><path fill="#00832D" d="M29 15h-8a6 6 0 0 0-6 6v6a6 6 0 0 0 6 6h8z"/><path fill="#00A152" d="M29 33h-8a6 6 0 0 1-6-6v-6a6 6 0 0 1 6-6h8z"/><path fill="#5BB974" d="M29 15h6l6 6v6l-6 6h-6z"/><path fill="#FFCD40" d="M41 21v6l5-3z"/></svg>
         Reunión vía Google Meet
@@ -500,12 +500,14 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
 
     <div class="calembed">
       <div class="calendly-inline-widget"
-        data-url="https://calendly.com/comunicar-terapiadelenguaje/50-minute-meeting?hide_gdpr_banner=1&background_color=fffef8&text_color=2d2a26&primary_color=f59e1b&hide_landing_page_details=1&locale=es">
-      </div>
-      <div class="tz">✓ Si estás en España/UE, cambiá la <em>Time zone</em> a tu ciudad antes de reservar.</div>
+           data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=f7f2e8&text_color=1f2937&primary_color=ff6b4a"
+           style="width:100%; min-width:320px; height:760px;"></div>
     </div>
   </div>
 </section>
+
+<!-- Cargar una sola vez antes de </body> -->
+<script async src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 
 <!-- ===================== PREGUNTAS FRECUENTES ===================== -->
 <section id="faq" class="faq-band">
