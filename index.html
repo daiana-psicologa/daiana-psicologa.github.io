@@ -192,15 +192,28 @@ details[open] summary .t::after{content:"Ver menos"}
 .gm{ display:inline-flex; align-items:center; gap:8px; font-weight:800; margin-top:8px }
 .calendly-inline-widget { width:100%; min-width:320px; height:820px; }
 .tz{ font-size:.92rem; color:#7a6d5d; padding:8px 12px 14px }
-/* Estilo del contenedor del Calendly */
+  
+/* Contenedor del Calendly dentro del card */
 .calembed{
   background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
-  box-shadow:var(--shadow-s);
-  overflow:hidden; /* asegura el borde redondeado del iframe */
+  border-top:1px solid var(--line);
+  overflow:hidden; /* mantiene el borde redondeado del padre */
+  padding:0;
 }
 
+/* Card visual tipo “bonito” del calendario */
+.calcard{ ... }
+.calcard-head{ ... }
+.calcard-banner{ ... }
+.calcard-meta{ ... }
+.calcard-title{ ... }
+.calcard-sub{ ... }
+
+@media (max-width:960px){
+  .calgrid{ grid-template-columns:1fr; }
+  .calendly-inline-widget{ height:720px; }
+}
+  
 /* ====== FAQ ====== */
 .faq-band{background:var(--band);padding:28px 0}
 .faq{max-width:var(--narrow);margin:0 auto;padding:0 22px}
@@ -506,11 +519,28 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
       </div>
     </div>
 
-    <div class="calembed">
-      <div class="calendly-inline-widget"
-           data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=fff7e6&text_color=2d2a26&primary_color=ff6b4a"
-           style="width:100%; min-width:320px; height:820px;"></div>
+    <!-- Card visual del calendario (banner + datos) -->
+<div class="calcard">
+  <div class="calcard-head">
+    <!-- Si algún día querés, podés usar una imagen real:
+    <img src="/assets/calendario-banner.jpg" alt="" loading="lazy"> -->
+    <div class="calcard-banner" aria-hidden="true"></div>
+
+    <div class="calcard-meta">
+      <div class="calcard-title">Sesión psicológica online (40′)</div>
+      <div class="calcard-sub">
+        <span>Vía Google Meet</span> • <span>40 min</span>
+      </div>
     </div>
+  </div>
+
+  <div class="calembed">
+    <div class="calendly-inline-widget"
+         data-url="https://calendly.com/comunicar-terapiadelenguaje/psicologia-online-50min?hide_gdpr_banner=1&background_color=fff7e6&text_color=2d2a26&primary_color=ff6b4a"
+         style="width:100%; min-width:320px; height:820px;"></div>
+  </div>
+</div>
+
   </div> <!-- 👈 cierre de .calgrid -->
 </section>
 
