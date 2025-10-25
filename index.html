@@ -349,6 +349,57 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
   margin: 0 0 20px;
   font-size: 1rem;
 }
+  /* ==== Centrado de títulos + párrafos intro ==== */
+
+/* Título "Psicóloga presencial en Neuquén..." */
+.intro-local-title {
+  text-align: center;
+  margin: 32px 0 8px;
+  font-weight: 700;
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+/* Párrafo debajo ("Atiendo de forma presencial...") */
+.intro-local {
+  max-width: 70ch;        /* ancho cómodo de lectura */
+  margin: 8px auto 24px;  /* auto = centrado horizontal */
+  text-align: center;
+  line-height: 1.5;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+/* Sección PAGOS */
+#pagos h2 {
+  text-align: center;
+}
+
+.pay-intro {
+  max-width: 70ch;
+  margin: 0 auto 24px;
+  text-align: center;
+  line-height: 1.5;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+/* Sección CALENDARIO */
+#reservar h2 {
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Párrafo debajo de "Calendario de sesiones (40')" */
+#reservar .lede {
+  max-width: 70ch;
+  margin: 8px auto 24px;
+  text-align: center;
+  line-height: 1.5;
+  color: var(--ink);
+  font-size: 1rem;
+}
 </style>
 
 <!-- MasterCard SVG para las badges -->
@@ -576,8 +627,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
- <section class="container" style="padding-top:32px; padding-bottom:16px;">
-  <h2>Psicóloga presencial en Neuquén Capital y terapia online en toda Argentina</h2>
+<section class="container" style="padding-top:32px; padding-bottom:16px;">
+  <h2 class="intro-local-title">Psicóloga presencial en Neuquén Capital y terapia online en toda Argentina</h2>
 
   <p class="intro-local">
     Atiendo de forma presencial en Neuquén Capital como psicóloga clínica y, si preferís,
