@@ -318,7 +318,37 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
 @media (max-width:640px){
   #reservar .calendly-inline-widget{ min-height:720px !important; }
 }
+.intro-local {
+  max-width: 70ch;        /* para que no ocupe todo el ancho gigante */
+  margin: 8px auto 0;     /* auto = centrado horizontal */
+  text-align: center;     /* centrado del texto */
+  color: var(--ink);      /* mismo color de texto normal */
+  line-height: 1.5;
+}
+  /* Texto intro de la zona Neuquén + online */
+.intro-local-title {
+  margin: 32px 0 8px;
+  font-weight: 700;
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.25;
+  color: var(--ink);
+}
 
+.intro-local {
+  max-width: 100%;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 24px;
+}
+
+/* Texto introductorio de pagos */
+.pay-intro {
+  max-width: 100%;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 20px;
+  font-size: 1rem;
+}
 </style>
 
 <!-- MasterCard SVG para las badges -->
@@ -546,10 +576,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-  <section class="container" style="padding-top:32px; padding-bottom:16px;">
+ <section class="container" style="padding-top:32px; padding-bottom:16px;">
   <h2>Psicóloga presencial en Neuquén Capital y terapia online en toda Argentina</h2>
 
-  <p>
+  <p class="intro-local">
     Atiendo de forma presencial en Neuquén Capital como psicóloga clínica y, si preferís,
     podemos continuar por videollamada. También trabajo 100% online con personas de todo el país.
   </p>
@@ -559,10 +589,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ===================== PAGOS ===================== -->
 <section class="container pay" id="pagos">
   <h2>Aboná tu sesión (presencial en Neuquén u online) y agendá al instante</h2>
-  <p class="lede">
+
+  <p class="pay-intro">
     Pagás por <strong>transferencia bancaria</strong>. Escribime por WhatsApp y te paso el alias/CBU.
     Luego enviás el comprobante y agendás en el calendario.
   </p>
+
+  <!-- ...acá siguen las tarjetas de precios... -->
+</section>
 
   <!-- Badge "Transferencia" (estilo mínimo) -->
   <style>
