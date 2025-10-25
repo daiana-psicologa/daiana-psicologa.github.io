@@ -400,6 +400,71 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
   color: var(--ink);
   font-size: 1rem;
 }
+  /* === FAQ centrada === */
+.faq {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 22px;
+}
+
+.faq-title {
+  text-align: center;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+/* La cajita acordeón */
+.acc {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 26px rgba(90,70,30,.08);
+}
+
+/* Ajustes internos siguen igual */
+.acc details {
+  border-top: 1px solid var(--line);
+}
+.acc details:first-child {
+  border-top: 0;
+}
+.acc summary {
+  background: #FFF7E6;
+  color: #2d2a26;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-weight: 900;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background .15s ease, color .15s ease;
+}
+.acc summary::after {
+  content: "+";
+  font-weight: 900;
+  color: #7c7163;
+}
+.acc details[open] summary {
+  background:#fff;
+  border-bottom:1px dashed var(--line);
+}
+.acc details[open] summary::after {
+  content: "–";
+}
+.acc .content {
+  padding: 12px 16px 16px;
+  color: #4b463f;
+}
+.acc .content p {
+  margin: .55rem 0;
+}
 </style>
 
 <!-- MasterCard SVG para las badges -->
@@ -728,60 +793,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ===================== PREGUNTAS FRECUENTES ===================== -->
 <section id="faq" class="faq-band">
-  <div class="acc" id="faqAcc">
-  <details>
-    <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
-    <div class="content">
-      <p>Es una duda habitual. A veces lo indican señales claras (ansiedad, obsesiones, apatía, desesperanza). Otras veces el malestar es difuso: sensación de vacío, vivir en automático, cansancio o agobio constante. Si te lo estás planteando, probablemente ya notas que algo no va bien.</p>
-      <p>Lo más útil es conversar en terapia para entender qué está señalando ese malestar y despejar dudas: ver si hay asuntos que estás evitando, decisiones pendientes o dinámicas que te están haciendo daño y cómo abordarlas.</p>
-    </div>
-  </details>
+  <div class="faq">
+    <h2 class="faq-title">Preguntas frecuentes</h2>
 
-  <details>
-    <summary>¿Cuánto suele durar una psicoterapia?</summary>
-    <div class="content">
-      <p>La frecuencia más efectiva es semanal o quincenal. Con menor frecuencia el proceso pierde fuerza. De forma orientativa, muchos tratamientos se mueven entre <strong>6 y 10 meses</strong>; algunos casos requieren menos tiempo y otros más.</p>
-      <p>La duración exacta depende de los objetivos, el ritmo y lo que vayamos encontrando. En psicología no es honesto prometer cifras cerradas: se evalúa contigo y se revisa durante el proceso.</p>
-    </div>
-  </details>
+    <div class="acc" id="faqAcc">
+      <details>
+        <summary>¿Cómo saber si necesito ayuda psicológica?</summary>
+        <div class="content">
+          <p>Es una duda habitual. A veces lo indican señales claras (ansiedad, obsesiones, apatía, desesperanza). Otras veces el malestar es difuso: sensación de vacío, vivir en automático, cansancio o agobio constante. Si te lo estás planteando, probablemente ya notás que algo no va bien.</p>
+          <p>Lo más útil es conversar en terapia para entender qué está señalando ese malestar y despejar dudas: ver si hay asuntos que estás evitando, decisiones pendientes o dinámicas que te están haciendo daño y cómo abordarlas.</p>
+        </div>
+      </details>
 
-  <details>
-    <summary>¿Por qué hay tantos tipos de terapia y cómo sé cuál necesito?</summary>
-    <div class="content">
-      <p>Existen diferentes corrientes (cognitivo-conductual, psicodinámica, humanista, sistémica…). Cada una entiende el malestar desde un ángulo y propone recursos propios. Aun así, comparten bases como no reprimir emociones, cuidar la relación terapeuta-paciente y tomar conciencia del mundo interno.</p>
-      <p>Mi recomendación práctica: priorizá la <strong>conexión y confianza</strong> con la profesional. La investigación muestra que la alianza terapéutica es el mejor predictor de buenos resultados.</p>
-    </div>
-  </details>
+      <details>
+        <summary>¿Cuánto suele durar una psicoterapia?</summary>
+        <div class="content">
+          <p>La frecuencia más efectiva es semanal o quincenal. Con menor frecuencia el proceso pierde fuerza. De forma orientativa, muchos tratamientos se mueven entre <strong>6 y 10 meses</strong>; algunos casos requieren menos tiempo y otros más.</p>
+          <p>La duración exacta depende de los objetivos, el ritmo y lo que vayamos encontrando. En psicología no es honesto prometer cifras cerradas: se evalúa con vos y se revisa durante el proceso.</p>
+        </div>
+      </details>
 
-  <details>
-    <summary>¿Cómo es una psicoterapia conmigo?</summary>
-    <div class="content">
-      <p>Me centro en la persona por encima del protocolo. Aunque diagnósticos como ansiedad o depresión se repitan, cada historia es única; adapto la intervención a tu contexto y metas.</p>
-      <p>Trabajo con un enfoque humanista e integrativo: prioriza la relación, la experiencia emocional y el sentido personal. Integro recursos con base empírica y trabajo experiencial para pasar de “sé lo que tendría que hacer” a “puedo hacerlo”. Cuando es útil, incorporo mirada sistémica y referencias existenciales.</p>
-      <p>Busco una terapia honesta y directa, siempre con empatía y cuidado. No solo aliviar síntomas: cambiar lo que los sostiene para que se note en lo cotidiano (decisiones más claras, límites más sanos y mayor bienestar).</p>
-    </div>
-  </details>
+      <details>
+        <summary>¿Por qué hay tantos tipos de terapia y cómo sé cuál necesito?</summary>
+        <div class="content">
+          <p>Existen diferentes corrientes (cognitivo-conductual, psicodinámica, humanista, sistémica…). Cada una entiende el malestar desde un ángulo y propone recursos propios. Aun así, comparten bases como no reprimir emociones, cuidar la relación terapeuta–paciente y tomar conciencia del mundo interno.</p>
+          <p>Mi recomendación práctica: priorizá la <strong>conexión y confianza</strong> con la profesional. La alianza terapéutica es el mejor predictor de buenos resultados.</p>
+        </div>
+      </details>
 
-  <details>
-    <summary>¿Trabajás con obra social?</summary>
-    <div class="content">
-      <p>No, la atención es particular.</p>
-    </div>
-  </details>
+      <details>
+        <summary>¿Cómo es una psicoterapia conmigo?</summary>
+        <div class="content">
+          <p>Me centro en la persona por encima del protocolo. Aunque diagnósticos como ansiedad o depresión se repitan, cada historia es única; adapto la intervención a tu contexto y metas.</p>
+          <p>Trabajo con un enfoque humanista e integrativo: prioriza la relación, la experiencia emocional y el sentido personal. Integro recursos con base empírica y trabajo experiencial para pasar de “sé lo que tendría que hacer” a “puedo hacerlo”. Cuando es útil, incorporo mirada sistémica y referencias existenciales.</p>
+          <p>Busco una terapia honesta y directa, siempre con empatía y cuidado. No solo aliviar síntomas: cambiar lo que los sostiene para que se note en lo cotidiano (decisiones más claras, límites más sanos y mayor bienestar).</p>
+        </div>
+      </details>
 
-  <details>
-    <summary>¿Qué medios de pago aceptás?</summary>
-    <div class="content">
-      <p>Acepto <strong>transferencia bancaria</strong>. Escribime por WhatsApp y te envío los datos de pago. Una vez hecha la transferencia, mandá el comprobante y agendá en el calendario.</p>
-    </div>
-  </details>
+      <details>
+        <summary>¿Trabajás con obra social?</summary>
+        <div class="content">
+          <p>No, la atención es particular.</p>
+        </div>
+      </details>
 
-  <details>
-    <summary>¿Atendés de forma presencial en Neuquén?</summary>
-    <div class="content">
-      <p>Sí. Atiendo de forma presencial en Neuquén Capital y también hago sesiones online por videollamada para el resto del país. Escribime por WhatsApp para disponibilidad y dirección.</p>
-    </div>
-  </details>
+      <details>
+        <summary>¿Qué medios de pago aceptás?</summary>
+        <div class="content">
+          <p>Acepto <strong>transferencia bancaria</strong>. Me escribís por WhatsApp y te paso el alias/CBU. Después enviás el comprobante y reservás en el calendario.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>¿Atendés de forma presencial en Neuquén?</summary>
+        <div class="content">
+          <p>Sí. Coordino sesiones presenciales en Neuquén Capital y también ofrezco modalidad online por videollamada para el resto del país. Escribime por WhatsApp para disponibilidad y dirección.</p>
+        </div>
+      </details>     
 </div>
   </section>
 
