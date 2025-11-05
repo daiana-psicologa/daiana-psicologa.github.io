@@ -469,6 +469,62 @@ footer{background:#fff;border-top:1px solid var(--line);margin-top:32px}
 .acc .content p {
   margin: .55rem 0;
 }
+  /* ===== Precio destacado + teléfono en el hero ===== */
+.price-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
+  margin-bottom:6px;
+  align-items:center;
+}
+
+.price-main{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 20px;
+  border-radius:999px;
+  font-weight:900;
+  font-size:18px;
+  background-image:linear-gradient(90deg,#f97316,#fbbf24);
+  color:#fff;
+  box-shadow:var(--shadow-s);
+}
+
+.price-main small{
+  font-weight:600;
+  font-size:.9rem;
+  opacity:.95;
+}
+
+.price-secondary{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:9px 16px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:14px;
+  background:#d1fae5;
+  color:#065f46;
+}
+
+.hero-phone{
+  margin-top:10px;
+  font-weight:700;
+  font-size:1rem;
+  color:#3b2f1a;
+}
+
+.hero-phone a{
+  color:#b45309;
+  text-decoration:none;
+}
+
+.hero-phone a:hover{
+  text-decoration:underline;
+}
 </style>
 
 <!-- MasterCard SVG para las badges -->
@@ -529,17 +585,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="lede">Para mí, acompañar el sufrimiento y aliviarlo es de los actos más genuinos y valiosos que puedo brindar</p>
 <div class="pay-short" style="display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; margin-bottom:10px;">
   <div style="display:flex; align-items:center; gap:6px; background:#fef3c7; border-radius:999px; padding:10px 16px; font:700 16px/1.2 Inter, sans-serif; color:#92400e;">
-  🖥 Online: $30.000
+ <p class="lede">Para mí, acompañar el sufrimiento y aliviarlo es de los actos más genuinos y valiosos que puedo brindar</p>
+
+<div class="price-row">
+  <div class="price-main">
+    🖥 Sesión online · $30.000 <small>(40′)</small>
+  </div>
+  <div class="price-secondary">
+    👥 Presencial Neuquén · $45.000
+  </div>
 </div>
-<div style="display:flex; align-items:center; gap:6px; background:#d1fae5; border-radius:999px; padding:10px 16px; font:700 16px/1.2 Inter, sans-serif; color:#065f46;">
-  👥 Presencial: $45.000
+
+<div class="actions">
+  <a class="btn btn-outline" href="#filosofia">Ver enfoque</a>
+  <a class="btn btn-grad" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quisiera%20coordinar%20una%20sesión."
+     target="_blank" rel="noopener">Escribirme por WhatsApp</a>
 </div>
-</div>
-    <div class="actions">
-      <a class="btn btn-outline" href="#filosofia">Ver enfoque</a>
-      <a class="btn btn-grad" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quisiera%20coordinar%20una%20sesión."
-         target="_blank" rel="noopener">Escribirme por WhatsApp</a>
-    </div>
+
+<p class="hero-phone">
+  También podés llamarme o escribirme al
+  <a href="tel:+5492996044900">+54 9 299 604 4900</a>.
+</p>
   </div>
   
   <div class="photo" aria-hidden="true">
