@@ -74,7 +74,6 @@
       --max:1180px;
       --shadow:0 28px 70px rgba(0,0,0,.36);
       --shadow-soft:0 18px 44px rgba(0,0,0,.12);
-      --radius:26px;
     }
 
     *{box-sizing:border-box}
@@ -112,20 +111,21 @@
     h1,h2,h3{margin:0 0 12px}
     h1{
       font-family:Manrope,Inter,sans-serif;
-      font-size:clamp(46px,7vw,88px);
+      font-size:clamp(48px,7vw,88px);
       line-height:.93;
       letter-spacing:-.05em;
       max-width:10.5ch;
+      text-wrap:balance;
     }
     h2{
       font-family:Manrope,Inter,sans-serif;
-      font-size:clamp(34px,4.1vw,58px);
+      font-size:clamp(36px,4.2vw,58px);
       line-height:.98;
-      letter-spacing:-.035em;
+      letter-spacing:-.04em;
       text-wrap:balance;
     }
     h3{
-      font-size:clamp(20px,2vw,28px);
+      font-size:clamp(22px,2vw,28px);
       line-height:1.08;
       letter-spacing:-.02em;
       text-wrap:balance;
@@ -224,13 +224,13 @@
     }
     .hero-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:1.02fr .98fr;
       gap:44px;
       align-items:center;
       padding:60px 0 76px;
     }
     .hero-copy .lede{
-      max-width:52ch;
+      max-width:54ch;
       font-size:clamp(16px,1.48vw,19px);
       color:#cac7be;
       margin:18px 0 20px;
@@ -333,16 +333,21 @@
 
     .intro-block{
       display:grid;
-      grid-template-columns:.95fr 1.05fr;
-      gap:36px;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
       align-items:center;
     }
+    .intro-block h2{
+      max-width:12ch;
+    }
+
     .thesis-card{
       background:linear-gradient(180deg,#15171c,#0f1014);
       border:1px solid rgba(255,255,255,.08);
       border-radius:28px;
       padding:28px;
       box-shadow:var(--shadow);
+      max-width:520px;
     }
     .thesis-card .kicker{
       font-size:.9rem;
@@ -356,28 +361,38 @@
       font-family:Manrope,Inter,sans-serif;
       font-weight:800;
       letter-spacing:-.03em;
-      font-size:clamp(30px,3.3vw,48px);
+      font-size:clamp(30px,3.2vw,48px);
       line-height:1.02;
       margin-bottom:12px;
       color:#f5f4ef;
       opacity:1;
       text-wrap:balance;
+      max-width:11ch;
     }
     .thesis-card p:last-child{
       color:#d5d1c8;
       font-size:1rem;
       margin:0;
+      max-width:42ch;
     }
 
-    .section-heading-tight{
-      max-width:980px;
+    .help-section{
+      max-width:1180px;
     }
-    .section-heading-tight h2{
-      max-width:18ch;
+    .help-heading{
+      max-width:980px;
+      margin:0 auto 34px;
+    }
+    .help-heading h2{
+      max-width:15ch;
+      font-size:clamp(38px,4.5vw,68px);
+      line-height:.98;
+      letter-spacing:-.04em;
+      text-wrap:balance;
     }
     .section-subtle{
-      max-width:680px;
-      margin:0 0 28px;
+      max-width:720px;
+      margin:10px 0 0;
       color:#a9a49b;
       font-size:1.03rem;
       line-height:1.7;
@@ -434,7 +449,13 @@
       border:1px solid rgba(255,255,255,.08);
       box-shadow:var(--shadow);
     }
-    .panel-dark p{color:#d6d2ca}
+    .panel-dark h2{
+      max-width:12ch;
+    }
+    .panel-dark > p{
+      color:#d6d2ca;
+      max-width:60ch;
+    }
 
     .steps{
       display:grid;
@@ -473,15 +494,15 @@
       justify-content:center;
     }
     .section-title-center h2{
-      max-width:18ch;
+      max-width:16ch;
       margin-inline:auto;
     }
+
     .g-badge-wrap{
       display:flex;
       justify-content:center;
       margin-bottom:24px;
     }
-
     .g-badge{
       display:inline-flex;
       align-items:center;
@@ -578,6 +599,9 @@
       display:grid;
       gap:12px;
       margin-top:26px;
+      max-width:920px;
+      margin-left:auto;
+      margin-right:auto;
     }
     details.faq-item{
       background:#fff;
@@ -616,7 +640,7 @@
     }
     .cta-box{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
+      grid-template-columns:1.05fr .95fr;
       gap:28px;
       align-items:center;
       padding:74px 0;
@@ -633,6 +657,9 @@
       border-radius:28px;
       padding:28px;
       box-shadow:var(--shadow);
+      max-width:520px;
+      margin-left:auto;
+      width:100%;
     }
 
     footer{
@@ -671,17 +698,23 @@
       .hero-visual{min-height:520px}
       .grid-3{grid-template-columns:1fr 1fr}
       .t-card{flex-basis:calc((100% - 18px)/2)}
-      .visual-shell{margin-inline:auto}
-      .section-heading-tight h2,
+      .visual-shell,.cta-panel{margin-inline:auto}
+      .help-heading h2,
       .section-title-center h2,
-      .cta-copy h2{max-width:none}
+      .cta-copy h2,
+      .intro-block h2,
+      .panel-dark h2{
+        max-width:none;
+      }
     }
+
     @media (max-width:860px){
       .nav a:not(.cta){display:none}
       .footer-grid{grid-template-columns:1fr}
       .hero{min-height:auto}
       .portrait{max-width:500px;margin-inline:auto}
     }
+
     @media (max-width:700px){
       .container{padding:0 18px}
       .topbar-inner{height:72px}
@@ -695,6 +728,17 @@
       .section-pad{padding:76px 0}
       .carousel-btn{display:none}
       h1{max-width:none}
+      .help-heading,
+      .section-title-center{
+        margin-bottom:24px;
+      }
+      .help-heading h2{
+        font-size:clamp(34px,8vw,52px);
+        max-width:none;
+      }
+      .section-subtle{
+        max-width:100%;
+      }
     }
   </style>
 </head>
@@ -772,12 +816,14 @@
     </section>
 
     <section class="section-light section-pad" id="en-que-te-ayudo">
-      <div class="container section-heading-tight">
-        <span class="eyebrow" style="color:#9c611f">En qué te ayudo</span>
-        <h2>Te acompaño si hoy te pasa algo de esto.</h2>
-        <p class="section-subtle">
-          No hace falta tocar fondo para pedir ayuda. A veces alcanza con sentir que algo adentro ya pesa demasiado.
-        </p>
+      <div class="container help-section">
+        <div class="help-heading">
+          <span class="eyebrow" style="color:#9c611f">En qué te ayudo</span>
+          <h2>Te acompaño si hoy te pasa algo de esto.</h2>
+          <p class="section-subtle">
+            No hace falta tocar fondo para pedir ayuda. A veces alcanza con sentir que algo adentro ya pesa demasiado.
+          </p>
+        </div>
 
         <div class="grid-3">
           <article class="card">
