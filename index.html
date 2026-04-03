@@ -64,7 +64,6 @@
       --bg:#090a0d;
       --bg2:#0f1116;
       --paper:#f5f1e8;
-      --paper2:#ede6d8;
       --text:#f5f4ef;
       --text-dark:#1c1c1f;
       --muted:#b8b5ae;
@@ -72,11 +71,9 @@
       --gold:#f0b455;
       --gold2:#c97a2d;
       --line:rgba(255,255,255,.08);
-      --line-dark:rgba(0,0,0,.07);
       --max:1180px;
       --shadow:0 28px 70px rgba(0,0,0,.36);
       --shadow-soft:0 18px 44px rgba(0,0,0,.12);
-      --radius:26px;
     }
 
     *{box-sizing:border-box}
@@ -284,9 +281,7 @@
       font-weight:800;
       box-shadow:var(--shadow);
     }
-    .price-badge strong{
-      color:var(--gold);
-    }
+    .price-badge strong{color:var(--gold)}
 
     .hero-visual{
       position:relative;
@@ -354,15 +349,15 @@
       margin-bottom:10px;
     }
     .quote-big{
-  font-family:Manrope,Inter,sans-serif;
-  font-weight:800;
-  letter-spacing:-.03em;
-  font-size:clamp(28px,3.2vw,46px);
-  line-height:1.02;
-  margin-bottom:12px;
-  color:#f5f4ef;
-  opacity:1;
-}
+      font-family:Manrope,Inter,sans-serif;
+      font-weight:800;
+      letter-spacing:-.03em;
+      font-size:clamp(28px,3.2vw,46px);
+      line-height:1.02;
+      margin-bottom:12px;
+      color:#f5f4ef;
+      opacity:1;
+    }
     .thesis-card p:last-child{
       color:#d5d1c8;
       font-size:1rem;
@@ -449,13 +444,20 @@
     }
 
     .testimonials-wrap{display:grid;gap:20px}
-    .score-row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-      flex-wrap:wrap;
+    .section-title-center{
+      max-width:920px;
+      margin:0 auto 18px;
+      text-align:center;
     }
+    .section-title-center .eyebrow{
+      justify-content:center;
+    }
+    .g-badge-wrap{
+      display:flex;
+      justify-content:center;
+      margin-bottom:24px;
+    }
+
     .g-badge{
       display:inline-flex;
       align-items:center;
@@ -551,7 +553,7 @@
     .faq-grid{
       display:grid;
       gap:12px;
-      margin-top:22px;
+      margin-top:26px;
     }
     details.faq-item{
       background:#fff;
@@ -739,9 +741,9 @@
       <div class="container">
         <span class="eyebrow" style="color:#9c611f">En qué te ayudo</span>
         <h2>Te acompaño si hoy te pasa algo de esto.</h2>
-        <p class="muted" style="max-width:680px;margin:0 0 28px">
-  No hace falta tocar fondo para pedir ayuda. A veces alcanza con sentir que algo adentro ya pesa demasiado.
-</p>
+        <p class="muted" style="max-width:760px;margin:0 0 28px">
+          No hace falta tocar fondo para pedir ayuda. A veces alcanza con sentir que algo adentro ya pesa demasiado.
+        </p>
 
         <div class="grid-3">
           <article class="card">
@@ -818,12 +820,12 @@
 
     <section class="section-dark section-pad" id="opiniones">
       <div class="container testimonials-wrap">
-        <div class="score-row">
-          <div>
-            <span class="eyebrow">Prueba social</span>
-            <h2>Opiniones de personas que ya hicieron proceso conmigo.</h2>
-          </div>
+        <div class="section-title-center">
+          <span class="eyebrow">Experiencias reales</span>
+          <h2>Opiniones de personas que ya hicieron proceso conmigo.</h2>
+        </div>
 
+        <div class="g-badge-wrap">
           <div class="g-badge" aria-label="Opiniones en Google">
             <span class="g-stars">★★★★★</span>
             <span>Google</span>
@@ -910,8 +912,10 @@
 
     <section class="section-light section-pad" id="preguntas">
       <div class="container">
-        <span class="eyebrow" style="color:#9c611f">Preguntas frecuentes</span>
-        <h2>Lo que más suele preguntar la gente antes de escribirme.</h2>
+        <div class="section-title-center">
+          <span class="eyebrow" style="color:#9c611f">Preguntas frecuentes</span>
+          <h2>Lo que más suele preguntar la gente antes de escribirme.</h2>
+        </div>
 
         <div class="faq-grid">
           <details class="faq-item">
@@ -957,7 +961,7 @@
         <div>
           <span class="eyebrow">Primer paso</span>
           <h2>Si sentís que algo te frena todo el tiempo, no tenés que seguir cargando con eso.</h2>
-          <p class="muted">Podés escribirme,contarme brevemente qué te está pasando y vemos si este espacio puede ayudarte.</p>
+          <p class="muted">Podés escribirme, contarme brevemente qué te está pasando y vemos si este espacio puede ayudarte.</p>
         </div>
 
         <div class="cta-panel">
