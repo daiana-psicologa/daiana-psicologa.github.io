@@ -217,17 +217,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     position:relative;z-index:2;width:min(560px,100%);margin-left:auto;
     filter:drop-shadow(0 38px 80px rgba(0,0,0,.45));
   }
-  .hero-quote{
-    position:absolute;left:0;bottom:52px;z-index:3;
-    width:min(360px,72%);
-    background:rgba(16,17,21,.76);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:24px;
-    padding:22px;
-    box-shadow:var(--shadow);
-  }
-  .hero-quote strong{display:block;font-size:1.05rem;margin-bottom:8px}
-  .hero-quote p{color:#cbc8c0;margin:0;font-size:.96rem}
 
   .section-light{
     background:#f5f1e7;color:#1d1d20;
@@ -268,17 +257,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .card ul{padding-left:18px;margin:10px 0 0;color:#4f4a43}
   .card li{margin-bottom:8px}
 
-  .split{
-    display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch;
-  }
   .panel-dark{
     border-radius:28px;padding:30px;background:linear-gradient(180deg,#16181e,#0f1014);
     border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);
   }
   .panel-dark p{color:#d6d2ca}
-  .panel-light{
-    border-radius:28px;padding:30px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:var(--shadow-soft);
-  }
 
   .steps{display:grid;gap:14px;margin-top:20px}
   .step{
@@ -297,8 +280,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background:rgba(240,180,85,.12);color:#f3d7a5;border:1px solid rgba(240,180,85,.18);font-weight:800;
   }
   .stars{letter-spacing:.16em;color:var(--gold)}
-  .testimonials-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .testimonials-carousel{position:relative}
+  .testimonials-track{
+    display:flex;gap:18px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;padding:6px 2px 4px;
+  }
+  .testimonials-track::-webkit-scrollbar{display:none}
   .t-card{
+    flex:0 0 calc((100% - 36px)/3);
     background:#14161b;border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:22px;
     box-shadow:var(--shadow);
   }
@@ -309,6 +297,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .t-card p{color:#d1cec7;margin:0}
   .t-meta{font-size:.92rem;color:#aaa59c}
+  .carousel-btn{
+    position:absolute;top:50%;transform:translateY(-50%);z-index:2;
+    width:42px;height:42px;border-radius:999px;border:1px solid rgba(255,255,255,.1);
+    background:#15171c;color:#fff;font-size:28px;line-height:1;display:grid;place-items:center;cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  .carousel-btn.prev{left:-10px}
+  .carousel-btn.next{right:-10px}
 
   .faq-grid{display:grid;gap:12px;margin-top:22px}
   details.faq-item{
@@ -356,11 +352,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .legal{padding:0 0 28px;color:#8f8b83;font-size:.92rem}
 
   @media (max-width:1100px){
-    .hero-grid,.intro-block,.split,.cta-box{grid-template-columns:1fr}
+    .hero-grid,.intro-block,.cta-box{grid-template-columns:1fr}
     .hero-visual{min-height:520px}
     .hero-panel{inset:20px 0 0 40px}
-    .hero-quote{position:relative;left:auto;bottom:auto;width:100%;margin-top:18px}
-    .testimonials-grid,.grid-3{grid-template-columns:1fr 1fr}
+    .grid-3{grid-template-columns:1fr 1fr}
+    .t-card{flex-basis:calc((100% - 18px)/2)}
   }
   @media (max-width:860px){
     .nav a:not(.cta){display:none}
@@ -378,8 +374,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-grid{padding:34px 0 56px}
     .hero-visual{min-height:420px}
     .hero-panel{inset:16px 0 0 18px}
-    .testimonials-grid,.grid-3{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:1fr}
+    .t-card{flex-basis:100%}
     .section-pad{padding:74px 0}
+    .carousel-btn{display:none}
   }
 </style>
 </head>
@@ -402,7 +400,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <nav class="nav" aria-label="Principal">
       <a href="#en-que-te-ayudo">En qué te ayudo</a>
-      <a href="#enfoque">Enfoque</a>
+      <a href="#enfoque">Cómo trabajo</a>
       <a href="#opiniones">Opiniones</a>
       <a href="#preguntas">Preguntas</a>
       <a class="cta" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20hablar%20para%20agendar%20una%20sesi%C3%B3n." target="_blank" rel="noopener" onclick="gtag('event', 'conversion', {'send_to': 'AW-17569733605/G_-LCM3ojq8bEOW387lB'});">Escribirme por WhatsApp</a>
@@ -435,10 +433,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="hero-visual" aria-hidden="true">
         <div class="hero-panel"></div>
         <img class="portrait" src="/assets/portrait.png" alt="Daiana Beltrán, psicóloga" />
-        <div class="hero-quote">
-          <strong>No siempre te falta fuerza.</strong>
-          <p>A veces te sobra tensión, exigencia y una sensación constante de tener que sostener demasiado sola.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -501,8 +495,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </section>
 
   <section class="section-dark section-pad" id="enfoque">
-    <div class="container split">
-      <div class="panel-dark">
+    <div class="container">
+      <div class="panel-dark" style="max-width:980px;margin:0 auto;">
         <span class="eyebrow">Cómo trabajo</span>
         <h2>Una terapia clara, humana y profunda.</h2>
         <p>No trabajo desde fórmulas vacías ni desde frases hechas. Mi objetivo no es solo que entiendas lo que te pasa, sino que puedas empezar a vivir con más claridad, menos peso emocional y más dirección.</p>
@@ -530,14 +524,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
         </div>
       </div>
-
-      <div class="panel-light">
-        <span class="eyebrow" style="color:#9c611f">Mi enfoque</span>
-        <h3 style="font-size:clamp(26px,3.1vw,40px)">La relación terapéutica es parte del cambio.</h3>
-        <p class="muted-dark">Trabajo desde una mirada humanista e integrativa. Para mí, no alcanza con aplicar técnicas si la persona no se siente comprendida, cuidada y bien leída en su historia.</p>
-        <p class="muted-dark">Aporto marco, herramientas y claridad clínica. Vos aportás lo más valioso: tu experiencia, tus tiempos, tu contexto y lo que venís sosteniendo hace tiempo. Cuando esas dos cosas se encuentran bien, la terapia deja de ser solo alivio y empieza a ordenar la vida.</p>
-        <p class="muted-dark" style="margin-bottom:0"><strong>Presencial en Neuquén Capital</strong> y <strong>online para Argentina</strong>. Atención particular. Turnos por WhatsApp.</p>
-      </div>
     </div>
   </section>
 
@@ -548,46 +534,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <span class="eyebrow">Prueba social</span>
           <h2>Opiniones de personas que ya hicieron proceso conmigo.</h2>
         </div>
-        <div class="score-pill">
-          <span>Excelente</span>
-          <span class="stars">★★★★★</span>
-          <span>112 reseñas</span>
-        </div>
       </div>
 
-      <div class="testimonials-grid">
-        <article class="t-card">
-          <div class="t-top">
-            <div class="avatar">N</div>
-            <div>
-              <strong>Natu Lucero</strong>
-              <div class="t-meta">Hace 2 semanas</div>
+      <div class="testimonials-carousel">
+        <button class="carousel-btn prev" type="button" aria-label="Anterior" onclick="scrollTestimonials(-1)">‹</button>
+        <div class="testimonials-track" id="testimonialsTrack">
+          <article class="t-card">
+            <div class="t-top">
+              <div class="avatar">N</div>
+              <div>
+                <strong>Natu Lucero</strong>
+                <div class="t-meta">Hace 2 semanas</div>
+              </div>
             </div>
-          </div>
-          <p>Me sentí escuchada sin juicios, con una guía clara y respetuosa. Tu profesionalismo hizo toda la diferencia. 100% recomendada.</p>
-        </article>
+            <p>Me sentí escuchada sin juicios, con una guía clara y respetuosa. Tu profesionalismo hizo toda la diferencia. 100% recomendada.</p>
+          </article>
 
-        <article class="t-card">
-          <div class="t-top">
-            <div class="avatar">S</div>
-            <div>
-              <strong>Sofía Morales</strong>
-              <div class="t-meta">31/08/2025</div>
+          <article class="t-card">
+            <div class="t-top">
+              <div class="avatar">S</div>
+              <div>
+                <strong>Sofía Morales</strong>
+                <div class="t-meta">31/08/2025</div>
+              </div>
             </div>
-          </div>
-          <p>Orden y claridad para la ansiedad. Calidez y profesionalismo.</p>
-        </article>
+            <p>Orden y claridad para la ansiedad. Calidez y profesionalismo.</p>
+          </article>
 
-        <article class="t-card">
-          <div class="t-top">
-            <div class="avatar">L</div>
-            <div>
-              <strong>Lucas R.</strong>
-              <div class="t-meta">12/09/2025</div>
+          <article class="t-card">
+            <div class="t-top">
+              <div class="avatar">L</div>
+              <div>
+                <strong>Lucas R.</strong>
+                <div class="t-meta">12/09/2025</div>
+              </div>
             </div>
-          </div>
-          <p>Herramientas prácticas y avances desde el inicio.</p>
-        </article>
+            <p>Herramientas prácticas y avances desde el inicio.</p>
+          </article>
+
+          <article class="t-card">
+            <div class="t-top">
+              <div class="avatar">M</div>
+              <div>
+                <strong>Macarena Cid</strong>
+                <div class="t-meta">Hace 2 semanas</div>
+              </div>
+            </div>
+            <p>La Lic. Daiana me brindó un espacio claro y respetuoso. Con herramientas simples pude entender mejor lo que me pasaba y avanzar.</p>
+          </article>
+
+          <article class="t-card">
+            <div class="t-top">
+              <div class="avatar">C</div>
+              <div>
+                <strong>Carla P.</strong>
+                <div class="t-meta">22/08/2025</div>
+              </div>
+            </div>
+            <p>Acompañamiento cálido y profesional. Bajó mi rumiación.</p>
+          </article>
+        </div>
+        <button class="carousel-btn next" type="button" aria-label="Siguiente" onclick="scrollTestimonials(1)">›</button>
       </div>
     </div>
   </section>
@@ -674,7 +681,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h4>Secciones</h4>
       <p><a href="#inicio">Inicio</a></p>
       <p><a href="#en-que-te-ayudo">En qué te ayudo</a></p>
-      <p><a href="#enfoque">Enfoque</a></p>
+      <p><a href="#enfoque">Cómo trabajo</a></p>
       <p><a href="#opiniones">Opiniones</a></p>
       <p><a href="#preguntas">Preguntas</a></p>
     </div>
@@ -691,5 +698,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     © 2026 Daiana Beltrán · Psicología
   </div>
 </footer>
+
+<script>
+function scrollTestimonials(direction){
+  const track = document.getElementById('testimonialsTrack');
+  if(!track) return;
+  const first = track.querySelector('.t-card');
+  if(!first) return;
+  const gap = 18;
+  const amount = first.getBoundingClientRect().width + gap;
+  track.scrollBy({left: direction * amount, behavior: 'smooth'});
+}
+</script>
 </body>
 </html>
