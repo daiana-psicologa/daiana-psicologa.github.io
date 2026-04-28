@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Psicóloga en Neuquén Capital y online para adultos | Daiana Beltrán</title>
-  <meta name="description" content="Psicóloga en Neuquén Capital y atención online para adultos en Argentina. Atención particular, presencial y virtual. Sesión breve de 30 min y sesión completa de 60 min. Turnos por WhatsApp." />
+  <meta name="description" content="Psicóloga en Neuquén Capital y atención online para adultos en Argentina. Atención particular, presencial y virtual. Consulta inicial de 20 min, sesión online de 30 min y sesión extendida de 60 min. Turnos por WhatsApp." />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="author" content="Daiana Beltrán" />
   <meta name="theme-color" content="#090a0d" />
@@ -53,7 +53,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Psicóloga en Neuquén Capital y online para adultos | Daiana Beltrán" />
-  <meta name="twitter:description" content="Atención psicológica para adultos en Neuquén Capital y online en Argentina. Sesión breve de 30 min y sesión completa de 60 min." />
+  <meta name="twitter:description" content="Atención psicológica para adultos en Neuquén Capital y online en Argentina. Consulta inicial de 20 min, sesión online de 30 min y sesión extendida de 60 min." />
   <meta name="twitter:image" content="https://daiana-psicologa.github.io/assets/yo-psico.png" />
 
   <script type="application/ld+json">
@@ -94,22 +94,32 @@
           "itemListElement": [
             {
               "@type": "Offer",
-              "name": "Sesión breve",
-              "price": "40000",
+              "name": "Consulta inicial online",
+              "price": "30000",
               "priceCurrency": "ARS",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Sesión de 30 minutos"
+                "name": "Consulta inicial online de 20 minutos"
               }
             },
             {
               "@type": "Offer",
-              "name": "Sesión completa",
-              "price": "75000",
+              "name": "Sesión online",
+              "price": "40000",
               "priceCurrency": "ARS",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Sesión de 60 minutos"
+                "name": "Sesión online de 30 minutos"
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Sesión extendida online",
+              "price": "80000",
+              "priceCurrency": "ARS",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Sesión online de 60 minutos"
               }
             }
           ]
@@ -134,7 +144,7 @@
           "url": "https://daiana-psicologa.github.io/assets/yo-psico.png"
         },
         "inLanguage": "es-AR",
-        "description": "Psicóloga en Neuquén Capital y atención online para adultos en Argentina. Sesión breve de 30 min y sesión completa de 60 min."
+        "description": "Psicóloga en Neuquén Capital y atención online para adultos en Argentina. Consulta inicial de 20 min, sesión online de 30 min y sesión extendida de 60 min."
       },
       {
         "@type": "FAQPage",
@@ -145,7 +155,7 @@
             "name": "¿Atendés presencial o solo online?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Atiendo de forma presencial en Neuquén Capital y también online para toda Argentina."
+              "text": "Atiendo principalmente de forma online para toda Argentina. La modalidad puede ser por videollamada y, si la persona no maneja la computadora, por llamada telefónica."
             }
           },
           {
@@ -169,7 +179,7 @@
             "name": "¿Qué opciones de sesión ofrecés?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Podés elegir una sesión inicial de 20 minutos por $30.000 o una sesión breve de 30 minutos por $40.000, según disponibilidad y necesidad."
+              "text": "Podés elegir una consulta inicial online de 20 minutos por $30.000, una sesión online de 30 minutos por $40.000 o una sesión extendida online de 60 minutos por $80.000, según disponibilidad y necesidad."
             }
           },
           {
@@ -177,7 +187,7 @@
             "name": "¿A quién está orientado este espacio?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Este espacio está orientado a adultos que buscan atención psicológica presencial en Neuquén Capital o modalidad online en Argentina."
+              "text": "Este espacio está orientado a adultos que buscan atención psicológica online en Argentina."
             }
           }
         ]
@@ -334,21 +344,22 @@
     }
 
     .price-hero{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin:22px 0 16px;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin:20px 0 16px;
+      max-width:720px;
     }
     .price-option{
       display:flex;
       flex-direction:column;
       gap:4px;
-      padding:16px 20px;
+      padding:14px 14px;
       border-radius:20px;
       background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
       border:1px solid rgba(255,255,255,.10);
       color:#f5f4ef;
-      min-width:220px;
+      min-width:0;
       box-shadow:0 18px 40px rgba(0,0,0,.28);
     }
     .price-option-primary{
@@ -363,14 +374,14 @@
       color:#d7c7a5;
     }
     .price-amount{
-      font-size:2rem;
+      font-size:1.72rem;
       font-weight:900;
       letter-spacing:-.04em;
       color:var(--gold);
       line-height:1;
     }
     .price-text{
-      font-size:1rem;
+      font-size:.92rem;
       font-weight:800;
       color:#f5f4ef;
     }
@@ -387,10 +398,10 @@
     .hero-points li::before{content:"•";color:var(--gold);font-weight:900;line-height:1}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;margin-bottom:14px}
 
-    .hero-visual{position:relative;min-height:540px;display:grid;align-items:center}
+    .hero-visual{position:relative;min-height:540px;display:grid;align-items:start;padding-top:22px}
     .visual-shell{
       position:relative;
-      width:min(480px,100%);
+      width:min(430px,100%);
       margin-left:auto;
       border-radius:34px;
       padding:18px;
@@ -660,6 +671,10 @@
       .cta-panel{margin-inline:auto}
     }
 
+    @media (max-width:980px){
+      .price-hero{grid-template-columns:1fr;max-width:420px}
+    }
+
     @media (max-width:860px){
       .nav a:not(.cta){display:none}
       .brand-copy span{display:none}
@@ -678,6 +693,7 @@
       .cta,.cta-secondary{width:100%}
       .hero-grid{padding:40px 0 62px}
       .panel-dark,.cta-panel,.thesis-card{padding:24px}
+      .price-hero{grid-template-columns:1fr}
       .price-option{min-width:100%}
     }
   </style>
@@ -717,37 +733,43 @@
           <span class="eyebrow">Psicóloga en Neuquén Capital y online para adultos</span>
           <h1>Atención psicológica para adultos en Neuquén Capital y online en Argentina.</h1>
           <p class="lede">
-            Espacio terapéutico con atención particular, presencial y virtual.
-            Podés elegir una sesión breve de 30 minutos o una sesión completa de 60 minutos,
-            según lo que necesites hoy.
+            Espacio terapéutico con atención particular y modalidad online.
+            Podés elegir una consulta inicial de 20 minutos, una sesión online de 30 minutos
+            o una sesión extendida de 60 minutos, según lo que necesites hoy.
           </p>
 
           <div class="hero-meta" aria-label="Datos rápidos de la atención">
             <span class="meta-chip">Atención particular</span>
             <span class="meta-chip">Sin obra social</span>
-            <span class="meta-chip">Presencial y online</span>
+            <span class="meta-chip">Online para Argentina</span>
           </div>
 
           <div class="price-hero">
-            <div class="price-option price-option-primary">
-              <span class="price-label">Consulta Inicial</span>
+            <div class="price-option">
+              <span class="price-label">Consulta inicial</span>
               <span class="price-amount">$30.000</span>
-              <span class="price-text">Sesión de 20 min</span>
+              <span class="price-text">20 min online</span>
+            </div>
+
+            <div class="price-option price-option-primary">
+              <span class="price-label">Opción recomendada</span>
+              <span class="price-amount">$40.000</span>
+              <span class="price-text">30 min online</span>
             </div>
 
             <div class="price-option">
-              <span class="price-label">sesión online</span>
-              <span class="price-amount">$40.000</span>
-              <span class="price-text">Sesión de 30 min</span>
+              <span class="price-label">Sesión extendida</span>
+              <span class="price-amount">$80.000</span>
+              <span class="price-text">60 min online</span>
             </div>
           </div>
 
-          <p class="hero-note">Atención particular para adultos · Presencial en Neuquén Capital · Online para toda Argentina</p>
+          <p class="hero-note">Atención particular para adultos · Online para toda Argentina</p>
 
           <ul class="hero-points" aria-label="Datos principales">
             <li>Atención psicológica para adultos.</li>
-            <li>Modalidad presencial y virtual.</li>
-            <li>Podés elegir sesión breve o sesión completa.</li>
+            <li>Modalidad online por videollamada o llamada telefónica.</li>
+            <li>Podés elegir consulta inicial, sesión de 30 min o sesión extendida.</li>
             <li>Turnos coordinados por WhatsApp.</li>
             <li>Espacio de trabajo claro, humano y profesional.</li>
           </ul>
@@ -1013,7 +1035,7 @@
         <div class="faq-grid">
           <details class="faq-item">
             <summary>¿Atendés presencial o solo online?</summary>
-            <div class="answer"><p>Atiendo de forma presencial en Neuquén Capital y también online para toda Argentina.</p></div>
+            <div class="answer"><p>Atiendo principalmente de forma online para toda Argentina. La modalidad puede ser por videollamada y, si la persona no maneja la computadora, por llamada telefónica.</p></div>
           </details>
 
           <details class="faq-item">
@@ -1028,12 +1050,12 @@
 
           <details class="faq-item">
             <summary>¿Qué opciones de sesión ofrecés?</summary>
-            <div class="answer"><p>Podés elegir una sesión inicial de 20 minutos por $30.000 o una sesión breve de 30 minutos por $40.000, según disponibilidad y lo que necesites trabajar.</p></div>
+            <div class="answer"><p>Podés elegir una consulta inicial online de 20 minutos por $30.000, una sesión online de 30 minutos por $40.000 o una sesión extendida online de 60 minutos por $80.000, según disponibilidad y lo que necesites trabajar.</p></div>
           </details>
 
           <details class="faq-item">
             <summary>¿A quién está orientado este espacio?</summary>
-            <div class="answer"><p>Este espacio está orientado a adultos que buscan atención psicológica presencial en Neuquén Capital o modalidad online en Argentina.</p></div>
+            <div class="answer"><p>Este espacio está orientado a adultos que buscan atención psicológica online en Argentina.</p></div>
           </details>
         </div>
       </div>
