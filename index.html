@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="image" href="/assets/portada-pareja.webp" />
-  <link rel="preload" as="image" href="/assets/yo-psico.png" />
+  <link rel="preload" as="image" href="/assets/retrato.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
 
   <!-- Google Tag Manager -->
@@ -67,7 +67,7 @@
         "@id": "https://daiana-psicologa.github.io/#person",
         "name": "Daiana Beltrán",
         "jobTitle": "Psicóloga",
-        "image": "https://daiana-psicologa.github.io/assets/yo-psico.png",
+        "image": "https://daiana-psicologa.github.io/assets/retrato.png",
         "url": "https://daiana-psicologa.github.io/",
         "telephone": "+54 9 299 604 4900",
         "email": "comunicar.terapiadelenguaje@gmail.com",
@@ -87,7 +87,7 @@
         "@id": "https://daiana-psicologa.github.io/#business",
         "name": "Daiana Beltrán · Terapia de Pareja",
         "url": "https://daiana-psicologa.github.io/",
-        "image": "https://daiana-psicologa.github.io/assets/yo-psico.png",
+        "image": "https://daiana-psicologa.github.io/assets/retrato.png",
         "telephone": "+54 9 299 604 4900",
         "email": "comunicar.terapiadelenguaje@gmail.com",
         "priceRange": "$$$",
@@ -364,7 +364,7 @@
 
     .hero-portrait-wrap{position:relative;display:flex;justify-content:center;align-items:center;min-height:520px}
     .portrait-card{
-      width:min(255px,100%);
+      width:min(315px,100%);
       border-radius:30px;
       padding:10px;
       background:linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,.055));
@@ -374,9 +374,9 @@
     }
     .portrait{
       width:100%;
-      aspect-ratio:3 / 4.4;
+      aspect-ratio:3 / 4.25;
       object-fit:cover;
-      object-position:center 10%;
+      object-position:center 18%;
       border-radius:22px;
       background:#1b1714;
       filter:saturate(.98) contrast(1.01);
@@ -465,9 +465,10 @@
     .price-detail li::before{content:"✓";color:var(--rose);font-weight:900}
 
     .google-reviews-head{text-align:center;margin:2px 0 30px}
-    .google-word{font-size:2rem;font-weight:900;line-height:1;margin-bottom:10px;letter-spacing:-.04em}
+    .google-word{font-size:2rem;font-weight:900;line-height:1;margin-bottom:10px;letter-spacing:-.04em;white-space:nowrap}
+    .google-word span{display:inline !important}
     .google-reviews-head strong{display:block;font-size:1.55rem;font-weight:900;color:#fff8ee;margin-bottom:4px}
-    .google-reviews-head span{display:block;color:#dbcdbd;font-size:.98rem}
+    .google-reviews-head > span{display:block;color:#dbcdbd;font-size:.98rem}
     .stars-row{color:var(--gold2);letter-spacing:.18em;margin-top:10px;font-size:1rem}
 
     .reviews-slider{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
@@ -517,7 +518,7 @@
       .hero{min-height:auto}.hero-bg{background:linear-gradient(180deg,rgba(12,10,9,.78),rgba(12,10,9,.86)),url('/assets/portada-pareja.webp') center center / cover no-repeat}
       .hero-grid{padding:46px 0 68px;gap:30px}.hero-actions{flex-direction:column}.cta,.cta-secondary{width:100%}
       .price-hero{border-radius:23px}
-      .portrait-card{width:min(230px,76vw);padding:10px;border-radius:26px}.portrait{border-radius:20px;object-position:center 10%}
+      .portrait-card{width:min(255px,78vw);padding:10px;border-radius:26px}.portrait{border-radius:20px;object-position:center 18%}
       .floating-card{position:relative;left:auto;bottom:auto;width:100%;max-width:100%;margin-top:14px}
       .thesis-card,.cta-panel,.price-card,.price-detail{padding:25px}.trust-grid{grid-template-columns:1fr}
       .floating-whatsapp{right:14px;bottom:14px;height:54px;min-width:54px;padding:0 15px;font-size:.9rem}.floating-whatsapp span{display:none}
@@ -598,7 +599,7 @@
 
         <div class="hero-portrait-wrap" aria-label="Daiana Beltrán, psicóloga">
           <div class="portrait-card">
-            <img class="portrait" src="/assets/yo-psico.png" alt="Daiana Beltrán, psicóloga para terapia de pareja en Neuquén Capital y online" width="900" height="1200" fetchpriority="high" />
+            <img class="portrait" src="/assets/retrato.png" alt="Daiana Beltrán, psicóloga para terapia de pareja en Neuquén Capital y online" width="900" height="1200" fetchpriority="high" />
           </div>
           <div class="floating-card">
             <strong>Cuando hablar se volvió difícil, el espacio terapéutico ayuda a ordenar.</strong>
