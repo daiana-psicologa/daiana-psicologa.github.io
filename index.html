@@ -263,27 +263,41 @@
       margin-bottom:14px;
     }
 
+    /* Subtítulos pequeños de sección: limpios, sin franja detrás */
     .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      margin-bottom:12px;
-      font-size:.73rem;
+      display:inline-block;
+      margin-bottom:14px;
+      padding:0;
+      background:transparent !important;
+      border:0 !important;
+      box-shadow:none !important;
+      font-size:.74rem;
+      line-height:1.35;
       font-weight:900;
-      letter-spacing:.16em;
+      letter-spacing:.15em;
       text-transform:uppercase;
-      color:var(--gold2);
+      color:var(--wine);
+      position:relative;
+      z-index:2;
     }
 
-    .eyebrow::before{
-      content:"";
-      width:32px;
-      height:1px;
-      background:linear-gradient(90deg,currentColor,transparent);
+    .eyebrow::before,
+    .eyebrow::after{
+      content:none !important;
+      display:none !important;
+    }
+
+    .hero .eyebrow,
+    .section-dark .eyebrow,
+    .cta-band .eyebrow,
+    footer .eyebrow{
+      color:var(--gold2);
+      background:transparent !important;
     }
 
     .eyebrow.dark{
       color:var(--wine);
+      background:transparent !important;
     }
 
     .topbar{
