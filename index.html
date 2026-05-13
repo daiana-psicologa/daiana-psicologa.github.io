@@ -9,18 +9,17 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="author" content="Daiana Beltrán" />
   <meta name="theme-color" content="#11100d" />
-  <meta name="format-detection" content="telephone=no" />
   <meta name="geo.region" content="AR-Q" />
   <meta name="geo.placename" content="Neuquén Capital" />
 
   <link rel="canonical" href="https://daiana-psicologa.github.io/" />
-  <link rel="icon" href="activos/daiana-beltran-logo-primary-amarillo-1024x1024-v1.png" type="image/png" />
+  <link rel="icon" href="https://daiana-psicologa.github.io/activos/daiana-beltran-logo-primaria-amarillo-1024x1024-v1.png" type="image/png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="activos/banner.webp" />
-  <link rel="preload" as="image" href="activos/portada-pareja.webp" />
-  <link rel="preload" as="image" href="activos/yo-psico.png" />
+  <link rel="preload" as="image" href="https://daiana-psicologa.github.io/activos/banner.webp" />
+  <link rel="preload" as="image" href="https://daiana-psicologa.github.io/activos/portada-pareja.webp" />
+  <link rel="preload" as="image" href="https://daiana-psicologa.github.io/activos/yo-psico.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
 
   <!-- Google Tag Manager -->
@@ -50,11 +49,6 @@
   <meta property="og:image" content="https://daiana-psicologa.github.io/activos/banner.webp" />
   <meta property="og:image:alt" content="Terapia de pareja en Neuquén Capital y online" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Terapia de Pareja en Neuquén y Online | Daiana Beltrán" />
-  <meta name="twitter:description" content="Terapia de pareja para crisis, comunicación, celos, acuerdos, distancia emocional y reconstrucción del vínculo. Sesión: $120.000." />
-  <meta name="twitter:image" content="https://daiana-psicologa.github.io/activos/banner.webp" />
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -75,8 +69,7 @@
           "Conflictos vinculares",
           "Celos en la pareja",
           "Reconstrucción de confianza",
-          "Acuerdos de convivencia",
-          "Separación consciente"
+          "Acuerdos de convivencia"
         ]
       },
       {
@@ -178,9 +171,12 @@
     }
     img{display:block;max-width:100%}
     a{text-decoration:none;color:inherit}
-    ::selection{background:rgba(227,191,121,.34);color:#fff}
 
-    .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+    .container{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 24px;
+    }
 
     h1,h2,h3,h4,p{margin-top:0}
     h1,h2,h3{
@@ -190,23 +186,29 @@
       text-wrap:balance;
     }
     h1{
-      font-size:clamp(42px,5.2vw,74px);
-      line-height:.92;
-      max-width:760px;
-      margin-bottom:20px;
+      font-size:clamp(38px,4.5vw,64px);
+      line-height:.98;
+      margin-bottom:18px;
     }
     h2{
-      font-size:clamp(34px,4.5vw,62px);
-      line-height:.96;
+      font-size:clamp(32px,4vw,56px);
+      line-height:1;
       margin-bottom:16px;
     }
     h3{
-      font-size:clamp(23px,2vw,31px);
-      line-height:1.06;
+      font-size:clamp(22px,2vw,30px);
+      line-height:1.08;
       margin-bottom:10px;
     }
-    h4{font-size:1rem;font-weight:900;margin-bottom:8px}
-    p{line-height:1.72;margin-bottom:14px}
+    h4{
+      font-size:1rem;
+      font-weight:900;
+      margin-bottom:8px;
+    }
+    p{
+      line-height:1.72;
+      margin-bottom:14px;
+    }
 
     .eyebrow{
       display:inline-flex;
@@ -225,19 +227,23 @@
       height:1px;
       background:linear-gradient(90deg,var(--gold2),transparent);
     }
-    .eyebrow.dark{color:var(--rose)}
-    .eyebrow.dark::before{background:linear-gradient(90deg,var(--rose),transparent)}
+    .eyebrow.dark{
+      color:var(--rose);
+    }
+    .eyebrow.dark::before{
+      background:linear-gradient(90deg,var(--rose),transparent);
+    }
 
     .topbar{
       position:sticky;
       top:0;
       z-index:90;
-      background:rgba(17,16,13,.9);
+      background:rgba(17,16,13,.92);
       backdrop-filter:blur(18px);
       border-bottom:1px solid rgba(255,255,255,.075);
     }
     .topbar-inner{
-      min-height:78px;
+      min-height:74px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -250,22 +256,25 @@
       min-width:0;
     }
     .brand-badge{
-      width:46px;
-      height:46px;
-      border-radius:17px;
+      width:44px;
+      height:44px;
+      border-radius:16px;
       display:grid;
       place-items:center;
       background:linear-gradient(145deg,#2d2119,#15110e);
       border:1px solid rgba(244,217,158,.20);
       box-shadow:0 14px 34px rgba(0,0,0,.28);
       flex:0 0 auto;
+      overflow:hidden;
     }
     .brand-badge img{
-      width:25px;
-      height:25px;
+      width:28px;
+      height:28px;
       object-fit:contain;
     }
-    .brand-copy{line-height:1.08}
+    .brand-copy{
+      line-height:1.08;
+    }
     .brand-copy strong{
       display:block;
       font-weight:900;
@@ -288,7 +297,6 @@
       color:#efe5d8;
       opacity:.92;
     }
-    .nav a:hover{opacity:1;color:#fff}
 
     .cta,.cta-secondary{
       display:inline-flex;
@@ -300,8 +308,8 @@
       font-weight:900;
       border:0;
       cursor:pointer;
-      transition:transform .22s ease,box-shadow .22s ease,background .22s ease,border-color .22s ease;
       text-align:center;
+      transition:transform .22s ease,box-shadow .22s ease;
     }
     .cta{
       color:#24170e;
@@ -318,7 +326,7 @@
       border:1px solid rgba(255,255,255,.18);
     }
 
-    /* BANNER PRINCIPAL ANCHO, ESTILO EJEMPLO */
+    /* BANNER REAL ARRIBA */
     .page-banner{
       position:relative;
       min-height:430px;
@@ -332,7 +340,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background-image:url("activos/banner.webp");
+      background-image:url("https://daiana-psicologa.github.io/activos/banner.webp");
       background-size:cover;
       background-position:center center;
       background-repeat:no-repeat;
@@ -343,7 +351,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(0,0,0,.38);
+      background:rgba(0,0,0,.36);
       z-index:-1;
     }
     .page-banner-content{
@@ -355,7 +363,7 @@
       max-width:900px;
       margin:0 auto 14px;
       font-family:Inter,system-ui,sans-serif;
-      font-size:clamp(38px,5vw,70px);
+      font-size:clamp(38px,5vw,68px);
       line-height:1.05;
       font-weight:900;
       letter-spacing:-.04em;
@@ -371,45 +379,50 @@
       text-shadow:0 6px 20px rgba(0,0,0,.35);
     }
 
-    /* HERO DE VENTA */
+    /* HERO COMPACTO */
     .hero{
       position:relative;
       overflow:hidden;
       background:
-        radial-gradient(680px 420px at 18% 18%, rgba(182,108,69,.22), transparent 58%),
-        radial-gradient(520px 300px at 84% 18%, rgba(244,217,158,.13), transparent 58%),
-        linear-gradient(135deg,#17120f 0%,#11100d 55%,#221714 100%);
+        radial-gradient(600px 380px at 15% 22%, rgba(182,108,69,.20), transparent 58%),
+        radial-gradient(520px 300px at 90% 18%, rgba(244,217,158,.10), transparent 58%),
+        linear-gradient(135deg,#17120f 0%,#11100d 58%,#221714 100%);
     }
     .hero::before{
       content:"";
       position:absolute;
       inset:0;
       background:
-        linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
       background-size:56px 56px;
-      mask-image:linear-gradient(180deg,rgba(0,0,0,.42),transparent 72%);
       pointer-events:none;
     }
     .hero-grid{
       position:relative;
       z-index:2;
-      width:100%;
       display:grid;
-      grid-template-columns:minmax(0,.92fr) minmax(420px,1.08fr);
-      gap:54px;
+      grid-template-columns:minmax(0, 0.9fr) minmax(380px, 1.1fr);
+      gap:48px;
       align-items:center;
-      padding:76px 0 72px;
+      padding:70px 0 72px;
     }
-    .hero-copy{max-width:650px}
+    .hero-copy{
+      max-width:580px;
+    }
     .hero-copy h1{
+      max-width:560px;
       color:#fff8ee;
+      font-size:clamp(38px,4.6vw,62px);
+      line-height:.98;
+      margin-bottom:20px;
       text-shadow:0 8px 24px rgba(0,0,0,.28);
     }
     .lede{
-      max-width:58ch;
+      max-width:56ch;
       color:#e9dbc9;
-      font-size:clamp(16px,1.35vw,19px);
+      font-size:clamp(15px,1.15vw,18px);
+      line-height:1.68;
     }
 
     .hero-meta{
@@ -422,9 +435,9 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:10px 14px;
+      padding:9px 13px;
       border-radius:999px;
-      font-size:.84rem;
+      font-size:.8rem;
       font-weight:900;
       color:#fff6ec;
       background:rgba(255,255,255,.08);
@@ -444,15 +457,6 @@
       overflow:hidden;
       backdrop-filter:blur(10px);
     }
-    .price-hero::after{
-      content:"";
-      position:absolute;
-      inset:-45% -20% auto auto;
-      width:220px;
-      height:220px;
-      background:radial-gradient(circle,rgba(244,217,158,.20),transparent 68%);
-      pointer-events:none;
-    }
     .price-label{
       display:block;
       font-size:.78rem;
@@ -461,19 +465,15 @@
       text-transform:uppercase;
       color:#ecd5a7;
       margin-bottom:8px;
-      position:relative;
-      z-index:1;
     }
     .price-row{
       display:flex;
       align-items:end;
       gap:12px;
       flex-wrap:wrap;
-      position:relative;
-      z-index:1;
     }
     .price-amount{
-      font-size:clamp(36px,4.3vw,56px);
+      font-size:clamp(36px,4.2vw,54px);
       line-height:.9;
       font-weight:900;
       letter-spacing:-.055em;
@@ -488,17 +488,15 @@
       margin:11px 0 0;
       color:#d6c6b3;
       font-size:.94rem;
-      position:relative;
-      z-index:1;
     }
 
     .hero-points{
       display:grid;
-      gap:10px;
+      gap:9px;
       list-style:none;
       padding:0;
-      margin:0 0 26px;
-      max-width:620px;
+      margin:0 0 24px;
+      max-width:580px;
     }
     .hero-points li{
       color:#f0e5d9;
@@ -506,6 +504,7 @@
       gap:10px;
       align-items:flex-start;
       font-weight:650;
+      line-height:1.42;
     }
     .hero-points li::before{
       content:"•";
@@ -521,17 +520,16 @@
 
     .hero-media{
       position:relative;
-      min-height:590px;
       display:flex;
       align-items:center;
       justify-content:center;
     }
     .cover-card{
       position:relative;
-      width:min(640px,100%);
-      border-radius:36px;
+      width:min(620px,100%);
+      border-radius:34px;
       overflow:hidden;
-      box-shadow:0 34px 90px rgba(0,0,0,.42);
+      box-shadow:0 34px 90px rgba(0,0,0,.38);
       border:1px solid rgba(255,255,255,.16);
       background:#191511;
     }
@@ -539,14 +537,14 @@
       content:"";
       position:absolute;
       inset:14px;
-      border-radius:26px;
+      border-radius:24px;
       border:1px solid rgba(255,255,255,.18);
       z-index:2;
       pointer-events:none;
     }
     .cover-image{
       width:100%;
-      height:560px;
+      height:500px;
       object-fit:cover;
       object-position:center center;
       filter:saturate(.95) contrast(1.02);
@@ -555,20 +553,20 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.44)),
+        linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.32)),
         radial-gradient(circle at 72% 22%,rgba(244,217,158,.13),transparent 42%);
       z-index:1;
       pointer-events:none;
     }
     .therapist-badge{
       position:absolute;
-      left:-28px;
-      bottom:34px;
+      left:-18px;
+      bottom:28px;
       z-index:4;
       display:flex;
       align-items:center;
       gap:13px;
-      max-width:360px;
+      max-width:355px;
       padding:14px 16px;
       border-radius:24px;
       background:rgba(247,239,227,.96);
@@ -615,7 +613,7 @@
       gap:1px;
     }
     .trust-item{
-      padding:22px 18px;
+      padding:20px 18px;
       text-align:center;
       background:rgba(255,255,255,.025);
     }
@@ -630,9 +628,9 @@
       color:#d7c8b8;
     }
 
-    .section-light{background:var(--cream);color:var(--text);padding:98px 0}
-    .section-cream{background:var(--cream2);color:var(--text);padding:98px 0}
-    .section-dark{background:var(--bg2);color:var(--ink);padding:98px 0}
+    .section-light{background:var(--cream);color:var(--text);padding:90px 0}
+    .section-cream{background:var(--cream2);color:var(--text);padding:90px 0}
+    .section-dark{background:var(--bg2);color:var(--ink);padding:90px 0}
 
     .intro-block{
       display:grid;
@@ -640,7 +638,9 @@
       gap:42px;
       align-items:center;
     }
-    .intro-block h2{max-width:13ch}
+    .intro-block h2{
+      max-width:13ch;
+    }
     .thesis-card{
       background:#fff;
       border:1px solid var(--lineDark);
@@ -676,7 +676,9 @@
       margin:0 auto 36px;
       text-align:center;
     }
-    .section-heading .eyebrow{justify-content:center}
+    .section-heading .eyebrow{
+      justify-content:center;
+    }
     .section-heading h2{
       max-width:17ch;
       margin-left:auto;
@@ -700,11 +702,6 @@
       border-radius:28px;
       padding:26px;
       box-shadow:var(--softShadow);
-      transition:transform .22s ease,box-shadow .22s ease;
-    }
-    .card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 24px 60px rgba(80,42,24,.18);
     }
     .card .tag{
       display:inline-flex;
@@ -724,15 +721,19 @@
       color:var(--wine);
       max-width:13ch;
     }
-    .card p,.card li{color:#5d5147}
+    .card p,.card li{
+      color:#5d5147;
+    }
     .card ul{
       margin:0;
       padding-left:18px;
     }
-    .card li{margin-bottom:7px}
+    .card li{
+      margin-bottom:7px;
+    }
 
     .proof-band{
-      padding:94px 0;
+      padding:90px 0;
       background:
         radial-gradient(540px 310px at 85% 20%,rgba(244,217,158,.15),transparent 62%),
         radial-gradient(480px 290px at 10% 20%,rgba(164,88,77,.18),transparent 62%),
@@ -773,7 +774,9 @@
       max-width:1000px;
       margin:0 auto;
     }
-    .seo-copy h2{max-width:16ch}
+    .seo-copy h2{
+      max-width:16ch;
+    }
     .seo-copy p{
       color:#5c5047;
       max-width:86ch;
@@ -897,7 +900,9 @@
       letter-spacing:-.04em;
       white-space:nowrap;
     }
-    .google-word span{display:inline !important}
+    .google-word span{
+      display:inline !important;
+    }
     .google-reviews-head strong{
       display:block;
       font-size:1.55rem;
@@ -916,7 +921,6 @@
       margin-top:10px;
       font-size:1rem;
     }
-
     .reviews-slider{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
@@ -973,14 +977,18 @@
       align-items:center;
       color:var(--wine);
     }
-    details.faq-item summary::-webkit-details-marker{display:none}
+    details.faq-item summary::-webkit-details-marker{
+      display:none;
+    }
     details.faq-item summary::after{
       content:"+";
       font-size:1.2rem;
       color:var(--rose);
       margin-left:16px;
     }
-    details.faq-item[open] summary::after{content:"–"}
+    details.faq-item[open] summary::after{
+      content:"–";
+    }
     details.faq-item .answer{
       padding:0 0 18px;
       color:#5d5147;
@@ -997,7 +1005,9 @@
       gap:32px;
       align-items:center;
     }
-    .cta-copy h2{max-width:13ch}
+    .cta-copy h2{
+      max-width:13ch;
+    }
     .cta-copy p{
       max-width:56ch;
       color:#e0d1bf;
@@ -1074,7 +1084,10 @@
       height:28px;
       object-fit:contain;
     }
-    .footer-grid p,.footer-grid a{color:#d5c6b5}
+    .footer-grid p,
+    .footer-grid a{
+      color:#d5c6b5;
+    }
     .legal{
       padding:0 0 28px;
       color:#9f9182;
@@ -1109,8 +1122,12 @@
     }
 
     @media (max-width:920px){
-      .nav a:not(.cta){display:none}
-      .brand-copy span{display:none}
+      .nav a:not(.cta){
+        display:none;
+      }
+      .brand-copy span{
+        display:none;
+      }
       .grid-3,
       .process-grid,
       .keyword-grid{
@@ -1120,7 +1137,7 @@
       .section-cream,
       .section-dark,
       .proof-band{
-        padding:78px 0;
+        padding:76px 0;
       }
       .reviews-slider{
         display:flex;
@@ -1131,7 +1148,9 @@
         padding-bottom:8px;
         scrollbar-width:none;
       }
-      .reviews-slider::-webkit-scrollbar{display:none}
+      .reviews-slider::-webkit-scrollbar{
+        display:none;
+      }
       .review-card{
         flex:0 0 84%;
         scroll-snap-align:start;
@@ -1139,33 +1158,40 @@
     }
 
     @media (max-width:700px){
-      .container{padding:0 18px}
-      .topbar-inner{min-height:74px}
-      .brand-badge{width:40px;height:40px}
+      .container{
+        padding:0 18px;
+      }
+      .topbar-inner{
+        min-height:70px;
+      }
+      .brand-badge{
+        width:40px;
+        height:40px;
+      }
 
       .page-banner{
-        min-height:360px;
+        min-height:340px;
       }
       .page-banner-content{
-        padding:64px 18px;
+        padding:58px 18px;
       }
       .page-banner-content h1{
         font-size:clamp(34px,10vw,48px);
       }
 
-      .hero{min-height:auto}
       .hero-grid{
-        padding:44px 0 62px;
+        padding:52px 0 58px;
         gap:32px;
       }
-      h1{
-        font-size:clamp(42px,12vw,58px);
-        line-height:.92;
+      .hero-copy h1{
+        font-size:clamp(36px,11vw,52px);
+        line-height:.98;
       }
       .hero-actions{
         flex-direction:column;
       }
-      .cta,.cta-secondary{
+      .cta,
+      .cta-secondary{
         width:100%;
       }
       .price-hero{
@@ -1209,8 +1235,12 @@
         padding:0 15px;
         font-size:.9rem;
       }
-      .floating-whatsapp span{display:none}
-      .review-card{flex-basis:86%}
+      .floating-whatsapp span{
+        display:none;
+      }
+      .review-card{
+        flex-basis:86%;
+      }
     }
   </style>
 </head>
@@ -1224,7 +1254,7 @@
     <div class="container topbar-inner">
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
         <span class="brand-badge">
-          <img src="activos/daiana-beltran-logo-primary-amarillo-1024x1024-v1.png" alt="Logo Daiana Beltrán" width="25" height="25" />
+          <img src="https://daiana-psicologa.github.io/activos/daiana-beltran-logo-primaria-amarillo-1024x1024-v1.png" alt="Logo Daiana Beltrán" width="28" height="28" />
         </span>
         <span class="brand-copy">
           <strong>Daiana Beltrán</strong>
@@ -1296,7 +1326,7 @@
           <div class="cover-card">
             <img
               class="cover-image"
-              src="activos/portada-pareja.webp"
+              src="https://daiana-psicologa.github.io/activos/portada-pareja.webp"
               alt="Pareja sentada en una hamaca al atardecer, imagen de portada para terapia de pareja"
               width="1200"
               height="900"
@@ -1306,7 +1336,7 @@
           </div>
 
           <div class="therapist-badge">
-            <img src="activos/yo-psico.png" alt="Daiana Beltrán, psicóloga" width="120" height="120" />
+            <img src="https://daiana-psicologa.github.io/activos/yo-psico.png" alt="Daiana Beltrán, psicóloga" width="120" height="120" />
             <div>
               <strong>Daiana Beltrán</strong>
               <span>Psicóloga · Terapia de pareja en Neuquén Capital y online.</span>
@@ -1670,7 +1700,7 @@
     <div class="container footer-grid">
       <div>
         <div class="footer-logo">
-          <img src="activos/daiana-beltran-logo-primary-amarillo-1024x1024-v1.png" alt="Daiana Beltrán" width="28" height="28" />
+          <img src="https://daiana-psicologa.github.io/activos/daiana-beltran-logo-primaria-amarillo-1024x1024-v1.png" alt="Daiana Beltrán" width="28" height="28" />
           <strong>Daiana Beltrán · Terapia de pareja</strong>
         </div>
         <p>Terapia de pareja en Neuquén Capital y online para Argentina. Atención particular para parejas en crisis, comunicación difícil, acuerdos, confianza y decisiones vinculares.</p>
@@ -1744,4 +1774,3 @@
   </script>
 </body>
 </html>
-
