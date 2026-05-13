@@ -265,15 +265,73 @@
     .cta-secondary:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.26)}
 
     /* BANNER COMO EJEMPLO: imagen horizontal visible */
-    .banner-hero{position:relative;min-height:520px;display:grid;align-items:center;overflow:hidden;background:#16110e}
-    .banner-hero::before{content:"";position:absolute;inset:0;background:url('activos/banner.webp') center center / cover no-repeat;filter:saturate(.96) contrast(1.02);transform:scale(1.01)}
-    .banner-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,10,9,.75) 0%,rgba(12,10,9,.44) 44%,rgba(12,10,9,.18) 100%),linear-gradient(180deg,rgba(12,10,9,.16),rgba(12,10,9,.42))}
-    .banner-content{position:relative;z-index:2;padding:92px 0 76px;max-width:720px}
-    .banner-content h1{color:#fff8ee;text-shadow:0 8px 24px rgba(0,0,0,.34)}
-    .banner-content .lede{max-width:60ch;color:#f0e3d2;font-size:clamp(16px,1.35vw,19px)}
-    .banner-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .banner-hero{
+      position:relative;
+      min-height:620px;
+      display:grid;
+      align-items:center;
+      overflow:hidden;
+      background:#16110e;
+      isolation:isolate;
+    }
+    .banner-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:url("activos/banner.webp");
+      background-size:cover;
+      background-position:center center;
+      background-repeat:no-repeat;
+      filter:saturate(.98) contrast(1.03);
+      transform:scale(1.01);
+      z-index:-2;
+    }
+    .banner-hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg,rgba(17,16,13,.16) 0%,rgba(17,16,13,.24) 42%,rgba(17,16,13,.72) 100%),
+        radial-gradient(circle at center,rgba(255,255,255,.08),transparent 54%);
+      z-index:-1;
+    }
+    .banner-content{
+      position:relative;
+      z-index:2;
+      max-width:850px;
+      padding:110px 0 94px;
+      margin:0 auto;
+      text-align:center;
+    }
+    .banner-content h1{
+      color:#fff8ee;
+      max-width:760px;
+      margin-left:auto;
+      margin-right:auto;
+      text-shadow:0 8px 28px rgba(0,0,0,.42);
+    }
+    .banner-content .lede{
+      max-width:64ch;
+      color:#f0e3d2;
+      font-size:clamp(16px,1.35vw,19px);
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .banner-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:22px;
+      justify-content:center;
+    }
 
-    .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:14px 0 22px;
+      justify-content:center;
+    }
     .meta-chip{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:999px;font-size:.84rem;font-weight:900;color:#fff6ec;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(8px)}
 
     .trust-strip{background:#0e0d0b;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)}
@@ -780,3 +838,4 @@
   </script>
 </body>
 </html>
+
