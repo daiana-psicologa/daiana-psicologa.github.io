@@ -129,7 +129,7 @@
         "@type": "Offer",
         "@id": "https://daiana-psicologa.github.io/#offer-terapia-individual",
         "name": "Sesión de terapia individual",
-        "price": "70000",
+        "price": "55000",
         "priceCurrency": "ARS",
         "availability": "https://schema.org/InStock",
         "itemOffered": { "@id": "https://daiana-psicologa.github.io/#service-terapia-individual" }
@@ -260,8 +260,8 @@
     }
 
     h1{
-      font-size:clamp(38px,4.8vw,66px);
-      line-height:.92;
+      font-size:clamp(40px,5vw,68px);
+      line-height:.90;
       margin-bottom:16px;
     }
 
@@ -412,25 +412,33 @@
     /* HERO */
     .hero{
       position:relative;
-      min-height:660px;
+      min-height:680px;
       display:grid;
       align-items:start;
       isolation:isolate;
       overflow:hidden;
-      background:linear-gradient(180deg,#806f60 0%,#fbf6ea 84%);
+      background:
+        linear-gradient(180deg,#7d6b5c 0%,#b6a58f 48%,#fbf6ea 88%,var(--paper) 100%);
     }
 
+    /* Fondo tipo banner: no se estira como "cover" en toda la pantalla */
     .hero::before{
       content:"";
       position:absolute;
-      inset:0;
+      top:0;
+      left:50%;
+      width:min(100%, 1440px);
+      height:430px;
       z-index:-3;
-      background-image:url("assets/Agua-clara-terapia.png");
-      background-size:100% auto;
+      transform:translateX(-50%);
+      background-image:
+        url("assets/Agua-clara-terapia.png"),
+        url("assets/agua-clara-terapia.png"),
+        url("assets/atardecer-calma-terapia.png");
+      background-size:contain;
       background-repeat:no-repeat;
       background-position:center top;
-      transform:none;
-      filter:saturate(.92) contrast(.95) brightness(.82);
+      filter:saturate(.92) contrast(.98) brightness(.86);
     }
 
     .hero::after{
@@ -439,26 +447,26 @@
       inset:0;
       z-index:-2;
       background:
-        linear-gradient(180deg,rgba(45,35,29,.60),rgba(45,35,29,.36) 48%,rgba(251,246,234,.92) 88%,var(--paper) 100%),
-        radial-gradient(circle at 50% 26%,rgba(255,255,255,.12),rgba(255,255,255,.02) 44%,rgba(39,31,27,.20) 100%);
+        linear-gradient(180deg,rgba(39,31,27,.54),rgba(39,31,27,.30) 34%,rgba(251,246,234,.70) 70%,var(--paper) 96%),
+        radial-gradient(circle at 50% 24%,rgba(255,255,255,.07),rgba(255,255,255,.02) 36%,rgba(39,31,27,.18) 100%);
     }
 
     .hero-content{
       max-width:820px;
       margin:0 auto;
       text-align:center;
-      padding:88px 0 110px;
+      padding:76px 0 96px;
     }
 
     .hero-panel{
       display:inline-block;
       max-width:820px;
-      padding:30px 32px 26px;
+      padding:30px 34px 28px;
       border-radius:34px;
-      background:rgba(43,35,30,.30);
-      border:1px solid rgba(255,253,247,.18);
+      background:rgba(43,35,30,.34);
+      border:1px solid rgba(255,253,247,.22);
       box-shadow:0 28px 80px rgba(31,24,20,.22);
-      backdrop-filter:blur(5px);
+      backdrop-filter:blur(4px);
     }
 
     .hero-name{
@@ -499,43 +507,43 @@
       text-shadow:0 8px 24px rgba(0,0,0,.42);
     }
 
-
-
-    .obra-social-alert{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      width:min(100%, 720px);
-      margin:18px auto 22px;
-      padding:18px 24px;
-      border-radius:22px;
-      background:linear-gradient(135deg,#b81414,#7f0f0f);
-      color:#fffdf7;
-      border:3px solid rgba(255,255,255,.92);
-      box-shadow:0 22px 48px rgba(0,0,0,.34);
-      font-weight:1000;
-      font-size:clamp(18px,2.1vw,31px);
-      line-height:1.12;
-      letter-spacing:.02em;
-      text-transform:uppercase;
-      text-shadow:0 2px 10px rgba(0,0,0,.28);
+    .insurance-banner{
+      max-width:720px;
+      margin:24px auto 22px;
+      padding:18px 24px 17px;
+      border-radius:24px;
+      background:rgba(255,253,247,.98);
+      color:var(--coffee);
+      border:2px solid rgba(60,49,43,.62);
+      box-shadow:0 18px 42px rgba(0,0,0,.26);
+      text-align:center;
     }
 
-    .obra-social-subalert{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      width:min(100%, 680px);
-      margin:-12px auto 22px;
-      padding:10px 18px;
-      border-radius:999px;
-      background:rgba(255,253,247,.95);
-      color:#3c312b;
-      border:2px solid rgba(184,20,20,.65);
+    .insurance-banner strong{
+      display:block;
+      font-size:clamp(22px,2.45vw,34px);
       font-weight:950;
-      font-size:clamp(14px,1.35vw,18px);
+      letter-spacing:.01em;
+      line-height:1.05;
       text-transform:uppercase;
-      box-shadow:0 12px 28px rgba(0,0,0,.20);
+    }
+
+    .insurance-banner span{
+      display:block;
+      margin-top:8px;
+      font-size:clamp(15px,1.25vw,19px);
+      font-weight:900;
+      color:var(--brown-2);
+      text-transform:uppercase;
+    }
+
+    .insurance-banner em{
+      display:block;
+      margin-top:7px;
+      font-style:normal;
+      font-size:.88rem;
+      font-weight:850;
+      color:#7a2e28;
     }
 
     .hero-actions{
@@ -1207,7 +1215,9 @@
       }
 
       .hero::before{
-        background-size:auto 420px;
+        width:100%;
+        height:350px;
+        background-size:cover;
         background-position:center top;
       }
 
@@ -1218,6 +1228,12 @@
       .hero-panel{
         padding:24px 18px 22px;
         border-radius:28px;
+      }
+
+      .insurance-banner{
+        padding:15px 14px 14px;
+        border-radius:20px;
+        margin:20px auto 20px;
       }
 
       .hero h1{
@@ -1298,14 +1314,17 @@
               Terapia individual y terapia de pareja para ansiedad, angustia, estrés, autoestima, duelos, límites, vínculos y crisis de pareja. Atención particular en Neuquén Capital y online para Argentina.
             </p>
 
-            <div class="obra-social-alert">Atención sin obra social en Neuquén</div>
-            <div class="obra-social-subalert">No trabajo con obras sociales, prepagas ni reintegros</div>
+            <div class="insurance-banner">
+              <strong>Atención particular en Neuquén</strong>
+              <span>Sin obra social, prepaga ni reintegros</span>
+              <em>Los turnos se reservan con pago adelantado</em>
+            </div>
 
             <div class="hero-actions">
               <a class="btn btn-primary" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20consultar%20por%20terapia.%20Me%20gustar%C3%ADa%20saber%20disponibilidad." target="_blank" rel="noopener" onclick="trackWhatsappConversion('hero')">Consultar por WhatsApp</a>
               <a class="btn btn-light" href="#terapias">Ver terapias</a>
             </div>
-            <p class="hero-note">Terapia individual $55.000 · Pareja $120.000 · Neuquén Capital y online</p>
+            <p class="hero-note">Individual $55.000 · Pareja $120.000 · Particular únicamente</p>
             <div class="hero-therapist">
               <img src="assets/yo-psico.png" alt="Daiana Beltrán, psicóloga" width="108" height="108" />
               <div>
@@ -1490,7 +1509,7 @@
         <div class="section-head">
           <span class="eyebrow">sesiones y tarifas</span>
           <h2>Valores actuales.</h2>
-          <p><strong>Atención particular únicamente: no trabajo con obras sociales, prepagas ni reintegros.</strong> Los turnos se coordinan previamente por WhatsApp según disponibilidad.</p>
+          <p>Atención particular únicamente. No trabajo con obra social, prepaga ni reintegros. Los turnos se coordinan previamente por WhatsApp según disponibilidad.</p>
         </div>
 
         <div class="prices-grid">
@@ -1562,7 +1581,7 @@
 
           <details>
             <summary>¿Trabajás con obra social?</summary>
-            <p>No. La atención es exclusivamente particular. No trabajo con obras sociales, prepagas ni reintegros.</p>
+            <p>No. La atención es exclusivamente particular. No trabajo con obra social, prepaga ni reintegros.</p>
           </details>
         </div>
       </div>
@@ -1600,7 +1619,7 @@
             <div class="contact-line">
               <div>
                 <strong>Atención</strong>
-                <span>Particular. No se trabaja con obra social.</span>
+                <span>Particular únicamente. No se trabaja con obra social, prepaga ni reintegros.</span>
               </div>
             </div>
           </div>
