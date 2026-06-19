@@ -260,9 +260,10 @@
     }
 
     h1{
-      font-size:clamp(38px,4.7vw,64px);
-      line-height:1.02;
-      margin-bottom:20px;
+      font-size:clamp(38px,4.35vw,62px);
+      line-height:1.08;
+      margin-bottom:22px;
+      letter-spacing:-.038em;
     }
 
     h2{
@@ -412,24 +413,23 @@
     /* HERO */
     .hero{
       position:relative;
-      min-height:auto;
       display:block;
       isolation:isolate;
       overflow:hidden;
-      background:linear-gradient(180deg,#fbf6ea 0%,#f1eadb 100%);
+      background:linear-gradient(180deg,#fbf6ea 0%,#f6eedf 55%,#fbf6ea 100%);
     }
 
-    /* Banner claro arriba: separado del texto, sin superposición */
+    /* Banner superior limpio, separado del texto */
     .hero::before{
       content:"";
       display:block;
       width:100%;
-      height:330px;
+      height:300px;
       background-image:url("assets/banner-rincon-sauces.webp");
       background-size:cover;
       background-repeat:no-repeat;
-      background-position:center 47%;
-      filter:saturate(.92) contrast(.98) brightness(.88);
+      background-position:center 45%;
+      filter:saturate(.9) contrast(.98) brightness(.86);
     }
 
     .hero::after{
@@ -438,31 +438,31 @@
       top:0;
       left:0;
       right:0;
-      height:330px;
+      height:300px;
       z-index:0;
       pointer-events:none;
       background:
-        linear-gradient(180deg,rgba(39,31,27,.18),rgba(39,31,27,.28)),
-        radial-gradient(circle at 50% 30%,rgba(255,255,255,.08),transparent 42%);
+        linear-gradient(180deg,rgba(36,29,25,.14),rgba(36,29,25,.24)),
+        radial-gradient(circle at 50% 20%,rgba(255,255,255,.10),transparent 46%);
     }
 
     .hero-content{
-      max-width:860px;
-      margin:-78px auto 0;
+      max-width:940px;
+      margin:-62px auto 0;
       text-align:center;
-      padding:0 0 92px;
+      padding:0 0 84px;
       position:relative;
       z-index:2;
     }
 
     .hero-panel{
       display:inline-block;
-      max-width:860px;
-      padding:38px 44px 36px;
-      border-radius:34px;
-      background:rgba(255,253,247,.94);
-      border:1px solid rgba(61,48,38,.14);
-      box-shadow:0 28px 80px rgba(61,48,38,.18);
+      max-width:900px;
+      padding:46px 56px 42px;
+      border-radius:38px;
+      background:rgba(255,253,247,.96);
+      border:1px solid rgba(61,48,38,.12);
+      box-shadow:0 30px 80px rgba(61,48,38,.15);
       backdrop-filter:blur(10px);
     }
 
@@ -470,12 +470,12 @@
       display:inline-flex;
       align-items:center;
       gap:11px;
-      margin-bottom:14px;
+      margin-bottom:18px;
       color:var(--brown-2);
       font-family:"Playfair Display",Georgia,serif;
       font-weight:900;
-      font-size:clamp(25px,3.2vw,40px);
-      letter-spacing:-.055em;
+      font-size:clamp(23px,2.8vw,36px);
+      letter-spacing:-.045em;
       text-shadow:none;
     }
 
@@ -493,44 +493,45 @@
       text-shadow:none;
       max-width:760px;
       margin-inline:auto;
-      line-height:1.04;
-      letter-spacing:-.04em;
+      line-height:1.08;
+      letter-spacing:-.038em;
     }
 
     .hero .lede{
-      max-width:62ch;
-      margin:0 auto 24px;
-      font-size:clamp(16px,1.45vw,20px);
+      max-width:64ch;
+      margin:0 auto 28px;
+      font-size:clamp(15.5px,1.2vw,18px);
+      line-height:1.72;
       font-weight:650;
       color:#5f564e;
       text-shadow:none;
     }
 
     .insurance-banner{
-      max-width:680px;
-      margin:26px auto 24px;
+      max-width:650px;
+      margin:28px auto 26px;
       padding:15px 22px 14px;
-      border-radius:24px;
-      background:#f3e7d5;
+      border-radius:22px;
+      background:#f1e5d2;
       color:var(--coffee);
-      border:2px solid rgba(60,49,43,.34);
-      box-shadow:0 14px 34px rgba(61,48,38,.10);
+      border:1.5px solid rgba(60,49,43,.28);
+      box-shadow:0 12px 32px rgba(61,48,38,.10);
       text-align:center;
     }
 
     .insurance-banner strong{
       display:block;
-      font-size:clamp(20px,2.2vw,30px);
+      font-size:clamp(18px,1.8vw,26px);
       font-weight:950;
       letter-spacing:.01em;
-      line-height:1.05;
+      line-height:1.1;
       text-transform:uppercase;
     }
 
     .insurance-banner span{
       display:block;
-      margin-top:8px;
-      font-size:clamp(15px,1.25vw,19px);
+      margin-top:7px;
+      font-size:clamp(13px,1vw,16px);
       font-weight:900;
       color:var(--brown-2);
       text-transform:uppercase;
@@ -539,8 +540,9 @@
     .hero-actions{
       display:flex;
       justify-content:center;
-      gap:12px;
+      gap:14px;
       flex-wrap:wrap;
+      margin-top:4px;
     }
 
     .hero-note{
@@ -555,12 +557,12 @@
       display:inline-flex;
       align-items:center;
       gap:12px;
-      margin-top:22px;
-      padding:10px 15px 10px 10px;
+      margin-top:26px;
+      padding:10px 16px 10px 10px;
       border-radius:999px;
       background:rgba(255,253,247,.92);
-      border:1px solid rgba(80,70,60,.18);
-      box-shadow:0 16px 42px rgba(47,43,39,.22);
+      border:1px solid rgba(80,70,60,.16);
+      box-shadow:0 16px 42px rgba(47,43,39,.12);
       color:var(--coffee);
       backdrop-filter:blur(12px);
     }
@@ -590,7 +592,7 @@
     }
 
     .intro{
-      padding:70px 0 80px;
+      padding:64px 0 76px;
       text-align:center;
       background:var(--paper);
     }
@@ -1206,12 +1208,12 @@
 
       .hero::before,
       .hero::after{
-        height:250px;
+        height:220px;
       }
 
       .hero-content{
-        margin:-46px auto 0;
-        padding-bottom:72px;
+        margin:-38px auto 0;
+        padding-bottom:62px;
       }
 
       .hero-content{
@@ -1219,7 +1221,7 @@
       }
 
       .hero-panel{
-        padding:24px 18px 24px;
+        padding:28px 20px 26px;
         border-radius:28px;
       }
 
@@ -1230,7 +1232,8 @@
       }
 
       .hero h1{
-        font-size:clamp(36px,11vw,52px);
+        font-size:clamp(34px,10vw,48px);
+        line-height:1.08;
       }
 
       .hero-actions{
@@ -1304,7 +1307,7 @@
             <div class="hero-name">Daiana Beltrán</div>
             <h1>Psicóloga online para Rincón de los Sauces.</h1>
             <p class="lede">
-              Terapia individual y terapia de pareja para ansiedad, angustia, estrés, autoestima, duelos, límites, vínculos y crisis de pareja. Atención particular en Rincón de los Sauces y online para Argentina.
+              Terapia individual y terapia de pareja online para ansiedad, estrés, autoestima, vínculos y crisis de pareja. Atención particular para Rincón de los Sauces y Argentina.
             </p>
 
             <div class="insurance-banner">
