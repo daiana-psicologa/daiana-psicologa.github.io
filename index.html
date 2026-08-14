@@ -142,21 +142,21 @@
       },
       {
         "@type": "Offer",
-        "@id": "https://daiana-psicologa.github.io/#offer-terapia-individual",
-        "name": "Sesión de terapia individual en Neuquén",
-        "price": "55000",
+        "@id": "https://daiana-psicologa.github.io/#offer-terapia-individual-online",
+        "name": "Sesión de terapia individual online",
+        "price": "40000",
         "priceCurrency": "ARS",
         "availability": "https://schema.org/InStock",
         "itemOffered": { "@id": "https://daiana-psicologa.github.io/#service-terapia-individual" }
       },
       {
         "@type": "Offer",
-        "@id": "https://daiana-psicologa.github.io/#offer-terapia-pareja",
-        "name": "Sesión de terapia de pareja en Neuquén",
-        "price": "120000",
+        "@id": "https://daiana-psicologa.github.io/#offer-terapia-individual-presencial",
+        "name": "Sesión de terapia individual presencial en Neuquén",
+        "price": "55000",
         "priceCurrency": "ARS",
         "availability": "https://schema.org/InStock",
-        "itemOffered": { "@id": "https://daiana-psicologa.github.io/#service-terapia-pareja" }
+        "itemOffered": { "@id": "https://daiana-psicologa.github.io/#service-terapia-individual" }
       },
       {
         "@type": "WebSite",
@@ -205,7 +205,7 @@
             "name": "¿Cuál es el valor de la sesión individual?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "El valor de la sesión de terapia individual online es de $55.000. La atención es particular y los turnos se coordinan por WhatsApp."
+              "text": "El valor de la sesión de terapia individual online es de $40.000. La sesión presencial en el consultorio tiene un valor de $55.000. La atención es particular y los turnos se coordinan por WhatsApp."
             }
           },
           {
@@ -213,7 +213,7 @@
             "name": "¿Cuál es el valor de la sesión de pareja?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "El valor de la sesión de terapia de pareja online es de $120.000. La atención es particular y los turnos se coordinan por WhatsApp."
+              "text": "El valor de la sesión de terapia de pareja se coordina directamente por WhatsApp. La atención es particular."
             }
           },
           {
@@ -612,8 +612,8 @@
 
     .hero-note{
       color:#dfe4d0;
-      font-size:.88rem;
-      font-weight:700;
+      font-size:1.05rem;
+      font-weight:800;
       letter-spacing:.01em;
     }
 
@@ -1024,9 +1024,9 @@
 
     .price{
       margin:16px 0 8px;
-      font-size:clamp(38px,4.8vw,56px);
-      line-height:1.05;
-      font-weight:600;
+      font-size:clamp(52px,7vw,84px);
+      line-height:1.02;
+      font-weight:700;
       font-family:"Fraunces",Georgia,serif;
       letter-spacing:-.02em;
       background:linear-gradient(120deg,var(--coffee),var(--brown-2));
@@ -1041,6 +1041,13 @@
       color:var(--soft);
       font-weight:800;
       -webkit-text-fill-color:var(--soft);
+    }
+
+    .price-note{
+      margin:-2px 0 14px;
+      font-size:.86rem;
+      color:var(--soft);
+      font-weight:700;
     }
 
     .price-card p{
@@ -1545,7 +1552,7 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20consultar%20por%20terapia%20en%20Neuqu%C3%A9n.%20Me%20gustar%C3%ADa%20saber%20disponibilidad." target="_blank" rel="noopener" onclick="trackWhatsappConversion('hero')">Consultar por WhatsApp</a>
             <a class="btn btn-light" href="#terapias">Ver terapias</a>
-            <span class="hero-note">$55.000 individual · $120.000 pareja</span>
+            <span class="hero-note">Sesión individual online $40.000 · Pareja: consultá por WhatsApp</span>
           </div>
 
           <div class="hero-therapist">
@@ -1608,7 +1615,7 @@
             <div class="therapy-content">
               <h3>Terapia individual en Neuquén</h3>
               <p>Para ansiedad, autoestima, gestión emocional, duelos, decisiones, vínculos y momentos de crisis personal. Presencial en Neuquén u online.</p>
-              <span class="mini-price">$55.000 por sesión</span>
+              <span class="mini-price">Online $40.000</span>
             </div>
           </article>
 
@@ -1626,7 +1633,7 @@
             <div class="therapy-content">
               <h3>Terapia de pareja en Neuquén</h3>
               <p>Para discusiones repetidas, distancia emocional, celos, crisis de confianza, acuerdos y decisiones vinculares. Presencial en Neuquén u online.</p>
-              <span class="mini-price">$120.000 por sesión</span>
+              <span class="mini-price">Consultá el valor</span>
             </div>
           </article>
         </div>
@@ -1763,22 +1770,23 @@
         <div class="section-head reveal">
           <span class="eyebrow">sesiones y tarifas</span>
           <h2>Valores actuales.</h2>
-          <p>Atención particular, presencial en Neuquén Capital u online. No trabajo con obra social, prepaga ni reintegros. Los turnos se coordinan previamente por WhatsApp según disponibilidad.</p>
+          <p>Atención particular. No trabajo con obra social, prepaga ni reintegros. Los turnos se coordinan previamente por WhatsApp según disponibilidad.</p>
         </div>
 
         <div class="prices-grid reveal">
           <article class="price-card featured">
             <h3>Terapia individual</h3>
-            <div class="price">$55.000 <span>/ sesión</span></div>
+            <div class="price">$40.000 <span>/ sesión online</span></div>
+            <p class="price-note">Sesión presencial en Neuquén: $55.000</p>
             <p>Espacio individual para trabajar ansiedad, autoestima, emociones, vínculos, duelos y decisiones. Presencial en Neuquén u online.</p>
             <a class="btn btn-line" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20consultar%20por%20terapia%20individual%20en%20Neuqu%C3%A9n.%20Me%20gustar%C3%ADa%20saber%20disponibilidad." target="_blank" rel="noopener" onclick="trackWhatsappConversion('individual')">Quiero consultar</a>
           </article>
 
           <article class="price-card">
             <h3>Terapia de pareja</h3>
-            <div class="price">$120.000 <span>/ sesión</span></div>
-            <p>Espacio para parejas que necesitan ordenar comunicación, acuerdos, crisis, confianza o decisiones. Presencial en Neuquén u online.</p>
-            <a class="btn btn-line" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20queremos%20consultar%20por%20terapia%20de%20pareja%20en%20Neuqu%C3%A9n.%20Nos%20gustar%C3%ADa%20saber%20disponibilidad." target="_blank" rel="noopener" onclick="trackWhatsappConversion('pareja')">Quiero consultar</a>
+            <div class="price">Consultanos <span>por WhatsApp</span></div>
+            <p>Espacio para parejas que necesitan ordenar comunicación, acuerdos, crisis, confianza o decisiones. Presencial en Neuquén u online. Coordinamos el valor por WhatsApp.</p>
+            <a class="btn btn-line" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20queremos%20consultar%20por%20terapia%20de%20pareja%20en%20Neuqu%C3%A9n.%20Nos%20gustar%C3%ADa%20saber%20disponibilidad%20y%20valores." target="_blank" rel="noopener" onclick="trackWhatsappConversion('pareja')">Quiero consultar</a>
           </article>
         </div>
       </div>
@@ -1825,12 +1833,12 @@
 
           <details>
             <summary>¿Cuál es el valor de la sesión individual?</summary>
-            <p>El valor de la sesión de terapia individual, presencial en Neuquén u online, es de $55.000. La atención es particular y los turnos se coordinan previamente por WhatsApp.</p>
+            <p>El valor de la sesión de terapia individual online es de $40.000. La sesión presencial en el consultorio tiene un valor de $55.000. La atención es particular y los turnos se coordinan previamente por WhatsApp.</p>
           </details>
 
           <details>
             <summary>¿Cuál es el valor de la terapia de pareja?</summary>
-            <p>El valor de la sesión de terapia de pareja, presencial en Neuquén u online, es de $120.000. La atención es particular y se coordina por WhatsApp.</p>
+            <p>El valor de la sesión de terapia de pareja se coordina directamente por WhatsApp. La atención es particular, presencial en Neuquén u online.</p>
           </details>
 
           <details>
