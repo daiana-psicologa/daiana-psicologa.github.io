@@ -259,7 +259,7 @@
       color:var(--coffee);
     }
 
-    h1{font-size:clamp(36px,5vw,60px);line-height:1.08;margin-bottom:18px}
+    h1{font-size:clamp(34px,4.6vw,56px);line-height:1.08;margin-bottom:16px}
     h1 em, h2 em{font-style:italic;font-weight:500;color:var(--brown)}
     h2{font-size:clamp(28px,3.6vw,42px);line-height:1.12;margin-bottom:14px}
     h3{font-size:clamp(19px,2vw,24px);line-height:1.25;margin-bottom:8px}
@@ -306,32 +306,51 @@
       background:
         radial-gradient(circle at 80% 10%, rgba(240,205,133,.45), transparent 42%),
         linear-gradient(180deg,#08110d 0%,#132832 50%,#1f3944 100%);
-      padding:70px 0 64px;
+      padding:64px 0 0;
     }
+    .hero-grid{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:end;
+    }
+    .hero-copy{padding-bottom:56px}
     .hero-eyebrow{color:#e6d5a8;font-family:"Fraunces",serif;font-style:italic;font-size:clamp(18px,2vw,22px);margin-bottom:16px}
     .hero h1{color:#fbf6e8;max-width:17ch}
     .hero .lede{max-width:48ch;color:#e7ecd8;font-size:1.06rem;margin-bottom:24px}
     .hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
     .hero-note{color:#dfe4d0;font-weight:750;font-size:.92rem}
 
-    /* PAIN */
-    .pain{padding:56px 0 8px;text-align:center}
-    .pain h2{max-width:22ch;margin-inline:auto}
-    .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px;text-align:left}
-    .pain-card{
-      padding:18px 18px;border-radius:14px;background:var(--paper-3);
-      border:1px solid rgba(196,154,74,.2);box-shadow:0 10px 26px rgba(8,17,13,.06);
-      font-family:"Fraunces",serif;font-weight:600;font-size:1rem;line-height:1.34;color:#38443c;
+    .hero-photo-wrap{
+      position:relative;display:flex;justify-content:center;align-self:end;
     }
-    .pain-card:nth-child(2n){background:#e9dfc4}
+    .hero-photo-glow{
+      position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);
+      width:88%;height:70%;border-radius:50%;
+      background:radial-gradient(closest-side, rgba(240,205,133,.35), transparent 72%);
+      filter:blur(6px);
+      z-index:0;
+    }
+    .hero-photo{
+      position:relative;z-index:1;width:min(340px,86%);aspect-ratio:3/4;
+      border-radius:24px 24px 0 0;overflow:hidden;
+      background:#d7c9a6;
+      box-shadow:0 -10px 50px rgba(0,0,0,.35);
+      border:1px solid rgba(240,205,133,.35);
+      border-bottom:none;
+    }
+    .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+    .hero-photo-badge{
+      position:absolute;top:14px;left:14px;z-index:2;
+      display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:999px;
+      background:rgba(253,250,242,.94);color:var(--coffee);font-size:.74rem;font-weight:800;
+      box-shadow:0 8px 20px rgba(0,0,0,.25);
+    }
 
-    /* PRICING — the filter */
-    .pricing{padding:64px 0 70px}
-    .pricing .section-head{text-align:center;max-width:640px;margin:0 auto 34px}
+    /* PRICING — the filter, right after the hero */
+    .pricing{padding:56px 0 62px;background:var(--paper-3)}
+    .pricing .section-head{text-align:center;max-width:640px;margin:0 auto 30px}
     .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
     .price-card{
       position:relative;padding:30px 24px 26px;border-radius:22px;text-align:center;
-      background:var(--paper-3);border:1px solid rgba(196,154,74,.26);box-shadow:var(--soft-shadow);
+      background:var(--paper);border:1px solid rgba(196,154,74,.26);box-shadow:var(--soft-shadow);
       display:flex;flex-direction:column;
     }
     .price-card.featured{
@@ -375,6 +394,17 @@
       0%{background-position:0% center}
       100%{background-position:200% center}
     }
+
+    /* PAIN */
+    .pain{padding:56px 0 8px;text-align:center}
+    .pain h2{max-width:22ch;margin-inline:auto}
+    .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px;text-align:left}
+    .pain-card{
+      padding:18px 18px;border-radius:14px;background:var(--paper-3);
+      border:1px solid rgba(196,154,74,.2);box-shadow:0 10px 26px rgba(8,17,13,.06);
+      font-family:"Fraunces",serif;font-weight:600;font-size:1rem;line-height:1.34;color:#38443c;
+    }
+    .pain-card:nth-child(2n){background:#e9dfc4}
 
     /* HOW / ABOUT */
     .about{padding:66px 0;background:var(--paper-2)}
@@ -434,6 +464,12 @@
     @media (max-width:900px){
       .about-grid{grid-template-columns:1fr}
       .about-photo{min-height:300px}
+      .hero-grid{grid-template-columns:1fr;align-items:center}
+      .hero-photo-wrap{order:-1;padding-top:36px}
+      .hero-photo{border-radius:24px;border-bottom:1px solid rgba(240,205,133,.35)}
+      .hero-copy{padding-bottom:44px;text-align:center}
+      .hero .lede{margin-inline:auto}
+      .hero-actions{justify-content:center}
     }
     @media (max-width:760px){
       .nav a:not(.btn){display:none}
@@ -442,12 +478,12 @@
     }
     @media (max-width:520px){
       .container{width:min(100% - 32px,var(--max))}
-      .hero{padding:52px 0 46px}
+      .hero{padding:48px 0 0}
       .hero-actions{flex-direction:column;align-items:stretch}
       .hero-actions .btn{width:100%}
       .about{padding:52px 0}
       .pain{padding:44px 0 4px}
-      .pricing{padding:50px 0 56px}
+      .pricing{padding:44px 0 50px}
       .faq{padding:48px 0}
       .final{padding:60px 0}
     }
@@ -474,27 +510,24 @@
 
   <main>
     <section class="hero" id="inicio">
-      <div class="container">
-        <div class="hero-eyebrow">Psicóloga en Neuquén</div>
-        <h1>Lo que te pesa hace tiempo, <em>hoy</em> podés empezar a ordenarlo.</h1>
-        <p class="lede">Terapia individual y de pareja, presencial en Neuquén Capital u online. Turnos por WhatsApp, sin listas de espera eternas ni trámites.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20consultar%20por%20terapia%20en%20Neuqu%C3%A9n.%20Me%20gustar%C3%ADa%20saber%20disponibilidad." target="_blank" rel="noopener" onclick="trackWhatsappConversion('hero')">Consultar disponibilidad</a>
-          <span class="hero-note">Ver valores ↓</span>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-eyebrow">Psicóloga en Neuquén</div>
+          <h1>Lo que te pesa hace tiempo, <em>hoy</em> podés empezar a ordenarlo.</h1>
+          <p class="lede">Terapia individual y de pareja, presencial en Neuquén Capital u online. Turnos por WhatsApp, sin listas de espera eternas ni trámites.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20consultar%20por%20terapia%20en%20Neuqu%C3%A9n.%20Me%20gustar%C3%ADa%20saber%20disponibilidad." target="_blank" rel="noopener" onclick="trackWhatsappConversion('hero')">Consultar disponibilidad</a>
+            <span class="hero-note">Ver valores ↓</span>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <section class="pain container reveal" id="dolores">
-      <span class="eyebrow" style="display:block;text-align:center">llegaste hasta acá porque...</span>
-      <h2>Ya intentaste resolverlo sola/o, y sigue volviendo.</h2>
-      <div class="pain-grid">
-        <div class="pain-card">No podés parar de pensar y te cuesta bajar la cabeza a la noche.</div>
-        <div class="pain-card">Sentís ansiedad, angustia o cansancio emocional casi todos los días.</div>
-        <div class="pain-card">Te cuesta poner límites sin culpa, en el trabajo o en tu familia.</div>
-        <div class="pain-card">Discutís siempre por lo mismo con tu pareja, sin llegar a nada.</div>
-        <div class="pain-card">Estás atravesando un duelo, una separación o un cambio fuerte.</div>
-        <div class="pain-card">Necesitás tomar una decisión importante y no encontrás claridad.</div>
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-glow" aria-hidden="true"></div>
+          <div class="hero-photo">
+            <span class="hero-photo-badge">🌅 Daiana</span>
+            <img src="assets/yo-psico.png" alt="Daiana, psicóloga en Neuquén" width="600" height="800" loading="eager" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -534,6 +567,19 @@
             <a class="btn btn-line" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20queremos%20consultar%20por%20terapia%20de%20pareja%20($130.000).%20Nos%20gustar%C3%ADa%20saber%20disponibilidad." target="_blank" rel="noopener" onclick="trackWhatsappConversion('pareja')">Quiero este turno</a>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="pain container reveal" id="dolores">
+      <span class="eyebrow" style="display:block;text-align:center">llegaste hasta acá porque...</span>
+      <h2>Ya intentaste resolverlo sola/o, y sigue volviendo.</h2>
+      <div class="pain-grid">
+        <div class="pain-card">No podés parar de pensar y te cuesta bajar la cabeza a la noche.</div>
+        <div class="pain-card">Sentís ansiedad, angustia o cansancio emocional casi todos los días.</div>
+        <div class="pain-card">Te cuesta poner límites sin culpa, en el trabajo o en tu familia.</div>
+        <div class="pain-card">Discutís siempre por lo mismo con tu pareja, sin llegar a nada.</div>
+        <div class="pain-card">Estás atravesando un duelo, una separación o un cambio fuerte.</div>
+        <div class="pain-card">Necesitás tomar una decisión importante y no encontrás claridad.</div>
       </div>
     </section>
 
