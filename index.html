@@ -303,56 +303,22 @@
     /* HERO */
     .hero{
       position:relative;overflow:hidden;
-      background:
-        radial-gradient(circle at 80% 10%, rgba(240,205,133,.45), transparent 42%),
-        linear-gradient(180deg,#08110d 0%,#132832 50%,#1f3944 100%);
-      padding:64px 0 0;
+      min-height:560px;
+      display:flex;align-items:flex-end;
+      background-color:#0a1512;
+      background-image:
+        linear-gradient(180deg, rgba(8,17,13,.55) 0%, rgba(8,17,13,.35) 40%, rgba(8,17,13,.88) 100%),
+        url("activos/héroe.png");
+      background-size:cover;
+      background-position:center 60%;
+      padding:64px 0 56px;
     }
-    .hero-grid{
-      display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:end;
-    }
-    .hero-copy{padding-bottom:56px}
+    .hero-copy{max-width:640px}
     .hero-eyebrow{color:#e6d5a8;font-family:"Fraunces",serif;font-style:italic;font-size:clamp(18px,2vw,22px);margin-bottom:16px}
     .hero h1{color:#fbf6e8;max-width:17ch}
     .hero .lede{max-width:48ch;color:#e7ecd8;font-size:1.06rem;margin-bottom:24px}
     .hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
     .hero-note{color:#dfe4d0;font-weight:750;font-size:.92rem}
-
-    .hero-photo-wrap{
-      position:relative;display:flex;flex-direction:column;align-items:center;
-      align-self:end;padding-bottom:18px;
-    }
-    .hero-photo-glow{
-      position:absolute;top:6%;left:50%;transform:translateX(-50%);
-      width:104%;height:104%;border-radius:50%;
-      background:radial-gradient(closest-side, rgba(240,205,133,.32), rgba(31,57,68,.18) 55%, transparent 76%);
-      filter:blur(18px);
-      z-index:0;
-    }
-    .hero-photo{
-      position:relative;z-index:1;width:min(360px,90%);aspect-ratio:4/5;
-    }
-    .hero-photo img{
-      width:100%;height:100%;object-fit:cover;object-position:center 18%;
-      -webkit-mask-image:radial-gradient(ellipse 62% 68% at center 42%, #000 62%, transparent 100%);
-      mask-image:radial-gradient(ellipse 62% 68% at center 42%, #000 62%, transparent 100%);
-      filter:saturate(.88) contrast(1.03) brightness(.97) sepia(.1);
-    }
-    .hero-photo::after{
-      content:"";
-      position:absolute;inset:0;z-index:2;pointer-events:none;
-      background:radial-gradient(ellipse 62% 68% at center 42%, rgba(196,154,74,.16), transparent 72%);
-      mix-blend-mode:soft-light;
-    }
-    .hero-photo-caption{
-      position:relative;z-index:1;margin-top:2px;
-      font-family:"Fraunces",serif;font-style:italic;font-weight:500;
-      font-size:1rem;color:var(--gold);text-align:center;
-    }
-    .hero-photo-caption span{
-      display:block;margin-top:2px;font-family:Inter,sans-serif;font-style:normal;
-      font-weight:800;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#dfe4d0;
-    }
 
     /* PRICING — the filter, right after the hero */
     .pricing{padding:56px 0 62px;background:var(--paper-3)}
@@ -474,12 +440,6 @@
     @media (max-width:900px){
       .about-grid{grid-template-columns:1fr}
       .about-photo{min-height:300px}
-      .hero-grid{grid-template-columns:1fr;align-items:center}
-      .hero-photo-wrap{order:-1;padding-top:36px}
-      .hero-photo{width:min(280px,70%)}
-      .hero-copy{padding-bottom:44px;text-align:center}
-      .hero .lede{margin-inline:auto}
-      .hero-actions{justify-content:center}
     }
     @media (max-width:760px){
       .nav a:not(.btn){display:none}
@@ -488,7 +448,7 @@
     }
     @media (max-width:520px){
       .container{width:min(100% - 32px,var(--max))}
-      .hero{padding:48px 0 0}
+      .hero{padding:48px 0 40px;min-height:460px}
       .hero-actions{flex-direction:column;align-items:stretch}
       .hero-actions .btn{width:100%}
       .about{padding:52px 0}
@@ -520,7 +480,7 @@
 
   <main>
     <section class="hero" id="inicio">
-      <div class="container hero-grid">
+      <div class="container">
         <div class="hero-copy">
           <div class="hero-eyebrow">Psicóloga en Neuquén</div>
           <h1>Lo que te pesa hace tiempo, <em>hoy</em> podés empezar a ordenarlo.</h1>
@@ -529,14 +489,6 @@
             <a class="btn btn-primary" href="https://wa.me/5492996044900?text=Hola%20Daiana,%20quiero%20consultar%20por%20terapia%20en%20Neuqu%C3%A9n.%20Me%20gustar%C3%ADa%20saber%20disponibilidad." target="_blank" rel="noopener" onclick="trackWhatsappConversion('hero')">Consultar disponibilidad</a>
             <span class="hero-note">Ver valores ↓</span>
           </div>
-        </div>
-
-        <div class="hero-photo-wrap">
-          <div class="hero-photo-glow" aria-hidden="true"></div>
-          <div class="hero-photo">
-            <img src="assets/yo-psico.png" alt="Daiana, psicóloga en Neuquén" width="600" height="800" loading="eager" />
-          </div>
-          <p class="hero-photo-caption">Daiana<span>Psicóloga en Neuquén</span></p>
         </div>
       </div>
     </section>
