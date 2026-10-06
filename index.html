@@ -17,7 +17,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="assets/hero.png" />
+  <link rel="preconnect" href="https://images.pexels.com" />
+  <link rel="preload" as="image" href="https://images.pexels.com/photos/33010651/pexels-photo-33010651.jpeg?auto=compress&cs=tinysrgb&w=1920" media="(min-width:761px)" />
+  <link rel="preload" as="image" href="https://images.pexels.com/photos/33010651/pexels-photo-33010651.jpeg?auto=compress&cs=tinysrgb&w=1200" media="(max-width:760px)" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&display=swap" rel="stylesheet" />
 
   <!-- Google Tag Manager -->
@@ -162,7 +164,20 @@
     .btn-line:hover{background:rgba(253,250,242,.8)}
 
     /* Hero */
-    .hero{min-height:560px;display:flex;align-items:flex-end;padding:64px 0 56px;background:#0a1512 linear-gradient(180deg,rgba(8,17,13,.55),rgba(8,17,13,.35) 40%,rgba(8,17,13,.88)),url("assets/hero.png") center 60%/cover}
+    .hero{
+      --hero-img:url("https://images.pexels.com/photos/33010651/pexels-photo-33010651.jpeg?auto=compress&cs=tinysrgb&w=1920");
+      min-height:560px;display:flex;align-items:flex-end;padding:64px 0 56px;
+      background-color:#0a1512;
+      background-image:linear-gradient(180deg,rgba(8,17,13,.55),rgba(8,17,13,.35) 40%,rgba(8,17,13,.88)),var(--hero-img);
+      background-size:cover;background-position:center 60%;background-repeat:no-repeat;
+    }
+    /* Más resolución para pantallas grandes o retina, menos peso en celular */
+    @media (min-width:1921px),(min-width:1100px) and (min-resolution:1.5dppx){
+      .hero{--hero-img:url("https://images.pexels.com/photos/33010651/pexels-photo-33010651.jpeg?auto=compress&cs=tinysrgb&w=2880")}
+    }
+    @media (max-width:760px){
+      .hero{--hero-img:url("https://images.pexels.com/photos/33010651/pexels-photo-33010651.jpeg?auto=compress&cs=tinysrgb&w=1200")}
+    }
     .hero-copy{max-width:640px}
     .hero-eyebrow{color:#e6d5a8;font-family:Fraunces,serif;font-style:italic;font-size:clamp(18px,2vw,22px);margin-bottom:16px}
     .hero h1{color:#fbf6e8;max-width:17ch}
