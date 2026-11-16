@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Parejas en Neuquén | Psicóloga · Sesiones y programas - Daiana</title>
-<meta name="description" content="Espacio para parejas en Neuquén y online, con psicóloga. Para volver a comunicarse, superar una crisis o una infidelidad y decidir con claridad. Sesión $130.000 o programas de 1 y 2 meses.">
+<title>Parejas en Neuquén y online | Psicóloga · Sesiones desde $100.000 - Daiana</title>
+<meta name="description" content="Espacio para parejas en Neuquén y online, con psicóloga. Para volver a comunicarse, superar una crisis o una infidelidad y decidir con claridad. Sesión online $100.000, presencial $125.000. También espacio individual.">
 <link rel="canonical" href="https://daiana-psicologa.github.io/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#13241d">
@@ -34,7 +34,7 @@
    "url": "https://daiana-psicologa.github.io/",
    "image": "https://daiana-psicologa.github.io/daiana-foto.png",
    "telephone": "+54 9 299 604 4900",
-   "priceRange": "$130.000 - $900.000",
+   "priceRange": "$60.000 - $850.000",
    "address": {
     "@type": "PostalAddress",
     "addressLocality": "Neuquén Capital",
@@ -50,20 +50,38 @@
    "makesOffer": [
     {
      "@type": "Offer",
-     "name": "Sesión de pareja",
-     "price": "130000",
+     "name": "Sesión de pareja online",
+     "price": "100000",
+     "priceCurrency": "ARS"
+    },
+    {
+     "@type": "Offer",
+     "name": "Sesión de pareja presencial",
+     "price": "125000",
+     "priceCurrency": "ARS"
+    },
+    {
+     "@type": "Offer",
+     "name": "Sesión individual online",
+     "price": "60000",
+     "priceCurrency": "ARS"
+    },
+    {
+     "@type": "Offer",
+     "name": "Sesión individual presencial",
+     "price": "75000",
      "priceCurrency": "ARS"
     },
     {
      "@type": "Offer",
      "name": "Programa Reencuentro (4 encuentros)",
-     "price": "500000",
+     "price": "360000",
      "priceCurrency": "ARS"
     },
     {
      "@type": "Offer",
      "name": "Programa Proceso completo (8 encuentros)",
-     "price": "900000",
+     "price": "680000",
      "priceCurrency": "ARS"
     }
    ]
@@ -76,7 +94,7 @@
      "name": "¿Cuánto cuesta una sesión de pareja?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "La sesión suelta cuesta $130.000. El Programa Reencuentro (4 encuentros) $500.000 y el Proceso completo (8 encuentros) $900.000. Descuento en efectivo."
+      "text": "La sesión de pareja cuesta $100.000 online y $125.000 presencial. El Programa Reencuentro (4 encuentros) desde $360.000 y el Proceso completo (8 encuentros) desde $680.000. Descuento en efectivo."
      }
     },
     {
@@ -84,7 +102,7 @@
      "name": "¿Y si mi pareja no quiere venir?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Pueden empezar escribiendo y lo vemos: a veces la primera consulta ayuda a que el otro se anime."
+      "text": "Podés empezar vos con una sesión individual (online $60.000, presencial $75.000). Muchas veces, cuando uno empieza, el otro se suma después."
      }
     },
     {
@@ -255,6 +273,34 @@ h2 em.s{color:var(--coral)}
 .note{margin-top:34px;text-align:center;color:var(--muted);font-size:.95rem}
 .note strong{color:var(--ink)}
 
+/* MODE TOGGLE */
+.mode-toggle{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px;margin-top:28px;gap:4px}
+.mode-toggle button{border:0;background:transparent;font:inherit;font-weight:700;font-size:.92rem;padding:10px 24px;border-radius:999px;cursor:pointer;color:var(--muted);transition:background .2s,color .2s}
+.mode-toggle button.on{background:var(--dark);color:#fff}
+.save{display:inline-block;align-self:flex-start;font-size:.72rem;font-weight:800;letter-spacing:.04em;background:rgba(127,179,160,.2);color:#2f6b55;padding:5px 11px;border-radius:999px;margin-bottom:22px}
+.plan.featured .save{background:rgba(233,196,106,.18);color:var(--yellow)}
+
+/* SOLO */
+.solo{margin-top:28px;background:var(--sand);border-radius:var(--radius);padding:34px 36px;display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center}
+.solo h3{font-size:1.4rem;letter-spacing:-.02em;margin-bottom:8px}
+.solo p{color:var(--muted);font-size:.96rem}
+.solo .price{margin-top:4px}
+.solo-right{text-align:right}
+.solo-right .btn{margin-top:14px}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px}
+.step b{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--yellow);color:var(--dark);font-weight:800;margin-bottom:14px}
+.step h3{font-size:1.05rem;margin-bottom:6px}
+.step p{color:var(--muted);font-size:.93rem}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+.about img{height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:28px;background:var(--sand);width:100%;max-width:380px;justify-self:center}
+.about p{color:var(--muted);margin-bottom:14px}
+.about p strong{color:var(--ink)}
+
 /* FAQ */
 .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
 .faq{display:grid;gap:12px}
@@ -295,7 +341,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
   .hero-visual .c2{width:80px;height:80px;right:8%;top:10px}
   .hero-visual img{width:320px;right:50%;transform:translateX(50%)}
   .pains-head,.faq-grid{grid-template-columns:1fr;gap:10px}
-  .pains,.pillars,.plans{grid-template-columns:1fr}
+  .pains,.pillars,.plans,.steps{grid-template-columns:1fr}
+  .solo,.about{grid-template-columns:1fr;gap:18px}
+  .solo-right{text-align:left}
   .plan.featured{transform:none}
   .method{padding:44px 26px}
   .final{padding:56px 24px}
@@ -314,7 +362,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
     </a>
     <div class="nav-links">
       <a href="#como">Cómo trabajo</a>
-      <a href="#opciones">Opciones</a>
+      <a href="#opciones">Valores</a>
+      <a href="#individual">Individual</a>
       <a href="#preguntas">Preguntas</a>
     </div>
     <a class="btn btn-yellow nav-cta js-wa" data-source="menu" data-msg="Hola Daiana, queremos consultar por el espacio para parejas. ¿Qué disponibilidad tenés?">Escribime</a>
@@ -329,12 +378,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
       <p class="lead">Soy psicóloga y acompaño a parejas a <strong>volver a comunicarse</strong>, entender qué les está pasando y decidir con claridad qué quieren hacer con su vínculo.</p>
       <div class="hero-ctas">
         <a class="btn btn-yellow js-wa" data-source="hero" data-msg="Hola Daiana, queremos consultar por el espacio para parejas. ¿Qué disponibilidad tenés?">Consultar disponibilidad →</a>
-        <a class="btn btn-ghost" href="#opciones">Ver opciones</a>
+        <a class="btn btn-ghost" href="#opciones">Ver valores</a>
       </div>
       <div class="trust">
         <div><i class="d-yellow"></i>Presencial en Neuquén Capital</div>
         <div><i class="d-sage"></i>Online por videollamada</div>
-        <div><i class="d-coral"></i>Turnos esta semana</div>
+        <div><i class="d-coral"></i>Online desde $100.000</div>
       </div>
     </div>
     <div class="hero-visual">
@@ -374,7 +423,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
     <div class="method">
       <span class="c m1"></span><span class="c m2"></span>
       <p class="kicker" style="color:#9fb3aa"><i style="background:var(--yellow)"></i>Cómo trabajo</p>
-      <h2>Un vinculo se construye <em class="s"> y se cuida todos los días.</em></h2>
+      <h2>Un vínculo se construye <em class="s"> y se cuida todos los días.</em></h2>
       <p class="sub">Trabajamos sobre lo que sostiene un vínculo, con herramientas concretas para aplicar en casa entre encuentro y encuentro.</p>
       <div class="pillars">
         <div class="pillar">
@@ -402,24 +451,28 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
     <div class="center">
       <p class="kicker"><i></i>Opciones y valores</p>
       <h2>Elijan cómo <em class="s">empezar.</em></h2>
-      <p class="sub">Encuentros de pareja presenciales en Neuquén Capital u online. Atención particular, sin obra social.</p>
+      <p class="sub">Encuentros de pareja online por videollamada o presenciales en Neuquén Capital. Atención particular, sin obra social.</p>
+      <div class="mode-toggle" role="tablist" aria-label="Modalidad">
+        <button type="button" class="on" data-mode="online">Online</button>
+        <button type="button" data-mode="presencial">Presencial</button>
+      </div>
     </div>
 
     <div class="plans">
       <div class="plan">
         <div class="pc pc-1"></div>
         <p class="who">Para una primera consulta</p>
-        <h3>Sesión suelta</h3>
-        <p class="meta">1 encuentro de pareja</p>
-        <div class="price">$130.000</div>
+        <h3>Sesión de pareja</h3>
+        <p class="meta">1 encuentro · <span class="js-mode-label">online</span></p>
+        <div class="price" data-online="$100.000" data-presencial="$125.000">$100.000</div>
         <p class="price-note">Por sesión</p>
         <hr>
         <ul>
           <li>Un espacio para contar qué les pasa</li>
           <li>Una primera lectura de la situación</li>
-          <li>Orientación sobre cómo seguir</li>
+          <li>Orientación concreta sobre cómo seguir</li>
         </ul>
-        <a class="btn btn-dark js-wa" data-source="sesion" data-msg="Hola Daiana, queremos consultar por una sesión de pareja ($130.000). ¿Qué disponibilidad tenés?">Quiero una sesión</a>
+        <a class="btn btn-dark js-wa" data-source="sesion" data-msg="Hola Daiana, queremos consultar por una sesión de pareja ({modo}). ¿Qué disponibilidad tenés?">Quiero una sesión</a>
       </div>
 
       <div class="plan featured">
@@ -427,9 +480,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
         <div class="pc pc-2"></div>
         <p class="who">Un encuentro semanal</p>
         <h3>Programa Reencuentro</h3>
-        <p class="meta">4 encuentros en un mes</p>
-        <div class="price">$500.000</div>
+        <p class="meta">4 encuentros en un mes · <span class="js-mode-label">online</span></p>
+        <div class="price" data-online="$360.000" data-presencial="$450.000">$360.000</div>
         <p class="price-note">Pago único · descuento en efectivo</p>
+        <span class="save">Ahorran 10% vs. sesiones sueltas</span>
         <hr>
         <ul>
           <li>Entrevista inicial para entender su historia</li>
@@ -438,16 +492,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
           <li>Trabajo sobre el cuidado del vínculo</li>
           <li>Al final del mes, un plan claro de cómo seguir</li>
         </ul>
-        <a class="btn btn-yellow js-wa" data-source="reencuentro" data-msg="Hola Daiana, nos interesa el Programa Reencuentro (4 encuentros). ¿Qué disponibilidad tenés?">Quiero este</a>
+        <a class="btn btn-yellow js-wa" data-source="reencuentro" data-msg="Hola Daiana, nos interesa el Programa Reencuentro, 4 encuentros ({modo}). ¿Qué disponibilidad tenés?">Quiero este</a>
       </div>
 
       <div class="plan">
         <div class="pc pc-3"></div>
         <p class="who">Para un proceso profundo</p>
         <h3>Programa Proceso completo</h3>
-        <p class="meta">8 encuentros en dos meses</p>
-        <div class="price">$900.000</div>
+        <p class="meta">8 encuentros en dos meses · <span class="js-mode-label">online</span></p>
+        <div class="price" data-online="$680.000" data-presencial="$850.000">$680.000</div>
         <p class="price-note">Pago único</p>
+        <span class="save">Ahorran 15% vs. sesiones sueltas</span>
         <hr>
         <ul>
           <li>Todo el Programa Reencuentro</li>
@@ -456,11 +511,51 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
           <li>Seguimiento semanal por mensaje</li>
           <li>Cierre con acuerdos y proyecto en común</li>
         </ul>
-        <a class="btn btn-dark js-wa" data-source="proceso" data-msg="Hola Daiana, nos interesa el Programa Proceso completo (8 encuentros). ¿Qué disponibilidad tenés?">Quiero este</a>
+        <a class="btn btn-dark js-wa" data-source="proceso" data-msg="Hola Daiana, nos interesa el Programa Proceso completo, 8 encuentros ({modo}). ¿Qué disponibilidad tenés?">Quiero este</a>
+      </div>
+    </div>
+
+    <div class="solo" id="individual">
+      <div>
+        <p class="kicker"><i></i>Espacio individual</p>
+        <h3>¿Tu pareja no quiere venir? Podés empezar vos.</h3>
+        <p>Un espacio para vos solo/a, para entender qué te está pasando en tu relación, cómo te afecta y qué querés hacer. Muchas veces, cuando uno empieza, el otro se suma después. También sirve si estás atravesando una separación o te cuesta vincularte.</p>
+      </div>
+      <div class="solo-right">
+        <p class="who" style="color:var(--muted);font-weight:600;font-size:.82rem">Sesión individual · <span class="js-mode-label">online</span></p>
+        <div class="price" data-online="$60.000" data-presencial="$75.000">$60.000</div>
+        <a class="btn btn-dark js-wa" data-source="individual" data-msg="Hola Daiana, quería consultar por una sesión individual ({modo}). ¿Qué disponibilidad tenés?">Quiero una sesión individual</a>
       </div>
     </div>
 
     <p class="note">No hace falta llegar con todo claro. <strong>El primer paso es contar qué les pasa.</strong></p>
+  </div>
+</section>
+
+<section id="pasos" style="padding-top:10px">
+  <div class="wrap">
+    <div class="center">
+      <p class="kicker"><i></i>Cómo empezar</p>
+      <h2>Empezar es <em class="s">más simple de lo que parece.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><b>1</b><h3>Me escriben por WhatsApp</h3><p>En dos líneas, qué les está pasando. Sin formularios ni trámites.</p></div>
+      <div class="step"><b>2</b><h3>Elegimos día y modalidad</h3><p>Online o presencial, en el horario que les quede cómodo.</p></div>
+      <div class="step"><b>3</b><h3>Primer encuentro</h3><p>Salen con una primera lectura de la situación y una idea clara de cómo seguir.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre-mi" style="padding-top:10px">
+  <div class="wrap about">
+    <img src="assets/daiana-sobre-mi.webp" width="760" height="760" alt="Daiana, psicóloga en Neuquén" loading="lazy">
+    <div>
+      <p class="kicker"><i></i>Sobre mí</p>
+      <h2>Soy Daiana, <em class="s">psicóloga.</em></h2>
+      <p>Soy <strong>Licenciada en Psicología</strong> y hace años acompaño a parejas y personas de Neuquén y de otras ciudades, de forma presencial y online.</p>
+      <p>Mi forma de trabajar es <strong>práctica y directa</strong>: no se trata de hablar del problema durante meses, sino de entender qué les pasa y darles herramientas concretas para usar en casa desde el primer encuentro.</p>
+      <a class="btn btn-yellow js-wa" data-source="sobre-mi" data-msg="Hola Daiana, quería hacerte una consulta. ¿Qué disponibilidad tenés?">Escribime</a>
+    </div>
   </div>
 </section>
 
@@ -474,11 +569,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
     <div class="faq">
       <details>
         <summary>¿Cuánto cuesta una sesión de pareja?</summary>
-        <p>La sesión suelta cuesta $130.000. El Programa Reencuentro, de 4 encuentros en un mes, cuesta $500.000, y el Proceso completo, de 8 encuentros, $900.000. Hay descuento pagando en efectivo.</p>
+        <p>La sesión de pareja cuesta $100.000 online y $125.000 presencial. El Programa Reencuentro (4 encuentros en un mes) cuesta $360.000 online o $450.000 presencial, y el Proceso completo (8 encuentros) $680.000 online o $850.000 presencial. Hay descuento pagando en efectivo.</p>
       </details>
       <details>
         <summary>¿Y si mi pareja no quiere venir?</summary>
-        <p>Pasa seguido. Pueden empezar escribiéndome y lo vemos: a veces la primera consulta ayuda a que el otro se anime.</p>
+        <p>Pasa seguido. Podés empezar vos con una sesión individual ($60.000 online, $75.000 presencial). Muchas veces, cuando uno empieza, el otro se anima a sumarse.</p>
       </details>
       <details>
         <summary>¿Qué pasa si decidimos separarnos?</summary>
@@ -486,7 +581,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
       </details>
       <details>
         <summary>¿Es presencial u online?</summary>
-        <p>Las dos opciones: presencial en Neuquén Capital u online por videollamada.</p>
+        <p>Las dos opciones: online por videollamada (desde cualquier ciudad) o presencial en Neuquén Capital. La online funciona igual de bien y les ahorra traslados.</p>
       </details>
       <details>
         <summary>¿Trabajás con obra social?</summary>
@@ -525,16 +620,33 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
 <script>
 (function(){
   var WA='https://wa.me/5492996044900?text=';
+  var mode='online';
+  function setLinks(){
+    document.querySelectorAll('.js-wa').forEach(function(el){
+      var msg=(el.dataset.msg||'').replace('{modo}',mode);
+      el.href=WA+encodeURIComponent(msg);
+    });
+  }
+  function setMode(m){
+    mode=m;
+    document.querySelectorAll('.mode-toggle button').forEach(function(b){b.classList.toggle('on',b.dataset.mode===m);});
+    document.querySelectorAll('[data-online]').forEach(function(el){el.textContent=el.dataset[m];});
+    document.querySelectorAll('.js-mode-label').forEach(function(el){el.textContent=m;});
+    setLinks();
+  }
+  document.querySelectorAll('.mode-toggle button').forEach(function(b){
+    b.addEventListener('click',function(){setMode(b.dataset.mode);});
+  });
   document.querySelectorAll('.js-wa').forEach(function(el){
-    el.href=WA+encodeURIComponent(el.dataset.msg||'');
     el.target='_blank'; el.rel='noopener';
     el.addEventListener('click',function(){
       var source=el.dataset.source||'web';
       window.dataLayer=window.dataLayer||[];
-      window.dataLayer.push({event:'whatsapp_click',source:source,service:'parejas_neuquen',location:'neuquen_capital'});
+      window.dataLayer.push({event:'whatsapp_click',source:source,service:'parejas_neuquen',modalidad:mode,location:'neuquen_capital'});
       if(typeof gtag==='function'){gtag('event','conversion',{send_to:'AW-17569733605',event_category:'WhatsApp',event_label:source});}
     });
   });
+  setLinks();
 })();
 </script>
 </body>
