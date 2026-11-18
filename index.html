@@ -179,7 +179,15 @@
      "name": "¿Cómo reservo y pago?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Me escribís por WhatsApp y elegimos día y horario. El turno queda reservado al abonar la sesión por transferencia. Si necesitás cambiarlo, avisame con 24 horas de anticipación y lo reprogramamos."
+      "text": "Me escribís por WhatsApp y elegimos día y horario. El turno queda reservado con una seña del 50% por transferencia ($40.000 la individual, $65.000 la de pareja), y el resto se abona el día del encuentro. Si necesitás cambiarlo, avisame con 24 horas de anticipación y lo reprogramamos."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué pasa entre una sesión y otra?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Después de cada encuentro te envío un resumen por escrito de lo que trabajamos y actividades para hacer durante la semana. Así el proceso tiene una estructura clara y no depende solo de lo que se habla en la sesión."
      }
     },
     {
@@ -506,13 +514,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
           <a class="hp js-wa" data-source="hero-individual" data-msg="Hola Daiana, vi en tu web que la sesión individual (50 min) es de $80.000. Quería consultar disponibilidad.">
             <span class="hp-t">Terapia individual</span>
             <span class="hp-p">$80.000</span>
-            <span class="hp-m">por sesión · 50 min</span>
+            <span class="hp-m">por sesión · 50 min<br>+ guía escrita</span>
             <span class="hp-c">Consultar turno →</span>
           </a>
           <a class="hp alt js-wa" data-source="hero-pareja" data-msg="Hola Daiana, vi en tu web que la sesión de pareja (50 min) es de $130.000. Queríamos consultar disponibilidad.">
             <span class="hp-t">Terapia de pareja</span>
             <span class="hp-p">$130.000</span>
-            <span class="hp-m">por sesión · 50 min</span>
+            <span class="hp-m">por sesión · 50 min<br>+ guía escrita</span>
             <span class="hp-c">Consultar turno →</span>
           </a>
         </div>
@@ -573,8 +581,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
         </div>
         <div class="pillar">
           <div class="num n2">02</div>
-          <h3>Tareas entre sesiones</h3>
-          <p>Entre un encuentro y otro trabajamos con tareas y objetivos puntuales que acordamos, para que lo que charlamos se note en el día a día.</p>
+          <h3>Guía escrita entre sesiones</h3>
+          <p>Después de cada sesión te llevás un resumen por escrito de lo que trabajamos y actividades para la semana. Así sabés siempre dónde estás y hacia dónde vamos.</p>
         </div>
         <div class="pillar">
           <div class="num n3">03</div>
@@ -608,6 +616,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
           <li>Separaciones, duelos y cambios de etapa</li>
           <li>Autoestima y cómo te vinculás con los demás</li>
           <li>Un espacio para crecer y autoconocerte</li>
+          <li><strong>Resumen escrito y actividades para la semana</strong></li>
         </ul>
         <a class="btn btn-yellow js-wa" data-source="sesion-individual" data-msg="Hola Daiana, vi en tu web que la sesión individual (50 min) es de $80.000. Quería consultar disponibilidad.">Quiero una sesión individual</a>
       </div>
@@ -624,6 +633,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
           <li>Aprender a escucharse y a hablar sin atacarse</li>
           <li>Trabajo sobre el cuidado del vínculo</li>
           <li>Orientación concreta sobre cómo seguir</li>
+          <li><strong>Resumen escrito y actividades para la semana</strong></li>
         </ul>
         <a class="btn btn-dark js-wa" data-source="sesion-pareja" data-msg="Hola Daiana, vi en tu web que la sesión de pareja (50 min) es de $130.000. Queríamos consultar disponibilidad.">Quiero una sesión de pareja</a>
       </div>
@@ -642,14 +652,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
     </div>
     <div class="steps">
       <div class="step"><b>1</b><h3>Me escribís por WhatsApp</h3><p>En dos líneas, qué te está pasando. Sin formularios ni trámites.</p></div>
-      <div class="step"><b>2</b><h3>Reservás tu turno</h3><p>Elegimos día y modalidad. El turno queda reservado al abonar la sesión por transferencia.</p></div>
+      <div class="step"><b>2</b><h3>Reservás tu turno</h3><p>Elegimos día y modalidad. El turno queda reservado con una seña del 50% por transferencia; el resto se abona el día del encuentro.</p></div>
       <div class="step"><b>3</b><h3>Primer encuentro</h3><p>Empezamos a entender qué te pasa y vemos juntos cómo seguir el proceso.</p></div>
     </div>
     <div class="facts">
       <div class="fact"><b>50 minutos</b>Duración de cada sesión</div>
       <div class="fact"><b>Semanal o quincenal</b>Según lo que necesites</div>
       <div class="fact"><b>Online o presencial</b>Neuquén Capital o videollamada</div>
-      <div class="fact"><b>Pago al reservar</b>Por transferencia. Reprogramás avisando 24 hs antes</div>
+      <div class="fact"><b>Seña del 50%</b>Por transferencia al reservar. Reprogramás avisando 24 hs antes</div>
     </div>
   </div>
 </section>
@@ -724,7 +734,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
       </details>
       <details>
         <summary>¿Cómo reservo y pago?</summary>
-        <p>Me escribís por WhatsApp y elegimos día y horario. El turno queda reservado al abonar la sesión por transferencia. Si necesitás cambiarlo, avisame con 24 horas de anticipación y lo reprogramamos.</p>
+        <p>Me escribís por WhatsApp y elegimos día y horario. El turno queda reservado con una seña del 50% por transferencia ($40.000 la individual, $65.000 la de pareja), y el resto se abona el día del encuentro. Si necesitás cambiarlo, avisame con 24 horas de anticipación y lo reprogramamos.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa entre una sesión y otra?</summary>
+        <p>Después de cada encuentro te envío un resumen por escrito de lo que trabajamos y actividades para hacer durante la semana. Así el proceso tiene una estructura clara y no depende solo de lo que se habla en la sesión.</p>
       </details>
       <details>
         <summary>¿Cada cuánto son las sesiones?</summary>
